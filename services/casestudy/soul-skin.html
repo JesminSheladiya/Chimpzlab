@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local SEO Agency for Dermatology Clinics | ChimpzLab</title>
+    <meta name="description"
+        content="Own page one of a hyperlocal category. Win local search visibility for your clinic. Book a strategy call with ChimpzLab.">
+    <meta name="keywords"
+        content="local SEO for dermatology clinic, hyperlocal SEO, healthcare SEO, neighborhood search visibility, skin clinic SEO">
+    <link rel="icon" type="image/gif" href="../../asset/chimpzlab-icon.gif">
+    <link rel="apple-touch-icon" href="../../asset/chimpzlab-icon.gif">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Manrope', 'sans-serif'] },
+                    colors: { brand: { dark: '#0a0a0a' } },
+                    animation: { 'marquee': 'marquee 25s linear infinite' },
+                    keyframes: { marquee: { '0%': { transform: 'translateX(0%)' }, '100%': { transform: 'translateX(-100%)' } } }
+                }
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            function setEqualCardHeights() { const cards = document.querySelectorAll('.tab-card-item'); cards.forEach(card => { card.style.height = 'auto'; }); }
+            setEqualCardHeights();
+            window.addEventListener('resize', setEqualCardHeights);
+            gsap.utils.toArray('.tab-card-item').forEach((card, index) => { gsap.fromTo(card, { opacity: 0, y: 40, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, delay: index * 0.1, ease: 'power2.out' }); });
+            ScrollTrigger.refresh();
+        });
+    </script>
+    <style>
+        html.lenis {
+            height: auto;
+        }
+
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
+
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
+
+        .lenis.lenis-scrolling iframe {
+            pointer-events: none;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            cursor: none;
+            overflow-x: hidden;
+        }
+
+        .card-height-equal {
+            height: 100%;
+            min-height: 600px;
+        }
+
+        #cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s, background-color 0.3s, mix-blend-mode 0.3s;
+            mix-blend-mode: difference;
+        }
+
+        #cursor.hovered-drag {
+            width: 80px;
+            height: 80px;
+            background-color: #ffffff;
+        }
+
+        #cursor.hovered-drag #cursor-text {
+            opacity: 1;
+        }
+
+        .auto-scroll-swiper .swiper-wrapper {
+            transition-timing-function: linear !important;
+        }
+
+        #cursor.hovered {
+            width: 80px;
+            height: 80px;
+            background-color: #ffffff;
+        }
+
+        .text-huge {
+            font-size: clamp(3rem, 7vw, 7rem);
+            line-height: 0.95;
+            letter-spacing: -0.04em;
+        }
+
+        .text-outline {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+        }
+
+        .text-outline-dark {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .img-bw {
+            filter: grayscale(100%);
+        }
+
+        .gsap-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .phase-tab {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .phase-tab .tab-label {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .phase-tab .tab-title {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .phase-tab .tab-link {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .phase-tab.active {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .phase-tab.active .tab-label {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .phase-tab.active .tab-title {
+            color: #fff;
+        }
+
+        .phase-tab.active .tab-link {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .nav-pill {
+            background-color: rgba(26, 26, 26, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .has-dropdown {
+            position: relative;
+        }
+
+        .has-dropdown>a {
+            position: relative;
+            z-index: 2;
+        }
+
+        .has-dropdown::before {
+            content: '';
+            position: absolute;
+            inset: auto -16px -20px -16px;
+            height: 40px;
+            z-index: 1;
+            pointer-events: auto;
+        }
+
+        .mega-menu {
+            position: fixed;
+            top: 56px;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            max-width: calc(100vw - 32px);
+            background: #1a1a1a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            width: 780px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.7);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .has-dropdown:hover .mega-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+            pointer-events: auto;
+        }
+
+        .mega-menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .service-card-mini {
+            position: relative;
+            border-radius: 14px;
+            padding: 18px;
+            min-height: 150px;
+            background: #252525;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .service-card-mini:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.25);
+            background: #2e2e2e;
+        }
+
+        .service-card-mini .icon {
+            width: 38px;
+            height: 38px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-card-mini .icon svg {
+            width: 18px;
+            height: 18px;
+            color: white;
+        }
+
+        .service-card-mini .card-title {
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: #fff;
+        }
+
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .bg-white ::selection,
+        section.bg-white ::selection {
+            background-color: #f5f5f5 !important;
+            color: #0a0a0a !important;
+        }
+    </style>
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Local SEO Agency for Dermatology Clinics",
+      "provider": {"@type": "Organization","name":"ChimpzLab"},
+      "areaServed": "Chennai",
+      "serviceType": "Local SEO Agency for Dermatology Clinics"
+    }</script>
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Services","item":"https://chimpzlab.com/services/"},
+        {"@type":"ListItem","position":2,"name":"Visibility & Search","item":"https://chimpzlab.com/services/visibility-search/"},
+        {"@type":"ListItem","position":3,"name":"Local SEO Agency for Dermatology Clinics"}
+      ]
+    }</script>
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"What is hyperlocal SEO?","acceptedAnswer":{"@type":"Answer","text":"Hyperlocal SEO focuses on optimizing a business for neighborhood-level searches, targeting patients who search by area names rather than city-wide terms, which is critical for single-location healthcare providers."}},
+    {"@type":"Question","name":"How is local SEO different from traditional SEO?","acceptedAnswer":{"@type":"Answer","text":"Local SEO prioritizes Google Business Profile optimization, local citations, and neighborhood-specific keywords, whereas traditional SEO focuses on broader, non-geo-specific search terms."}},
+    {"@type":"Question","name":"How long does it take to rank for local search terms?","acceptedAnswer":{"@type":"Answer","text":"For hyperlocal healthcare categories, movement is typically visible within 2-4 months with consistent optimization and rank tracking against a fixed neighborhood keyword set."}}
+      ]
+    }</script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body class="selection:bg-white selection:text-black">
+
+    <div id="cursor"><span id="cursor-text"
+            class="text-black font-bold uppercase text-sm absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-300 pointer-events-none tracking-widest">DRAG</span>
+    </div>
+
+    <nav class="fixed w-full top-0 z-50 px-6 md:px-12 py-6 flex justify-between items-center pointer-events-none backdrop-blur-md"
+        style="background: linear-gradient(180deg, #000000cf, transparent);">
+        <a href="/" class="pointer-events-auto interactive z-10 flex items-center gap-2" aria-label="Home">
+            <img src="../image/logo-header.png" alt="ChimpzLab" class="h-9 md:h-12 object-contain"
+                onerror=" this.style.display='none' ; document.getElementById('text-logo').style.display='block' ;">
+            <span id="text-logo"
+                class="hidden text-white font-extrabold text-2xl md:text-3xl tracking-tighter">CHIMPZLAB</span>
+        </a>
+        <div class="pointer-events-auto hidden md:flex absolute left-1/2 -translate-x-1/2 z-10">
+            <div class="nav-pill px-6 py-3 rounded-full flex items-center gap-8">
+                <div class="has-dropdown">
+                    <a href="#"
+                        class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors flex items-center gap-1">Services<svg
+                            class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg></a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-grid">
+                            <a href="../reputation-communications.html" class="service-card-mini">
+                                <div class="icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                    </svg></div><span class="card-title">Reputation &<br>Communications</span>
+                            </a>
+                            <a href="../visibility-search.html" class="service-card-mini">
+                                <div class="icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                    </svg></div><span class="card-title">Visibility &<br>Search</span>
+                            </a>
+                            <a href="../creative.html" class="service-card-mini">
+                                <div class="icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                    </svg></div><span class="card-title">Content &<br>Creative</span>
+                            </a>
+                            <a href="../demand-generation.html" class="service-card-mini">
+                                <div class="icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg></div><span class="card-title">Demand &<br>Automation</span>
+                            </a>
+                            <a href="../digital-experiences.html" class="service-card-mini">
+                                <div class="icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg></div><span class="card-title">Digital<br>Experiences</span>
+                            </a>
+                            <a href="../reputation-architecture.html" class="service-card-mini">
+                                <div class="icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg></div><span class="card-title">Investor<br>Relations</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="/chimpzlab_agency.html#work"
+                    class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors">Work</a>
+                <a href="/chimpzlab_agency.html#about"
+                    class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors">About</a>
+                <a href="/blog-insite.html"
+                    class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors">Insights</a>
+            </div>
+        </div>
+        <div class="flex items-center gap-4 z-10">
+            <div class="pointer-events-auto hidden md:flex"><a href="/chimpzlab_agency.html#contact"
+                    class="interactive bg-white hover:bg-gray-200 text-black px-7 py-3 rounded-full text-sm font-bold tracking-wide transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.15)]">Let's
+                    Connect</a></div>
+            <button class="pointer-events-auto md:hidden text-white interactive p-2 z-10"><svg class="w-8 h-8"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg></button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+        class="pt-40 md:pt-56 pb-20 px-6 md:px-12 relative overflow-hidden bg-brand-dark min-h-[80vh] flex flex-col justify-center">
+        <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+            <div
+                class="absolute top-[-10%] right-[-5%] w-[60vw] h-[60vw] rounded-full bg-gradient-to-br from-white/10 to-transparent blur-3xl">
+            </div>
+            <div
+                class="absolute bottom-[-20%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-gradient-to-tr from-white/5 to-transparent blur-3xl">
+            </div>
+            <div
+                class="absolute inset-0 bg-[url('../../asset/grid-pattern.svg')] bg-repeat opacity-10 mix-blend-overlay">
+            </div>
+        </div>
+        <div class="max-w-[1400px] mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="flex items-center gap-4 mb-8 gsap-reveal">
+                    <div class="w-12 h-[1px] bg-white/30"></div>
+                    <span class="text-xs font-bold uppercase tracking-[0.2em] text-white/70"> SEO &middot; AEO
+                        &middot; CONTENT</span>
+                </div>
+                <h1
+                    class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-white tracking-tighter uppercase leading-[0.9] mb-12">
+                    <div class="overflow-hidden"><span class="block gsap-reveal-text">Owning Page One</span></div>
+                    <div class="overflow-hidden"><span class="block text-white/40 gsap-reveal-text">of a
+                            Hyperlocal</span>
+                    </div>
+                    <div class="overflow-hidden"><span class="block gsap-reveal-text">Category</span></div>
+                </h1>
+                <div class="flex items-center gap-4 gsap-reveal">
+                    <div class="w-2 h-2 bg-white rounded-full"></div>
+                    <p class="text-xl font-bold tracking-widest uppercase">Soul Skin</p>
+                </div>
+            </div>
+            <div
+                class="gsap-reveal rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 relative">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+                <img src="https://placehold.co/800x600/1a1a1a/ffffff?text=Soul+Skin" alt="Soul Skin Cover"
+                    class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700">
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Mandate -->
+    <section class="py-24 px-6 md:px-12 bg-white text-brand-dark">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+                <div class="gsap-reveal">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-[1px] bg-brand-dark/30"></div>
+                        <span class="text-xs font-bold uppercase tracking-[0.2em] text-brand-dark/50">About Brand</span>
+                    </div>
+                    <p class="text-xl md:text-2xl font-light leading-relaxed text-gray-800">
+                        <strong class="font-bold">Soul Skin</strong> is a dermatology, cosmetology, skin and hair clinic
+                        based in Anna Nagar, Chennai, competing for patients in a dense, hyperlocal healthcare market.
+                    </p>
+                </div>
+                <div class="gsap-reveal">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-[1px] bg-brand-dark/30"></div>
+                        <span class="text-xs font-bold uppercase tracking-[0.2em] text-brand-dark/50">The Mandate</span>
+                    </div>
+                    <p class="text-xl md:text-2xl font-light leading-relaxed text-gray-800">
+                        Chimpzlab was engaged to win local search visibility for Soul Skin's core treatment categories
+                        within its own neighborhood.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Challenge -->
+    <section class="py-32 px-6 md:px-12 bg-brand-dark text-white border-t border-white/10 overflow-hidden relative">
+        <div class="max-w-[1400px] mx-auto relative z-10">
+            <div class="flex items-center gap-4 mb-12 gsap-reveal">
+                <div class="w-12 h-[1px] bg-white/30"></div>
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-white/50">The Challenge</span>
+            </div>
+            <h2
+                class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter uppercase leading-[0.95] gsap-reveal max-w-5xl">
+                For a single-location clinic, the entire battle is hyperlocal. Patients search by neighborhood, not by
+                city, and every position lost to a competitor <span class="text-white/40">clinic is a patient who never
+                    calls.</span>
+            </h2>
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
+                <div class="gsap-reveal"></div>
+                <div class="gsap-reveal border-l border-white/20 pl-8 md:pl-12">
+                    <p class="text-lg md:text-xl text-gray-400 font-light leading-relaxed">
+                        Before the engagement, Soul Skin's core treatment terms sat two and three pages deep — well past
+                        where someone in discomfort or self-conscious about a skin condition would ever scroll.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Approach -->
+    <section class="py-32 px-6 md:px-12 bg-[#f5f5f5] text-brand-dark overflow-hidden">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 gsap-reveal">
+                <div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-[1px] bg-brand-dark/30"></div>
+                        <span class="text-xs font-bold uppercase tracking-[0.2em] text-brand-dark/50">Our
+                            Approach</span>
+                    </div>
+                    <h2
+                        class="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tighter uppercase m-0 max-w-3xl">
+                        Neighborhood-Level Precision</h2>
+                </div>
+                <div class="max-w-sm">
+                    <p class="text-base text-gray-600 font-medium">The plan focused on the neighborhood-level searches
+                        that actually convert to bookings, not city-wide terms that draw traffic without intent.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mt-16 gsap-reveal">
+                <div
+                    class="bg-white rounded-3xl p-8 md:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.05)] border border-gray-100 transition-transform duration-500 hover:-translate-y-2 flex flex-col justify-center min-h-[300px]">
+                    <div class="text-5xl font-extrabold text-gray-200 mb-6">01</div>
+                    <h3 class="text-2xl md:text-3xl font-extrabold tracking-tighter uppercase mb-4">Hyperlocal Keyword
+                        Targeting</h3>
+                    <p class="text-gray-600 leading-relaxed font-light text-lg">Built around Anna Nagar-specific
+                        searches for skin doctors, dermatologists and named treatments, rather than city-wide "Chennai"
+                        terms.</p>
+                </div>
+                <div
+                    class="bg-white rounded-3xl p-8 md:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.05)] border border-gray-100 transition-transform duration-500 hover:-translate-y-2 flex flex-col justify-center min-h-[300px]">
+                    <div class="text-5xl font-extrabold text-gray-200 mb-6">02</div>
+                    <h3 class="text-2xl md:text-3xl font-extrabold tracking-tighter uppercase mb-4">Treatment-Page
+                        Optimization</h3>
+                    <p class="text-gray-600 leading-relaxed font-light text-lg">Dedicated pages for high-intent
+                        procedures like pigmentation treatment, laser hair removal and acne scar treatment, where
+                        searchers are close to booking.</p>
+                </div>
+                <div
+                    class="bg-white rounded-3xl p-8 md:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.05)] border border-gray-100 transition-transform duration-500 hover:-translate-y-2 flex flex-col justify-center min-h-[300px]">
+                    <div class="text-5xl font-extrabold text-gray-200 mb-6">03</div>
+                    <h3 class="text-2xl md:text-3xl font-extrabold tracking-tighter uppercase mb-4">AEO-Ready Content
+                        Structuring</h3>
+                    <p class="text-gray-600 leading-relaxed font-light text-lg">Content built so the clinic can surface
+                        in AI-driven local search results, not only in traditional maps and listings.</p>
+                </div>
+                <div
+                    class="bg-white rounded-3xl p-8 md:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.05)] border border-gray-100 transition-transform duration-500 hover:-translate-y-2 flex flex-col justify-center min-h-[300px]">
+                    <div class="text-5xl font-extrabold text-gray-200 mb-6">04</div>
+                    <h3 class="text-2xl md:text-3xl font-extrabold tracking-tighter uppercase mb-4">Monthly Rank
+                        Tracking</h3>
+                    <p class="text-gray-600 leading-relaxed font-light text-lg">Movement checked against a fixed set of
+                        neighborhood keywords to stay ahead as competitors adjust.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Outcome -->
+    <section class="py-32 px-6 md:px-12 bg-brand-dark text-white border-t border-white/10">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="flex items-center gap-4 mb-8 gsap-reveal">
+                <div class="w-12 h-[1px] bg-white/30"></div>
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-white/50">The Impact</span>
+            </div>
+            <h2
+                class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter uppercase mb-16 gsap-reveal max-w-4xl">
+                For a single-location clinic there is no advertising budget wide enough to make up for being on page
+                two. <span class="text-white/40">Local search rank is not the top of the funnel — it is the whole
+                    funnel.</span>
+            </h2>
+
+            <!-- Metrics Grid -->
+            <div class="mb-16 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 gsap-reveal">
+                <div
+                    class="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 text-center backdrop-blur-md hover:bg-white/10 transition-colors duration-500">
+                    <div class="text-3xl md:text-5xl font-extrabold text-white mb-2">3</div>
+                    <div class="text-xs md:text-sm tracking-widest uppercase font-bold text-white/50">Keywords Ranking
+                        #1</div>
+                </div>
+                <div
+                    class="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 text-center backdrop-blur-md hover:bg-white/10 transition-colors duration-500">
+                    <div class="text-3xl md:text-5xl font-extrabold text-white mb-2">6/6</div>
+                    <div class="text-xs md:text-sm tracking-widest uppercase font-bold text-white/50">Tracked Terms on
+                        Page One</div>
+                </div>
+                <div
+                    class="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 text-center backdrop-blur-md hover:bg-white/10 transition-colors duration-500">
+                    <div class="text-3xl md:text-5xl font-extrabold text-white mb-2">30</div>
+                    <div class="text-xs md:text-sm tracking-widest uppercase font-bold text-white/50">Avg. Position
+                        Climb per Keyword</div>
+                </div>
+                <div
+                    class="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 text-center backdrop-blur-md hover:bg-white/10 transition-colors duration-500">
+                    <div class="text-3xl md:text-5xl font-extrabold text-white mb-2">55</div>
+                    <div class="text-xs md:text-sm tracking-widest uppercase font-bold text-white/50">Spot Jump,
+                        Top-Priority Term</div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 relative z-10 max-w-4xl mx-auto">
+                <div
+                    class="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-10 flex flex-col gsap-reveal backdrop-blur-md hover:bg-white/10 transition-colors duration-500">
+                    <div class="mb-10 flex-grow">
+                        <div class="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight">Page One</div>
+                        <div class="text-sm tracking-widest uppercase font-bold text-white/50">Dominance</div>
+                    </div>
+                    <div class="pt-8 border-t border-white/10">
+                        <p class="text-gray-400 font-light text-sm md:text-base leading-relaxed">All 6 tracked keywords
+                            now sit on page one, with 3 ranking #1 in a competitive hyperlocal dermatology market.</p>
+                    </div>
+                </div>
+                <div
+                    class="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-10 flex flex-col gsap-reveal backdrop-blur-md hover:bg-white/10 transition-colors duration-500">
+                    <div class="mb-10 flex-grow">
+                        <div class="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight">Patient</div>
+                        <div class="text-sm tracking-widest uppercase font-bold text-white/50">Reach</div>
+                    </div>
+                    <div class="pt-8 border-t border-white/10">
+                        <p class="text-gray-400 font-light text-sm md:text-base leading-relaxed">Hyperlocal focus
+                            ensures every search position gained translates directly to phone calls and booking requests
+                            from Anna Nagar patients.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-20 max-w-4xl mx-auto text-center gsap-reveal">
+                <div class="w-16 h-[1px] bg-white/20 mx-auto mb-8"></div>
+                <p class="text-lg md:text-2xl text-gray-400 font-light leading-relaxed italic">
+                    "For a single-location clinic there is no advertising budget wide enough to make up for being on
+                    page two. Local search rank is not the top of the funnel — it is the whole funnel."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Auto Scroll Marquee -->
+    <div class="relative overflow-hidden py-12 md:py-20 bg-brand-dark border-t border-white/10 interactive-drag">
+        <div class="swiper auto-scroll-swiper w-full">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide w-auto"><img src="https://placehold.co/600x400/2a2a2a/ffffff?text=Soul+Skin"
+                        class="h-48 md:h-80 w-auto object-cover rounded-xl shadow-2xl cursor-pointer" alt="Soul Skin">
+                </div>
+                <div class="swiper-slide w-auto"><img
+                        src="https://placehold.co/600x400/333333/ffffff?text=Dermatology+Clinic"
+                        class="h-48 md:h-80 w-auto object-cover rounded-xl shadow-2xl cursor-pointer"
+                        alt="Dermatology Clinic"></div>
+                <div class="swiper-slide w-auto"><img src="https://placehold.co/600x400/2a2a2a/ffffff?text=Anna+Nagar"
+                        class="h-48 md:h-80 w-auto object-cover rounded-xl shadow-2xl cursor-pointer" alt="Anna Nagar">
+                </div>
+                <div class="swiper-slide w-auto"><img src="https://placehold.co/600x400/333333/ffffff?text=Local+SEO"
+                        class="h-48 md:h-80 w-auto object-cover rounded-xl shadow-2xl cursor-pointer" alt="Local SEO">
+                </div>
+                <div class="swiper-slide w-auto"><img
+                        src="https://placehold.co/600x400/2a2a2a/ffffff?text=Skin+Treatment"
+                        class="h-48 md:h-80 w-auto object-cover rounded-xl shadow-2xl cursor-pointer"
+                        alt="Skin Treatment"></div>
+                <div class="swiper-slide w-auto"><img
+                        src="https://placehold.co/600x400/333333/ffffff?text=Hyperlocal+Search"
+                        class="h-48 md:h-80 w-auto object-cover rounded-xl shadow-2xl cursor-pointer"
+                        alt="Hyperlocal Search"></div>
+                <div class="swiper-slide w-auto"><img
+                        src="https://placehold.co/600x400/2a2a2a/ffffff?text=Healthcare+SEO"
+                        class="h-48 md:h-80 w-auto object-cover rounded-xl shadow-2xl cursor-pointer"
+                        alt="Healthcare SEO"></div>
+                <div class="swiper-slide w-auto"><img
+                        src="https://placehold.co/600x400/333333/ffffff?text=Chennai+Clinic"
+                        class="h-48 md:h-80 w-auto object-cover rounded-xl shadow-2xl cursor-pointer"
+                        alt="Chennai Clinic"></div>
+                <div class="swiper-slide w-auto"><img
+                        src="https://placehold.co/600x400/2a2a2a/ffffff?text=Page+One+Ranking"
+                        class="h-48 md:h-80 w-auto object-cover rounded-xl shadow-2xl cursor-pointer"
+                        alt="Page One Ranking"></div>
+                <div class="swiper-slide w-auto"><img
+                        src="https://placehold.co/600x400/333333/ffffff?text=Treatment+Pages"
+                        class="h-48 md:h-80 w-auto object-cover rounded-xl shadow-2xl cursor-pointer"
+                        alt="Treatment Pages"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof Swiper !== 'undefined') { new Swiper('.auto-scroll-swiper', { slidesPerView: 'auto', spaceBetween: 32, loop: true, speed: 4000, autoplay: { delay: 0, disableOnInteraction: false, pauseOnMouseEnter: true }, grabCursor: false, allowTouchMove: true, on: { click: function (swiper, event) { const clickedImg = event.target.closest('img'); if (clickedImg) { openLightbox(clickedImg.src); } } } }); }
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            const imageModal = document.getElementById('image-modal');
+            const modalImage = document.getElementById('modal-image');
+            const closeModalBtn = document.getElementById('close-modal');
+            window.openLightbox = function (src) { if (!imageModal || !modalImage) return; modalImage.src = src; imageModal.classList.remove('hidden'); imageModal.classList.add('flex'); void imageModal.offsetWidth; imageModal.classList.remove('opacity-0'); modalImage.classList.remove('scale-95'); document.body.style.overflow = 'hidden'; };
+            function closeLightbox() { imageModal.classList.add('opacity-0'); modalImage.classList.add('scale-95'); document.body.style.overflow = ''; setTimeout(() => { imageModal.classList.add('hidden'); imageModal.classList.remove('flex'); modalImage.src = ''; }, 300); }
+            if (closeModalBtn && imageModal) { closeModalBtn.addEventListener('click', closeLightbox); imageModal.addEventListener('click', function (e) { if (e.target === imageModal) { closeLightbox(); } }); }
+        });
+    </script>
+
+    <!-- Booking Form & Footer -->
+    <section class="py-16 md:py-20 px-6 md:px-12 bg-brand-dark text-white border-t border-white/10" id="booking-form"
+        style="min-height: 100dvh; align-items: center; display: flex; flex-wrap: wrap;">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                <div class="gsap-reveal">
+                    <h2
+                        class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter mb-4 md:mb-6 uppercase leading-[0.9]">
+                        Move from reactive messaging to real market authority.</h2>
+                    <p class="text-lg md:text-2xl text-gray-400 mb-6 md:mb-8 max-w-lg font-light">Let us audit your
+                        current communication footprint and build a reputation engine that works as one system.</p>
+                </div>
+                <div class="bg-[#111] border border-white/10 rounded-2xl p-6 md:p-8 gsap-reveal">
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div><input type="text" placeholder="Your Name *"
+                                    class="w-full bg-transparent border border-white/20 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
+                                    required></div>
+                            <div><input type="email" placeholder="Work Email *"
+                                    class="w-full bg-transparent border border-white/20 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
+                                    required></div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div><input type="text" placeholder="Phone / WhatsApp *"
+                                    class="w-full bg-transparent border border-white/20 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
+                                    required></div>
+                            <div><input type="text" placeholder="Company *"
+                                    class="w-full bg-transparent border border-white/20 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
+                                    required></div>
+                        </div>
+                        <div><select
+                                class="w-full bg-transparent border border-white/20 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-white transition-colors cursor-pointer interactive"
+                                required>
+                                <option value="" disabled class="text-black">Service Interested In</option>
+                                <option value="local-seo" class="text-black" selected>Local SEO</option>
+                                <option value="seo-aeo" class="text-black">SEO & AEO</option>
+                                <option value="content" class="text-black">Content Strategy</option>
+                                <option value="performance-marketing" class="text-black">Performance Marketing</option>
+                                <option value="corporate-communications" class="text-black">Corporate Communications
+                                </option>
+                            </select></div>
+                        <div><textarea placeholder="Message (optional)"
+                                class="w-full bg-transparent border border-white/20 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors resize-none"
+                                rows="3"></textarea></div>
+                        <div class="pt-6"><button type="submit"
+                                class="interactive w-fit bg-white hover:bg-gray-200 text-black px-10 py-5 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-3">Book
+                                a Strategy Call<svg class="w-5 h-5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg></button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div
+            class="relative z-10 mt-12 md:mt-16 pt-8 border-t border-white/10 w-full max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs tracking-widest uppercase text-gray-500 font-bold">
+            <p>Call or WhatsApp 9920149991</p>
+            <p class="text-center md:text-right">408, Fenkin 9 Phase 1, Wagle Estate, Behind Satkar Grande Hotel, Thane
+                West 400604</p>
+            <p>&copy; 2026 ChimpzLab. All rights reserved.</p>
+        </div>
+    </section>
+
+    <script>
+        const cursor = document.getElementById('cursor');
+        const interactiveElements = document.querySelectorAll('.interactive, a, button, input, textarea, select, label');
+        const interactiveDragElements = document.querySelectorAll('.interactive-drag');
+        interactiveDragElements.forEach(el => { el.addEventListener('mouseenter', () => cursor.classList.add('hovered-drag')); el.addEventListener('mouseleave', () => cursor.classList.remove('hovered-drag')); });
+        document.addEventListener('mousemove', (e) => { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; });
+        interactiveElements.forEach(el => { el.addEventListener('mouseenter', () => cursor.classList.add('hovered')); el.addEventListener('mouseleave', () => cursor.classList.remove('hovered')); });
+        const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), direction: 'vertical', gestureDirection: 'vertical', smooth: true, mouseMultiplier: 1, smoothTouch: false, touchMultiplier: 2, infinite: false });
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+        gsap.registerPlugin(ScrollTrigger);
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.from(".gsap-reveal-text", { y: 120, opacity: 0, duration: 1.2, stagger: 0.1, ease: "power4.out", delay: 0.2 });
+        const revealElements = document.querySelectorAll(".gsap-reveal");
+        revealElements.forEach((el) => { gsap.to(el, { scrollTrigger: { trigger: el, start: "top 85%", toggleActions: "play none none reverse" }, opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }); });
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => { const button = item.querySelector('button'); const answer = item.querySelector('.answer'); const icon = item.querySelector('.icon'); button.addEventListener('click', () => { const isOpen = !answer.classList.contains('hidden'); faqItems.forEach(otherItem => { otherItem.querySelector('.answer').classList.add('hidden'); otherItem.querySelector('.icon').style.transform = 'rotate(0deg)'; }); if (!isOpen) { answer.classList.remove('hidden'); icon.style.transform = 'rotate(180deg)'; } }); });
+        const phaseData = [
+            { image: '../../asset/2.jpg', date: 'Case Study', title: 'Annual Report & Investor Communication — Listed Company', desc: 'Seen internally as a compliance document, not a trust-building asset. The annual report was failing to build investor confidence and communicate real value to stakeholders.', link: '#' },
+            { image: '../../asset/1.jpg', date: 'Case Study', title: 'Full Narrative & Design Overhaul Aligned to Investor Priorities', desc: 'Complete narrative restructuring and design overhaul aligned to investor priorities. Messaging architecture rebuilt to position the company as a trusted, growth-oriented enterprise.', link: '#' },
+            { image: '../../asset/3.jpg', date: 'Case Study', title: 'Positive Analyst & Shareholder Feedback Cited to IR Team', desc: 'Positive analyst and shareholder feedback cited directly to the IR team, transforming the annual report into a trust-building asset.', link: '#' }
+        ];
+        const phaseTabs = document.querySelectorAll('.phase-tab');
+        const tabImage = document.getElementById('tab-image');
+        const tabDate = document.getElementById('tab-date');
+        const tabTitle = document.getElementById('tab-title');
+        const tabDesc = document.getElementById('tab-desc');
+        phaseTabs.forEach((tab, index) => { tab.addEventListener('click', () => { phaseTabs.forEach(t => { t.classList.remove('active'); }); tab.classList.add('active'); const tabCardWrapper = document.getElementById('tab-card-wrapper'); if (window.innerWidth < 1024 && tabCardWrapper) { tabCardWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' }); } if (tabImage && tabDate && tabTitle && tabDesc) { tabImage.src = phaseData[index].image; tabDate.textContent = phaseData[index].date; tabTitle.textContent = phaseData[index].title; tabDesc.textContent = phaseData[index].desc; } }); });
+    </script>
+
+    <div id="image-modal"
+        class="fixed inset-0 z-[10000] bg-black/95 hidden items-center justify-center opacity-0 transition-opacity duration-300 backdrop-blur-sm interactive">
+        <button id="close-modal"
+            class="absolute top-6 right-6 md:top-10 md:right-10 text-white hover:text-gray-400 transition-colors z-[10001]"><svg
+                class="w-10 h-10 md:w-12 md:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg></button>
+        <img id="modal-image" src=""
+            class="max-h-[85vh] max-w-[90vw] object-contain rounded-xl shadow-2xl transform scale-95 transition-transform duration-300 pointer-events-none">
+    </div>
+
+</body>
+
+</html>
