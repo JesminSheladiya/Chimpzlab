@@ -1,1 +1,0 @@
-const fs = require('fs'); let html = fs.readFileSync('services/reputation-communications/corporate-communications.html', 'utf8'); console.log(html.match(/<div class="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-5">[\s\S]*?<\/section>/) !== null);
