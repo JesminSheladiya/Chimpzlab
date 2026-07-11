@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO and Social Media Marketing Agency in Thane | ChimpzLab</title>
+    <meta name="description"
+        content="Rank on Google, get cited in AI answers, and build a social presence tied to real goals. Book a strategy call with ChimpzLab.">
+    <meta name="keywords"
+        content="SEO agency Thane, social media marketing agency India, AEO services India, influencer marketing agency">
+
+    <link rel="icon" type="image/gif" href="../asset/chimpzlab-icon.gif">
+    <link rel="apple-touch-icon" href="../asset/chimpzlab-icon.gif">
+    <!-- Fonts: Manrope -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Lenis for Smooth Scrolling -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0a0a0a',
+                        }
+                    },
+                    animation: {
+                        'marquee': 'marquee 25s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Lenis Smooth Scroll */
+        html.lenis {
+            height: auto;
+        }
+
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
+
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
+
+        .lenis.lenis-scrolling iframe {
+            pointer-events: none;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            cursor: none;
+            overflow-x: hidden;
+        }
+
+        #cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s, background-color 0.3s, mix-blend-mode 0.3s;
+            mix-blend-mode: difference;
+        }
+
+        #cursor.hovered {
+            width: 80px;
+            height: 80px;
+            background-color: #ffffff;
+        }
+
+        .text-huge {
+            font-size: clamp(3rem, 7vw, 7rem);
+            line-height: 0.95;
+            letter-spacing: -0.04em;
+        }
+
+        .text-outline {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+        }
+
+        .text-outline-dark {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .img-bw {
+            filter: grayscale(100%);
+        }
+
+        .gsap-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        /* Interactive Nav Elements */
+        .nav-pill {
+            background-color: rgba(26, 26, 26, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .has-dropdown {
+            position: relative;
+        }
+
+        .has-dropdown>a {
+            position: relative;
+            z-index: 2;
+        }
+
+        .has-dropdown::before {
+            content: '';
+            position: absolute;
+            inset: auto -16px -20px -16px;
+            height: 40px;
+            z-index: 1;
+            pointer-events: auto;
+        }
+
+        .mega-menu {
+            position: fixed;
+            top: 56px;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            max-width: calc(100vw - 32px);
+            background: #1a1a1a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            width: 780px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.7);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .has-dropdown:hover .mega-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+            pointer-events: auto;
+        }
+
+        .mega-menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .service-card-mini {
+            position: relative;
+            border-radius: 14px;
+            padding: 18px;
+            min-height: 150px;
+            background: #252525;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .service-card-mini:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.25);
+            background: #2e2e2e;
+        }
+
+        .service-card-mini .icon {
+            width: 38px;
+            height: 38px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-card-mini .icon svg {
+            width: 18px;
+            height: 18px;
+            color: white;
+        }
+
+        .service-card-mini .card-title {
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: #fff;
+        }
+
+
+        /* Form Select Style */
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+        }
+
+        /* Hide scrollbar for cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* Trust Marquee */
+        .trust-marquee {
+            mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+        }
+
+        .trust-track {
+            animation: trustScroll 20s linear infinite;
+            width: max-content;
+        }
+
+        @keyframes trustScroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .d-none {
+            display: none;
+        }
+
+        /* Testimonial Carousel */
+        .testimonial-track {
+            display: flex;
+        }
+
+        @media (min-width: 768px) and (max-width: 1100px) {
+            .testimonial-prev {
+                left: -2rem !important;
+            }
+
+            .testimonial-next {
+                right: -2rem !important;
+            }
+        }
+    
+        /* Services Dropdown */
+        .has-dropdown {
+            position: relative;
+        }
+
+        .has-dropdown>a {
+            position: relative;
+            z-index: 2;
+        }
+
+        .has-dropdown::before {
+            content: '';
+            position: absolute;
+            inset: auto -16px -20px -16px;
+            height: 40px;
+            z-index: 1;
+            pointer-events: auto;
+        }
+
+        .mega-menu {
+            position: fixed;
+            top: 56px;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            max-width: calc(100vw - 32px);
+            background: #1a1a1a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            width: 780px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.7);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .mega-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+            pointer-events: auto;
+        }
+
+        .mega-menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .service-card-mini {
+            position: relative;
+            border-radius: 14px;
+            padding: 18px;
+            min-height: 150px;
+            background: #252525;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .service-card-mini:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.25);
+            background: #2e2e2e;
+        }
+
+        .service-card-mini .icon {
+            width: 38px;
+            height: 38px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-card-mini .icon svg {
+            width: 18px;
+            height: 18px;
+            color: white;
+        }
+
+        .service-card-mini .card-title {
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: #fff;
+        }
+
+        
+    </style>
+</head>
+
+<body class="selection:bg-white selection:text-black">
+
+    <!-- Custom Cursor -->
+    <div id="cursor"></div>
+
+    <!-- Navigation (Stripped back for Ad Traffic) -->
+    <nav class="fixed w-full top-0 z-50 px-6 md:px-12 py-6 flex justify-between items-center pointer-events-none backdrop-blur-md"
+        style="background: linear-gradient(180deg, #000000cf, transparent);">
+        <!-- Logo -->
+        <a href="../index.html" class="pointer-events-auto interactive z-10 flex items-center gap-2" aria-label="Home">
+            <img src="../asset/chimpzlab-white.png" alt="ChimpzLab" class="h-7 md:h-9 object-contain "
+                onerror="this.style.display='none'; document.getElementById('text-logo').style.display='block';">
+            <span id="text-logo"
+                class="hidden text-white font-extrabold text-2xl md:text-3xl tracking-tighter">CHIMPZLAB</span>
+        </a>
+
+        <!-- Desktop Centered Menu -->
+        <div class="pointer-events-auto hidden md:flex absolute left-1/2 -translate-x-1/2 z-10">
+            <div class="nav-pill px-6 py-3 rounded-full flex items-center gap-8">
+                <div class="has-dropdown">
+                    <a href="#"
+                        class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors flex items-center gap-1">
+                        Services
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-grid">
+                            <a href="../services/reputation-communications.html" class="service-card-mini">
+                                <div class="icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                    </svg>
+                                </div>
+                                <span class="card-title">Reputation &<br>Communications</span>
+                            </a>
+                            <a href="../services/visibility-search.html" class="service-card-mini">
+                                <div class="icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                    </svg>
+                                </div>
+                                <span class="card-title">Visibility &<br>Search</span>
+                            </a>
+                            <a href="../services/creative.html" class="service-card-mini">
+                                <div class="icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                    </svg>
+                                </div>
+                                <span class="card-title">Content &<br>Creative</span>
+                            </a>
+                            <a href="../services/demand-generation.html" class="service-card-mini">
+                                <div class="icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                </div>
+                                <span class="card-title">Demand &<br>Automation</span>
+                            </a>
+                            <a href="../services/digital-experiences.html" class="service-card-mini">
+                                <div class="icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <span class="card-title">Digital<br>Experiences</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#work"
+                    class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors">Work</a>
+                <a href="#about"
+                    class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors">About</a>
+                <a href="blog-insite.html"
+                    class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors">Insights</a>
+            </div>
+        </div>
+
+        <!-- Right: CTA + Mobile -->
+        <div class="flex items-center gap-4 z-10">
+            <div class="pointer-events-auto hidden md:flex">
+                <a href="#contact"
+                    class="interactive bg-white hover:bg-gray-200 text-black px-7 py-3 rounded-full text-sm font-bold tracking-wide transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.15)]">
+                    Let's Connect
+                </a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="pointer-events-auto md:hidden text-white interactive p-2 z-10">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header
+        class="min-h-screen flex flex-col justify-center px-6 md:px-12 pt-32 pb-20 relative bg-brand-dark overflow-hidden">
+        <div class="w-full max-w-[1400px] mx-auto z-10">
+            <div class="flex items-center gap-4 mb-8 gsap-reveal-text">
+                <div class="w-12 h-[1px] bg-white/30"></div>
+                <span class="block text-xs font-bold uppercase tracking-[0.2em] text-white/70">Visibility &
+                    Search</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl md:text-8xl font-extrabold text-white mb-12 tracking-tighter uppercase">
+                <div class="overflow-hidden"><span class="block gsap-reveal-text">Be found exactly where</span></div>
+                <div class="overflow-hidden"><span class="block gsap-reveal-text text-white/40">your audience is already
+                        looking.</span></div>
+            </h1>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end gsap-reveal">
+                <div class="lg:col-span-7">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-8">
+                        <a href="#booking-form"
+                            class="interactive bg-white hover:bg-gray-200 text-black px-8 py-4 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2">
+                            Book a Strategy Call
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                        <div class="flex flex-col">
+                            <span class="text-xs font-bold uppercase tracking-widest text-white/50 mb-1">The
+                                Agenda</span>
+                            <span class="text-sm font-medium text-gray-400 whitespace-nowrap leading-tight">30 minutes.
+                                No pitch deck. Just finding your reputation gaps.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Intro Section (Image + Content) -->
+    <section class="py-32 px-6 md:px-12 bg-white text-brand-dark border-t border-gray-200">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-x-20 items-center">
+                <!-- Left: Image -->
+                <div class="lg:col-span-6 gsap-reveal">
+                    <div class="relative aspect-[4/3] rounded-3xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop"
+                            alt="Corporate Communications"
+                            class="w-full h-full object-cover hover:scale-105 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Content -->
+                <div class="lg:col-span-6 gsap-reveal">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-[1px] bg-gray-300"></div>
+                        <span class="block text-xs font-bold uppercase tracking-[0.2em] text-gray-500">Our
+                            Approach</span>
+                    </div>
+
+                    <p class="text-lg md:text-2xl font-light leading-relaxed text-gray-600 mb-8 max-w-3xl">
+                        ChimpzLab is a search and social agency that combines SEO, answer engine optimisation, content
+                        writing and influencer marketing into one discovery model, so your brand shows up whether
+                        someone is searching Google or asking ChatGPT.
+                    </p>
+                    <p class="text-lg md:text-2xl font-light leading-relaxed text-gray-600 mb-8 max-w-3xl">
+                        Search has quietly split into two lanes. There is the ranked list of links people have used for
+                        twenty years, and there is the AI answer that increasingly sits above it. Treating those as
+                        separate jobs is how brands end up winning one and losing the other. We build for both from the
+                        same foundation.
+                    </p>
+                    <p class="text-lg md:text-2xl font-light leading-relaxed text-gray-600 mb-10 max-w-3xl">
+                        The point is simple. When the right person goes looking for what you do, your name should be the
+                        one that comes up, and the one the answer is built from.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-8">
+                        <a href="#booking-form"
+                            class="interactive bg-brand-dark hover:bg-gray-800 text-white px-8 py-4 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2">
+                            Book a Strategy Call
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section (Sticky Scroll Layout) -->
+    <section class="py-32 px-6 md:px-12 bg-brand-dark text-white relative border-t border-white/10">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 relative items-start">
+
+                <!-- Left: Pinned Header -->
+                <div class="lg:col-span-5 lg:sticky lg:top-40 gsap-reveal">
+                    <span class="text-xs font-bold uppercase tracking-[0.2em] text-white/50 mb-6 block">Our
+                        Services</span>
+                    <h2
+                        class="text-4xl sm:text-5xl md:text-7xl lg:text-5xl xl:text-6xl font-extrabold leading-[0.95] tracking-tighter uppercase">
+                        Visibility and<br>Search<br>Services
+                    </h2>
+                </div>
+
+                <!-- Right: Scrolling Items -->
+                <div class="lg:col-span-7 space-y-6 md:space-y-8 min-w-0 services-list">
+                    <!-- Card 1 -->
+                    <a href="./visibility-search/seo-aeo.html"
+                        class="block bg-white/5 border border-white/10 p-8 md:p-10 rounded-2xl opacity-0 translate-y-8 group hover:border-white/30 transition-[border-color] duration-300">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="text-4xl text-white/30 font-extrabold">01</div>
+                            <div class="w-8 h-[1px] bg-white/30"></div>
+                        </div>
+                        <h3 class="text-xl md:text-3xl font-extrabold text-white mb-3 leading-tight tracking-tight">
+                            Search and Answer Engine Optimization (SEO / AEO)</h3>
+                        <p class="text-base md:text-xl font-light leading-relaxed text-gray-400 max-w-2xl">Rank on
+                            Google and get cited inside AI answers on ChatGPT, Gemini and Google AI Overviews. The two
+                            are no longer separate disciplines, and treating them that way is how brands fall behind.
+                            Includes: technical SEO audits, keyword and topical strategy, on-page and content
+                            optimisation, answer-engine-structured content, schema markup, backlinking and reporting.
+                        </p>
+                    </a>
+                    <!-- Card 2 -->
+                    <a href="./visibility-search/social-media-marketing.html"
+                        class="block bg-white/5 border border-white/10 p-8 md:p-10 rounded-2xl opacity-0 translate-y-8 group hover:border-white/30 transition-[border-color] duration-300">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="text-4xl text-white/30 font-extrabold">02</div>
+                            <div class="w-8 h-[1px] bg-white/30"></div>
+                        </div>
+                        <h3 class="text-xl md:text-3xl font-extrabold text-white mb-3 leading-tight tracking-tight">
+                            Social Media Marketing</h3>
+                        <p class="text-base md:text-xl font-light leading-relaxed text-gray-400 max-w-2xl">A presence
+                            that actually has a point. Platform-specific content, steady posting and real community
+                            management tied to business goals, not vanity numbers. Includes: content calendars and
+                            posting, community management, paid social amplification, platform strategy across
+                            Instagram, LinkedIn and more.</p>
+                    </a>
+                    <!-- Card 3 -->
+                    <a href="./visibility-search/content-writing.html"
+                        class="block bg-white/5 border border-white/10 p-8 md:p-10 rounded-2xl opacity-0 translate-y-8 group hover:border-white/30 transition-[border-color] duration-300">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="text-4xl text-white/30 font-extrabold">03</div>
+                            <div class="w-8 h-[1px] bg-white/30"></div>
+                        </div>
+                        <h3 class="text-xl md:text-3xl font-extrabold text-white mb-3 leading-tight tracking-tight">
+                            Content Writing</h3>
+                        <p class="text-base md:text-xl font-light leading-relaxed text-gray-400 max-w-2xl">Content built
+                            around what your buyers are searching for, not whatever was easy to write that week.
+                            Includes: blog and article strategy, SEO-led writing, content calendars, repurposing across
+                            channels, performance tracking.</p>
+                    </a>
+                    <!-- Card 4 -->
+                    <a href="./visibility-search/influencer-marketing-and-advocacy.html"
+                        class="block bg-white/5 border border-white/10 p-8 md:p-10 rounded-2xl opacity-0 translate-y-8 group hover:border-white/30 transition-[border-color] duration-300">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="text-4xl text-white/30 font-extrabold">04</div>
+                            <div class="w-8 h-[1px] bg-white/30"></div>
+                        </div>
+                        <h3 class="text-xl md:text-3xl font-extrabold text-white mb-3 leading-tight tracking-tight">
+                            Influencer Marketing and Advocacy</h3>
+                        <p class="text-base md:text-xl font-light leading-relaxed text-gray-400 max-w-2xl">Partnerships
+                            with the right voices in your category, judged on real impact rather than follower count.
+                            Includes: influencer identification and vetting, campaign strategy and briefs, performance
+                            tracking, creator and UGC content.</p>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section (Timeline layout) -->
+    <section class="py-32 px-6 md:px-12 bg-white text-brand-dark border-t border-gray-200">
+        <div class="max-w-[1400px] mx-auto">
+            <h2 class="text-4xl md:text-7xl font-extrabold tracking-tighter mb-24 uppercase gsap-reveal">How this works
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 relative hidden md:grid methodology-grid">
+                <div class="absolute top-8 inset-x-0 h-[2px] bg-gray-200 origin-left scale-x-0" id="methodology-line">
+                </div>
+                <!-- Phase 1 -->
+                <div class="opacity-0 translate-y-8 relative z-10 pt-4">
+                    <div class="w-3 h-3 bg-brand-dark rounded-full absolute -top-1.5 left-0"></div>
+                    <div class="text-gray-300 font-extrabold text-5xl mb-6 mt-4">01</div>
+                    <h4 class="text-2xl font-extrabold mb-3 tracking-tight uppercase text-brand-dark">
+                        Visibility<br>Audit</h4>
+                    <p class="text-gray-600 font-medium text-base leading-relaxed">We check where you rank, where you
+                        are missing from AI answers, and how your social and content actually perform today.</p>
+                </div>
+                <!-- Phase 2 -->
+                <div class="opacity-0 translate-y-8 relative z-10 pt-4">
+                    <div class="w-3 h-3 bg-brand-dark rounded-full absolute -top-1.5 left-0"></div>
+                    <div class="text-gray-300 font-extrabold text-5xl mb-6 mt-4">02</div>
+                    <h4 class="text-2xl font-extrabold mb-3 tracking-tight uppercase text-brand-dark">Keyword and Topic
+                        Strategy</h4>
+                    <p class="text-gray-600 font-medium text-base leading-relaxed">One plan covering the terms and
+                        questions your buyers use, mapped to the pages and posts that should own them.</p>
+                </div>
+                <!-- Phase 3 -->
+                <div class="opacity-0 translate-y-8 relative z-10 pt-4">
+                    <div class="w-3 h-3 bg-brand-dark rounded-full absolute -top-1.5 left-0"></div>
+                    <div class="text-gray-300 font-extrabold text-5xl mb-6 mt-4">03</div>
+                    <h4 class="text-2xl font-extrabold mb-3 tracking-tight uppercase text-brand-dark">On-page, Content
+                        and Amplification</h4>
+                    <p class="text-gray-600 font-medium text-base leading-relaxed">Technical fixes, structured content
+                        and social distribution, built so each channel feeds the others.</p>
+                </div>
+                <!-- Phase 4 -->
+                <div class="opacity-0 translate-y-8 relative z-10 pt-4">
+                    <div class="w-3 h-3 bg-brand-dark rounded-full absolute -top-1.5 left-0"></div>
+                    <div class="text-gray-300 font-extrabold text-5xl mb-6 mt-4">04</div>
+                    <h4 class="text-2xl font-extrabold mb-3 tracking-tight uppercase text-brand-dark">Reporting on
+                        Rankings and AI Citations</h4>
+                    <p class="text-gray-600 font-medium text-base leading-relaxed">Regular visibility into positions,
+                        traffic and where AI engines are pulling you in as a source.</p>
+                </div>
+            </div>
+
+            <!-- Mobile Fallback for Timeline -->
+            <div class="md:hidden space-y-12 border-l-2 border-gray-200 pl-6 ml-2">
+                <div class="gsap-reveal relative">
+                    <div class="w-3 h-3 bg-brand-dark rounded-full absolute top-2 -left-[31px]"></div>
+                    <div class="text-gray-300 font-extrabold text-4xl mb-2">01</div>
+                    <h4 class="text-xl font-extrabold mb-2 uppercase text-brand-dark">Visibility Audit</h4>
+                    <p class="text-gray-600 font-medium text-sm">We check where you rank, where you are missing from AI
+                        answers, and how your social and content actually perform today.</p>
+                </div>
+                <div class="gsap-reveal relative">
+                    <div class="w-3 h-3 bg-brand-dark rounded-full absolute top-2 -left-[31px]"></div>
+                    <div class="text-gray-300 font-extrabold text-4xl mb-2">02</div>
+                    <h4 class="text-xl font-extrabold mb-2 uppercase text-brand-dark">Keyword and Topic Strategy</h4>
+                    <p class="text-gray-600 font-medium text-sm">One plan covering the terms and questions your buyers
+                        use, mapped to the pages and posts that should own them.</p>
+                </div>
+                <div class="gsap-reveal relative">
+                    <div class="w-3 h-3 bg-brand-dark rounded-full absolute top-2 -left-[31px]"></div>
+                    <div class="text-gray-300 font-extrabold text-4xl mb-2">03</div>
+                    <h4 class="text-xl font-extrabold mb-2 uppercase text-brand-dark">On-page, Content and Amplification
+                    </h4>
+                    <p class="text-gray-600 font-medium text-sm">Technical fixes, structured content and social
+                        distribution, built so each channel feeds the others.</p>
+                </div>
+                <div class="gsap-reveal relative">
+                    <div class="w-3 h-3 bg-brand-dark rounded-full absolute top-2 -left-[31px]"></div>
+                    <div class="text-gray-300 font-extrabold text-4xl mb-2">04</div>
+                    <h4 class="text-xl font-extrabold mb-2 uppercase text-brand-dark">Reporting on Rankings and AI
+                        Citations</h4>
+                    <p class="text-gray-600 font-medium text-sm">Regular visibility into positions, traffic and where AI
+                        engines are pulling you in as a source.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrated Advantage -->
+    <section class="py-32 px-6 md:px-12 bg-brand-dark text-white border-t border-white/10">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-x-20 items-center">
+                <div class="lg:col-span-6 gsap-reveal">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-[1px] bg-white/30"></div>
+                        <span class="text-xs font-bold uppercase tracking-[0.2em] text-white/50">The Integrated
+                            Advantage</span>
+                    </div>
+                    <p class="text-lg md:text-2xl font-light leading-relaxed text-gray-400 max-w-3xl">
+                        Most social calendars run in total isolation from search. We tie your posts, your articles and
+                        your rankings to the same keywords and campaigns, so a blog post, a LinkedIn update and a Google
+                        result all reinforce the same thing instead of pulling in different directions.
+                    </p>
+                </div>
+                <div class="lg:col-span-6 gsap-reveal">
+                    <div class="relative aspect-[4/3] rounded-3xl overflow-hidden">
+                        <img src="../asset/service-banner-11.jpg" alt="Corporate Communications"
+                            class="w-full h-full object-cover hover:scale-105 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="py-16 px-6 md:px-12 bg-white text-brand-dark border-t border-gray-200 overflow-hidden">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="flex flex-col md:flex-row items-center md:items-start justify-start gap-6 md:gap-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-gray-400 whitespace-nowrap mt-1">Our
+                    Work</span>
+                <div class="trust-marquee overflow-hidden w-full">
+                    <div class="trust-track flex gap-8 text-sm md:text-base font-bold tracking-wider text-gray-600">
+                        <span class="hover:text-black transition-colors cursor-default whitespace-nowrap">NASSCOM</span>
+                        <span class="text-gray-200">•</span>
+                        <span class="hover:text-black transition-colors cursor-default whitespace-nowrap">EVERSHINE
+                            BUILDERS</span>
+                        <span class="text-gray-200">•</span>
+                        <span class="hover:text-black transition-colors cursor-default whitespace-nowrap">TIGER
+                            ANALYTICS</span>
+                        <span class="text-gray-200">•</span>
+                        <span class="hover:text-black transition-colors cursor-default whitespace-nowrap">ANITAB
+                            INDIA</span>
+                        <span class="text-gray-200">•</span>
+                        <span class="hover:text-black transition-colors cursor-default whitespace-nowrap">NASSCOM</span>
+                        <span class="text-gray-200">•</span>
+                        <span class="hover:text-black transition-colors cursor-default whitespace-nowrap">EVERSHINE
+                            BUILDERS</span>
+                        <span class="text-gray-200">•</span>
+                        <span class="hover:text-black transition-colors cursor-default whitespace-nowrap">TIGER
+                            ANALYTICS</span>
+                        <span class="text-gray-200">•</span>
+                        <span class="hover:text-black transition-colors cursor-default whitespace-nowrap">ANITAB
+                            INDIA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Carousel Section -->
+    <section class="py-32 px-6 md:px-12 bg-[#f5f5f5] text-brand-dark border-t border-gray-200 overflow-hidden">
+        <div class="max-w-[950px] mx-auto">
+            <div class="flex items-center gap-4 mb-12 gsap-reveal">
+                <div class="w-12 h-[1px] bg-gray-300"></div>
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-gray-500">What Our Clients Say</span>
+            </div>
+
+            <div class="relative">
+                <!-- Prev Button - outside card: left on desktop, bottom on mobile -->
+                <button
+                    class="testimonial-prev absolute left-0 md:-left-16 bottom-[-40px] md:bottom-auto md:top-1/2 md:-translate-y-1/2 w-12 h-12 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center hover:bg-gray-50 hover:border-gray-300 transition-all duration-300 group z-20"
+                    aria-label="Previous testimonial">
+                    <svg class="w-5 h-5 text-gray-600 group-hover:text-black transition-colors" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                        </path>
+                    </svg>
+                </button>
+
+                <!-- Next Button - outside card: right on desktop, bottom on mobile -->
+                <button
+                    class="testimonial-next absolute right-0 md:-right-16 bottom-[-40px] md:bottom-auto md:top-1/2 md:-translate-y-1/2 w-12 h-12 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center hover:bg-gray-50 hover:border-gray-300 transition-all duration-300 group z-20"
+                    aria-label="Next testimonial">
+                    <svg class="w-5 h-5 text-gray-600 group-hover:text-black transition-colors" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+
+                <div class="testimonial-carousel overflow-hidden">
+                    <div class="testimonial-track flex transition-transform duration-500 ease-in-out">
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial-slide min-w-full px-2">
+                            <div class="bg-white rounded-3xl p-10 md:p-14 relative shadow-sm">
+                                <div
+                                    class="absolute top-8 right-10 text-[120px] leading-none font-serif text-gray-100 select-none pointer-events-none">
+"</div>
+                                <p
+                                    class="text-xl md:text-2xl font-medium leading-relaxed text-gray-800 mb-10 relative z-10 italic max-w-[800px]">
+"ChimpzLab redefined our digital footprint. They didn't just give us rankings; they
+                                    gave us absolute authority in a sector where trust is non-negotiable. Their SXO
+                                    approach is the future of corporate growth."
+                                </p>
+                                <div class="flex items-center gap-4 relative z-10">
+                                    <img src="https://i.pravatar.cc/100?img=1" alt="Elena Sterling"
+                                        class="w-14 h-14 rounded-full object-cover">
+                                    <div>
+                                        <p class="font-bold text-base text-brand-dark">Elena Sterling</p>
+                                        <p class="text-sm text-gray-500">Director of Global Reputation, Alpha Nexus</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-slide min-w-full px-2">
+                            <div class="bg-white rounded-3xl p-10 md:p-14 relative shadow-sm">
+                                <div
+                                    class="absolute top-8 right-10 text-[120px] leading-none font-serif text-gray-100 select-none pointer-events-none">
+"</div>
+                                <p
+                                    class="text-xl md:text-2xl font-medium leading-relaxed text-gray-800 mb-10 relative z-10 italic max-w-[800px]">
+"The integrated communications approach transformed how our stakeholders perceive
+                                    us. Media coverage, investor confidence, and employer brand all moved in the same
+                                    direction for the first time."
+                                </p>
+                                <div class="flex items-center gap-4 relative z-10">
+                                    <img src="https://i.pravatar.cc/100?img=3" alt="Rajesh Mehta"
+                                        class="w-14 h-14 rounded-full object-cover">
+                                    <div>
+                                        <p class="font-bold text-base text-brand-dark">Rajesh Mehta</p>
+                                        <p class="text-sm text-gray-500">CEO, FinServ Capital</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Testimonial 3 -->
+                        <div class="testimonial-slide min-w-full px-2">
+                            <div class="bg-white rounded-3xl p-10 md:p-14 relative shadow-sm">
+                                <div
+                                    class="absolute top-8 right-10 text-[120px] leading-none font-serif text-gray-100 select-none pointer-events-none">
+"</div>
+                                <p
+                                    class="text-xl md:text-2xl font-medium leading-relaxed text-gray-800 mb-10 relative z-10 italic max-w-[800px]">
+"Our annual report went from a compliance document to a trust-building asset. The
+                                    narrative overhaul directly contributed to stronger analyst ratings and shareholder
+                                    engagement."
+                                </p>
+                                <div class="flex items-center gap-4 relative z-10">
+                                    <img src="https://i.pravatar.cc/100?img=5" alt="Priya Kapoor"
+                                        class="w-14 h-14 rounded-full object-cover">
+                                    <div>
+                                        <p class="font-bold text-base text-brand-dark">Priya Kapoor</p>
+                                        <p class="text-sm text-gray-500">Head of Investor Relations, Nexus Industries
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dots -->
+                <div class="flex items-center justify-center gap-2 mt-4 md:mt-6">
+                    <button class="testimonial-dot w-2.5 h-2.5 rounded-full bg-black transition-all duration-300"
+                        data-index="0" aria-label="Go to slide 1"></button>
+                    <button class="testimonial-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-all duration-300"
+                        data-index="1" aria-label="Go to slide 2"></button>
+                    <button class="testimonial-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-all duration-300"
+                        data-index="2" aria-label="Go to slide 3"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section class="pt-32 pb-20 bg-brand-dark text-white overflow-hidden border-t border-white/10">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+            <div class="flex items-center gap-4 mb-4 gsap-reveal">
+                <div class="w-12 h-[1px] bg-white/30"></div>
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-white/50">Case Studies</span>
+            </div>
+            <h2
+                class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter mb-12 uppercase gsap-reveal">
+                Featured Work</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <!-- Card 1: The Problem -->
+                <div class="relative w-full aspect-[4/3] bg-black overflow-hidden group interactive rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1400&auto=format&fit=crop"
+                        alt="Case Study"
+                        class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10"></div>
+
+                    <div class="absolute top-5 left-5 md:top-8 md:left-8 z-10">
+                        <span class="text-[10px] md:text-xs font-semibold uppercase tracking-widest text-white/80">The
+                            Problem</span>
+                    </div>
+
+                    <div class="absolute bottom-5 left-5 md:bottom-8 md:left-8 z-10 pr-6">
+                        <p class="text-sm md:text-base font-medium text-gray-300">Seen internally as a compliance
+                            document, not a trust-building asset.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: The Action -->
+                <div class="relative w-full aspect-[4/3] bg-black overflow-hidden group interactive rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1400&auto=format&fit=crop"
+                        alt="Case Study"
+                        class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10"></div>
+
+                    <div class="absolute top-5 left-5 md:top-8 md:left-8 z-10">
+                        <span class="text-[10px] md:text-xs font-semibold uppercase tracking-widest text-white/80">The
+                            Action</span>
+                    </div>
+
+                    <div class="absolute bottom-5 left-5 md:bottom-8 md:left-8 z-10 pr-6">
+                        <p class="text-sm md:text-base font-medium text-gray-300">Full narrative and design overhaul
+                            aligned to investor priorities.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: The Result -->
+                <div class="relative w-full aspect-[4/3] bg-black overflow-hidden group interactive rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=1400&auto=format&fit=crop"
+                        alt="Case Study"
+                        class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10"></div>
+
+                    <div class="absolute top-5 left-5 md:top-8 md:left-8 z-10">
+                        <span class="text-[10px] md:text-xs font-semibold uppercase tracking-widest text-white/80">The
+                            Result</span>
+                    </div>
+
+                    <div class="absolute bottom-5 left-5 md:bottom-8 md:left-8 z-10 pr-6">
+                        <p class="text-sm md:text-base font-medium text-white">Positive analyst and shareholder feedback
+                            cited directly to the IR team.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="text-xs text-white/40 mt-6 font-medium uppercase tracking-wider text-right">* Placeholder case
+                study</p>
+        </div>
+    </section>
+    <!-- Insights Section -->
+    <section class="py-16 px-4 sm:px-6 md:px-12 bg-[#f5f5f5] text-brand-dark border-t border-gray-200">
+        <div class="max-w-[1400px] mx-auto">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tighter mb-12 uppercase gsap-reveal">
+                Insights
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3">
+
+                <div class="p-6 md:p-8 md:pl-0 border-b md:border-b-0 md:border-r border-gray-300 gsap-reveal">
+                    <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-4 block">News</span>
+                    <h3 class="text-lg md:text-xl font-bold mb-8 leading-snug">Annual Report & Investor Communication —
+                        Listed Company</h3>
+                    <a href="#" class="text-brand-dark hover:opacity-70 transition-opacity duration-300">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="p-6 md:p-8 border-b md:border-b-0 md:border-r border-gray-300 gsap-reveal">
+                    <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-4 block">News</span>
+                    <h3 class="text-lg md:text-xl font-bold mb-8 leading-snug">Full Narrative & Design Overhaul Aligned
+                        to Investor Priorities</h3>
+                    <a href="#" class="text-brand-dark hover:opacity-70 transition-opacity duration-300">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="p-6 md:p-8 md:pr-0 gsap-reveal">
+                    <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-4 block">News</span>
+                    <h3 class="text-lg md:text-xl font-bold mb-8 leading-snug">Positive Analyst & Shareholder Feedback
+                        Cited to IR Team</h3>
+                    <a href="#" class="text-brand-dark hover:opacity-70 transition-opacity duration-300">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-32 px-6 md:px-12 bg-white text-brand-dark border-t border-gray-200">
+        <div class="max-w-[1000px] mx-auto">
+            <h2 class="text-4xl md:text-7xl font-extrabold tracking-tighter mb-16 uppercase gsap-reveal">FAQ</h2>
+
+            <div class="border-t border-gray-200">
+                <!-- Q1 -->
+                <div class="gsap-reveal border-b border-gray-200 faq-item group">
+                    <button
+                        class="w-full text-left py-6 font-bold text-base md:text-xl flex justify-between items-center interactive focus:outline-none tracking-tight pr-4">
+                        What is the difference between SEO and AEO, and do we need both?
+                        <svg class="w-6 h-6 transform transition-transform duration-300 icon text-gray-400 group-hover:text-black shrink-0 ml-4"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="pb-6 text-gray-600 font-medium text-base leading-relaxed hidden answer max-w-3xl">
+                        SEO gets you ranked in Google’s list of links. AEO structures that same content so AI engines
+                        like ChatGPT and Google AI Overviews can pull it out and cite it as the answer. They share a
+                        technical and content base, so running them separately just doubles the work. We build both from
+                        one strategy.
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="gsap-reveal border-b border-gray-200 faq-item group">
+                    <button
+                        class="w-full text-left py-6 font-bold text-base md:text-xl flex justify-between items-center interactive focus:outline-none tracking-tight pr-4">
+                        We already post on social media. What does this add?
+                        <svg class="w-6 h-6 transform transition-transform duration-300 icon text-gray-400 group-hover:text-black shrink-0 ml-4"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="pb-6 text-gray-600 font-medium text-base leading-relaxed hidden answer max-w-3xl">
+                        Most social activity runs disconnected from search and content. We tie your calendar to the same
+                        keywords and campaigns driving your SEO, so every channel backs up the others instead of
+                        drifting on its own.
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="gsap-reveal border-b border-gray-200 faq-item group">
+                    <button
+                        class="w-full text-left py-6 font-bold text-base md:text-xl flex justify-between items-center interactive focus:outline-none tracking-tight pr-4">
+                        How is influencer marketing measured beyond follower count?
+                        <svg class="w-6 h-6 transform transition-transform duration-300 icon text-gray-400 group-hover:text-black shrink-0 ml-4"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="pb-6 text-gray-600 font-medium text-base leading-relaxed hidden answer max-w-3xl">
+                        By engagement quality, audience fit, content performance and, where it can be tracked, direct
+                        attribution to traffic or leads. Reach on its own tells you very little.
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="gsap-reveal border-b border-gray-200 faq-item group">
+                    <button
+                        class="w-full text-left py-6 font-bold text-base md:text-xl flex justify-between items-center interactive focus:outline-none tracking-tight pr-4">
+                        How long until we see ranking or AI-citation improvements?
+                        <svg class="w-6 h-6 transform transition-transform duration-300 icon text-gray-400 group-hover:text-black shrink-0 ml-4"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="pb-6 text-gray-600 font-medium text-base leading-relaxed hidden answer max-w-3xl">
+                        Technical fixes usually show early signals in 4 to 8 weeks. Steady page-one rankings and AI
+                        citations tend to build over 3 to 6 months, depending on how competitive your space is.
+                    </div>
+                </div>
+
+                <!-- Q5 -->
+                <div class="gsap-reveal border-b border-gray-200 faq-item group">
+                    <button
+                        class="w-full text-left py-6 font-bold text-base md:text-xl flex justify-between items-center interactive focus:outline-none tracking-tight pr-4">
+                        Do you write the content, or only plan it?
+                        <svg class="w-6 h-6 transform transition-transform duration-300 icon text-gray-400 group-hover:text-black shrink-0 ml-4"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="pb-6 text-gray-600 font-medium text-base leading-relaxed hidden answer max-w-3xl">
+                        Both. Strategy and writing are handled together, so what gets planned is what actually gets
+                        published.
+                    </div>
+                </div>
+
+                <!-- Q6 -->
+                <div class="gsap-reveal border-b border-gray-200 faq-item group">
+                    <button
+                        class="w-full text-left py-6 font-bold text-base md:text-xl flex justify-between items-center interactive focus:outline-none tracking-tight pr-4">
+                        Can you work with our existing content or social team?
+                        <svg class="w-6 h-6 transform transition-transform duration-300 icon text-gray-400 group-hover:text-black shrink-0 ml-4"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="pb-6 text-gray-600 font-medium text-base leading-relaxed hidden answer max-w-3xl">
+                        Yes. We can lead strategy while your team produces, or run both the strategy and the production
+                        ourselves.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA / Form Section (CTA 3 of 3) -->
+    <section class="py-32 px-6 md:px-12 bg-brand-dark text-white border-t border-white/10" id="booking-form">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+
+                <!-- Left Side: Copy -->
+                <div class="gsap-reveal">
+                    <h2
+                        class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter mb-8 uppercase leading-[0.9]">
+                        Stop chasing plain clicks. Start owning the answers.
+                    </h2>
+                    <p class="text-lg md:text-2xl text-gray-400 mb-12 max-w-lg font-light">Let us look at how
+                        discoverable you really are, across search and AI, and build a plan to fix it.</p>
+                </div>
+
+                <!-- Right Side: Dark Form Container (Matches Homepage Redesign) -->
+                <div class="bg-[#111] border border-white/10 rounded-2xl p-8 md:p-12 gsap-reveal">
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <input type="text" placeholder="Your Name *"
+                                    class="w-full bg-transparent border border-white/20 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
+                                    required>
+                            </div>
+                            <div>
+                                <input type="email" placeholder="Work Email *"
+                                    class="w-full bg-transparent border border-white/20 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <input type="text" placeholder="Phone / WhatsApp *"
+                                    class="w-full bg-transparent border border-white/20 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
+                                    required>
+                            </div>
+                            <div>
+                                <input type="text" placeholder="Company Name *"
+                                    class="w-full bg-transparent border border-white/20 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
+                                    required>
+                            </div>
+                        </div>
+
+                        <!-- Dedicated Dropdown for this Landing Page -->
+                        <div>
+                            <select
+                                class="w-full bg-transparent border border-white/20 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors cursor-pointer interactive"
+                                required>
+                                <option value="" disabled selected class="text-black">What do you need help with?
+                                </option>
+                                <option value="corporate-comms" class="text-black">Corporate Communications & PR
+                                </option>
+                                <option value="investor-relations" class="text-black">Investor Relations</option>
+                                <option value="thought-leadership" class="text-black">Thought Leadership</option>
+                                <option value="employer-branding" class="text-black">Employer Branding</option>
+                                <option value="reputation-audit" class="text-black">Full Reputation Audit</option>
+                            </select>
+                        </div>
+
+                        <div class="pt-6">
+                            <button type="submit"
+                                class="interactive w-fit bg-white hover:bg-gray-200 text-black px-10 py-5 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-3">
+                                Book Strategy Call
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer (Stripped back for Landing Page) -->
+        <div
+            class="relative z-10 mt-32 pt-8 border-t border-white/10 w-full max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs tracking-widest uppercase text-gray-500 font-bold">
+            <p>© 2026 ChimpzLab. All rights reserved.</p>
+        </div>
+    </section>
+
+    <!-- JS Logic -->
+    <script>
+        // Mega Menu Logic
+        const hasDropdown = document.querySelector('.has-dropdown');
+        const megaMenu = document.querySelector('.mega-menu');
+
+        if (hasDropdown && megaMenu) {
+            // Open on hover
+            hasDropdown.addEventListener('mouseenter', () => {
+                megaMenu.classList.add('active');
+            });
+
+            // Fallback: Toggle on click
+            const servicesLink = hasDropdown.querySelector('a');
+            if (servicesLink) {
+                servicesLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    megaMenu.classList.toggle('active');
+                });
+            }
+
+            // Close when clicking anywhere outside
+            document.addEventListener('click', (e) => {
+                if (!hasDropdown.contains(e.target)) {
+                    megaMenu.classList.remove('active');
+                }
+            });
+
+            // Prevent clicks inside the menu from bubbling to document and closing it
+            megaMenu.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        }
+
+        // Custom Cursor Logic
+        const cursor = document.getElementById('cursor');
+        const interactiveElements = document.querySelectorAll('.interactive, a, button, input, textarea, select, label');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+        });
+
+        // Initialize Lenis Smooth Scrolling
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+            infinite: false,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // Connect GSAP to Lenis
+        gsap.registerPlugin(ScrollTrigger);
+        lenis.on('scroll', ScrollTrigger.update);
+
+        // Hero Text Reveal
+        gsap.from(".gsap-reveal-text", {
+            y: 120,
+            opacity: 0,
+            duration: 1.2,
+            stagger: 0.1,
+            ease: "power4.out",
+            delay: 0.2
+        });
+
+        // General Scroll Reveals
+        function initScrollReveals() {
+            const revealElements = document.querySelectorAll(".gsap-reveal");
+            revealElements.forEach((el) => {
+                const rect = el.getBoundingClientRect();
+                const isInView = rect.top < window.innerHeight - 80;
+                if (isInView) {
+                    gsap.set(el, { opacity: 1, y: 0 });
+                } else {
+                    gsap.to(el, {
+                        scrollTrigger: {
+                            trigger: el,
+                            start: "top 88%",
+                            toggleActions: "play none none none"
+                        },
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.6,
+                        ease: "power2.out"
+                    });
+                }
+            });
+        }
+
+        initScrollReveals();
+
+        function animateCards(container, staggerDelay, duration) {
+            if (!container || container.offsetParent === null) return;
+            const cards = container.querySelectorAll(':scope > div, :scope > a');
+            if (!cards.length || cards[0].style.opacity === '1') return;
+            const rect = container.getBoundingClientRect();
+            const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+            const anim = () => gsap.fromTo(cards,
+                { opacity: 0, y: 32 },
+                { opacity: 1, y: 0, duration: duration, stagger: staggerDelay, ease: "power2.out" }
+            );
+            if (isInView) {
+                anim();
+            } else {
+                ScrollTrigger.create({
+                    trigger: container,
+                    start: "top 85%",
+                    onEnter: anim,
+                    once: true
+                });
+            }
+        }
+
+        animateCards(document.querySelector('.methodology-grid'), 0.15, 0.6);
+        animateCards(document.querySelector('.services-list'), 0.12, 0.5);
+
+        // Animate methodology timeline line
+        const methodLine = document.getElementById('methodology-line');
+        if (methodLine) {
+            const lineAnim = () => {
+                gsap.to(methodLine, {
+                    scaleX: 1,
+                    duration: 1.5,
+                    ease: 'power1.out'
+                });
+            };
+            const rect = methodLine.closest('.methodology-grid').getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                lineAnim();
+            } else {
+                ScrollTrigger.create({
+                    trigger: methodLine.closest('.methodology-grid'),
+                    start: 'top 80%',
+                    onEnter: lineAnim,
+                    once: true
+                });
+            }
+        }
+
+        // Refresh multiple times to handle Lenis & font loading
+        function refreshST() {
+            ScrollTrigger.refresh();
+            animateCards(document.querySelector('.methodology-grid'), 0.15, 0.6);
+            animateCards(document.querySelector('.services-list'), 0.12, 0.5);
+        }
+        window.addEventListener('load', refreshST);
+        window.addEventListener('resize', refreshST);
+        setTimeout(refreshST, 600);
+
+        // FAQ Accordion Logic
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const button = item.querySelector('button');
+            const answer = item.querySelector('.answer');
+            const icon = item.querySelector('.icon');
+
+            button.addEventListener('click', () => {
+                const isOpen = !answer.classList.contains('hidden');
+
+                // Close all others
+                faqItems.forEach(otherItem => {
+                    otherItem.querySelector('.answer').classList.add('hidden');
+                    otherItem.querySelector('.icon').style.transform = 'rotate(0deg)';
+                });
+
+                if (!isOpen) {
+                    answer.classList.remove('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Testimonial Carousel Logic
+        const testimonialTrack = document.querySelector('.testimonial-track');
+        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+        const prevBtn = document.querySelector('.testimonial-prev');
+        const nextBtn = document.querySelector('.testimonial-next');
+        const dots = document.querySelectorAll('.testimonial-dot');
+        let currentSlide = 0;
+        const totalSlides = testimonialSlides.length;
+        let autoplayInterval;
+
+        function goToSlide(index) {
+            if (index < 0) index = totalSlides - 1;
+            if (index >= totalSlides) index = 0;
+            currentSlide = index;
+            testimonialTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('bg-black', i === currentSlide);
+                dot.classList.toggle('bg-gray-300', i !== currentSlide);
+            });
+        }
+
+        function startAutoplay() {
+            autoplayInterval = setInterval(() => {
+                goToSlide(currentSlide + 1);
+            }, 5000);
+        }
+
+        function stopAutoplay() {
+            clearInterval(autoplayInterval);
+        }
+
+        prevBtn.addEventListener('click', () => {
+            stopAutoplay();
+            goToSlide(currentSlide - 1);
+            startAutoplay();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            stopAutoplay();
+            goToSlide(currentSlide + 1);
+            startAutoplay();
+        });
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                stopAutoplay();
+                goToSlide(parseInt(dot.dataset.index));
+                startAutoplay();
+            });
+        });
+
+        // Drag / Swipe Support
+        const carouselEl = document.querySelector('.testimonial-carousel');
+        let dragStartX = 0;
+        let dragDeltaX = 0;
+        let isDragging = false;
+
+        function setTransition(v) {
+            testimonialTrack.style.transition = v ? 'transform 0.5s ease' : 'none';
+        }
+
+        function onDragStart(e) {
+            if (e.type === 'mousedown' && e.button !== 0) return;
+            isDragging = true;
+            dragStartX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+            dragDeltaX = 0;
+            setTransition(false);
+            stopAutoplay();
+        }
+
+        function onDragMove(e) {
+            if (!isDragging) return;
+            const x = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+            dragDeltaX = x - dragStartX;
+            const offset = -(currentSlide * 100) + (dragDeltaX / carouselEl.offsetWidth * 100);
+            testimonialTrack.style.transform = `translateX(${offset}%)`;
+        }
+
+        function onDragEnd() {
+            if (!isDragging) return;
+            isDragging = false;
+            setTransition(true);
+            if (dragDeltaX < -50) {
+                goToSlide(currentSlide + 1);
+            } else if (dragDeltaX > 50) {
+                goToSlide(currentSlide - 1);
+            } else {
+                goToSlide(currentSlide);
+            }
+            startAutoplay();
+        }
+
+        carouselEl.addEventListener('touchstart', onDragStart, { passive: true });
+        carouselEl.addEventListener('touchmove', onDragMove, { passive: true });
+        carouselEl.addEventListener('touchend', onDragEnd);
+        carouselEl.addEventListener('mousedown', onDragStart);
+        carouselEl.addEventListener('mousemove', onDragMove);
+        carouselEl.addEventListener('mouseup', onDragEnd);
+        carouselEl.addEventListener('mouseleave', onDragEnd);
+
+        startAutoplay();
+    </script>
+<!-- Footer -->
+    <footer class="w-full bg-[#050505] text-white py-8 px-6 md:px-12 relative z-50 border-t border-white/10">
+        <div class="max-w-[1400px] mx-auto flex flex-col items-center gap-6 text-center">
+            
+            <!-- Information Row -->
+            <div class="flex flex-col md:flex-row justify-center md:justify-between items-center w-full gap-4 text-[10px] md:text-xs tracking-widest uppercase font-medium">
+                <div class="interactive hover:text-gray-300 transition-colors cursor-pointer">Call or WhatsApp 9920149991</div>
+                <div class="max-w-xl interactive hover:text-gray-300 transition-colors cursor-pointer">408, Fenkin 9 Phase 1, Wagle Estate,<br>Behind Satkar Grande Hotel, Thane West 400604</div>
+                <div class="interactive hover:text-gray-300 transition-colors cursor-pointer">&copy; 2026 ChimpzLab. All rights reserved.</div>
+            </div>
+
+            <!-- GIF Icon -->
+            <div class="flex justify-center w-full interactive">
+                <img src="../asset/chimpzlab-icon-white.gif" alt="ChimpzLab Icon" class="h-32 md:h-40 w-auto object-contain">
+            </div>
+
+            <!-- Social Media Handles -->
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#" class="px-8 py-3 border border-white/20 rounded hover:border-white transition-colors interactive text-xs uppercase tracking-widest font-bold">YouTube</a>
+                <a href="#" class="px-8 py-3 border border-white/20 rounded hover:border-white transition-colors interactive text-xs uppercase tracking-widest font-bold">LinkedIn</a>
+                <a href="#" class="px-8 py-3 border border-white/20 rounded hover:border-white transition-colors interactive text-xs uppercase tracking-widest font-bold">Instagram</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

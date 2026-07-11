@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO and AEO Agency in Thane | ChimpzLab</title>
+    <meta name="description"
+        content="Rank on Google and get cited inside AI answers on ChatGPT and Google AI Overviews. Book a strategy call with ChimpzLab.">
+    <meta name="keywords"
+        content="SEO agency India, AEO services, answer engine optimisation agency, technical SEO agency Thane">
+    <link rel="icon" type="image/gif" href="../../asset/chimpzlab-icon.gif">
+    <link rel="apple-touch-icon" href="../../asset/chimpzlab-icon.gif">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Manrope', 'sans-serif'] },
+                    colors: { brand: { dark: '#0a0a0a' } },
+                    animation: { 'marquee': 'marquee 25s linear infinite' },
+                    keyframes: { marquee: { '0%': { transform: 'translateX(0%)' }, '100%': { transform: 'translateX(-100%)' } } }
+                }
+            }
+        }
+
+        // Initialize GSAP animations when page loads
+        document.addEventListener('DOMContentLoaded', function () {
+            // Ensure equal height cards are working
+            function setEqualCardHeights() {
+                const cards = document.querySelectorAll('.tab-card-item');
+                cards.forEach(card => {
+                    card.style.height = 'auto';
+                });
+            }
+
+            // Set equal heights on DOM load and window resize
+            setEqualCardHeights();
+            window.addEventListener('resize', setEqualCardHeights);
+
+            // Custom GSAP animation for tab cards
+            gsap.utils.toArray('.tab-card-item').forEach((card, index) => {
+                gsap.fromTo(card,
+                    { opacity: 0, y: 40, scale: 0.95 },
+                    { opacity: 1, y: 0, scale: 1, duration: 0.6, delay: index * 0.1, ease: 'power2.out' }
+                );
+            });
+
+            // Initial ScrollTrigger refresh
+            ScrollTrigger.refresh();
+        });
+    </script>
+    <style>
+        /* Lenis Smooth Scroll */
+        html.lenis {
+            height: auto;
+        }
+
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
+
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
+
+        .lenis.lenis-scrolling iframe {
+            pointer-events: none;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            cursor: none;
+            overflow-x: hidden;
+        }
+
+        /* Equal Height Cards for Case Studies */
+        .card-height-equal {
+            height: 100%;
+            min-height: 600px;
+        }
+
+        #cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s, background-color 0.3s, mix-blend-mode 0.3s;
+            mix-blend-mode: difference;
+        }
+
+        #cursor.hovered {
+            width: 80px;
+            height: 80px;
+            background-color: #ffffff;
+        }
+
+        .text-huge {
+            font-size: clamp(3rem, 7vw, 7rem);
+            line-height: 0.95;
+            letter-spacing: -0.04em;
+        }
+
+        .text-outline {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+        }
+
+        .text-outline-dark {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .img-bw {
+            filter: grayscale(100%);
+        }
+
+        .gsap-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        /* Phase Tab Active State */
+        .phase-tab {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .phase-tab .tab-label {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .phase-tab .tab-title {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .phase-tab .tab-link {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .phase-tab.active {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .phase-tab.active .tab-label {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .phase-tab.active .tab-title {
+            color: #fff;
+        }
+
+        .phase-tab.active .tab-link {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Interactive Nav Elements */
+        .nav-pill {
+            background-color: rgba(26, 26, 26, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .has-dropdown {
+            position: relative;
+        }
+
+        .has-dropdown>a {
+            position: relative;
+            z-index: 2;
+        }
+
+        .has-dropdown::before {
+            content: '';
+            position: absolute;
+            inset: auto -16px -20px -16px;
+            height: 40px;
+            z-index: 1;
+            pointer-events: auto;
+        }
+
+        .mega-menu {
+            position: fixed;
+            top: 56px;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            max-width: calc(100vw - 32px);
+            background: #1a1a1a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            width: 780px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.7);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .has-dropdown:hover .mega-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+            pointer-events: auto;
+        }
+
+        .mega-menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .service-card-mini {
+            position: relative;
+            border-radius: 14px;
+            padding: 18px;
+            min-height: 150px;
+            background: #252525;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .service-card-mini:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.25);
+            background: #2e2e2e;
+        }
+
+        .service-card-mini .icon {
+            width: 38px;
+            height: 38px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-card-mini .icon svg {
+            width: 18px;
+            height: 18px;
+            color: white;
+        }
+
+        .service-card-mini .card-title {
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: #fff;
+        }
+
+
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    
+        .bg-white ::selection, section.bg-white ::selection {
+            background-color: #f5f5f5 !important;
+            color: #0a0a0a !important;
+        }
+    
+        /* Services Dropdown */
+        .has-dropdown {
+            position: relative;
+        }
+
+        .has-dropdown>a {
+            position: relative;
+            z-index: 2;
+        }
+
+        .has-dropdown::before {
+            content: '';
+            position: absolute;
+            inset: auto -16px -20px -16px;
+            height: 40px;
+            z-index: 1;
+            pointer-events: auto;
+        }
+
+        .mega-menu {
+            position: fixed;
+            top: 56px;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            max-width: calc(100vw - 32px);
+            background: #1a1a1a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            width: 780px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.7);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .mega-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+            pointer-events: auto;
+        }
+
+        .mega-menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .service-card-mini {
+            position: relative;
+            border-radius: 14px;
+            padding: 18px;
+            min-height: 150px;
+            background: #252525;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .service-card-mini:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.25);
+            background: #2e2e2e;
+        }
+
+        .service-card-mini .icon {
+            width: 38px;
+            height: 38px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-card-mini .icon svg {
+            width: 18px;
+            height: 18px;
+            color: white;
+        }
+
+        .service-card-mini .card-title {
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: #fff;
+        }
+
+        
+    </style>
+
+    <script type="application/ld+json">
+    {
+"@context": "https://schema.org",
+"@type": "Service",
+"name": "Corporate Communications Agency in Thane",
+"provider": {"@type": "Organization","name":"ChimpzLab"},
+"areaServed": "Thane",
+"serviceType": "Corporate Communications Agency in Thane"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Services","item":"https://chimpzlab.com/services/"},
+        {"@type":"ListItem","position":2,"name":"Reputation & Communications","item":"https://chimpzlab.com/services/reputation-communications/"},
+        {"@type":"ListItem","position":3,"name":"Corporate Communications Agency in Thane"}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+        {"@type":"Question","name":"Do you handle crisis communication as part of this?","acceptedAnswer":{"@type":"Answer","text":"Yes. Crisis-readiness and response planning are part of the core offering, so you are not writing a plan for the first time in the middle of a crisis."}},
+    {"@type":"Question","name":"Is this only for large companies?","acceptedAnswer":{"@type":"Answer","text":"No. Even founder-led or growth-stage companies benefit once their messaging starts reaching media, investors or a growing team in inconsistent ways."}},
+    {"@type":"Question","name":"What is a messaging framework, in plain terms?","acceptedAnswer":{"@type":"Answer","text":"It is a short, agreed set of core messages, proof points and positioning that everyone writes from. It keeps your website, your press outreach and your leadership content saying the same thing."}},
+    {"@type":"Question","name":"How is this different from PR?","acceptedAnswer":{"@type":"Answer","text":"PR is about earning coverage. Corporate communications is the layer underneath it, the narrative and systems that make sure every message, coverage included, stays consistent."}}
+      ]
+    }
+    </script>
+
+</head>
+
+<body class="selection:bg-white selection:text-black">
+
+    <div id="cursor"></div>
+
+    <nav class="fixed w-full top-0 z-50 px-6 md:px-12 py-6 flex justify-between items-center pointer-events-none backdrop-blur-md"
+        style="background: linear-gradient(180deg, #000000cf, transparent);">
+        <!-- Logo -->
+        <a href="../../index.html" class="pointer-events-auto interactive z-10 flex items-center gap-2" aria-label="Home">
+            <img src="../../asset/chimpzlab-white.png" alt="ChimpzLab" class="h-7 md:h-9 object-contain "
+                onerror="this.style.display='none'; document.getElementById('text-logo').style.display='block';">
+            <span id="text-logo"
+                class="hidden text-white font-extrabold text-2xl md:text-3xl tracking-tighter">CHIMPZLAB</span>
+        </a>
+
+        <!-- Desktop Centered Menu -->
+        <div class="pointer-events-auto hidden md:flex absolute left-1/2 -translate-x-1/2 z-10">
+            <div class="nav-pill px-6 py-3 rounded-full flex items-center gap-8">
+                <div class="has-dropdown">
+                    <a href="#"
+                        class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors flex items-center gap-1">
+                        Services
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-grid">
+                            <a href="../../services/reputation-communications.html" class="service-card-mini">
+                                <div class="icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                    </svg>
+                                </div>
+                                <span class="card-title">Reputation &<br>Communications</span>
+                            </a>
+                            <a href="../../services/visibility-search.html" class="service-card-mini">
+                                <div class="icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                    </svg>
+                                </div>
+                                <span class="card-title">Visibility &<br>Search</span>
+                            </a>
+                            <a href="../../services/creative.html" class="service-card-mini">
+                                <div class="icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                    </svg>
+                                </div>
+                                <span class="card-title">Content &<br>Creative</span>
+                            </a>
+                            <a href="../../services/demand-generation.html" class="service-card-mini">
+                                <div class="icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                </div>
+                                <span class="card-title">Demand &<br>Automation</span>
+                            </a>
+                            <a href="../../services/digital-experiences.html" class="service-card-mini">
+                                <div class="icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <span class="card-title">Digital<br>Experiences</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#work"
+                    class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors">Work</a>
+                <a href="#about"
+                    class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors">About</a>
+                <a href="blog-insite.html"
+                    class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors">Insights</a>
+            </div>
+        </div>
+
+        <!-- Right: CTA + Mobile -->
+        <div class="flex items-center gap-4 z-10">
+            <div class="pointer-events-auto hidden md:flex">
+                <a href="#contact"
+                    class="interactive bg-white hover:bg-gray-200 text-black px-7 py-3 rounded-full text-sm font-bold tracking-wide transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.15)]">
+                    Let's Connect
+                </a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="pointer-events-auto md:hidden text-white interactive p-2 z-10">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <header
+        class="min-h-screen flex flex-col justify-center px-6 md:px-12 pt-32 pb-20 relative bg-brand-dark overflow-hidden">
+        <div class="w-full max-w-[1400px] mx-auto z-10">
+            <div class="flex items-center gap-4 mb-8 gsap-reveal-text">
+                <div class="w-12 h-[1px] bg-white/30"></div>
+                <span class="block text-xs font-bold uppercase tracking-[0.2em] text-white/70">SEO and AEO</span>
+            </div>
+            <h1 class="text-4xl sm:text-6xl md:text-8xl font-extrabold text-white mb-12 tracking-tighter uppercase">
+                <div class="overflow-hidden"><span class="block gsap-reveal-text">Rank on Google.<br>Get cited by
+                        AI.</span></div>
+            </h1>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end gsap-reveal">
+                <div class="lg:col-span-7">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-8">
+                        <a href="#booking-form"
+                            class="interactive bg-white hover:bg-gray-200 text-black px-8 py-4 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2">
+                            Book a Strategy Call
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                        <div class="flex flex-col">
+                            <span class="text-xs font-bold uppercase tracking-widest text-white/50 mb-1">The
+                                Agenda</span>
+                            <span class="text-sm font-medium text-gray-400 leading-tight">30 minutes. Auditing your search visibility.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-32 px-6 md:px-12 bg-white text-brand-dark">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-x-20 items-center">
+                <div class="lg:col-span-6 gsap-reveal">
+                    <div class="relative aspect-[4/3] rounded-3xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop"
+                            alt="Corporate Communications Agency in India"
+                            class="w-full h-full object-cover hover:scale-105 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent">
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-6 gsap-reveal">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-[1px] bg-gray-300"></div>
+                        <span class="block text-xs font-bold uppercase tracking-[0.2em] text-gray-500">Our
+                            Approach</span>
+                    </div>
+                    <p class="text-lg md:text-2xl font-light leading-relaxed text-gray-600 mb-8 max-w-3xl">SEO gets your
+                        pages ranked in search results. AEO, or answer engine optimisation, structures that same content
+                        so AI engines like ChatGPT and Google AI Overviews can pull it out and cite it as the answer.
+                        Search has split into these two lanes, and we build for both from the same technical and content
+                        base.</p>
+                    <p class="text-lg md:text-2xl font-light leading-relaxed text-gray-600 mb-10 max-w-3xl">Treating
+                        them as separate projects just doubles the work and leaves gaps. One strategy, one foundation,
+                        both outcomes.</p>
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-8">
+                        <a href="#booking-form"
+                            class="interactive bg-brand-dark hover:bg-gray-800 text-white px-8 py-4 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2">
+                            Book a Strategy Call
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 md:px-12 bg-brand-dark text-white border-t border-white/10 overflow-hidden">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="flex items-center gap-4 mb-8 gsap-reveal">
+                <div class="w-12 h-[1px] bg-white/30"></div>
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-white/50">What This Includes</span>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 mb-16">
+                <div class="lg:col-span-5 gsap-reveal">
+                    <h2
+                        class="text-3xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-extrabold tracking-tighter uppercase leading-[0.9]">
+                        Everything<br>you get</h2>
+                </div>
+                <div class="lg:col-span-7 gsap-reveal">
+                    <p class="text-lg md:text-xl text-gray-400 font-light max-w-xl leading-relaxed">Every optimization is focused on capturing high-intent traffic and dominating search answers.</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-5">
+
+                <div class="md:col-span-3 group relative">
+                    <div
+                        class="h-full bg-white/[0.03] border border-white/10 rounded-2xl p-10 md:p-12 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-500">
+                        <div class="flex items-start gap-5">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-white/20 transition-all duration-500">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <p
+                                class="text-gray-300 font-medium text-base md:text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
+                                Technical SEO audits and fixes</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-2 group relative">
+                    <div
+                        class="h-full bg-white/[0.03] border border-white/10 rounded-2xl p-10 md:p-12 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-500">
+                        <div class="flex items-start gap-5">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-white/20 transition-all duration-500">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <p
+                                class="text-gray-300 font-medium text-base md:text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
+                                Keyword and topical strategy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-2 group relative">
+                    <div
+                        class="h-full bg-white/[0.03] border border-white/10 rounded-2xl p-10 md:p-12 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-500">
+                        <div class="flex items-start gap-5">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-white/20 transition-all duration-500">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <p
+                                class="text-gray-300 font-medium text-base md:text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
+                                On-page and content optimisation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-3 group relative">
+                    <div
+                        class="h-full bg-white/[0.03] border border-white/10 rounded-2xl p-10 md:p-12 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-500">
+                        <div class="flex items-start gap-5">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-white/20 transition-all duration-500">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <p
+                                class="text-gray-300 font-medium text-base md:text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
+                                Answer-engine-structured content for AEO</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-5 group relative">
+                    <div
+                        class="h-full bg-white/[0.03] border border-white/10 rounded-2xl p-10 md:p-12 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-500">
+                        <div class="flex items-start gap-5">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-white/20 transition-all duration-500">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <p
+                                class="text-gray-300 font-medium text-base md:text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
+                                Schema markup and structured data</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 md:px-12 bg-white text-brand-dark border-t border-gray-200 overflow-hidden">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="flex items-center gap-4 mb-8 gsap-reveal">
+                <div class="w-12 h-[1px] bg-gray-300"></div>
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-gray-500">Our Process</span>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 mb-16">
+                <div class="lg:col-span-5 gsap-reveal">
+                    <h2
+                        class="text-3xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-extrabold tracking-tighter uppercase leading-[0.9]">
+                        How it<br>works</h2>
+                </div>
+                <div class="lg:col-span-7 gsap-reveal">
+                    <p class="text-lg md:text-xl text-gray-500 font-light max-w-xl leading-relaxed">A technical and content-led approach to improving rankings and engine discoverability.</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-8 md:gap-6 relative process-grid">
+
+                <div class="gsap-reveal relative process-step">
+                    <div class="h-full bg-white rounded-2xl p-7 shadow-[0_4px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300 text-center md:text-left">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-brand-dark text-white flex items-center justify-center mx-auto md:mx-0 mb-5 text-xl font-extrabold shadow-lg relative z-10">
+                            01</div>
+                        <div class="relative">
+                            <div class="w-12 h-[2px] bg-gray-200 mx-auto md:mx-0 mb-5"></div>
+                            <p class="text-gray-700 font-medium text-base md:text-lg leading-relaxed">Technical and
+                                visibility audit</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gsap-reveal relative process-step">
+                    <div class="h-full bg-white rounded-2xl p-7 shadow-[0_4px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300 text-center md:text-left">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-brand-dark text-white flex items-center justify-center mx-auto md:mx-0 mb-5 text-xl font-extrabold shadow-lg relative z-10">
+                            02</div>
+                        <div class="relative">
+                            <div class="w-12 h-[2px] bg-gray-200 mx-auto md:mx-0 mb-5"></div>
+                            <p class="text-gray-700 font-medium text-base md:text-lg leading-relaxed">Keyword and topic
+                                strategy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gsap-reveal relative process-step">
+                    <div class="h-full bg-white rounded-2xl p-7 shadow-[0_4px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300 text-center md:text-left">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-brand-dark text-white flex items-center justify-center mx-auto md:mx-0 mb-5 text-xl font-extrabold shadow-lg relative z-10">
+                            03</div>
+                        <div class="relative">
+                            <div class="w-12 h-[2px] bg-gray-200 mx-auto md:mx-0 mb-5"></div>
+                            <p class="text-gray-700 font-medium text-base md:text-lg leading-relaxed">On-page and
+                                content optimisation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gsap-reveal relative process-step">
+                    <div class="h-full bg-white rounded-2xl p-7 shadow-[0_4px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300 text-center md:text-left">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-brand-dark text-white flex items-center justify-center mx-auto md:mx-0 mb-5 text-xl font-extrabold shadow-lg relative z-10">
+                            04</div>
+                        <div class="relative">
+                            <div class="w-12 h-[2px] bg-gray-200 mx-auto md:mx-0 mb-5"></div>
+                            <p class="text-gray-700 font-medium text-base md:text-lg leading-relaxed">Reporting on
+                                rankings and AI citations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Article & Case Study Section (Hidden by default) -->
+    <!-- <section class="py-16 md:py-32 px-4 sm:px-6 md:px-12 bg-brand-dark text-white border-t border-white/10">
+        <div class="max-w-[1400px] mx-auto">
+
+            <div class="flex items-center gap-4 mb-4 gsap-reveal">
+                <div class="w-12 h-[1px] bg-white/30"></div>
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-white/50">Case Studies</span>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16 gsap-reveal">
+                <h2 class="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tighter uppercase m-0">
+                    Featured Case Studies
+                </h2>
+                <a href="/case-studies.html" class="inline-flex items-center gap-2 text-white font-bold text-sm hover:gap-3 transition-all duration-300 pb-1 border-b border-white/30 hover:border-white shrink-0 uppercase tracking-wider">
+                    View All Case Studies
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch">
+                <div id="tab-card-wrapper" class="lg:w-6/12 gsap-reveal">
+                    <div id="tab-card"
+                        class="bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden min-h-[400px] lg:min-h-[620px] flex flex-col"
+                        style="">
+                        <div class="relative h-[200px] sm:h-[240px] md:h-[350px] overflow-hidden">
+                            <img id="tab-image" src="../../asset/2.jpg" alt="Case Study"
+                                class="w-full h-full object-cover transition-all duration-500">
+                        </div>
+                        <div class="p-5 sm:p-6 md:p-8 flex flex-col flex-1 min-h-0 overflow-y-auto">
+                            <span id="tab-date"
+                                class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/50 mb-2 block">Case
+                                Study</span>
+                            <h3 id="tab-title"
+                                class="text-lg sm:text-xl md:text-2xl font-extrabold text-white mb-2 sm:mb-3 leading-tight tracking-tight">
+                                Annual Report & Investor Communication — Listed Company</h3>
+                            <p id="tab-desc"
+                                class="text-gray-400 font-medium text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5 flex-1">
+                                Seen
+                                internally as a compliance document, not a trust-building asset. The annual report was
+                                failing to build investor confidence and communicate real value to stakeholders.</p>
+                            <a href="#"
+                                class="inline-flex items-center gap-2 text-white font-bold text-xs sm:text-sm hover:gap-3 transition-all duration-300">
+                                Read More
+                                <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-6/12 flex flex-col gsap-reveal">
+                    <div class="flex-1 overflow-y-auto max-h-[400px] sm:max-h-[480px] md:max-h-[520px] pr-1 sm:pr-2 space-y-3 sm:space-y-4"
+                        style="scrollbar-width: thin; scrollbar-color: #444 transparent;">
+
+                        <div class="phase-tab active group cursor-pointer rounded-xl sm:rounded-2xl p-3 sm:p-4 transition-all duration-300 hover:-translate-y-0.5"
+                            data-tab="0">
+                            <div class="flex gap-3 sm:gap-4 items-center">
+                                <div
+                                    class="w-[80px] h-[60px] sm:w-[120px] sm:h-[90px] md:w-[150px] md:h-[120px] rounded-lg sm:rounded-xl overflow-hidden shrink-0">
+                                    <img src="../../asset/2.jpg" alt="Phase 01"
+                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <span
+                                        class="tab-label text-[9px] sm:text-[10px] font-bold uppercase tracking-widest block mb-1">Phase
+                                        01: Problem</span>
+                                    <p
+                                        class="tab-title font-bold text-xs sm:text-sm leading-snug mb-1 sm:mb-2 line-clamp-2">
+                                        Annual Report & Investor Communication — Listed Company</p>
+                                    <a href="#"
+                                        class="tab-link inline-flex items-center gap-1 font-bold text-[10px] sm:text-xs hover:gap-2 transition-all duration-300">
+                                        Read More
+                                        <svg class="w-2.5 h-2.5 sm:w-3 sm:h-3" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="phase-tab group cursor-pointer rounded-xl sm:rounded-2xl p-3 sm:p-4 transition-all duration-300 hover:-translate-y-0.5"
+                            data-tab="1">
+                            <div class="flex gap-3 sm:gap-4 items-center">
+                                <div
+                                    class="w-[80px] h-[60px] sm:w-[120px] sm:h-[90px] md:w-[150px] md:h-[120px] rounded-lg sm:rounded-xl overflow-hidden shrink-0">
+                                    <img src="../../asset/1.jpg" alt="Phase 02"
+                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <span
+                                        class="tab-label text-[9px] sm:text-[10px] font-bold uppercase tracking-widest block mb-1">Phase
+                                        02: Action</span>
+                                    <p
+                                        class="tab-title font-bold text-xs sm:text-sm leading-snug mb-1 sm:mb-2 line-clamp-2">
+                                        Full Narrative & Design Overhaul Aligned to Investor Priorities</p>
+                                    <a href="#"
+                                        class="tab-link inline-flex items-center gap-1 font-bold text-[10px] sm:text-xs hover:gap-2 transition-all duration-300">
+                                        Read More
+                                        <svg class="w-2.5 h-2.5 sm:w-3 sm:h-3" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="phase-tab group cursor-pointer rounded-xl sm:rounded-2xl p-3 sm:p-4 transition-all duration-300 hover:-translate-y-0.5"
+                            data-tab="2">
+                            <div class="flex gap-3 sm:gap-4 items-center">
+                                <div
+                                    class="w-[80px] h-[60px] sm:w-[120px] sm:h-[90px] md:w-[150px] md:h-[120px] rounded-lg sm:rounded-xl overflow-hidden shrink-0">
+                                    <img src="../../asset/3.jpg" alt="Phase 03"
+                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <span
+                                        class="tab-label text-[9px] sm:text-[10px] font-bold uppercase tracking-widest block mb-1">Phase
+                                        03: Result</span>
+                                    <p
+                                        class="tab-title font-bold text-xs sm:text-sm leading-snug mb-1 sm:mb-2 line-clamp-2">
+                                        Positive Analyst & Shareholder Feedback Cited to IR Team</p>
+                                    <a href="#"
+                                        class="tab-link inline-flex items-center gap-1 font-bold text-[10px] sm:text-xs hover:gap-2 transition-all duration-300">
+                                        Read More
+                                        <svg class="w-2.5 h-2.5 sm:w-3 sm:h-3" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="mt-5 sm:mt-6 pt-5 sm:pt-6 border-t border-white/10">
+                        <a href="#"
+                            class="inline-flex items-center gap-2 border-2 border-white text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-brand-dark transition-all duration-300">
+                            See More Blogs
+                            <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section> -    <!-- Case Studies Grid Version (Active by default) -->
+    <section class="py-16 md:py-32 px-4 sm:px-6 md:px-12 bg-brand-dark text-white border-t border-white/10">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="flex items-center gap-4 mb-4 gsap-reveal">
+                <div class="w-12 h-[1px] bg-white/30"></div>
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-white/50">Case Studies</span>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16 gsap-reveal">
+                <h2 class="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tighter uppercase m-0">
+                    Featured Work
+                </h2>
+                <a href="/case-studies.html" class="inline-flex items-center gap-2 text-white font-bold text-sm hover:gap-3 transition-all duration-300 pb-1 border-b border-white/30 hover:border-white shrink-0 uppercase tracking-wider">
+                    View All Case Studies
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+            </div>
+
+            <!-- Flex container for equal height cards -->
+            <div class="flex flex-col lg:flex-row gap-6 md:gap-8 items-stretch">
+
+                <div class="w-full gsap-reveal tab-card-item group" style="animation-delay: 0s">
+                    <div class="bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden min-h-[400px] lg:min-h-[620px] flex flex-col card-height-equal"
+                        style="">
+                        <div class="relative h-[200px] sm:h-[240px] md:h-[350px] overflow-hidden">
+                            <img src="../../asset/2.jpg" alt="Case Study"
+                                class="w-full h-full object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-110">
+                        </div>
+                        <div class="p-5 sm:p-6 md:p-8 flex flex-col flex-1 min-h-0 overflow-y-auto">
+                            <span
+                                class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/50 mb-2 block">Case
+                                Study</span>
+                            <h3
+                                class="text-lg sm:text-xl md:text-2xl font-extrabold text-white mb-2 sm:mb-3 leading-tight tracking-tight">
+                                Annual Report & Investor Communication — Listed Company</h3>
+                            <p class="text-gray-400 font-medium text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5 flex-1">
+                                Seen
+                                internally as a compliance document, not a trust-building asset. The annual report was
+                                failing to build investor confidence and communicate real value to stakeholders.</p>
+                            <a href="#"
+                                class="inline-flex items-center gap-2 text-white font-bold text-xs sm:text-sm hover:gap-3 transition-all duration-300">
+                                Read More
+                                <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full gsap-reveal tab-card-item group" style="animation-delay: 0.1s">
+                    <div class="bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden min-h-[400px] lg:min-h-[620px] flex flex-col card-height-equal"
+                        style="">
+                        <div class="relative h-[200px] sm:h-[240px] md:h-[350px] overflow-hidden">
+                            <img src="../../asset/1.jpg" alt="Case Study"
+                                class="w-full h-full object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-110">
+                        </div>
+                        <div class="p-5 sm:p-6 md:p-8 flex flex-col flex-1 min-h-0 overflow-y-auto">
+                            <span
+                                class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/50 mb-2 block">Case
+                                Study</span>
+                            <h3
+                                class="text-lg sm:text-xl md:text-2xl font-extrabold text-white mb-2 sm:mb-3 leading-tight tracking-tight">
+                                Full Narrative & Design Overhaul Aligned to Investor Priorities</h3>
+                            <p class="text-gray-400 font-medium text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5 flex-1">
+                                Complete
+                                transformation of annual report design and narrative to align with key investor metrics
+                                and priorities.</p>
+                            <a href="#"
+                                class="inline-flex items-center gap-2 text-white font-bold text-xs sm:text-sm hover:gap-3 transition-all duration-300">
+                                Read More
+                                <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full gsap-reveal tab-card-item group" style="animation-delay: 0.2s">
+                    <div class="bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden min-h-[400px] lg:min-h-[620px] flex flex-col card-height-equal"
+                        style="">
+                        <div class="relative h-[200px] sm:h-[240px] md:h-[350px] overflow-hidden">
+                            <img src="../../asset/3.jpg" alt="Case Study"
+                                class="w-full h-full object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-110">
+                        </div>
+                        <div class="p-5 sm:p-6 md:p-8 flex flex-col flex-1 min-h-0 overflow-y-auto">
+                            <span
+                                class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/50 mb-2 block">Case
+                                Study</span>
+                            <h3
+                                class="text-lg sm:text-xl md:text-2xl font-extrabold text-white mb-2 sm:mb-3 leading-tight tracking-tight">
+                                Positive Analyst & Shareholder Feedback Cited to IR Team</h3>
+                            <p class="text-gray-400 font-medium text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5 flex-1">
+                                Investor
+                                Relations strategy implementation resulting in positive analyst coverage and shareholder
+                                engagement.</p>
+                            <a href="#"
+                                class="inline-flex items-center gap-2 text-white font-bold text-xs sm:text-sm hover:gap-3 transition-all duration-300">
+                                Read More
+                                <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights Section -->
+    <section class="py-16 px-4 sm:px-6 md:px-12 bg-[#f5f5f5] text-brand-dark border-t border-gray-200">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 gsap-reveal">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tighter uppercase m-0">
+                    Insights
+                </h2>
+                <a href="/insights.html" class="inline-flex items-center gap-2 text-brand-dark font-bold text-sm hover:gap-3 transition-all duration-300 pb-1 border-b border-brand-dark/30 hover:border-brand-dark shrink-0 uppercase tracking-wider">
+                    View All Insights
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3">
+
+                <div class="p-6 md:p-8 md:pl-0 border-b md:border-b-0 md:border-r border-gray-300 gsap-reveal">
+                    <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-4 block">News</span>
+                    <h3 class="text-lg md:text-xl font-bold mb-8 leading-snug">Annual Report & Investor Communication —
+                        Listed Company</h3>
+                    <a href="#" class="text-brand-dark hover:opacity-70 transition-opacity duration-300">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="p-6 md:p-8 border-b md:border-b-0 md:border-r border-gray-300 gsap-reveal">
+                    <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-4 block">News</span>
+                    <h3 class="text-lg md:text-xl font-bold mb-8 leading-snug">Full Narrative & Design Overhaul Aligned
+                        to Investor Priorities</h3>
+                    <a href="#" class="text-brand-dark hover:opacity-70 transition-opacity duration-300">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="p-6 md:p-8 md:pr-0 gsap-reveal">
+                    <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-4 block">News</span>
+                    <h3 class="text-lg md:text-xl font-bold mb-8 leading-snug">Positive Analyst & Shareholder Feedback
+                        Cited to IR Team</h3>
+                    <a href="#" class="text-brand-dark hover:opacity-70 transition-opacity duration-300">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 md:px-12 bg-white text-brand-dark border-t border-gray-200">
+        <div class="max-w-[1000px] mx-auto">
+            <h2 class="text-4xl md:text-7xl font-extrabold tracking-tighter mb-16 uppercase gsap-reveal">FAQ</h2>
+            <div class="border-t border-gray-200">
+                <div class="gsap-reveal border-b border-gray-200 faq-item group">
+                    <button
+                        class="w-full text-left py-6 font-bold text-base md:text-xl flex justify-between items-center interactive focus:outline-none tracking-tight pr-4">
+                        How is AEO different from regular SEO?
+                        <svg class="w-6 h-6 transform transition-transform duration-300 icon text-gray-400 group-hover:text-black shrink-0 ml-4"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="pb-6 text-gray-600 font-medium text-base leading-relaxed hidden answer max-w-3xl">
+                        SEO gets you ranked in Google’s list of links. AEO structures that same content so AI engines
+                        like ChatGPT and Google AI Overviews can extract and cite it directly as an answer.
+                    </div>
+                </div>
+                <div class="gsap-reveal border-b border-gray-200 faq-item group">
+                    <button
+                        class="w-full text-left py-6 font-bold text-base md:text-xl flex justify-between items-center interactive focus:outline-none tracking-tight pr-4">
+                        How long until we see results?
+                        <svg class="w-6 h-6 transform transition-transform duration-300 icon text-gray-400 group-hover:text-black shrink-0 ml-4"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="pb-6 text-gray-600 font-medium text-base leading-relaxed hidden answer max-w-3xl">
+                        Technical fixes usually show early signals in 4 to 8 weeks. Steady rankings and AI citations
+                        build over 3 to 6 months, depending on competition.
+                    </div>
+                </div>
+                <div class="gsap-reveal border-b border-gray-200 faq-item group">
+                    <button
+                        class="w-full text-left py-6 font-bold text-base md:text-xl flex justify-between items-center interactive focus:outline-none tracking-tight pr-4">
+                        Do we really need AEO, or is SEO enough for now?
+                        <svg class="w-6 h-6 transform transition-transform duration-300 icon text-gray-400 group-hover:text-black shrink-0 ml-4"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="pb-6 text-gray-600 font-medium text-base leading-relaxed hidden answer max-w-3xl">
+                        More and more searches end in an AI answer without a click. If you only optimise for the ranked
+                        list, you stay invisible in that answer. Building both is how you stay found on either path.
+                    </div>
+                </div>
+                <div class="gsap-reveal border-b border-gray-200 faq-item group">
+                    <button
+                        class="w-full text-left py-6 font-bold text-base md:text-xl flex justify-between items-center interactive focus:outline-none tracking-tight pr-4">
+                        Will you fix our existing content or only write new pages?
+                        <svg class="w-6 h-6 transform transition-transform duration-300 icon text-gray-400 group-hover:text-black shrink-0 ml-4"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="pb-6 text-gray-600 font-medium text-base leading-relaxed hidden answer max-w-3xl">
+                        Both. We often get more from optimising and restructuring content you already have than from
+                        adding new pages, and we do whichever moves the needle.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-20 px-6 md:px-12 bg-brand-dark text-white border-t border-white/10" id="booking-form"
+        style="min-height: 100dvh; align-items: center; display: flex; flex-wrap: wrap;">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                <div class="gsap-reveal">
+                    <h2
+                        class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter mb-4 md:mb-6 uppercase leading-[0.9]">
+                        Stop chasing plain clicks. Start owning the answers.</h2>
+                    <p class="text-lg md:text-2xl text-gray-400 mb-6 md:mb-8 max-w-lg font-light">Let us look at how discoverable you really are, across search and AI, and build a plan to fix it.
+                    </p>
+                </div>
+                <div class="bg-[#111] border border-white/10 rounded-2xl p-6 md:p-8 gsap-reveal">
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <input type="text" placeholder="Your Name *"
+                                    class="w-full bg-transparent border border-white/20 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
+                                    required>
+                            </div>
+                            <div>
+                                <input type="email" placeholder="Work Email *"
+                                    class="w-full bg-transparent border border-white/20 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <input type="text" placeholder="Phone / WhatsApp *"
+                                    class="w-full bg-transparent border border-white/20 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
+                                    required>
+                            </div>
+                            <div>
+                                <input type="text" placeholder="Company *"
+                                    class="w-full bg-transparent border border-white/20 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
+                                    required>
+                            </div>
+                        </div>
+                        <div>
+                            <select
+                                class="w-full bg-transparent border border-white/20 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-white transition-colors cursor-pointer interactive"
+                                required>
+                                <option value="" disabled class="text-black">Service Interested In</option>
+                                <option value="corporate-communications" class="text-black">Corporate Communications
+                                </option>
+                                <option value="seo-aeo" class="text-black" selected>SEO and AEO</option>
+                                <option value="public-relations" class="text-black">Public Relations</option>
+                                <option value="thought-leadership" class="text-black">Thought Leadership</option>
+                                <option value="employer-branding" class="text-black">Employer Branding</option>
+                                <option value="reputation-audit" class="text-black">Full Reputation Audit</option>
+
+                            </select>
+                        </div>
+                        <div>
+                            <textarea placeholder="Message (optional)"
+                                class="w-full bg-transparent border border-white/20 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors resize-none"
+                                rows="3"></textarea>
+                        </div>
+                        <div class="pt-6">
+                            <button type="submit"
+                                class="interactive w-fit bg-white hover:bg-gray-200 text-black px-10 py-5 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-3">
+                                Book a Strategy Call
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div
+            class="relative z-10 mt-12 md:mt-16 pt-8 border-t border-white/10 w-full max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs tracking-widest uppercase text-gray-500 font-bold">
+            <p>Call or WhatsApp 9920149991</p>
+            <p class="text-center md:text-right">408, Fenkin 9 Phase 1, Wagle Estate, Behind Satkar Grande Hotel, Thane
+                West 400604</p>
+            <p>© 2026 ChimpzLab. All rights reserved.</p>
+        </div>
+    </section>
+
+    <script>
+        const cursor = document.getElementById('cursor');
+        const interactiveElements = document.querySelectorAll('.interactive, a, button, input, textarea, select, label');
+        document.addEventListener('mousemove', (e) => { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; });
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+        });
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical', gestureDirection: 'vertical', smooth: true,
+            mouseMultiplier: 1, smoothTouch: false, touchMultiplier: 2, infinite: false,
+        });
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+        gsap.registerPlugin(ScrollTrigger);
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.from(".gsap-reveal-text", {
+            y: 120, opacity: 0, duration: 1.2, stagger: 0.1, ease: "power4.out", delay: 0.2
+        });
+        const revealElements = document.querySelectorAll(".gsap-reveal");
+        revealElements.forEach((el) => {
+            gsap.to(el, {
+                scrollTrigger: { trigger: el, start: "top 85%", toggleActions: "play none none reverse" },
+                opacity: 1, y: 0, duration: 0.8, ease: "power3.out"
+            });
+        });
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const button = item.querySelector('button');
+            const answer = item.querySelector('.answer');
+            const icon = item.querySelector('.icon');
+            button.addEventListener('click', () => {
+                const isOpen = !answer.classList.contains('hidden');
+                faqItems.forEach(otherItem => {
+                    otherItem.querySelector('.answer').classList.add('hidden');
+                    otherItem.querySelector('.icon').style.transform = 'rotate(0deg)';
+                });
+                if (!isOpen) {
+                    answer.classList.remove('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+
+
+        // Phase Tabs Logic
+        const phaseData = [
+            {
+                image: '../../asset/2.jpg',
+                date: 'Case Study',
+                title: 'Annual Report & Investor Communication — Listed Company',
+                desc: 'Seen internally as a compliance document, not a trust-building asset. The annual report was failing to build investor confidence and communicate real value to stakeholders.',
+                link: '#'
+            },
+            {
+                image: '../../asset/1.jpg',
+                date: 'Case Study',
+                title: 'Full Narrative & Design Overhaul Aligned to Investor Priorities',
+                desc: 'Complete narrative restructuring and design overhaul aligned to investor priorities. Messaging architecture rebuilt to position the company as a trusted, growth-oriented enterprise.',
+                link: '#'
+            },
+            {
+                image: '../../asset/3.jpg',
+                date: 'Case Study',
+                title: 'Positive Analyst & Shareholder Feedback Cited to IR Team',
+                desc: 'Positive analyst and shareholder feedback cited directly to the IR team, transforming the annual report into a trust-building asset.',
+                link: '#'
+            }
+        ];
+
+        const phaseTabs = document.querySelectorAll('.phase-tab');
+        const tabImage = document.getElementById('tab-image');
+        const tabDate = document.getElementById('tab-date');
+        const tabTitle = document.getElementById('tab-title');
+        const tabDesc = document.getElementById('tab-desc');
+
+        phaseTabs.forEach((tab, index) => {
+            tab.addEventListener('click', () => {
+                // Remove active from all
+                phaseTabs.forEach(t => {
+                    t.classList.remove('active');
+                });
+
+                // Add active to clicked
+                tab.classList.add('active');
+
+                // Scroll to left card on mobile
+                const tabCardWrapper = document.getElementById('tab-card-wrapper');
+                if (window.innerWidth < 1024 && tabCardWrapper) {
+                    tabCardWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+
+                // Instant content change - no animation
+                if (tabImage && tabDate && tabTitle && tabDesc) {
+                    tabImage.src = phaseData[index].image;
+                    tabDate.textContent = phaseData[index].date;
+                    tabTitle.textContent = phaseData[index].title;
+                    tabDesc.textContent = phaseData[index].desc;
+                }
+            });
+        });
+    </script>
+
+</html>
