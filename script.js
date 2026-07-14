@@ -308,25 +308,87 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Mobile Hamburger Menu Logic
-    const hamburgerBtn = document.querySelector('.hamburger-btn');
-    const mainNav = document.querySelector('.main-nav');
-    
-    if (hamburgerBtn && mainNav) {
-        hamburgerBtn.addEventListener('click', () => {
-            mainNav.classList.toggle('mobile-menu-open');
-        });
-    }
+    // ===== Mobile Offcanvas Navigation =====
+    // Build the mobile menu dynamically from each page's existing desktop nav,
+    // so links (with correct relative paths) work on every page without
+    // hard-coding markup into all 46 HTML files.
+    const navEl = document.querySelector('nav');
+    const hamburgerBtn = navEl ? navEl.querySelector('button') : null;
 
-    // Mobile Dropdown Logic
-    const dropdownToggle = document.querySelector('.has-dropdown > .nav-link');
-    if (dropdownToggle) {
-        dropdownToggle.addEventListener('click', (e) => {
-            if(window.innerWidth <= 1024) {
-                e.preventDefault();
-                dropdownToggle.parentElement.classList.toggle('dropdown-open');
-            }
+    if (navEl && hamburgerBtn) {
+        const megaLinks = Array.from(document.querySelectorAll('nav .mega-menu-grid a')).map(a => {
+            const t = a.querySelector('.card-title');
+            const label = t ? t.innerHTML.replace(/<br\s*\/?>/gi, ' ').replace(/\s+/g, ' ').trim() : a.textContent.trim();
+            return { href: a.href, label };
         });
+        const directLinks = Array.from(document.querySelectorAll('nav .nav-pill > a')).map(a => ({
+            href: a.href,
+            label: a.textContent.trim()
+        }));
+        const ctaLink = Array.from(document.querySelectorAll('nav a')).find(a => /connect/i.test(a.textContent));
+
+        const overlay = document.createElement('div');
+        overlay.className = 'mobile-menu-overlay';
+        overlay.id = 'mobileMenuOverlay';
+
+        const panel = document.createElement('div');
+        panel.className = 'mobile-menu-panel';
+
+        let html = '<div class="mobile-menu-head">';
+        html += '<a href="' + (document.querySelector('nav a[aria-label="Home"]') ? document.querySelector('nav a[aria-label="Home"]').href : 'index.html') + '" class="mobile-menu-logo">CHIMPZLAB</a>';
+        html += '<button type="button" class="mobile-menu-close" aria-label="Close menu">&times;</button>';
+        html += '</div>';
+
+        html += '<nav class="mobile-menu-nav">';
+        html += '<div class="mobile-menu-group">';
+        html += '<button type="button" class="mobile-menu-toggle">Services <span class="chev">+</span></button>';
+        html += '<div class="mobile-submenu">';
+        megaLinks.forEach(l => { html += '<a href="' + l.href + '" class="mobile-submenu-link">' + l.label + '</a>'; });
+        html += '</div></div>';
+
+        directLinks.forEach(l => { html += '<a href="' + l.href + '" class="mobile-menu-link">' + l.label + '</a>'; });
+        html += '<a href="' + (ctaLink ? ctaLink.href : 'index.html#contact') + '" class="mobile-menu-cta">Let\'s Connect</a>';
+        html += '</nav>';
+
+        panel.innerHTML = html;
+        overlay.appendChild(panel);
+        document.body.appendChild(overlay);
+
+        const openMenu = () => {
+            overlay.classList.add('open');
+            document.body.classList.add('menu-open');
+            hamburgerBtn.classList.add('is-active');
+            hamburgerBtn.setAttribute('aria-expanded', 'true');
+        };
+        const closeMenu = () => {
+            overlay.classList.remove('open');
+            document.body.classList.remove('menu-open');
+            hamburgerBtn.classList.remove('is-active');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+        };
+
+        hamburgerBtn.addEventListener('click', () => {
+            overlay.classList.contains('open') ? closeMenu() : openMenu();
+        });
+
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) closeMenu();
+            if (e.target.closest('a')) closeMenu();
+        });
+
+        const closeBtn = panel.querySelector('.mobile-menu-close');
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+
+        const svcToggle = panel.querySelector('.mobile-menu-toggle');
+        if (svcToggle) {
+            svcToggle.addEventListener('click', () => {
+                const group = svcToggle.parentElement;
+                const isOpen = group.classList.toggle('open');
+                svcToggle.querySelector('.chev').textContent = isOpen ? '−' : '+';
+            });
+        }
     }
 });
 
