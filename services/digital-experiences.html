@@ -889,7 +889,7 @@
                 </a>
             </div>
             <div class="max-w-4xl mx-auto">
-                        <a href="casestudy/soul-skin.html" class="block group interactive gsap-reveal h-full">
+                        <a href="casestudy/soul-skin.html" class="block group interactive gsap-reveal h-full" data-featured-slug="soul-skin">
                     <div class="bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden h-full flex flex-col md:flex-row">
                         <div class="relative h-[220px] sm:h-[280px] md:h-[440px] md:w-1/2 overflow-hidden shrink-0">
                             <img src="https://placehold.co/800x600/1a1a1a/ffffff?text=Soul+Skin" alt="Soul Skin"
@@ -1427,6 +1427,28 @@
             </div>
         </div>
     </footer>
+
+    <script>
+    // Featured Case Study — JSON-driven
+    (function initFeatured() {
+        const card = document.querySelector('[data-featured-slug]');
+        if (!card) return;
+        const slug = card.dataset.featuredSlug;
+        fetch('./case-studies.json', { cache: 'no-cache' })
+            .then(r => r.json())
+            .then(data => {
+                const item = data.find(d => d.slug === slug);
+                if (!item) return;
+                const img = card.querySelector('img');
+                const h3 = card.querySelector('h3');
+                const p = card.querySelector('p.line-clamp-2');
+                if (img) { img.src = (item.cover.startsWith('http') ? item.cover : '' + item.cover); img.alt = item.title; }
+                if (h3) h3.textContent = item.title;
+                if (p) p.textContent = item.desc || '';
+                card.href = 'casestudy/' + slug + '.html';
+            });
+    })();
+    </script>
 </body>
 
 </html>

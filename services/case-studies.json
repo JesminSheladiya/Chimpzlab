@@ -1,0 +1,420 @@
+[
+  {
+    "slug": "ajmera-realty",
+    "title": "Ajmera Realty & Infra India Ltd.",
+    "cover": "./casestudy/ajmera-realty/cover.webp",
+    "categories": [
+      {
+        "key": "brand-strategy",
+        "label": "Brand Strategy"
+      },
+      {
+        "key": "brand-identity",
+        "label": "Brand Identity"
+      }
+    ],
+    "categoryKeys": [
+      "brand-strategy",
+      "brand-identity"
+    ],
+    "link": "./casestudy/ajmera-realty.html",
+    "hasDetail": true,
+    "desc": "Real estate brand building & visual identity."
+  },
+  {
+    "slug": "blue-star",
+    "title": "Blue Star India",
+    "cover": "./casestudy/blue-star/cover.png",
+    "categories": [
+      {
+        "key": "brand-strategy",
+        "label": "Brand Strategy"
+      }
+    ],
+    "categoryKeys": [
+      "brand-strategy"
+    ],
+    "link": "./casestudy/blue-star.html",
+    "hasDetail": true,
+    "desc": "Employer branding & social media for India's AC leader."
+  },
+  {
+    "slug": "carnelian-capital",
+    "title": "Carnelian Capital",
+    "cover": "https://placehold.co/800x1000/161616/ffffff?text=Carnelian%20Capital",
+    "categories": [
+      {
+        "key": "brand-strategy",
+        "label": "Brand Strategy"
+      },
+      {
+        "key": "visual-content",
+        "label": "Visual Content"
+      }
+    ],
+    "categoryKeys": [
+      "brand-strategy",
+      "visual-content"
+    ],
+    "link": "./casestudy/carnelian-capital.html",
+    "hasDetail": true,
+    "desc": "From Unranked to Category Leader"
+  },
+  {
+    "slug": "cisco-thingqbator",
+    "title": "Cisco thingQbator",
+    "cover": "./casestudy/cisco-thingqbator/cover.jpg",
+    "categories": [
+      {
+        "key": "brand-strategy",
+        "label": "Brand Strategy"
+      },
+      {
+        "key": "ux-ui",
+        "label": "UX / UI Design"
+      },
+      {
+        "key": "web-development",
+        "label": "Web Development"
+      },
+      {
+        "key": "ai-intelligence",
+        "label": "AI Intelligence"
+      }
+    ],
+    "categoryKeys": [
+      "brand-strategy",
+      "ux-ui",
+      "web-development",
+      "ai-intelligence"
+    ],
+    "link": "./casestudy/cisco-thingqbator.html",
+    "hasDetail": true,
+    "desc": "Startup accelerator platform & IoT storytelling."
+  },
+  {
+    "slug": "evershine-builders",
+    "title": "Evershine Builders",
+    "cover": "./casestudy/evershine-builders/cover.png",
+    "categories": [
+      {
+        "key": "brand-strategy",
+        "label": "Brand Strategy"
+      }
+    ],
+    "categoryKeys": [
+      "brand-strategy"
+    ],
+    "link": "./casestudy/evershine-builders.html",
+    "hasDetail": true,
+    "desc": "PR & thought leadership for a real estate developer."
+  },
+  {
+    "slug": "forest-hills",
+    "title": "Forest Hills at Tala",
+    "cover": "./casestudy/forest-hills/cover.jpg",
+    "categories": [
+      {
+        "key": "brand-strategy",
+        "label": "Brand Strategy"
+      },
+      {
+        "key": "brand-identity",
+        "label": "Brand Identity"
+      }
+    ],
+    "categoryKeys": [
+      "brand-strategy",
+      "brand-identity"
+    ],
+    "link": "./casestudy/forest-hills.html",
+    "hasDetail": true,
+    "desc": "Branding & design for a luxury weekend home."
+  },
+  {
+    "slug": "ghci-2024",
+    "title": "Grace Hopper Celebration India 2024",
+    "cover": "./casestudy/ghci-2024/cover.jpg",
+    "categories": [
+      {
+        "key": "brand-strategy",
+        "label": "Brand Strategy"
+      },
+      {
+        "key": "visual-content",
+        "label": "Visual Content"
+      }
+    ],
+    "categoryKeys": [
+      "brand-strategy",
+      "visual-content"
+    ],
+    "link": "./casestudy/ghci-2024.html",
+    "hasDetail": true,
+    "desc": "Social media & design for Grace Hopper Celebration."
+  },
+  {
+    "slug": "imbesharam",
+    "title": "IMBesharam",
+    "cover": "./casestudy/imbesharam/cover.jpg",
+    "categories": [
+      {
+        "key": "brand-strategy",
+        "label": "Brand Strategy"
+      },
+      {
+        "key": "visual-content",
+        "label": "Visual Content"
+      },
+      {
+        "key": "web-development",
+        "label": "Web Development"
+      }
+    ],
+    "categoryKeys": [
+      "brand-strategy",
+      "visual-content",
+      "web-development"
+    ],
+    "link": "./casestudy/imbesharam.html",
+    "hasDetail": true,
+    "desc": "Ecommerce growth, content & site for a bold D2C brand."
+  },
+  {
+    "slug": "mos-world",
+    "title": "MOS World",
+    "cover": "./casestudy/mos-world/cover.jpg",
+    "categories": [
+      {
+        "key": "brand-strategy",
+        "label": "Brand Strategy"
+      }
+    ],
+    "categoryKeys": [
+      "brand-strategy"
+    ],
+    "link": "./casestudy/mos-world.html",
+    "hasDetail": true,
+    "desc": "Branding & thought leadership for MOS World."
+  },
+  {
+    "slug": "munns-mars",
+    "title": "Munns & Mars",
+    "cover": "https://placehold.co/800x1000/161616/ffffff?text=Munns%20%26%20Mars",
+    "categories": [
+      {
+        "key": "brand-strategy",
+        "label": "Brand Strategy"
+      },
+      {
+        "key": "visual-content",
+        "label": "Visual Content"
+      }
+    ],
+    "categoryKeys": [
+      "brand-strategy",
+      "visual-content"
+    ],
+    "link": "./casestudy/munns-mars.html",
+    "hasDetail": true,
+    "desc": "Social media & influencer marketing for Munns & Mars."
+  },
+  {
+    "slug": "nasscom-konnect",
+    "title": "Nasscom Konnect",
+    "cover": "./casestudy/nasscom-konnect/cover.jpg",
+    "categories": [
+      {
+        "key": "brand-strategy",
+        "label": "Brand Strategy"
+      },
+      {
+        "key": "visual-content",
+        "label": "Visual Content"
+      }
+    ],
+    "categoryKeys": [
+      "brand-strategy",
+      "visual-content"
+    ],
+    "link": "./casestudy/nasscom-konnect.html",
+    "hasDetail": true,
+    "desc": "Corporate comms & social for NASSCOM Konnect."
+  },
+  {
+    "slug": "nasscom-member-connect",
+    "title": "Nasscom Member Connect",
+    "cover": "https://placehold.co/800x1000/161616/ffffff?text=Nasscom%20Member%20Connect",
+    "categories": [
+      {
+        "key": "brand-strategy",
+        "label": "Brand Strategy"
+      }
+    ],
+    "categoryKeys": [
+      "brand-strategy"
+    ],
+    "link": "./casestudy/nasscom-member-connect.html",
+    "hasDetail": true,
+    "desc": "Membership & community for NASSCOM."
+  },
+  {
+    "slug": "psiog",
+    "title": "Psiog",
+    "cover": "https://placehold.co/800x1000/161616/ffffff?text=Psiog",
+    "categories": [
+      {
+        "key": "brand-identity",
+        "label": "Brand Identity"
+      },
+      {
+        "key": "visual-content",
+        "label": "Visual Content"
+      }
+    ],
+    "categoryKeys": [
+      "brand-identity",
+      "visual-content"
+    ],
+    "link": "./casestudy/psiog.html",
+    "hasDetail": true,
+    "desc": "Creative, branding & design for Psiog."
+  },
+  {
+    "slug": "robust-petcare",
+    "title": "Robust Petcare",
+    "cover": "./casestudy/robust-petcare/cover.jpg",
+    "categories": [
+      {
+        "key": "brand-identity",
+        "label": "Brand Identity"
+      },
+      {
+        "key": "brand-strategy",
+        "label": "Brand Strategy"
+      }
+    ],
+    "categoryKeys": [
+      "brand-identity",
+      "brand-strategy"
+    ],
+    "link": "./casestudy/robust-petcare.html",
+    "hasDetail": true,
+    "desc": "Branding & design for Robust Petcare."
+  },
+  {
+    "slug": "soul-skin",
+    "title": "Soul Skin",
+    "cover": "./casestudy/soul-skin/cover.jpeg",
+    "categories": [
+      {
+        "key": "brand-strategy",
+        "label": "Brand Strategy"
+      },
+      {
+        "key": "visual-content",
+        "label": "Visual Content"
+      }
+    ],
+    "categoryKeys": [
+      "brand-strategy",
+      "visual-content"
+    ],
+    "link": "./casestudy/soul-skin.html",
+    "hasDetail": true,
+    "desc": "Owning Page One of a Hyperlocal Category"
+  },
+  {
+    "slug": "stl-digital",
+    "title": "STL Digital",
+    "cover": "./casestudy/stl-digital/cover.jpg",
+    "categories": [
+      {
+        "key": "brand-strategy",
+        "label": "Brand Strategy"
+      },
+      {
+        "key": "visual-content",
+        "label": "Visual Content"
+      },
+      {
+        "key": "web-development",
+        "label": "Web Development"
+      }
+    ],
+    "categoryKeys": [
+      "brand-strategy",
+      "visual-content",
+      "web-development"
+    ],
+    "link": "./casestudy/stl-digital.html",
+    "hasDetail": true,
+    "desc": "Corporate comms, design & web for STL Digital."
+  },
+  {
+    "slug": "tiger-analytics",
+    "title": "Tiger Analytics",
+    "cover": "https://placehold.co/800x1000/161616/ffffff?text=Tiger%20Analytics",
+    "categories": [
+      {
+        "key": "brand-strategy",
+        "label": "Brand Strategy"
+      },
+      {
+        "key": "ai-intelligence",
+        "label": "AI Intelligence"
+      }
+    ],
+    "categoryKeys": [
+      "brand-strategy",
+      "ai-intelligence"
+    ],
+    "link": "./casestudy/tiger-analytics.html",
+    "hasDetail": true,
+    "desc": "Doubling Organic Reach in an AI-Saturated Category"
+  },
+  {
+    "slug": "ccoe",
+    "title": "CCOE",
+    "cover": "./casestudy/ccoe/cover.jpg",
+    "categories": [
+      {
+        "key": "brand-strategy",
+        "label": "Brand Strategy"
+      },
+      {
+        "key": "visual-content",
+        "label": "Visual Content"
+      }
+    ],
+    "categoryKeys": [
+      "brand-strategy",
+      "visual-content"
+    ],
+    "link": "#",
+    "hasDetail": false,
+    "desc": "Brand & communication for CCOE."
+  },
+  {
+    "slug": "far-east-asia",
+    "title": "Far East Asia",
+    "cover": "./casestudy/far-east-asia/cover.webp",
+    "categories": [
+      {
+        "key": "brand-strategy",
+        "label": "Brand Strategy"
+      },
+      {
+        "key": "brand-identity",
+        "label": "Brand Identity"
+      }
+    ],
+    "categoryKeys": [
+      "brand-strategy",
+      "brand-identity"
+    ],
+    "link": "#",
+    "hasDetail": false,
+    "desc": "Regional brand identity for Far East Asia."
+  }
+]
