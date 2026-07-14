@@ -28,6 +28,10 @@
     <!-- Lenis for Smooth Scrolling -->
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
 
+    <!-- Masonry & ImagesLoaded -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -619,7 +623,7 @@
     <section class="px-6 md:px-12 py-12 md:py-16 bg-brand-dark border-t border-white/10">
         <div class="max-w-[1400px] mx-auto">
             <div
-                class="cs-filterbar sticky top-20 z-40 flex flex-wrap gap-3 mb-12 pb-5 backdrop-blur-md bg-brand-dark/80 -mx-2 px-2 rounded-xl">
+                class="cs-filterbar sticky top-24 z-40 flex flex-wrap gap-3 mb-12 py-2 backdrop-blur-md bg-brand-dark/80 -mx-2 px-2 rounded-xl">
                 <button data-filter="all"
                     class="cs-filter active interactive px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300">All</button>
                 <button data-filter="brand-strategy"
@@ -643,7 +647,7 @@
                 <span class="cs-count ml-auto self-center text-sm text-white/50 font-medium tracking-wide"></span>
             </div>
 
-            <div id="cs-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <div id="cs-grid" class="cs-masonry">
             </div>
 
             <p id="cs-empty" class="hidden text-center text-white/40 py-20 text-lg">No case studies in this category
@@ -704,11 +708,56 @@
             scroll-behavior: smooth;
         }
 
+        .cs-masonry {
+            position: relative;
+            width: 100%;
+        }
+
         .cs-card {
+            width: 100%;
+            margin-bottom: 1.5rem;
             opacity: 0;
             transform: translateY(34px) scale(0.97);
+            border-color: rgba(255, 255, 255, 0.1);
+            background-color: #101010;
             transition: opacity .65s cubic-bezier(.22, 1, .36, 1), transform .65s cubic-bezier(.22, 1, .36, 1);
             will-change: opacity, transform;
+        }
+
+        .cs-masonry-ready .cs-card {
+            transition: opacity .65s cubic-bezier(.22, 1, .36, 1), transform .65s cubic-bezier(.22, 1, .36, 1), left .45s ease, top .45s ease, border-color .45s ease;
+        }
+
+        .cs-card.cs-hover-active {
+            border-color: transparent;
+            animation: hoverBg .8s ease forwards;
+        }
+
+        @keyframes hoverBg {
+            0% {
+                background-color: #101010;
+            }
+
+            50% {
+                background-color: transparent;
+            }
+
+            100% {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        @media (min-width: 640px) {
+            .cs-card {
+                width: calc((100% - 24px) / 2);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .cs-card {
+                width: calc((100% - 64px) / 3);
+                margin-bottom: 2rem;
+            }
         }
 
         .cs-card.in {
@@ -746,15 +795,22 @@
             backdrop-filter: blur(6px);
         }
 
-        .cs-tags {
+        .cs-hover-reveal {
             max-height: 0;
-            opacity: 0;
             overflow: hidden;
-            transition: all .35s ease;
+            transition: max-height .45s ease;
         }
 
-        .cs-card:hover .cs-tags {
-            max-height: 60px;
+        .cs-card.cs-hover-active .cs-hover-reveal {
+            max-height: 200px;
+        }
+
+        .cs-hover-inner {
+            opacity: 0;
+            transition: opacity .35s ease .45s;
+        }
+
+        .cs-card.cs-hover-active .cs-hover-inner {
             opacity: 1;
         }
     </style>
@@ -798,20 +854,41 @@
                     const card = document.createElement('a');
                     card.href = item.link;
                     card.setAttribute('data-cats', item.categoryKeys.join(' '));
-                    card.className = 'cs-card group relative block rounded-2xl overflow-hidden border border-white/10 bg-[#101010] aspect-[4/5] sm:aspect-[3/4]';
+                    card.className = 'cs-card group relative block rounded-2xl overflow-hidden border border-white/10 bg-[#101010]';
                     card.innerHTML =
-                        '<img src="' + item.cover + '" alt="' + item.title + '" class="absolute inset-0 w-full h-full object-cover opacity-90 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" loading="lazy">' +
-                        '<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>' +
-                        '<div class="absolute top-4 left-5 text-xs font-bold tracking-[0.2em] text-white/50">' + idx + '</div>' +
-                        '<div class="absolute inset-0 p-5 sm:p-6 flex flex-col justify-end">' +
-                        '<div class="cs-tags flex flex-wrap gap-2 mb-3">' + tags + '</div>' +
+                        '<div class="relative overflow-hidden">' +
+                        '<img src="' + item.cover + '" alt="' + item.title + '" class="w-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" loading="lazy">' +
+                        '</div>' +
+                        '<div class="p-5 sm:p-6">' +
                         '<h3 class="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-[1.05] text-white">' + item.title + '</h3>' +
-                        '<span class="cs-cta mt-3 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white/85 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">View Case Study' +
+                        '<div class="cs-hover-reveal">' +
+                        '<div class="cs-hover-inner">' +
+                        '<div class="flex flex-wrap gap-2 mt-3 mb-2">' + tags + '</div>' +
+                        '<span class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white/85">View Case Study' +
                         '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H8m9 0v9"/></svg>' +
                         '</span>' +
+                        '</div>' +
+                        '</div>' +
                         '</div>';
+                    // Hover → Masonry relayout after transition
+                    const revealEl = card.querySelector('.cs-hover-reveal');
+                    revealEl.addEventListener('transitionend', (e) => {
+                        if (e.propertyName === 'max-height' && msnry) msnry.layout();
+                    });
+                    card.addEventListener('mouseenter', () => {
+                        card.classList.add('cs-hover-active');
+                    });
+                    card.addEventListener('mouseleave', () => {
+                        card.classList.remove('cs-hover-active');
+                    });
                     grid.appendChild(card);
                 });
+            }
+
+            let msnry = null;
+
+            function getGutter() {
+                return window.innerWidth >= 1024 ? 32 : 24;
             }
 
             // Load data from external JSON file
@@ -819,8 +896,18 @@
                 .then(r => r.json())
                 .then(data => {
                     renderCards(data);
-                    initReveal();
-                    updateCount();
+                    imagesLoaded(grid, () => {
+                        msnry = new Masonry(grid, {
+                            itemSelector: '.cs-card',
+                            columnWidth: '.cs-card',
+                            percentPosition: true,
+                            gutter: getGutter(),
+                            transitionDuration: 0,
+                        });
+                        grid.classList.add('cs-masonry-ready');
+                        initReveal();
+                        updateCount();
+                    });
                 })
                 .catch(() => {
                     grid.innerHTML = '<p class="text-center text-white/40 py-20">Failed to load case studies.</p>';
@@ -866,6 +953,14 @@
                         if (match) card.classList.add('in'); else card.classList.remove('in');
                     });
                     updateCount();
+                    if (msnry) msnry.destroy();
+                    msnry = new Masonry(grid, {
+                        itemSelector: '.cs-card:not(.hidden)',
+                        columnWidth: '.cs-card:not(.hidden)',
+                        percentPosition: true,
+                        gutter: getGutter(),
+                        transitionDuration: 0,
+                    });
                     requestAnimationFrame(() => {
                         grid.style.opacity = '1';
                         setTimeout(() => { filterBusy = false; }, 280);
@@ -874,6 +969,6 @@
             }));
 
         });</script>
-    </body>
+</body>
 
 </html>

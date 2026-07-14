@@ -2,7 +2,7 @@
   {
     "slug": "ajmera-realty",
     "title": "Ajmera Realty & Infra India Ltd.",
-    "cover": "./casestudy/ajmera-realty/cover.webp",
+    "cover": "https://placehold.co/800x700/161616/ffffff?text=Ajmera%20Realty%20&%20Infra%20India%20Ltd.",
     "categories": [
       {
         "key": "brand-strategy",
@@ -372,49 +372,5 @@
     "link": "./casestudy/tiger-analytics.html",
     "hasDetail": true,
     "desc": "Doubling Organic Reach in an AI-Saturated Category"
-  },
-  {
-    "slug": "ccoe",
-    "title": "CCOE",
-    "cover": "./casestudy/ccoe/cover.jpg",
-    "categories": [
-      {
-        "key": "brand-strategy",
-        "label": "Brand Strategy"
-      },
-      {
-        "key": "visual-content",
-        "label": "Visual Content"
-      }
-    ],
-    "categoryKeys": [
-      "brand-strategy",
-      "visual-content"
-    ],
-    "link": "#",
-    "hasDetail": false,
-    "desc": "Brand & communication for CCOE."
-  },
-  {
-    "slug": "far-east-asia",
-    "title": "Far East Asia",
-    "cover": "./casestudy/far-east-asia/cover.webp",
-    "categories": [
-      {
-        "key": "brand-strategy",
-        "label": "Brand Strategy"
-      },
-      {
-        "key": "brand-identity",
-        "label": "Brand Identity"
-      }
-    ],
-    "categoryKeys": [
-      "brand-strategy",
-      "brand-identity"
-    ],
-    "link": "#",
-    "hasDetail": false,
-    "desc": "Regional brand identity for Far East Asia."
   }
 ]
