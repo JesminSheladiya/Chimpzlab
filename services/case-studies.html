@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies | ChimpzLab — Selected Work</title>
+    <meta name="description"
+        content="Rank on Google, get cited in AI answers, and build a social presence tied to real goals. Book a strategy call with ChimpzLab.">
+    <meta name="keywords"
+        content="SEO agency Thane, social media marketing agency India, AEO services India, influencer marketing agency">
+
+    <link rel="icon" type="image/gif" href="../asset/chimpzlab-icon.gif">
+    <link rel="apple-touch-icon" href="../asset/chimpzlab-icon.gif">
+    <!-- Fonts: Manrope -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Lenis for Smooth Scrolling -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0a0a0a',
+                        }
+                    },
+                    animation: {
+                        'marquee': 'marquee 25s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Lenis Smooth Scroll */
+        html.lenis {
+            height: auto;
+        }
+
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
+
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
+
+        .lenis.lenis-scrolling iframe {
+            pointer-events: none;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            cursor: none;
+            overflow-x: hidden;
+        }
+
+        #cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s, background-color 0.3s, mix-blend-mode 0.3s;
+            mix-blend-mode: difference;
+        }
+
+        #cursor.hovered {
+            width: 80px;
+            height: 80px;
+            background-color: #ffffff;
+        }
+
+        .text-huge {
+            font-size: clamp(3rem, 7vw, 7rem);
+            line-height: 0.95;
+            letter-spacing: -0.04em;
+        }
+
+        .text-outline {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+        }
+
+        .text-outline-dark {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .img-bw {
+            filter: grayscale(100%);
+        }
+
+        .gsap-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        /* Interactive Nav Elements */
+        .nav-pill {
+            background-color: rgba(26, 26, 26, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .has-dropdown {
+            position: relative;
+        }
+
+        .has-dropdown>a {
+            position: relative;
+            z-index: 2;
+        }
+
+        .has-dropdown::before {
+            content: '';
+            position: absolute;
+            inset: auto -16px -20px -16px;
+            height: 40px;
+            z-index: 1;
+            pointer-events: auto;
+        }
+
+        .mega-menu {
+            position: fixed;
+            top: 56px;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            max-width: calc(100vw - 32px);
+            background: #1a1a1a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            width: 780px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.7);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .has-dropdown:hover .mega-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+            pointer-events: auto;
+        }
+
+        .mega-menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .service-card-mini {
+            position: relative;
+            border-radius: 14px;
+            padding: 18px;
+            min-height: 150px;
+            background: #252525;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .service-card-mini:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.25);
+            background: #2e2e2e;
+        }
+
+        .service-card-mini .icon {
+            width: 38px;
+            height: 38px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-card-mini .icon svg {
+            width: 18px;
+            height: 18px;
+            color: white;
+        }
+
+        .service-card-mini .card-title {
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: #fff;
+        }
+
+
+        /* Form Select Style */
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+        }
+
+        /* Hide scrollbar for cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* Trust Marquee */
+        .trust-marquee {
+            mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+        }
+
+        .trust-track {
+            animation: trustScroll 20s linear infinite;
+            width: max-content;
+        }
+
+        @keyframes trustScroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .d-none {
+            display: none;
+        }
+
+        /* Testimonial Carousel */
+        .testimonial-track {
+            display: flex;
+        }
+
+        @media (min-width: 768px) and (max-width: 1100px) {
+            .testimonial-prev {
+                left: -2rem !important;
+            }
+
+            .testimonial-next {
+                right: -2rem !important;
+            }
+        }
+
+        /* Services Dropdown */
+        .has-dropdown {
+            position: relative;
+        }
+
+        .has-dropdown>a {
+            position: relative;
+            z-index: 2;
+        }
+
+        .has-dropdown::before {
+            content: '';
+            position: absolute;
+            inset: auto -16px -20px -16px;
+            height: 40px;
+            z-index: 1;
+            pointer-events: auto;
+        }
+
+        .mega-menu {
+            position: fixed;
+            top: 56px;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            max-width: calc(100vw - 32px);
+            background: #1a1a1a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            width: 780px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.7);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .mega-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+            pointer-events: auto;
+        }
+
+        .mega-menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .service-card-mini {
+            position: relative;
+            border-radius: 14px;
+            padding: 18px;
+            min-height: 150px;
+            background: #252525;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .service-card-mini:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.25);
+            background: #2e2e2e;
+        }
+
+        .service-card-mini .icon {
+            width: 38px;
+            height: 38px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-card-mini .icon svg {
+            width: 18px;
+            height: 18px;
+            color: white;
+        }
+
+        .service-card-mini .card-title {
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: #fff;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+        /* Case Study Carousel */
+        .case-study-carousel-outer {
+            position: relative;
+        }
+
+        .case-study-carousel .swiper-slide {
+            height: auto;
+        }
+
+        .case-study-carousel .swiper-slide>a {
+            height: 100%;
+        }
+
+        .case-study-carousel .swiper-pagination-bullet {
+            background: rgba(255, 255, 255, 0.25);
+            width: 10px;
+            height: 10px;
+            opacity: 1;
+            transition: all 0.3s ease;
+        }
+
+        .case-study-carousel .swiper-pagination-bullet-active {
+            background: #fff;
+            width: 32px;
+            border-radius: 5px;
+        }
+
+        .case-study-carousel-outer .swiper-button-next,
+        .case-study-carousel-outer .swiper-button-prev {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.06);
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: all 0.3s ease;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+
+        .case-study-carousel-outer .swiper-button-next:hover,
+        .case-study-carousel-outer .swiper-button-prev:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .case-study-carousel-outer .swiper-button-next:hover {
+            transform: translateY(-50%) scale(1.08);
+        }
+
+        .case-study-carousel-outer .swiper-button-prev:hover {
+            transform: translateY(-50%) scale(1.08);
+        }
+
+        .case-study-carousel-outer .swiper-button-next::after,
+        .case-study-carousel-outer .swiper-button-prev::after {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .case-study-carousel-outer .swiper-button-next {
+            right: -8px;
+        }
+
+        @media (min-width: 768px) {
+            .case-study-carousel-outer .swiper-button-next {
+                right: -26px;
+            }
+        }
+
+        .case-study-carousel-outer .swiper-button-prev {
+            left: -8px;
+        }
+
+        @media (min-width: 768px) {
+            .case-study-carousel-outer .swiper-button-prev {
+                left: -26px;
+            }
+        }
+    </style>
+</head>
+
+<body class="selection:bg-white selection:text-black">
+
+    <!-- Custom Cursor -->
+    <div id="cursor"></div>
+
+    <nav class="fixed w-full top-0 z-50 px-6 md:px-12 py-6 flex justify-between items-center pointer-events-none backdrop-blur-md"
+        style="background: linear-gradient(180deg, #000000cf, transparent);">
+        <!-- Logo -->
+        <a href="../index.html" class="pointer-events-auto interactive z-10 flex items-center gap-2" aria-label="Home">
+            <img src="../asset/chimpzlab-white.png" alt="ChimpzLab" class="h-7 md:h-9 object-contain "
+                onerror="this.style.display='none'; document.getElementById('text-logo').style.display='block';">
+            <span id="text-logo"
+                class="hidden text-white font-extrabold text-2xl md:text-3xl tracking-tighter">CHIMPZLAB</span>
+        </a>
+
+        <!-- Desktop Centered Menu -->
+        <div class="pointer-events-auto hidden md:flex absolute left-1/2 -translate-x-1/2 z-10">
+            <div class="nav-pill px-6 py-3 rounded-full flex items-center gap-8">
+                <div class="has-dropdown">
+                    <a href="#"
+                        class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors flex items-center gap-1">
+                        Services
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-grid">
+                            <a href=".././services/reputation-communications.html" class="service-card-mini">
+                                <div class="icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                    </svg>
+                                </div>
+                                <span class="card-title">Reputation &<br>Communications</span>
+                            </a>
+                            <a href=".././services/visibility-search.html" class="service-card-mini">
+                                <div class="icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                    </svg>
+                                </div>
+                                <span class="card-title">Visibility &<br>Search</span>
+                            </a>
+                            <a href=".././services/creative.html" class="service-card-mini">
+                                <div class="icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                    </svg>
+                                </div>
+                                <span class="card-title">Content &<br>Creative</span>
+                            </a>
+                            <a href=".././services/demand-generation.html" class="service-card-mini">
+                                <div class="icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                </div>
+                                <span class="card-title">Demand &<br>Automation</span>
+                            </a>
+                            <a href=".././services/digital-experiences.html" class="service-card-mini">
+                                <div class="icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <span class="card-title">Digital<br>Experiences</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="../case-studies.html"
+                    class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors"
+                    class="interactive text-white font-medium text-sm transition-colors">Work</a>
+                <a href="../index.html#about"
+                    class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors">About</a>
+                <a href="../blog-insite.html"
+                    class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors">Insights</a>
+            </div>
+        </div>
+
+        <!-- Right: CTA + Mobile -->
+        <div class="flex items-center gap-4 z-10">
+            <div class="pointer-events-auto hidden md:flex">
+                <a href="../index.html#contact"
+                    class="interactive bg-white hover:bg-gray-200 text-black px-7 py-3 rounded-full text-sm font-bold tracking-wide transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.15)]">
+                    Let's Connect
+                </a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="pointer-events-auto md:hidden text-white interactive p-2 z-10">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pt-44 md:pt-56 pb-14 px-6 md:px-12 relative overflow-hidden bg-brand-dark">
+        <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+            <div
+                class="absolute top-[-10%] right-[-5%] w-[60vw] h-[60vw] rounded-full bg-gradient-to-br from-white/10 to-transparent blur-3xl">
+            </div>
+            <div
+                class="absolute bottom-[-20%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-gradient-to-tr from-white/5 to-transparent blur-3xl">
+            </div>
+            <div class="absolute inset-0 bg-[url('../asset/grid-pattern.svg')] bg-repeat opacity-10 mix-blend-overlay">
+            </div>
+        </div>
+        <div class="max-w-[1400px] mx-auto w-full relative z-10">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-[1px] bg-white/30"></div>
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-white/70">Selected Work</span>
+            </div>
+            <h1
+                class="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold text-white tracking-tighter uppercase leading-[0.9] mb-8">
+                <span class="block gsap-reveal-text">Case</span>
+                <span class="block text-white/40 gsap-reveal-text">Studies</span>
+            </h1>
+            <p class="max-w-2xl text-lg md:text-xl text-white/70 font-light leading-relaxed gsap-reveal">
+                A cross-section of the brands we've positioned, designed, and grown — filterable by the
+                discipline that matters to you.
+            </p>
+        </div>
+    </section>
+
+    <!-- Filter + Grid -->
+    <section class="px-6 md:px-12 py-12 md:py-16 bg-brand-dark border-t border-white/10">
+        <div class="max-w-[1400px] mx-auto">
+            <div
+                class="cs-filterbar sticky top-20 z-40 flex flex-wrap gap-3 mb-12 pb-5 backdrop-blur-md bg-brand-dark/80 -mx-2 px-2 rounded-xl">
+                <button data-filter="all"
+                    class="cs-filter active interactive px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300">All</button>
+                <button data-filter="brand-strategy"
+                    class="cs-filter  interactive px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300">Brand
+                    Strategy</button>
+                <button data-filter="brand-identity"
+                    class="cs-filter  interactive px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300">Brand
+                    Identity</button>
+                <button data-filter="ux-ui"
+                    class="cs-filter  interactive px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300">UX
+                    / UI Design</button>
+                <button data-filter="visual-content"
+                    class="cs-filter  interactive px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300">Visual
+                    Content</button>
+                <button data-filter="web-development"
+                    class="cs-filter  interactive px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300">Web
+                    Development</button>
+                <button data-filter="ai-intelligence"
+                    class="cs-filter  interactive px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300">AI
+                    Intelligence</button>
+                <span class="cs-count ml-auto self-center text-sm text-white/50 font-medium tracking-wide"></span>
+            </div>
+
+            <div id="cs-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <a href="./casestudy/ajmera-realty.html" data-cats="brand-strategy brand-identity"
+                    class="cs-card group relative block rounded-2xl overflow-hidden border border-white/10 bg-[#101010] aspect-[4/5] sm:aspect-[3/4]">
+                    <img src="./casestudy/ajmera-realty/cover.webp" alt="Ajmera Realty & Infra India Ltd."
+                        class="absolute inset-0 w-full h-full object-cover opacity-90 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                        loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute top-4 left-5 text-xs font-bold tracking-[0.2em] text-white/50">01</div>
+                    <div class="absolute inset-0 p-5 sm:p-6 flex flex-col justify-end">
+                        <div class="cs-tags flex flex-wrap gap-2 mb-3"><span class="cs-tag">Brand Strategy</span><span
+                                class="cs-tag">Brand Identity</span></div>
+                        <h3
+                            class="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-[1.05] text-white">
+                            Ajmera Realty & Infra India Ltd.</h3>
+                        <span
+                            class="cs-cta mt-3 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white/85 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">View
+                            Case Study
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 17L17 7M17 7H8m9 0v9" />
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+                <a href="./casestudy/blue-star.html" data-cats="brand-strategy"
+                    class="cs-card group relative block rounded-2xl overflow-hidden border border-white/10 bg-[#101010] aspect-[4/5] sm:aspect-[3/4]">
+                    <img src="./casestudy/blue-star/cover.png" alt="Blue Star India"
+                        class="absolute inset-0 w-full h-full object-cover opacity-90 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                        loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute top-4 left-5 text-xs font-bold tracking-[0.2em] text-white/50">02</div>
+                    <div class="absolute inset-0 p-5 sm:p-6 flex flex-col justify-end">
+                        <div class="cs-tags flex flex-wrap gap-2 mb-3"><span class="cs-tag">Brand Strategy</span></div>
+                        <h3
+                            class="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-[1.05] text-white">
+                            Blue Star India</h3>
+                        <span
+                            class="cs-cta mt-3 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white/85 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">View
+                            Case Study
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 17L17 7M17 7H8m9 0v9" />
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+                <a href="./casestudy/carnelian-capital.html" data-cats="brand-strategy visual-content"
+                    class="cs-card group relative block rounded-2xl overflow-hidden border border-white/10 bg-[#101010] aspect-[4/5] sm:aspect-[3/4]">
+                    <img src="https://placehold.co/800x1000/161616/ffffff?text=Carnelian%20Capital"
+                        alt="Carnelian Capital"
+                        class="absolute inset-0 w-full h-full object-cover opacity-90 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                        loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute top-4 left-5 text-xs font-bold tracking-[0.2em] text-white/50">03</div>
+                    <div class="absolute inset-0 p-5 sm:p-6 flex flex-col justify-end">
+                        <div class="cs-tags flex flex-wrap gap-2 mb-3"><span class="cs-tag">Brand Strategy</span><span
+                                class="cs-tag">Visual Content</span></div>
+                        <h3
+                            class="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-[1.05] text-white">
+                            Carnelian Capital</h3>
+                        <span
+                            class="cs-cta mt-3 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white/85 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">View
+                            Case Study
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 17L17 7M17 7H8m9 0v9" />
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+                <a href="./casestudy/cisco-thingqbator.html"
+                    data-cats="brand-strategy ux-ui web-development ai-intelligence"
+                    class="cs-card group relative block rounded-2xl overflow-hidden border border-white/10 bg-[#101010] aspect-[4/5] sm:aspect-[3/4]">
+                    <img src="./casestudy/cisco-thingqbator/cover.jpg" alt="Cisco thingQbator"
+                        class="absolute inset-0 w-full h-full object-cover opacity-90 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                        loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute top-4 left-5 text-xs font-bold tracking-[0.2em] text-white/50">04</div>
+                    <div class="absolute inset-0 p-5 sm:p-6 flex flex-col justify-end">
+                        <div class="cs-tags flex flex-wrap gap-2 mb-3"><span class="cs-tag">Brand Strategy</span><span
+                                class="cs-tag">UX / UI Design</span><span class="cs-tag">Web Development</span><span
+                                class="cs-tag">AI Intelligence</span></div>
+                        <h3
+                            class="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-[1.05] text-white">
+                            Cisco thingQbator</h3>
+                        <span
+                            class="cs-cta mt-3 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white/85 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">View
+                            Case Study
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 17L17 7M17 7H8m9 0v9" />
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+                <a href="./casestudy/evershine-builders.html" data-cats="brand-strategy"
+                    class="cs-card group relative block rounded-2xl overflow-hidden border border-white/10 bg-[#101010] aspect-[4/5] sm:aspect-[3/4]">
+                    <img src="./casestudy/evershine-builders/cover.png" alt="Evershine Builders"
+                        class="absolute inset-0 w-full h-full object-cover opacity-90 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                        loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute top-4 left-5 text-xs font-bold tracking-[0.2em] text-white/50">05</div>
+                    <div class="absolute inset-0 p-5 sm:p-6 flex flex-col justify-end">
+                        <div class="cs-tags flex flex-wrap gap-2 mb-3"><span class="cs-tag">Brand Strategy</span></div>
+                        <h3
+                            class="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-[1.05] text-white">
+                            Evershine Builders</h3>
+                        <span
+                            class="cs-cta mt-3 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white/85 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">View
+                            Case Study
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 17L17 7M17 7H8m9 0v9" />
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+                <a href="./casestudy/forest-hills.html" data-cats="brand-strategy brand-identity"
+                    class="cs-card group relative block rounded-2xl overflow-hidden border border-white/10 bg-[#101010] aspect-[4/5] sm:aspect-[3/4]">
+                    <img src="./casestudy/forest-hills/cover.jpg" alt="Forest Hills at Tala"
+                        class="absolute inset-0 w-full h-full object-cover opacity-90 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                        loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute top-4 left-5 text-xs font-bold tracking-[0.2em] text-white/50">06</div>
+                    <div class="absolute inset-0 p-5 sm:p-6 flex flex-col justify-end">
+                        <div class="cs-tags flex flex-wrap gap-2 mb-3"><span class="cs-tag">Brand Strategy</span><span
+                                class="cs-tag">Brand Identity</span></div>
+                        <h3
+                            class="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-[1.05] text-white">
+                            Forest Hills at Tala</h3>
+                        <span
+                            class="cs-cta mt-3 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white/85 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">View
+                            Case Study
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 17L17 7M17 7H8m9 0v9" />
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+                <a href="./casestudy/ghci-2024.html" data-cats="brand-strategy visual-content"
+                    class="cs-card group relative block rounded-2xl overflow-hidden border border-white/10 bg-[#101010] aspect-[4/5] sm:aspect-[3/4]">
+                    <img src="./casestudy/ghci-2024/cover.jpg" alt="Grace Hopper Celebration India 2024"
+                        class="absolute inset-0 w-full h-full object-cover opacity-90 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                        loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute top-4 left-5 text-xs font-bold tracking-[0.2em] text-white/50">07</div>
+                    <div class="absolute inset-0 p-5 sm:p-6 flex flex-col justify-end">
+                        <div class="cs-tags flex flex-wrap gap-2 mb-3"><span class="cs-tag">Brand Strategy</span><span
+                                class="cs-tag">Visual Content</span></div>
+                        <h3
+                            class="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-[1.05] text-white">
+                            Grace Hopper Celebration India 2024</h3>
+                        <span
+                            class="cs-cta mt-3 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white/85 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">View
+                            Case Study
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 17L17 7M17 7H8m9 0v9" />
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+                <a href="./casestudy/imbesharam.html" data-cats="brand-strategy visual-content web-development"
+                    class="cs-card group relative block rounded-2xl overflow-hidden border border-white/10 bg-[#101010] aspect-[4/5] sm:aspect-[3/4]">
+                    <img src="./casestudy/imbesharam/cover.jpg" alt="IMBesharam"
+                        class="absolute inset-0 w-full h-full object-cover opacity-90 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                        loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute top-4 left-5 text-xs font-bold tracking-[0.2em] text-white/50">08</div>
+                    <div class="absolute inset-0 p-5 sm:p-6 flex flex-col justify-end">
+                        <div class="cs-tags flex flex-wrap gap-2 mb-3"><span class="cs-tag">Brand Strategy</span><span
+                                class="cs-tag">Visual Content</span><span class="cs-tag">Web Development</span></div>
+                        <h3
+                            class="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-[1.05] text-white">
+                            IMBesharam</h3>
+                        <span
+                            class="cs-cta mt-3 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white/85 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">View
+                            Case Study
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 17L17 7M17 7H8m9 0v9" />
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+                <a href="./casestudy/mos-world.html" data-cats="brand-strategy"
+                    class="cs-card group relative block rounded-2xl overflow-hidden border border-white/10 bg-[#101010] aspect-[4/5] sm:aspect-[3/4]">
+                    <img src="./casestudy/mos-world/cover.jpg" alt="MOS World"
+                        class="absolute inset-0 w-full h-full object-cover opacity-90 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                        loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute top-4 left-5 text-xs font-bold tracking-[0.2em] text-white/50">09</div>
+                    <div class="absolute inset-0 p-5 sm:p-6 flex flex-col justify-end">
+                        <div class="cs-tags flex flex-wrap gap-2 mb-3"><span class="cs-tag">Brand Strategy</span></div>
+                        <h3
+                            class="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-[1.05] text-white">
+                            MOS World</h3>
+                        <span
+                            class="cs-cta mt-3 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white/85 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">View
+                            Case Study
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 17L17 7M17 7H8m9 0v9" />
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+                <a href="./casestudy/munns-mars.html" data-cats="brand-strategy visual-content"
+                    class="cs-card group relative block rounded-2xl overflow-hidden border border-white/10 bg-[#101010] aspect-[4/5] sm:aspect-[3/4]">
+                    <img src="https://placehold.co/800x1000/161616/ffffff?text=Munns%20%26%20Mars" alt="Munns & Mars"
+                        class="absolute inset-0 w-full h-full object-cover opacity-90 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                        loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute top-4 left-5 text-xs font-bold tracking-[0.2em] text-white/50">10</div>
+                    <div class="absolute inset-0 p-5 sm:p-6 flex flex-col justify-end">
+                        <div class="cs-tags flex flex-wrap gap-2 mb-3"><span class="cs-tag">Brand Strategy</span><span
+                                class="cs-tag">Visual Content</span></div>
+                        <h3
+                            class="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-[1.05] text-white">
+                            Munns & Mars</h3>
+                        <span
+                            class="cs-cta mt-3 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white/85 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">View
+                            Case Study
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 17L17 7M17 7H8m9 0v9" />
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+                <a href="./casestudy/nasscom-konnect.html" data-cats="brand-strategy visual-content"
+                    class="cs-card group relative block rounded-2xl overflow-hidden border border-white/10 bg-[#101010] aspect-[4/5] sm:aspect-[3/4]">
+                    <img src="./casestudy/nasscom-konnect/cover.jpg" alt="Nasscom Konnect"
+                        class="absolute inset-0 w-full h-full object-cover opacity-90 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                        loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute top-4 left-5 text-xs font-bold tracking-[0.2em] text-white/50">11</div>
+                    <div class="absolute inset-0 p-5 sm:p-6 flex flex-col justify-end">
+                        <div class="cs-tags flex flex-wrap gap-2 mb-3"><span class="cs-tag">Brand Strategy</span><span
+                                class="cs-tag">Visual Content</span></div>
+                        <h3
+                            class="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-[1.05] text-white">
+                            Nasscom Konnect</h3>
+                        <span
+                            class="cs-cta mt-3 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white/85 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">View
+                            Case Study
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 17L17 7M17 7H8m9 0v9" />
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+                <a href="./casestudy/nasscom-member-connect.html" data-cats="brand-strategy"
+                    class="cs-card group relative block rounded-2xl overflow-hidden border border-white/10 bg-[#101010] aspect-[4/5] sm:aspect-[3/4]">
+                    <img src="https://placehold.co/800x1000/161616/ffffff?text=Nasscom%20Member%20Connect"
+                        alt="Nasscom Member Connect"
+                        class="absolute inset-0 w-full h-full object-cover opacity-90 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                        loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute top-4 left-5 text-xs font-bold tracking-[0.2em] text-white/50">12</div>
+                    <div class="absolute inset-0 p-5 sm:p-6 flex flex-col justify-end">
+                        <div class="cs-tags flex flex-wrap gap-2 mb-3"><span class="cs-tag">Brand Strategy</span></div>
+                        <h3
+                            class="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-[1.05] text-white">
+                            Nasscom Member Connect</h3>
+                        <span
+                            class="cs-cta mt-3 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white/85 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">View
+                            Case Study
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 17L17 7M17 7H8m9 0v9" />
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+                <a href="./casestudy/psiog.html" data-cats="brand-identity visual-content"
+                    class="cs-card group relative block rounded-2xl overflow-hidden border border-white/10 bg-[#101010] aspect-[4/5] sm:aspect-[3/4]">
+                    <img src="https://placehold.co/800x1000/161616/ffffff?text=Psiog" alt="Psiog"
+                        class="absolute inset-0 w-full h-full object-cover opacity-90 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                        loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute top-4 left-5 text-xs font-bold tracking-[0.2em] text-white/50">13</div>
+                    <div class="absolute inset-0 p-5 sm:p-6 flex flex-col justify-end">
+                        <div class="cs-tags flex flex-wrap gap-2 mb-3"><span class="cs-tag">Brand Identity</span><span
+                                class="cs-tag">Visual Content</span></div>
+                        <h3
+                            class="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-[1.05] text-white">
+                            Psiog</h3>
+                        <span
+                            class="cs-cta mt-3 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white/85 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">View
+                            Case Study
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 17L17 7M17 7H8m9 0v9" />
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+                <a href="./casestudy/robust-petcare.html" data-cats="brand-identity brand-strategy"
+                    class="cs-card group relative block rounded-2xl overflow-hidden border border-white/10 bg-[#101010] aspect-[4/5] sm:aspect-[3/4]">
+                    <img src="./casestudy/robust-petcare/cover.jpg" alt="Robust Petcare"
+                        class="absolute inset-0 w-full h-full object-cover opacity-90 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                        loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute top-4 left-5 text-xs font-bold tracking-[0.2em] text-white/50">14</div>
+                    <div class="absolute inset-0 p-5 sm:p-6 flex flex-col justify-end">
+                        <div class="cs-tags flex flex-wrap gap-2 mb-3"><span class="cs-tag">Brand Identity</span><span
+                                class="cs-tag">Brand Strategy</span></div>
+                        <h3
+                            class="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-[1.05] text-white">
+                            Robust Petcare</h3>
+                        <span
+                            class="cs-cta mt-3 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white/85 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">View
+                            Case Study
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 17L17 7M17 7H8m9 0v9" />
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+                <a href="./casestudy/soul-skin.html" data-cats="brand-strategy visual-content"
+                    class="cs-card group relative block rounded-2xl overflow-hidden border border-white/10 bg-[#101010] aspect-[4/5] sm:aspect-[3/4]">
+                    <img src="https://placehold.co/800x1000/161616/ffffff?text=Soul%20Skin" alt="Soul Skin"
+                        class="absolute inset-0 w-full h-full object-cover opacity-90 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                        loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute top-4 left-5 text-xs font-bold tracking-[0.2em] text-white/50">15</div>
+                    <div class="absolute inset-0 p-5 sm:p-6 flex flex-col justify-end">
+                        <div class="cs-tags flex flex-wrap gap-2 mb-3"><span class="cs-tag">Brand Strategy</span><span
+                                class="cs-tag">Visual Content</span></div>
+                        <h3
+                            class="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-[1.05] text-white">
+                            Soul Skin</h3>
+                        <span
+                            class="cs-cta mt-3 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white/85 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">View
+                            Case Study
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 17L17 7M17 7H8m9 0v9" />
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+                <a href="./casestudy/stl-digital.html" data-cats="brand-strategy visual-content web-development"
+                    class="cs-card group relative block rounded-2xl overflow-hidden border border-white/10 bg-[#101010] aspect-[4/5] sm:aspect-[3/4]">
+                    <img src="./casestudy/stl-digital/cover.jpg" alt="STL Digital"
+                        class="absolute inset-0 w-full h-full object-cover opacity-90 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                        loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute top-4 left-5 text-xs font-bold tracking-[0.2em] text-white/50">16</div>
+                    <div class="absolute inset-0 p-5 sm:p-6 flex flex-col justify-end">
+                        <div class="cs-tags flex flex-wrap gap-2 mb-3"><span class="cs-tag">Brand Strategy</span><span
+                                class="cs-tag">Visual Content</span><span class="cs-tag">Web Development</span></div>
+                        <h3
+                            class="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-[1.05] text-white">
+                            STL Digital</h3>
+                        <span
+                            class="cs-cta mt-3 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white/85 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">View
+                            Case Study
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 17L17 7M17 7H8m9 0v9" />
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+                <a href="./casestudy/tiger-analytics.html" data-cats="brand-strategy ai-intelligence"
+                    class="cs-card group relative block rounded-2xl overflow-hidden border border-white/10 bg-[#101010] aspect-[4/5] sm:aspect-[3/4]">
+                    <img src="https://placehold.co/800x1000/161616/ffffff?text=Tiger%20Analytics" alt="Tiger Analytics"
+                        class="absolute inset-0 w-full h-full object-cover opacity-90 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                        loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute top-4 left-5 text-xs font-bold tracking-[0.2em] text-white/50">17</div>
+                    <div class="absolute inset-0 p-5 sm:p-6 flex flex-col justify-end">
+                        <div class="cs-tags flex flex-wrap gap-2 mb-3"><span class="cs-tag">Brand Strategy</span><span
+                                class="cs-tag">AI Intelligence</span></div>
+                        <h3
+                            class="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-[1.05] text-white">
+                            Tiger Analytics</h3>
+                        <span
+                            class="cs-cta mt-3 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white/85 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">View
+                            Case Study
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 17L17 7M17 7H8m9 0v9" />
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+                <a href="#" data-cats="brand-strategy visual-content"
+                    class="cs-card group relative block rounded-2xl overflow-hidden border border-white/10 bg-[#101010] aspect-[4/5] sm:aspect-[3/4]">
+                    <img src="./casestudy/ccoe/cover.jpg" alt="CCOE"
+                        class="absolute inset-0 w-full h-full object-cover opacity-90 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                        loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute top-4 left-5 text-xs font-bold tracking-[0.2em] text-white/50">18</div>
+                    <div class="absolute inset-0 p-5 sm:p-6 flex flex-col justify-end">
+                        <div class="cs-tags flex flex-wrap gap-2 mb-3"><span class="cs-tag">Brand Strategy</span><span
+                                class="cs-tag">Visual Content</span></div>
+                        <h3
+                            class="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-[1.05] text-white">
+                            CCOE</h3>
+                        <span
+                            class="cs-cta mt-3 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white/85 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">View
+                            Case Study
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 17L17 7M17 7H8m9 0v9" />
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+                <a href="#" data-cats="brand-strategy brand-identity"
+                    class="cs-card group relative block rounded-2xl overflow-hidden border border-white/10 bg-[#101010] aspect-[4/5] sm:aspect-[3/4]">
+                    <img src="./casestudy/far-east-asia/cover.webp" alt="Far East Asia"
+                        class="absolute inset-0 w-full h-full object-cover opacity-90 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                        loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute top-4 left-5 text-xs font-bold tracking-[0.2em] text-white/50">19</div>
+                    <div class="absolute inset-0 p-5 sm:p-6 flex flex-col justify-end">
+                        <div class="cs-tags flex flex-wrap gap-2 mb-3"><span class="cs-tag">Brand Strategy</span><span
+                                class="cs-tag">Brand Identity</span></div>
+                        <h3
+                            class="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-[1.05] text-white">
+                            Far East Asia</h3>
+                        <span
+                            class="cs-cta mt-3 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white/85 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">View
+                            Case Study
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 17L17 7M17 7H8m9 0v9" />
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+            </div>
+
+            <p id="cs-empty" class="hidden text-center text-white/40 py-20 text-lg">No case studies in this category
+                yet.</p>
+        </div>
+    </section>
+
+    <footer class="w-full bg-[#050505] text-white py-8 px-6 md:px-12 relative z-50 border-t border-white/10">
+        <div class="max-w-[1400px] mx-auto flex flex-col items-center gap-6 text-center">
+
+            <!-- Information Row -->
+            <div
+                class="flex flex-col md:flex-row justify-center md:justify-between items-center w-full gap-4 text-[10px] md:text-xs tracking-widest uppercase font-medium">
+                <a href="tel:9920149991" class="interactive hover:text-gray-300 transition-colors">Call or WhatsApp
+                    9920149991</a>
+                <a href="https://maps.google.com/?q=408+Fenkin+9+Phase+1+Wagle+Estate+Thane+West+400604" target="_blank"
+                    rel="noopener noreferrer" class="max-w-xl interactive hover:text-gray-300 transition-colors">408,
+                    Fenkin 9 Phase 1, Wagle Estate,<br>Behind Satkar Grande Hotel, Thane West 400604</a>
+                <div class="interactive hover:text-gray-300 transition-colors cursor-pointer">&copy; 2026 ChimpzLab. All
+                    rights reserved.</div>
+            </div>
+
+            <!-- GIF Icon -->
+            <div class="flex justify-center w-full interactive">
+                <img src="../asset/chimpzlab-icon-white.gif" alt="ChimpzLab Icon"
+                    class="h-32 md:h-40 w-auto object-contain">
+            </div>
+
+            <!-- Social Media Handles -->
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://youtube.com/@chimpzlab" target="_blank" rel="noopener noreferrer"
+                    class="px-8 py-3 border border-white/20 rounded hover:border-white transition-colors interactive text-xs uppercase tracking-widest font-bold">YouTube</a>
+                <a href="https://linkedin.com/company/chimpzlab" target="_blank" rel="noopener noreferrer"
+                    class="px-8 py-3 border border-white/20 rounded hover:border-white transition-colors interactive text-xs uppercase tracking-widest font-bold">LinkedIn</a>
+                <a href="https://instagram.com/chimpzlab" target="_blank" rel="noopener noreferrer"
+                    class="px-8 py-3 border border-white/20 rounded hover:border-white transition-colors interactive text-xs uppercase tracking-widest font-bold">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .cs-filter {
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .cs-filter:hover {
+            border-color: rgba(255, 255, 255, 0.45);
+        }
+
+        .cs-filter.active {
+            background: #fff;
+            color: #000;
+            border-color: #fff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .cs-card {
+            opacity: 0;
+            transform: translateY(34px) scale(0.97);
+            transition: opacity .65s cubic-bezier(.22, 1, .36, 1), transform .65s cubic-bezier(.22, 1, .36, 1);
+            will-change: opacity, transform;
+        }
+
+        .cs-card.in {
+            opacity: 1;
+            transform: none;
+        }
+
+        @keyframes csRise {
+            from {
+                opacity: 0;
+                transform: translateY(48px);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .gsap-reveal-text,
+        .gsap-reveal {
+            animation: csRise .9s cubic-bezier(.22, 1, .36, 1) both;
+        }
+
+        .cs-tag {
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #fff;
+            backdrop-filter: blur(6px);
+        }
+
+        .cs-tags {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all .35s ease;
+        }
+
+        .cs-card:hover .cs-tags {
+            max-height: 60px;
+            opacity: 1;
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Custom cursor
+            const cursor = document.getElementById('cursor');
+            if (cursor) {
+                const interactiveElements = document.querySelectorAll('.interactive, a, button, input, textarea, select, label');
+                document.addEventListener('mousemove', (e) => { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; });
+                interactiveElements.forEach(el => {
+                    el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
+                    el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+                });
+            }
+
+            // Smooth scroll (Lenis) — guarded, mirrors the rest of the site
+            try {
+                if (typeof Lenis !== 'undefined') {
+                    const lenis = new Lenis({
+                        duration: 1.1,
+                        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                        smooth: true
+                    });
+                    const lenisRaf = (time) => { lenis.raf(time); requestAnimationFrame(lenisRaf); };
+                    requestAnimationFrame(lenisRaf);
+                }
+            } catch (e) { /* fall back to native scroll */ }
+
+            // Card reveal on scroll (native, no CDN dependency)
+            const cards = document.querySelectorAll('.cs-card');
+            if ('IntersectionObserver' in window) {
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+                }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
+                cards.forEach(c => io.observe(c));
+            } else {
+                cards.forEach(c => c.classList.add('in'));
+            }
+
+            // Filtering with a smooth grid crossfade (no per-card blink)
+            const filterBtns = document.querySelectorAll('.cs-filter');
+            const grid = document.getElementById('cs-grid');
+            const emptyMsg = document.getElementById('cs-empty');
+            const countEl = document.querySelector('.cs-count');
+
+            function updateCount() {
+                const visible = grid.querySelectorAll('.cs-card:not(.hidden)').length;
+                countEl.textContent = visible + (visible === 1 ? ' Project' : ' Projects');
+                emptyMsg.classList.toggle('hidden', visible > 0);
+            }
+
+            let filterBusy = false;
+            filterBtns.forEach(btn => btn.addEventListener('click', () => {
+                if (btn.classList.contains('active') || filterBusy) return;
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const f = btn.dataset.filter;
+
+                filterBusy = true;
+                grid.style.transition = 'opacity .28s ease';
+                grid.style.opacity = '0';
+
+                setTimeout(() => {
+                    cards.forEach(card => {
+                        const match = f === 'all' || card.dataset.cats.split(' ').includes(f);
+                        card.classList.toggle('hidden', !match);
+                        if (match) card.classList.add('in'); else card.classList.remove('in');
+                    });
+                    updateCount();
+                    requestAnimationFrame(() => {
+                        grid.style.opacity = '1';
+                        setTimeout(() => { filterBusy = false; }, 280);
+                    });
+                }, 280);
+            }));
+
+            updateCount();
+        });
+    </script>
+</body>
+
+</html>

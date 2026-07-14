@@ -296,7 +296,7 @@
                 right: -2rem !important;
             }
         }
-    
+
         /* Services Dropdown */
         .has-dropdown {
             position: relative;
@@ -393,60 +393,92 @@
             line-height: 1.3;
             color: #fff;
         }
-
-        
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<style>
+    <style>
         /* Case Study Carousel */
-        .case-study-carousel-outer { position: relative; }
-        .case-study-carousel .swiper-slide { height: auto; }
-        .case-study-carousel .swiper-slide > a { height: 100%; }
+        .case-study-carousel-outer {
+            position: relative;
+        }
+
+        .case-study-carousel .swiper-slide {
+            height: auto;
+        }
+
+        .case-study-carousel .swiper-slide>a {
+            height: 100%;
+        }
+
         .case-study-carousel .swiper-pagination-bullet {
             background: rgba(255, 255, 255, 0.25);
-            width: 10px; height: 10px; opacity: 1;
+            width: 10px;
+            height: 10px;
+            opacity: 1;
             transition: all 0.3s ease;
         }
+
         .case-study-carousel .swiper-pagination-bullet-active {
             background: #fff;
-            width: 32px; border-radius: 5px;
+            width: 32px;
+            border-radius: 5px;
         }
+
         .case-study-carousel-outer .swiper-button-next,
         .case-study-carousel-outer .swiper-button-prev {
             color: #fff;
             background: rgba(255, 255, 255, 0.06);
-            width: 52px; height: 52px;
+            width: 52px;
+            height: 52px;
             border-radius: 50%;
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.12);
             transition: all 0.3s ease;
-            position: absolute; top: 50%;
+            position: absolute;
+            top: 50%;
             transform: translateY(-50%);
             z-index: 10;
         }
+
         .case-study-carousel-outer .swiper-button-next:hover,
         .case-study-carousel-outer .swiper-button-prev:hover {
             background: rgba(255, 255, 255, 0.15);
         }
+
         .case-study-carousel-outer .swiper-button-next:hover {
             transform: translateY(-50%) scale(1.08);
         }
+
         .case-study-carousel-outer .swiper-button-prev:hover {
             transform: translateY(-50%) scale(1.08);
         }
+
         .case-study-carousel-outer .swiper-button-next::after,
         .case-study-carousel-outer .swiper-button-prev::after {
-            font-size: 16px; font-weight: 700;
+            font-size: 16px;
+            font-weight: 700;
         }
-        .case-study-carousel-outer .swiper-button-next { right: -8px; }
-        @media (min-width: 768px) {
-            .case-study-carousel-outer .swiper-button-next { right: -26px; }
+
+        .case-study-carousel-outer .swiper-button-next {
+            right: -8px;
         }
-        .case-study-carousel-outer .swiper-button-prev { left: -8px; }
+
         @media (min-width: 768px) {
-            .case-study-carousel-outer .swiper-button-prev { left: -26px; }
-        }</style>
+            .case-study-carousel-outer .swiper-button-next {
+                right: -26px;
+            }
+        }
+
+        .case-study-carousel-outer .swiper-button-prev {
+            left: -8px;
+        }
+
+        @media (min-width: 768px) {
+            .case-study-carousel-outer .swiper-button-prev {
+                left: -26px;
+            }
+        }
+    </style>
 </head>
 
 <body class="selection:bg-white selection:text-black">
@@ -482,7 +514,8 @@
                             <a href=".././services/reputation-communications.html" class="service-card-mini">
                                 <div class="icon">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                                     </svg>
                                 </div>
                                 <span class="card-title">Reputation &<br>Communications</span>
@@ -490,7 +523,8 @@
                             <a href=".././services/visibility-search.html" class="service-card-mini">
                                 <div class="icon">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                     </svg>
                                 </div>
                                 <span class="card-title">Visibility &<br>Search</span>
@@ -498,7 +532,8 @@
                             <a href=".././services/creative.html" class="service-card-mini">
                                 <div class="icon">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                     </svg>
                                 </div>
                                 <span class="card-title">Content &<br>Creative</span>
@@ -506,7 +541,8 @@
                             <a href=".././services/demand-generation.html" class="service-card-mini">
                                 <div class="icon">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
                                     </svg>
                                 </div>
                                 <span class="card-title">Demand &<br>Automation</span>
@@ -514,7 +550,8 @@
                             <a href=".././services/digital-experiences.html" class="service-card-mini">
                                 <div class="icon">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                     </svg>
                                 </div>
                                 <span class="card-title">Digital<br>Experiences</span>
@@ -705,7 +742,7 @@
                             channels, performance tracking.</p>
                     </a>
                     <!-- Card 4 -->
-                    <a href="./visibility-search/influencer-marketing-and-advocacy.html"
+                    <a href="./visibility-search/influencer-marketing.html"
                         class="block bg-white/5 border border-white/10 p-8 md:p-10 rounded-2xl opacity-0 translate-y-8 group hover:border-white/30 transition-[border-color] duration-300">
                         <div class="flex items-center gap-4 mb-4">
                             <div class="text-4xl text-white/30 font-extrabold">04</div>
@@ -907,10 +944,10 @@
                             <div class="bg-white rounded-3xl p-10 md:p-14 relative shadow-sm">
                                 <div
                                     class="absolute top-8 right-10 text-[120px] leading-none font-serif text-gray-100 select-none pointer-events-none">
-"</div>
+                                    "</div>
                                 <p
                                     class="text-xl md:text-2xl font-medium leading-relaxed text-gray-800 mb-10 relative z-10 italic max-w-[800px]">
-"ChimpzLab redefined our digital footprint. They didn't just give us rankings; they
+                                    "ChimpzLab redefined our digital footprint. They didn't just give us rankings; they
                                     gave us absolute authority in a sector where trust is non-negotiable. Their SXO
                                     approach is the future of corporate growth."
                                 </p>
@@ -929,10 +966,10 @@
                             <div class="bg-white rounded-3xl p-10 md:p-14 relative shadow-sm">
                                 <div
                                     class="absolute top-8 right-10 text-[120px] leading-none font-serif text-gray-100 select-none pointer-events-none">
-"</div>
+                                    "</div>
                                 <p
                                     class="text-xl md:text-2xl font-medium leading-relaxed text-gray-800 mb-10 relative z-10 italic max-w-[800px]">
-"The integrated communications approach transformed how our stakeholders perceive
+                                    "The integrated communications approach transformed how our stakeholders perceive
                                     us. Media coverage, investor confidence, and employer brand all moved in the same
                                     direction for the first time."
                                 </p>
@@ -951,10 +988,10 @@
                             <div class="bg-white rounded-3xl p-10 md:p-14 relative shadow-sm">
                                 <div
                                     class="absolute top-8 right-10 text-[120px] leading-none font-serif text-gray-100 select-none pointer-events-none">
-"</div>
+                                    "</div>
                                 <p
                                     class="text-xl md:text-2xl font-medium leading-relaxed text-gray-800 mb-10 relative z-10 italic max-w-[800px]">
-"Our annual report went from a compliance document to a trust-building asset. The
+                                    "Our annual report went from a compliance document to a trust-building asset. The
                                     narrative overhaul directly contributed to stronger analyst ratings and shareholder
                                     engagement."
                                 </p>
@@ -985,8 +1022,9 @@
         </div>
     </section>
 
-            <!-- Case Studies Grid Version (Active by default) -->
-    <section class="py-16 md:py-32 px-4 sm:px-6 md:px-12 bg-brand-dark text-white border-t border-white/10 overflow-hidden">
+    <!-- Case Studies Grid Version (Active by default) -->
+    <section
+        class="py-16 md:py-32 px-4 sm:px-6 md:px-12 bg-brand-dark text-white border-t border-white/10 overflow-hidden">
         <div class="max-w-[1400px] mx-auto">
             <div class="flex items-center gap-4 mb-4 gsap-reveal">
                 <div class="w-12 h-[1px] bg-white/30"></div>
@@ -1000,67 +1038,98 @@
                     class="inline-flex items-center gap-2 text-white font-bold text-sm hover:gap-3 transition-all duration-300 pb-1 border-b border-white/30 hover:border-white shrink-0 uppercase tracking-wider">
                     View All Case Studies
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                     </svg>
                 </a>
             </div>
             <div class="case-study-carousel-outer relative">
                 <div class="swiper case-study-carousel gsap-reveal">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide h-auto"><a href="casestudy/carnelian-capital.html" class="block group interactive gsap-reveal h-full">
-                    <div class="bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden h-full flex flex-col">
-                        <div class="relative h-[220px] sm:h-[280px] md:h-[340px] overflow-hidden shrink-0">
-                            <img src="https://placehold.co/800x600/1a1a1a/ffffff?text=Carnelian+Capital" alt="Carnelian Capital"
-                                class="w-full h-full object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-110">
-                        </div>
-                        <div class="p-5 sm:p-6 md:p-8 flex flex-col flex-1">
-                            <h3 class="text-lg sm:text-xl md:text-2xl font-extrabold text-white mb-2 sm:mb-3 leading-tight tracking-tight">Carnelian Capital</h3>
-                            <p class="text-gray-400 font-medium text-sm leading-relaxed mb-4 sm:mb-5 flex-1 line-clamp-2">From Unranked to Category Leader</p>
-                            <span class="inline-flex items-center gap-2 text-white font-bold text-xs sm:text-sm group-hover:gap-3 transition-all duration-300">
-                                Read More
-                                <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                </svg>
-                            </span>
-                        </div>
-                    </div>
-                </a></div>
-                        <div class="swiper-slide h-auto"><a href="casestudy/tiger-analytics.html" class="block group interactive gsap-reveal h-full">
-                    <div class="bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden h-full flex flex-col">
-                        <div class="relative h-[220px] sm:h-[280px] md:h-[340px] overflow-hidden shrink-0">
-                            <img src="https://placehold.co/800x600/1a1a1a/ffffff?text=Tiger+Analytics" alt="Tiger Analytics"
-                                class="w-full h-full object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-110">
-                        </div>
-                        <div class="p-5 sm:p-6 md:p-8 flex flex-col flex-1">
-                            <h3 class="text-lg sm:text-xl md:text-2xl font-extrabold text-white mb-2 sm:mb-3 leading-tight tracking-tight">Tiger Analytics</h3>
-                            <p class="text-gray-400 font-medium text-sm leading-relaxed mb-4 sm:mb-5 flex-1 line-clamp-2">Doubling Organic Reach in an AI-Saturated Category</p>
-                            <span class="inline-flex items-center gap-2 text-white font-bold text-xs sm:text-sm group-hover:gap-3 transition-all duration-300">
-                                Read More
-                                <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                </svg>
-                            </span>
-                        </div>
-                    </div>
-                </a></div>
-                        <div class="swiper-slide h-auto"><a href="casestudy/soul-skin.html" class="block group interactive gsap-reveal h-full">
-                    <div class="bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden h-full flex flex-col">
-                        <div class="relative h-[220px] sm:h-[280px] md:h-[340px] overflow-hidden shrink-0">
-                            <img src="https://placehold.co/800x600/1a1a1a/ffffff?text=Soul+Skin" alt="Soul Skin"
-                                class="w-full h-full object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-110">
-                        </div>
-                        <div class="p-5 sm:p-6 md:p-8 flex flex-col flex-1">
-                            <h3 class="text-lg sm:text-xl md:text-2xl font-extrabold text-white mb-2 sm:mb-3 leading-tight tracking-tight">Soul Skin</h3>
-                            <p class="text-gray-400 font-medium text-sm leading-relaxed mb-4 sm:mb-5 flex-1 line-clamp-2">Owning Page One of a Hyperlocal Category</p>
-                            <span class="inline-flex items-center gap-2 text-white font-bold text-xs sm:text-sm group-hover:gap-3 transition-all duration-300">
-                                Read More
-                                <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                </svg>
-                            </span>
-                        </div>
-                    </div>
-                </a></div>
+                        <div class="swiper-slide h-auto"><a href="casestudy/carnelian-capital.html"
+                                class="block group interactive gsap-reveal h-full">
+                                <div
+                                    class="bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden h-full flex flex-col">
+                                    <div class="relative h-[220px] sm:h-[280px] md:h-[340px] overflow-hidden shrink-0">
+                                        <img src="https://placehold.co/800x600/1a1a1a/ffffff?text=Carnelian+Capital"
+                                            alt="Carnelian Capital"
+                                            class="w-full h-full object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-110">
+                                    </div>
+                                    <div class="p-5 sm:p-6 md:p-8 flex flex-col flex-1">
+                                        <h3
+                                            class="text-lg sm:text-xl md:text-2xl font-extrabold text-white mb-2 sm:mb-3 leading-tight tracking-tight">
+                                            Carnelian Capital</h3>
+                                        <p
+                                            class="text-gray-400 font-medium text-sm leading-relaxed mb-4 sm:mb-5 flex-1 line-clamp-2">
+                                            From Unranked to Category Leader</p>
+                                        <span
+                                            class="inline-flex items-center gap-2 text-white font-bold text-xs sm:text-sm group-hover:gap-3 transition-all duration-300">
+                                            Read More
+                                            <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a></div>
+                        <div class="swiper-slide h-auto"><a href="casestudy/tiger-analytics.html"
+                                class="block group interactive gsap-reveal h-full">
+                                <div
+                                    class="bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden h-full flex flex-col">
+                                    <div class="relative h-[220px] sm:h-[280px] md:h-[340px] overflow-hidden shrink-0">
+                                        <img src="https://placehold.co/800x600/1a1a1a/ffffff?text=Tiger+Analytics"
+                                            alt="Tiger Analytics"
+                                            class="w-full h-full object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-110">
+                                    </div>
+                                    <div class="p-5 sm:p-6 md:p-8 flex flex-col flex-1">
+                                        <h3
+                                            class="text-lg sm:text-xl md:text-2xl font-extrabold text-white mb-2 sm:mb-3 leading-tight tracking-tight">
+                                            Tiger Analytics</h3>
+                                        <p
+                                            class="text-gray-400 font-medium text-sm leading-relaxed mb-4 sm:mb-5 flex-1 line-clamp-2">
+                                            Doubling Organic Reach in an AI-Saturated Category</p>
+                                        <span
+                                            class="inline-flex items-center gap-2 text-white font-bold text-xs sm:text-sm group-hover:gap-3 transition-all duration-300">
+                                            Read More
+                                            <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a></div>
+                        <div class="swiper-slide h-auto"><a href="casestudy/soul-skin.html"
+                                class="block group interactive gsap-reveal h-full">
+                                <div
+                                    class="bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden h-full flex flex-col">
+                                    <div class="relative h-[220px] sm:h-[280px] md:h-[340px] overflow-hidden shrink-0">
+                                        <img src="https://placehold.co/800x600/1a1a1a/ffffff?text=Soul+Skin"
+                                            alt="Soul Skin"
+                                            class="w-full h-full object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-110">
+                                    </div>
+                                    <div class="p-5 sm:p-6 md:p-8 flex flex-col flex-1">
+                                        <h3
+                                            class="text-lg sm:text-xl md:text-2xl font-extrabold text-white mb-2 sm:mb-3 leading-tight tracking-tight">
+                                            Soul Skin</h3>
+                                        <p
+                                            class="text-gray-400 font-medium text-sm leading-relaxed mb-4 sm:mb-5 flex-1 line-clamp-2">
+                                            Owning Page One of a Hyperlocal Category</p>
+                                        <span
+                                            class="inline-flex items-center gap-2 text-white font-bold text-xs sm:text-sm group-hover:gap-3 transition-all duration-300">
+                                            Read More
+                                            <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a></div>
                     </div>
                     <div class="swiper-pagination !relative !bottom-auto mt-10 md:mt-12"></div>
                 </div>
@@ -1082,7 +1151,8 @@
                     <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-4 block">News</span>
                     <h3 class="text-lg md:text-xl font-bold mb-8 leading-snug">Annual Report & Investor Communication —
                         Listed Company</h3>
-                    <a href="../blog-insite.html" class="text-brand-dark hover:opacity-70 transition-opacity duration-300">
+                    <a href="../blog-insite.html"
+                        class="text-brand-dark hover:opacity-70 transition-opacity duration-300">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -1094,7 +1164,8 @@
                     <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-4 block">News</span>
                     <h3 class="text-lg md:text-xl font-bold mb-8 leading-snug">Full Narrative & Design Overhaul Aligned
                         to Investor Priorities</h3>
-                    <a href="../blog-insite.html" class="text-brand-dark hover:opacity-70 transition-opacity duration-300">
+                    <a href="../blog-insite.html"
+                        class="text-brand-dark hover:opacity-70 transition-opacity duration-300">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -1106,7 +1177,8 @@
                     <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-4 block">News</span>
                     <h3 class="text-lg md:text-xl font-bold mb-8 leading-snug">Positive Analyst & Shareholder Feedback
                         Cited to IR Team</h3>
-                    <a href="../blog-insite.html" class="text-brand-dark hover:opacity-70 transition-opacity duration-300">
+                    <a href="../blog-insite.html"
+                        class="text-brand-dark hover:opacity-70 transition-opacity duration-300">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -1604,52 +1676,61 @@
 
         startAutoplay();
     </script>
-<!-- Footer -->
+    <!-- Footer -->
     <footer class="w-full bg-[#050505] text-white py-8 px-6 md:px-12 relative z-50 border-t border-white/10">
         <div class="max-w-[1400px] mx-auto flex flex-col items-center gap-6 text-center">
-            
+
             <!-- Information Row -->
-            <div class="flex flex-col md:flex-row justify-center md:justify-between items-center w-full gap-4 text-[10px] md:text-xs tracking-widest uppercase font-medium">
-                <a href="tel:9920149991" class="interactive hover:text-gray-300 transition-colors">Call or WhatsApp 9920149991</a>
-                <a href="https://maps.google.com/?q=408+Fenkin+9+Phase+1+Wagle+Estate+Thane+West+400604" target="_blank" rel="noopener noreferrer" class="max-w-xl interactive hover:text-gray-300 transition-colors">408, Fenkin 9 Phase 1, Wagle Estate,<br>Behind Satkar Grande Hotel, Thane West 400604</a>
-                <div class="interactive hover:text-gray-300 transition-colors cursor-pointer">&copy; 2026 ChimpzLab. All rights reserved.</div>
+            <div
+                class="flex flex-col md:flex-row justify-center md:justify-between items-center w-full gap-4 text-[10px] md:text-xs tracking-widest uppercase font-medium">
+                <a href="tel:9920149991" class="interactive hover:text-gray-300 transition-colors">Call or WhatsApp
+                    9920149991</a>
+                <a href="https://maps.google.com/?q=408+Fenkin+9+Phase+1+Wagle+Estate+Thane+West+400604" target="_blank"
+                    rel="noopener noreferrer" class="max-w-xl interactive hover:text-gray-300 transition-colors">408,
+                    Fenkin 9 Phase 1, Wagle Estate,<br>Behind Satkar Grande Hotel, Thane West 400604</a>
+                <div class="interactive hover:text-gray-300 transition-colors cursor-pointer">&copy; 2026 ChimpzLab. All
+                    rights reserved.</div>
             </div>
 
             <!-- GIF Icon -->
             <div class="flex justify-center w-full interactive">
-                <img src="../asset/chimpzlab-icon-white.gif" alt="ChimpzLab Icon" class="h-32 md:h-40 w-auto object-contain">
+                <img src="../asset/chimpzlab-icon-white.gif" alt="ChimpzLab Icon"
+                    class="h-32 md:h-40 w-auto object-contain">
             </div>
 
             <!-- Social Media Handles -->
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="https://youtube.com/@chimpzlab" target="_blank" rel="noopener noreferrer" class="px-8 py-3 border border-white/20 rounded hover:border-white transition-colors interactive text-xs uppercase tracking-widest font-bold">YouTube</a>
-                <a href="https://linkedin.com/company/chimpzlab" target="_blank" rel="noopener noreferrer" class="px-8 py-3 border border-white/20 rounded hover:border-white transition-colors interactive text-xs uppercase tracking-widest font-bold">LinkedIn</a>
-                <a href="https://instagram.com/chimpzlab" target="_blank" rel="noopener noreferrer" class="px-8 py-3 border border-white/20 rounded hover:border-white transition-colors interactive text-xs uppercase tracking-widest font-bold">Instagram</a>
+                <a href="https://youtube.com/@chimpzlab" target="_blank" rel="noopener noreferrer"
+                    class="px-8 py-3 border border-white/20 rounded hover:border-white transition-colors interactive text-xs uppercase tracking-widest font-bold">YouTube</a>
+                <a href="https://linkedin.com/company/chimpzlab" target="_blank" rel="noopener noreferrer"
+                    class="px-8 py-3 border border-white/20 rounded hover:border-white transition-colors interactive text-xs uppercase tracking-widest font-bold">LinkedIn</a>
+                <a href="https://instagram.com/chimpzlab" target="_blank" rel="noopener noreferrer"
+                    class="px-8 py-3 border border-white/20 rounded hover:border-white transition-colors interactive text-xs uppercase tracking-widest font-bold">Instagram</a>
             </div>
         </div>
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-        // Case Study Carousel
-        if (document.querySelector('.case-study-carousel')) {
-            new Swiper('.case-study-carousel', {
-                slidesPerView: 1,
-                spaceBetween: 16,
-                loop: true,
-                speed: 600,
-                pagination: { el: '.swiper-pagination', clickable: true },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                breakpoints: {
-                    640: { slidesPerView: 1.5, spaceBetween: 20 },
-                    768: { slidesPerView: 2, spaceBetween: 24 },
-                    1024: { slidesPerView: 2.5, spaceBetween: 28 },
-                    1280: { slidesPerView: 3, spaceBetween: 32 },
-                },
-            });
-        }
+            // Case Study Carousel
+            if (document.querySelector('.case-study-carousel')) {
+                new Swiper('.case-study-carousel', {
+                    slidesPerView: 1,
+                    spaceBetween: 16,
+                    loop: true,
+                    speed: 600,
+                    pagination: { el: '.swiper-pagination', clickable: true },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    breakpoints: {
+                        640: { slidesPerView: 1.5, spaceBetween: 20 },
+                        768: { slidesPerView: 2, spaceBetween: 24 },
+                        1024: { slidesPerView: 2.5, spaceBetween: 28 },
+                        1280: { slidesPerView: 3, spaceBetween: 32 },
+                    },
+                });
+            }
         });
     </script>
 </body>
