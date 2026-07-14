@@ -169,7 +169,7 @@
         <!-- Right: CTA + Mobile -->
         <div class="flex items-center gap-4 z-10">
             <div class="pointer-events-auto hidden md:flex">
-                <a href="../../index.html#contact"
+                <a href="#booking-form"
                     class="interactive bg-white hover:bg-gray-200 text-black px-7 py-3 rounded-full text-sm font-bold tracking-wide transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.15)]">
                     Let's Connect
                 </a>
@@ -649,7 +649,7 @@
   html += '</div></div>';
   directLinks.forEach(function (l) { html += '<a href="' + l.href + '" class="mobile-menu-link">' + l.label + '</a>'; });
   html += '</nav>';
-  html += '<a href="' + (ctaLink ? ctaLink.href : 'index.html#contact') + '" class="mobile-menu-cta">Let\'s Connect</a>';
+  html += '<a href="' + (ctaLink ? ctaLink.href : '#booking-form') + '" class="mobile-menu-cta">Let\'s Connect</a>';
 
   panel.innerHTML = html;
   overlay.appendChild(panel);
