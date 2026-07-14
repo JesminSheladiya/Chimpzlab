@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The New Rules of Crisis Management in an AI World | CHIMPZLAB</title>
     <link rel="icon" type="image/gif" href="../asset/chimpzlab-icon.gif">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../insights.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body class="selection:bg-white selection:text-black">
@@ -296,53 +295,7 @@
     </script>
 
 <!-- MOBILE_OFFCANVAS_MENU -->
-<style>
-/* === Mobile Offcanvas Menu === */
-body.menu-open { overflow: hidden; }
-.mobile-menu-overlay {
-  position: fixed; inset: 0; z-index: 9990;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
-  opacity: 0; visibility: hidden;
-  transition: opacity 0.35s ease, visibility 0.35s ease;
-}
-.mobile-menu-overlay.open { opacity: 1; visibility: visible; }
-.mobile-menu-panel {
-  position: absolute; top: 0; right: 0; height: 100%;
-  width: min(82vw, 360px); background: #0c0f0f;
-  border-left: 1px solid rgba(255,255,255,0.08);
-  padding: 24px 24px 24px; display: flex; flex-direction: column;
-  transform: translateX(100%);
-  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
-  overflow-y: auto; z-index: 9991;
-  overscroll-behavior: contain; -webkit-overflow-scrolling: touch;
-}
-.mobile-menu-overlay.open .mobile-menu-panel { transform: translateX(0); }
-.mobile-menu-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; flex-shrink: 0; }
-.mobile-menu-logo { color: #fff; font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; }
-.mobile-menu-close { background: transparent; border: none; color: #fff; font-size: 2rem; line-height: 1; cursor: pointer; padding: 4px 8px; }
-.mobile-menu-nav { display: flex; flex-direction: column; gap: 4px; }
-.mobile-menu-link, .mobile-menu-toggle {
-  display: flex; align-items: center; justify-content: space-between;
-  color: #e2e2e2; font-size: 1.05rem; font-weight: 600; padding: 14px 4px;
-  border: 0; border-bottom: 1px solid rgba(255,255,255,0.06);
-  background: transparent; width: 100%; text-align: left; cursor: pointer;
-}
-.mobile-menu-link:hover, .mobile-menu-toggle:hover { color: #fff; }
-.mobile-submenu { display: none; flex-direction: column; padding: 4px 0 12px 12px; }
-.mobile-menu-group.open .mobile-submenu { display: flex; }
-.mobile-submenu-link { color: #b5b5b5; font-size: 0.95rem; font-weight: 500; padding: 10px 4px; border-bottom: 1px solid rgba(255,255,255,0.04); }
-.mobile-submenu-link:hover { color: #fff; }
-.mobile-menu-toggle .chev { transition: transform 0.3s ease; flex-shrink: 0; display: inline-flex; }
-.mobile-menu-group.open .mobile-menu-toggle .chev { transform: rotate(180deg); }
-.mobile-menu-cta {
-  position: sticky; bottom: 0; margin-top: auto; flex-shrink: 0;
-  display: block; text-align: center; background: #fff; color: #000;
-  font-weight: 700; font-size: 0.95rem; letter-spacing: 0.02em; padding: 14px;
-  border-radius: 9999px; box-shadow: 0 -8px 16px rgba(12,15,15,0.95);
-}
-.mobile-menu-cta:hover { background: #e5e5e5; }
-</style>
+
 <script>
 /* Mobile Offcanvas Menu - built dynamically from each page's nav */
 (function () {

@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insights | ChimpzLab</title>
-    
+
     <link rel="icon" type="image/gif" href="asset/chimpzlab-icon.gif">
     <link rel="apple-touch-icon" href="asset/chimpzlab-icon.gif">
     <!-- Fonts: Manrope -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- GSAP for Animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    
+
     <!-- Lenis for Smooth Scrolling -->
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
 
@@ -39,209 +41,16 @@
             }
         }
     </script>
-    <style>
-        html.lenis {
-            height: auto;
-        }
-
-        .lenis.lenis-smooth {
-            scroll-behavior: auto !important;
-        }
-
-        .lenis.lenis-stopped {
-            overflow: hidden;
-        }
-
-        .lenis.lenis-scrolling iframe {
-            pointer-events: none;
-        }
-
-        body {
-            background-color: #0a0a0a;
-            color: #ffffff;
-            cursor: none; 
-            overflow-x: hidden;
-        }
-
-        #cursor {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 20px;
-            height: 20px;
-            background-color: #ffffff;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -50%);
-            transition: width 0.3s, height 0.3s, background-color 0.3s, mix-blend-mode 0.3s;
-            mix-blend-mode: difference;
-        }
-        #cursor.hovered {
-            width: 60px;
-            height: 60px;
-            background-color: #ffffff;
-        }
-
-        /* Reading Progress Bar */
-        #progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 4px;
-            background-color: #0a0a0a;
-            width: 0%;
-            z-index: 10000;
-            transform-origin: left;
-        }
-
-        .img-bw { filter: grayscale(100%) contrast(1.1); }
-        
-        .nav-pill {
-            background-color: rgba(26, 26, 26, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .gsap-reveal {
-            opacity: 0;
-            transform: translateY(40px);
-        }
-
-        /* Editorial Typography Tweaks for Light Mode */
-        .article-content p {
-            margin-bottom: 2rem;
-            line-height: 1.8;
-            color: #4b5563; /* Tailwind gray-600 */
-        }
-        .article-content h2 {
-            font-size: 2.25rem;
-            font-weight: 800;
-            color: #000000;
-            margin-top: 4rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
-        }
-        .article-content blockquote {
-            border-left: 3px solid #0a0a0a;
-            padding-left: 2rem;
-            margin: 3rem 0;
-            font-size: 1.5rem;
-            font-weight: 300;
-            font-style: italic;
-            color: #0a0a0a;
-            line-height: 1.5;
-        }
     
-        /* Services Dropdown */
-        .has-dropdown {
-            position: relative;
-        }
-
-        .has-dropdown>a {
-            position: relative;
-            z-index: 2;
-        }
-
-        .has-dropdown::before {
-            content: '';
-            position: absolute;
-            inset: auto -16px -20px -16px;
-            height: 40px;
-            z-index: 1;
-            pointer-events: auto;
-        }
-
-        .mega-menu {
-            position: fixed;
-            top: 56px;
-            left: 50%;
-            transform: translateX(-50%) translateY(10px);
-            max-width: calc(100vw - 32px);
-            background: #1a1a1a;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 20px;
-            width: 780px;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.7);
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .mega-menu.active {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(-50%) translateY(0);
-            pointer-events: auto;
-        }
-
-        .mega-menu-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-        }
-
-        .service-card-mini {
-            position: relative;
-            border-radius: 14px;
-            padding: 18px;
-            min-height: 150px;
-            background: #252525;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            overflow: hidden;
-            transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .service-card-mini:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255, 255, 255, 0.25);
-            background: #2e2e2e;
-        }
-
-        .service-card-mini .icon {
-            width: 38px;
-            height: 38px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .service-card-mini .icon svg {
-            width: 18px;
-            height: 18px;
-            color: white;
-        }
-
-        .service-card-mini .card-title {
-            font-size: 13px;
-            font-weight: 700;
-            line-height: 1.3;
-            color: #fff;
-        }
-
-        
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="selection:bg-black selection:text-white">
+
+<body class="selection:bg-white selection:text-black">
 
     <!-- Custom Cursor -->
     <div id="cursor"></div>
-    
-    <!-- Reading Progress -->
-    <div id="progress-bar"></div>
 
-    <!-- Navigation (Light Mode Adapted) -->
+    <!-- Navigation -->
     <nav class="fixed w-full top-0 z-50 px-6 md:px-12 py-6 flex justify-between items-center pointer-events-none backdrop-blur-md"
         style="background: linear-gradient(180deg, #000000cf, transparent);">
         <!-- Logo -->
@@ -269,7 +78,8 @@
                             <a href="./services/reputation-communications.html" class="service-card-mini">
                                 <div class="icon">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                                     </svg>
                                 </div>
                                 <span class="card-title">Reputation &<br>Communications</span>
@@ -277,7 +87,8 @@
                             <a href="./services/visibility-search.html" class="service-card-mini">
                                 <div class="icon">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                     </svg>
                                 </div>
                                 <span class="card-title">Visibility &<br>Search</span>
@@ -285,7 +96,8 @@
                             <a href="./services/creative.html" class="service-card-mini">
                                 <div class="icon">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                     </svg>
                                 </div>
                                 <span class="card-title">Content &<br>Creative</span>
@@ -293,7 +105,8 @@
                             <a href="./services/demand-generation.html" class="service-card-mini">
                                 <div class="icon">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
                                     </svg>
                                 </div>
                                 <span class="card-title">Demand &<br>Automation</span>
@@ -301,7 +114,8 @@
                             <a href="./services/digital-experiences.html" class="service-card-mini">
                                 <div class="icon">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                     </svg>
                                 </div>
                                 <span class="card-title">Digital<br>Experiences</span>
@@ -336,227 +150,330 @@
         </div>
     </nav>
 
-    <!-- Blog Hero Split Layout -->
-    <header class="pt-32 md:pt-48 pb-20 px-6 md:px-12 relative bg-brand-dark">
+    <!-- Hero -->
+    <header class="pt-36 md:pt-48 pb-16 px-6 md:px-12 relative bg-brand-dark overflow-hidden">
         <div class="w-full max-w-[1400px] mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
-            <!-- Left: Text & Audio (7 Cols) -->
-            <div class="lg:col-span-7">
-                <!-- Meta -->
-                <div class="flex flex-wrap items-center gap-4 mb-8 gsap-reveal">
-                    <span class="text-xs font-bold uppercase tracking-widest text-white px-4 py-2 border border-white/20 rounded-full">Strategy</span>
-                    <span class="text-xs font-bold uppercase tracking-widest text-gray-500">5 Min Read</span>
-                    <span class="text-xs font-bold uppercase tracking-widest text-gray-500 hidden md:inline">• July 1, 2026</span>
-                </div>
-                
-                <!-- Title -->
-                <h1 class="text-5xl sm:text-7xl md:text-8xl font-extrabold text-white mb-8 tracking-tighter uppercase">
-            <div class="overflow-hidden"><span class="block gsap-reveal-text">ChimpzLab</span></div>
-            <div class="overflow-hidden"><span class="block text-white/40 gsap-reveal-text">Insights</span></div>
-        </h1>
-
-                <!-- Custom Audio Player -->
-                <div class="gsap-reveal mt-10 p-2 pr-6 border border-white/10 bg-white/5 rounded-full flex items-center gap-4 w-fit interactive group hover:border-white/30 transition-colors cursor-pointer" onclick="toggleAudio()">
-                    
-                    <!-- Hidden Audio Element (ADD YOUR SRC HERE) -->
-                    <audio id="blog-audio" src="" preload="metadata"></audio>
-                    
-                    <button id="play-pause-btn" class="w-14 h-14 rounded-full bg-black text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-md">
-                        <!-- Play Icon (Default) -->
-                        <svg id="icon-play" class="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                        <!-- Pause Icon (Hidden initially) -->
-                        <svg id="icon-pause" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                    </button>
-                    
-                    <div class="flex flex-col justify-center">
-                        <span class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-0.5">Listen to this blog</span>
-                        <div class="flex items-center gap-3">
-                            <!-- Visual Waveform Placeholder -->
-                            <div class="flex items-center gap-1 h-3">
-                                <div class="w-1 h-2 bg-white/60 rounded-full animate-pulse"></div>
-                                <div class="w-1 h-3 bg-white/60 rounded-full animate-pulse delay-75"></div>
-                                <div class="w-1 h-1.5 bg-white/60 rounded-full animate-pulse delay-150"></div>
-                                <div class="w-1 h-2.5 bg-white/60 rounded-full animate-pulse delay-75"></div>
-                                <div class="w-1 h-2 bg-white/20 rounded-full"></div>
-                                <div class="w-1 h-1 bg-white/20 rounded-full"></div>
-                                <div class="w-1 h-2 bg-white/20 rounded-full"></div>
-                            </div>
-                            <span class="text-sm font-bold text-white">4:20</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="mb-10 gsap-reveal">
+                <span class="text-sm font-bold uppercase tracking-widest border-b-2 border-white pb-2">ChimpzLab
+                    Insights</span>
             </div>
-
-            <!-- Right: Cover Image (5 Cols) -->
-            <div class="lg:col-span-5 gsap-reveal mt-12 lg:mt-0">
-                <div class="w-full aspect-[4/5] bg-gray-100 overflow-hidden rounded-2xl relative shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop" alt="Corporate Strategy" class="w-full h-full object-cover img-bw hover:scale-105 transition-transform duration-700">
-                </div>
-            </div>
-            
-        </div>
+            <h1
+                class="text-6xl sm:text-8xl md:text-[9rem] font-extrabold uppercase text-white mb-10 tracking-tighter leading-[0.85]">
+                <div class="overflow-hidden"><span class="block gsap-reveal-text">Perspectives</span></div>
+                <div class="overflow-hidden"><span class="block text-white/40 gsap-reveal-text">That Move</span></div>
+                <div class="overflow-hidden"><span class="block gsap-reveal-text">Markets</span></div>
+            </h1>
+            <p class="max-w-2xl text-lg md:text-2xl font-light text-gray-300 gsap-reveal">
+                Ideas, frameworks and field notes on reputation, visibility and the communications strategies behind
+                brands that earn lasting trust.
+            </p>
         </div>
     </header>
 
-    <!-- Main Content & Sidebar Layout -->
-    <section class="px-6 md:px-12 pt-20 pb-32 bg-white text-brand-dark">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start max-w-[1400px] mx-auto">
-            
-            <!-- Left: Article Body (Spans 8 columns) -->
-            <article class="lg:col-span-8 article-content text-lg md:text-xl font-light">
-                
-                <!-- Share Options (Moved to Top) -->
-                <div class="mb-12 pb-8 border-b border-gray-200 flex items-center gap-6 gsap-reveal">
-                    <span class="text-xs font-bold uppercase tracking-widest text-gray-500">Share Article</span>
-                    <a href="https://linkedin.com/company/chimpzlab" target="_blank" rel="noopener noreferrer" class="text-black hover:text-gray-400 transition-colors interactive">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    </a>
-                    <a href="https://twitter.com/chimpzlab" target="_blank" rel="noopener noreferrer" class="text-black hover:text-gray-400 transition-colors interactive">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
-                    </a>
-                </div>
-
-                <p class="gsap-reveal text-2xl md:text-3xl text-black font-medium mb-12 leading-tight">
-                    Search is no longer just a list of blue links. With the rapid integration of Generative AI into search engines, how stakeholders research your company is fundamentally changing. If your corporate narrative isn't structured for AI, you are handing your reputation over to an algorithm.
-                </p>
-
-                <p class="gsap-reveal">
-                    For decades, corporate communications and SEO existed in entirely separate silos. PR teams focused on securing tier-one media placements, while digital teams obsessed over keywords and technical site structure. In an era where AI models synthesize answers from across the web in real-time, this separation is no longer just inefficient—it’s dangerous to your brand equity.
-                </p>
-
-                <p class="gsap-reveal">
-                    When an investor, a prospective employee, or a critical partner asks an AI engine, <em>"What is the market reputation of [Your Company]?"</em>, the engine doesn't just read your latest press release. It synthesizes your website, employee reviews, news sentiment, and leadership visibility into one definitive summary.
-                </p>
-
-                <blockquote class="gsap-reveal">
-"You can no longer control the narrative by simply issuing a statement. You must architect a digital infrastructure that consistently feeds the truth to the machines that shape human perception."
-                </blockquote>
-
-                <h2 class="gsap-reveal uppercase tracking-tight">The Shift from SEO to AEO (Answer Engine Optimization)</h2>
-                
-                <p class="gsap-reveal">
-                    Optimizing for AI means understanding that these systems look for consensus and context. A single highly-placed op-ed might drive immediate traffic, but consistently published, expert-level content across your owned channels establishes the semantic authority that AI relies upon. 
-                </p>
-
-                <p class="gsap-reveal">
-                    This is where integrated communications becomes non-negotiable. Your corporate narrative must be unified. If your PR team is telling a story about innovation, but your careers page is entirely generic and your leadership has zero footprint on LinkedIn, the AI detects an inconsistency. To an answer engine, inconsistency equates to a lack of authority.
-                </p>
-
-                <h2 class="gsap-reveal uppercase tracking-tight">How to Audit Your AI Footprint</h2>
-                
-                <p class="gsap-reveal">
-                    Start by querying the major AI tools as if you were your own harshest critic. Ask about your company's controversies, market position, and culture. The gaps in the generated responses represent your immediate communications mandate. 
-                </p>
-                
-                <p class="gsap-reveal">
-                    At ChimpzLab, we approach this by merging narrative strategy with technical digital execution. We ensure that the story you want to tell is exactly the story the algorithms piece together. Because in an AI-first world, visibility and reputation are the exact same thing.
-                </p>
-            </article>
-
-            <!-- Right: Sticky Sidebar (Spans 4 columns) -->
-            <aside class="lg:col-span-4 hidden lg:block relative">
-                <div class="sticky top-40">
-                    
-                    <!-- Blog Categorization by Services -->
-                    <div class="mb-16 gsap-reveal">
-                        <h4 class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-6 border-b border-gray-200 pb-4">Explore by Service</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="./services/reputation-communications.html" class="interactive border border-black/20 rounded-full px-4 py-2 text-xs font-semibold tracking-wide text-black hover:bg-black hover:text-white transition-colors">Reputation & Comms</a>
-                            <a href="./services/visibility-search.html" class="interactive border border-black/20 rounded-full px-4 py-2 text-xs font-semibold tracking-wide text-black hover:bg-black hover:text-white transition-colors">Visibility & Search</a>
-                            <a href="./services/creative.html" class="interactive border border-black/20 rounded-full px-4 py-2 text-xs font-semibold tracking-wide text-black hover:bg-black hover:text-white transition-colors">Content & Creative</a>
-                            <a href="./services/demand-generation.html" class="interactive border border-black/20 rounded-full px-4 py-2 text-xs font-semibold tracking-wide text-black hover:bg-black hover:text-white transition-colors">Demand & Automation</a>
-                            <a href="./services/digital-experiences.html" class="interactive border border-black/20 rounded-full px-4 py-2 text-xs font-semibold tracking-wide text-black hover:bg-black hover:text-white transition-colors">Digital Experiences</a>
-                        </div>
-                    </div>
-
-                    <!-- Table of Recent Blogs -->
-                    <div class="gsap-reveal">
-                        <h4 class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-6 border-b border-gray-200 pb-4">Recent Insights</h4>
-                        <ul class="space-y-6">
-                            <li class="group">
-                                <a href="blog-insite.html" class="interactive block">
-                                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-1">Digital • 4 Min Read</span>
-                                    <h5 class="text-lg font-bold tracking-tight text-black group-hover:text-gray-500 transition-colors leading-tight">Why Your Website is Your Most Important PR Asset</h5>
-                                </a>
-                            </li>
-                            <li class="group">
-                                <a href="blog-insite.html" class="interactive block">
-                                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-1">Engagement • 6 Min Read</span>
-                                    <h5 class="text-lg font-bold tracking-tight text-black group-hover:text-gray-500 transition-colors leading-tight">Navigating Stakeholder Trust in Complex Markets</h5>
-                                </a>
-                            </li>
-                            <li class="group">
-                                <a href="blog-insite.html" class="interactive block">
-                                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-1">Corporate Comms • 5 Min Read</span>
-                                    <h5 class="text-lg font-bold tracking-tight text-black group-hover:text-gray-500 transition-colors leading-tight">The difference between activity and actual reputation.</h5>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-            </aside>
+    <!-- Insights Tabs / Filter -->
+    <section class="px-6 md:px-12 py-8 bg-brand-dark border-t border-white/10">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="flex flex-wrap items-center gap-2 md:gap-3" id="insight-filters" role="tablist"
+                aria-label="Filter insights by topic">
+                <button class="insight-filter active interactive px-5 py-2.5 rounded-full text-sm font-semibold"
+                    data-filter="all" role="tab" aria-selected="true">All</button>
+                <button class="insight-filter interactive px-5 py-2.5 rounded-full text-sm font-semibold"
+                    data-filter="reputation" role="tab" aria-selected="false">Reputation</button>
+                <button class="insight-filter interactive px-5 py-2.5 rounded-full text-sm font-semibold"
+                    data-filter="visibility" role="tab" aria-selected="false">Visibility</button>
+                <button class="insight-filter interactive px-5 py-2.5 rounded-full text-sm font-semibold"
+                    data-filter="content" role="tab" aria-selected="false">Content</button>
+                <button class="insight-filter interactive px-5 py-2.5 rounded-full text-sm font-semibold"
+                    data-filter="demand" role="tab" aria-selected="false">Demand</button>
+                <button class="insight-filter interactive px-5 py-2.5 rounded-full text-sm font-semibold"
+                    data-filter="experience" role="tab" aria-selected="false">Experience</button>
+            </div>
         </div>
     </section>
 
-    <!-- More Blogs Connector -->
-    <section class="px-6 md:px-12 py-24 bg-white text-brand-dark border-t border-gray-200">
+    <!-- Featured Article -->
+    <section class="px-6 md:px-12 py-16 md:py-24 bg-brand-dark">
         <div class="max-w-[1400px] mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8 gsap-reveal">
-                <h3 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter uppercase text-black">More in Strategy</h3>
-            <a href="blog-insite.html" class="interactive border border-black/20 text-black hover:bg-black hover:text-white px-8 py-4 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 whitespace-nowrap">View All Strategy</a>
+            <a href="blog-insite.html" class="group interactive block gsap-reveal">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    <div class="lg:col-span-7 overflow-hidden rounded-3xl relative aspect-[16/10] bg-white/5">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop"
+                            alt="Featured insight"
+                            class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+                        <span
+                            class="absolute top-5 left-5 text-xs font-bold uppercase tracking-widest text-black bg-white px-4 py-2 rounded-full">Featured
+                            • Strategy</span>
+                    </div>
+                    <div class="lg:col-span-5">
+                        <span class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4 block">5 Min Read •
+                            July 2026</span>
+                        <h2
+                            class="text-3xl md:text-5xl font-extrabold tracking-tighter text-white mb-6 leading-[1.05] group-hover:text-gray-300 transition-colors">
+                            Why your search footprint is now a boardroom issue</h2>
+                        <p class="text-gray-400 text-lg font-light leading-relaxed mb-8">With generative AI reshaping
+                            how stakeholders research your company, reputation and visibility are no longer separate
+                            disciplines. Here's how integrated communications closes the gap.</p>
+                        <span
+                            class="interactive inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white border border-white/20 rounded-full px-6 py-3 group-hover:bg-white group-hover:text-black transition-colors">Read
+                            Article
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </a>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8">
-            <!-- Related Blog 1 -->
-            <a href="blog-insite.html" class="group interactive block gsap-reveal">
-                <div class="w-full aspect-[16/9] bg-gray-100 overflow-hidden rounded-xl mb-6 relative">
-                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800&auto=format&fit=crop" alt="Strategy Planning" class="w-full h-full object-cover img-bw opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
-                </div>
-                <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-3">Strategy • 4 Min Read</span>
-                <h4 class="text-2xl md:text-3xl font-bold tracking-tight text-black group-hover:text-gray-500 transition-colors leading-tight mb-4">Re-thinking Corporate Narrative during a Market Shift</h4>
-            </a>
-            <!-- Related Blog 2 -->
-            <a href="blog-insite.html" class="group interactive block gsap-reveal">
-                <div class="w-full aspect-[16/9] bg-gray-100 overflow-hidden rounded-xl mb-6 relative">
-                    <img src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?q=80&w=800&auto=format&fit=crop" alt="Market Analysis" class="w-full h-full object-cover img-bw opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
-                </div>
-                <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-3">Strategy • 7 Min Read</span>
-                <h4 class="text-2xl md:text-3xl font-bold tracking-tight text-black group-hover:text-gray-500 transition-colors leading-tight mb-4">Why Your Brand's Search Footprint is a Boardroom Issue</h4>
-            </a>
+    </section>
+
+    <!-- Latest Insights Grid -->
+    <section class="px-6 md:px-12 py-16 md:py-24 bg-[#0d0d0d] border-t border-white/5">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 gap-6 gsap-reveal">
+                <h3 class="text-4xl md:text-6xl font-extrabold tracking-tighter uppercase text-white">Latest Insights
+                </h3>
+                <a href="blog-insite.html"
+                    class="interactive border border-white/20 text-white hover:bg-white hover:text-black px-8 py-4 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 whitespace-nowrap">View
+                    All</a>
             </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="insight-grid">
+                <a href="blog-insite.html" data-category="reputation"
+                    class="insight-card group interactive block gsap-reveal">
+                    <div class="w-full aspect-[16/10] overflow-hidden rounded-2xl mb-6 bg-white/5 relative">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800&auto=format&fit=crop"
+                            alt="Reputation"
+                            class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-3">Reputation •
+                        5 Min Read</span>
+                    <h4
+                        class="text-2xl font-bold tracking-tight text-white group-hover:text-gray-300 transition-colors leading-tight mb-3">
+                        The difference between activity and actual reputation</h4>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed mb-5">Most brands are busy. Few are
+                        believed. We break down what separates noise from earned trust.</p>
+                    <span class="text-xs font-bold uppercase tracking-widest text-white">Read Article →</span>
+                </a>
+
+                <a href="blog-insite.html" data-category="visibility"
+                    class="insight-card group interactive block gsap-reveal">
+                    <div class="w-full aspect-[16/10] overflow-hidden rounded-2xl mb-6 bg-white/5 relative">
+                        <img src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?q=80&w=800&auto=format&fit=crop"
+                            alt="Visibility"
+                            class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-3">Visibility •
+                        7 Min Read</span>
+                    <h4
+                        class="text-2xl font-bold tracking-tight text-white group-hover:text-gray-300 transition-colors leading-tight mb-3">
+                        Why your brand's search footprint is a boardroom issue</h4>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed mb-5">Generative AI has rewritten the
+                        rules of discovery. Here's how to stay visible when answers replace links.</p>
+                    <span class="text-xs font-bold uppercase tracking-widest text-white">Read Article →</span>
+                </a>
+
+                <a href="insights/sample-blog.html" data-category="content"
+                    class="insight-card group interactive block gsap-reveal">
+                    <div class="w-full aspect-[16/10] overflow-hidden rounded-2xl mb-6 bg-white/5 relative">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop"
+                            alt="Content"
+                            class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-3">Content • 6
+                        Min Read</span>
+                    <h4
+                        class="text-2xl font-bold tracking-tight text-white group-hover:text-gray-300 transition-colors leading-tight mb-3">
+                        Building a content engine that compounds</h4>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed mb-5">One-off posts fade. A connected
+                        narrative builds authority. A practical system for steady output.</p>
+                    <span class="text-xs font-bold uppercase tracking-widest text-white">Read Article →</span>
+                </a>
+
+                <a href="blog-insite.html" data-category="demand"
+                    class="insight-card group interactive block gsap-reveal">
+                    <div class="w-full aspect-[16/10] overflow-hidden rounded-2xl mb-6 bg-white/5 relative">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop"
+                            alt="Demand"
+                            class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-3">Demand • 4
+                        Min Read</span>
+                    <h4
+                        class="text-2xl font-bold tracking-tight text-white group-hover:text-gray-300 transition-colors leading-tight mb-3">
+                        Turning thought leadership into pipeline</h4>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed mb-5">Reputation doesn't pay bills on its
+                        own. How to connect ideas to measurable demand.</p>
+                    <span class="text-xs font-bold uppercase tracking-widest text-white">Read Article →</span>
+                </a>
+
+                <a href="insights/sample-blog.html" data-category="experience"
+                    class="insight-card group interactive block gsap-reveal">
+                    <div class="w-full aspect-[16/10] overflow-hidden rounded-2xl mb-6 bg-white/5 relative">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800&auto=format&fit=crop"
+                            alt="Experience"
+                            class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-3">Experience •
+                        5 Min Read</span>
+                    <h4
+                        class="text-2xl font-bold tracking-tight text-white group-hover:text-gray-300 transition-colors leading-tight mb-3">
+                        Your website is your most important PR asset</h4>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed mb-5">Before a journalist quotes you, a
+                        stakeholder screens your site. Make the first impression count.</p>
+                    <span class="text-xs font-bold uppercase tracking-widest text-white">Read Article →</span>
+                </a>
+
+                <a href="blog-insite.html" data-category="visibility"
+                    class="insight-card group interactive block gsap-reveal">
+                    <div class="w-full aspect-[16/10] overflow-hidden rounded-2xl mb-6 bg-white/5 relative">
+                        <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?q=80&w=800&auto=format&fit=crop"
+                            alt="Visibility"
+                            class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-3">Visibility •
+                        6 Min Read</span>
+                    <h4
+                        class="text-2xl font-bold tracking-tight text-white group-hover:text-gray-300 transition-colors leading-tight mb-3">
+                        Answer Engine Optimization, explained simply</h4>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed mb-5">SEO got you ranked. AEO gets you
+                        cited. What changed and what to do on Monday.</p>
+                    <span class="text-xs font-bold uppercase tracking-widest text-white">Read Article →</span>
+                </a>
+
+                <a href="blog-insite.html" data-category="reputation"
+                    class="insight-card group interactive block gsap-reveal">
+                    <div class="w-full aspect-[16/10] overflow-hidden rounded-2xl mb-6 bg-white/5 relative">
+                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=800&auto=format&fit=crop"
+                            alt="Reputation"
+                            class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-3">Reputation •
+                        5 Min Read</span>
+                    <h4
+                        class="text-2xl font-bold tracking-tight text-white group-hover:text-gray-300 transition-colors leading-tight mb-3">
+                        Navigating stakeholder trust in complex markets</h4>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed mb-5">When everyone is watching,
+                        consistency is the strategy. A field guide for comms leaders.</p>
+                    <span class="text-xs font-bold uppercase tracking-widest text-white">Read Article →</span>
+                </a>
+
+                <a href="insights/sample-blog.html" data-category="content"
+                    class="insight-card group interactive block gsap-reveal">
+                    <div class="w-full aspect-[16/10] overflow-hidden rounded-2xl mb-6 bg-white/5 relative">
+                        <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=800&auto=format&fit=crop"
+                            alt="Content"
+                            class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-3">Content • 4
+                        Min Read</span>
+                    <h4
+                        class="text-2xl font-bold tracking-tight text-white group-hover:text-gray-300 transition-colors leading-tight mb-3">
+                        The editorial standards your brand actually needs</h4>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed mb-5">Quality isn't subjective when the
+                        algorithm is reading. Set the bar before you scale output.</p>
+                    <span class="text-xs font-bold uppercase tracking-widest text-white">Read Article →</span>
+                </a>
+
+                <a href="blog-insite.html" data-category="demand"
+                    class="insight-card group interactive block gsap-reveal">
+                    <div class="w-full aspect-[16/10] overflow-hidden rounded-2xl mb-6 bg-white/5 relative">
+                        <img src="https://images.unsplash.com/photo-1533750516457-a19e426bf71d?q=80&w=800&auto=format&fit=crop"
+                            alt="Demand"
+                            class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-3">Demand • 6
+                        Min Read</span>
+                    <h4
+                        class="text-2xl font-bold tracking-tight text-white group-hover:text-gray-300 transition-colors leading-tight mb-3">
+                        Automation without losing the human voice</h4>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed mb-5">Scale personalization without
+                        sounding like a robot. The balance smart teams are striking.</p>
+                    <span class="text-xs font-bold uppercase tracking-widest text-white">Read Article →</span>
+                </a>
+            </div>
+
+            <p id="insight-empty" class="hidden text-center text-gray-500 py-20 text-lg">No insights in this category
+                yet — check back soon.</p>
+        </div>
+    </section>
+
+    <!-- CTA Band -->
+    <section class="px-6 md:px-12 py-24 bg-brand-dark border-t border-white/10">
+        <div class="max-w-[1400px] mx-auto text-center gsap-reveal">
+            <h3 class="text-4xl md:text-6xl font-extrabold tracking-tighter uppercase text-white mb-8">Have a
+                perspective to share?</h3>
+            <a href="#contact"
+                class="interactive bg-white hover:bg-gray-200 text-black px-10 py-5 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 inline-flex items-center gap-2">Let's
+                start a conversation
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+            </a>
         </div>
     </section>
 
     <!-- Contact Form Section -->
-    <section class="py-32 px-6 md:px-12 bg-white border-t border-gray-200" id="contact">
+    <section class="py-32 px-6 md:px-12 bg-white text-brand-dark" id="contact">
         <div class="max-w-[1400px] mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-                
+
                 <!-- Left Side: Copy -->
                 <div class="gsap-reveal">
-                    <h2 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 text-black uppercase leading-[0.9]">Ready to get started?</h2>
-                    <p class="text-xl text-gray-600 mb-12 max-w-lg font-medium">Submit your inquiry and our team will get back to you within 24 hours.</p>
+                    <h2
+                        class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 text-black uppercase leading-[0.9]">
+                        Ready to get started?</h2>
+                    <p class="text-xl text-gray-600 mb-12 max-w-lg font-medium">Submit your inquiry and our team will
+                        get back to you within 24 hours.</p>
 
                     <div class="space-y-8 max-w-md">
                         <!-- Item -->
                         <div class="flex gap-4 items-start">
-                            <div class="shrink-0 w-6 h-6 rounded-full border-2 border-black flex items-center justify-center mt-1">
-                                <svg class="w-3.5 h-3.5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            <div
+                                class="shrink-0 w-6 h-6 rounded-full border-2 border-black flex items-center justify-center mt-1">
+                                <svg class="w-3.5 h-3.5 text-black" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
                             </div>
                             <div>
                                 <h4 class="text-lg font-bold text-black mb-1">Reputation Strategy</h4>
-                                <p class="text-gray-600 text-sm font-medium">Expert guidance on your brand's market narrative.</p>
+                                <p class="text-gray-600 text-sm font-medium">Expert guidance on your brand's market
+                                    narrative.</p>
                             </div>
                         </div>
                         <!-- Item -->
                         <div class="flex gap-4 items-start">
-                            <div class="shrink-0 w-6 h-6 rounded-full border-2 border-black flex items-center justify-center mt-1">
-                                <svg class="w-3.5 h-3.5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            <div
+                                class="shrink-0 w-6 h-6 rounded-full border-2 border-black flex items-center justify-center mt-1">
+                                <svg class="w-3.5 h-3.5 text-black" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
                             </div>
                             <div>
                                 <h4 class="text-lg font-bold text-black mb-1">Stakeholder Mapping</h4>
-                                <p class="text-gray-600 text-sm font-medium">Deep analysis of who matters to your business.</p>
+                                <p class="text-gray-600 text-sm font-medium">Identify and engage the audiences that move
+                                    your business.</p>
+                            </div>
+                        </div>
+                        <!-- Item -->
+                        <div class="flex gap-4 items-start">
+                            <div
+                                class="shrink-0 w-6 h-6 rounded-full border-2 border-black flex items-center justify-center mt-1">
+                                <svg class="w-3.5 h-3.5 text-black" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-black mb-1">Integrated Execution</h4>
+                                <p class="text-gray-600 text-sm font-medium">One team across comms, content, search and
+                                    digital.</p>
                             </div>
                         </div>
                     </div>
@@ -568,65 +485,117 @@
                         <!-- Top Row Fields -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <input type="text" placeholder="Your Name *" class="w-full bg-transparent border border-white/10 rounded-lg px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors" required>
+                                <input type="text" placeholder="Your Name *"
+                                    class="w-full bg-transparent border border-white/10 rounded-lg px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
+                                    required>
                             </div>
                             <div>
-                                <input type="email" placeholder="Email *" class="w-full bg-transparent border border-white/10 rounded-lg px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors" required>
+                                <input type="email" placeholder="Email *"
+                                    class="w-full bg-transparent border border-white/10 rounded-lg px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
+                                    required>
                             </div>
                         </div>
                         <!-- Phone -->
                         <div>
-                            <input type="tel" placeholder="Phone (Optional)" class="w-full bg-transparent border border-white/10 rounded-lg px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors">
+                            <input type="tel" placeholder="Phone (Optional)"
+                                class="w-full bg-transparent border border-white/10 rounded-lg px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors">
                         </div>
                         <!-- Textarea -->
                         <div>
-                            <textarea placeholder="Tell us about your project *" rows="4" class="w-full bg-transparent border border-white/10 rounded-lg px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors resize-none" required></textarea>
+                            <textarea placeholder="Tell us about your project *" rows="4"
+                                class="w-full bg-transparent border border-white/10 rounded-lg px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors resize-none"
+                                required></textarea>
                         </div>
-                        
+
                         <!-- Checkboxes -->
                         <div class="pt-6">
-                            <h5 class="text-xs font-bold uppercase tracking-widest text-white mb-6">SERVICES YOU ARE INTERESTED IN</h5>
+                            <h5 class="text-xs font-bold uppercase tracking-widest text-white mb-6">SERVICES YOU ARE
+                                INTERESTED IN</h5>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8">
                                 <label class="flex items-center gap-3 cursor-pointer group interactive">
-                                    <div class="relative flex items-center justify-center w-5 h-5 border border-white/30 bg-transparent group-hover:border-white transition-colors">
-                                        <input type="checkbox" class="peer appearance-none w-full h-full absolute inset-0 cursor-pointer">
-                                        <svg class="w-3.5 h-3.5 text-black opacity-0 peer-checked:opacity-100 z-10 transition-opacity absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7"></path></svg>
-                                        <div class="absolute inset-0 bg-white opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+                                    <div
+                                        class="relative flex items-center justify-center w-5 h-5 border border-white/30 bg-transparent group-hover:border-white transition-colors">
+                                        <input type="checkbox"
+                                            class="peer appearance-none w-full h-full absolute inset-0 cursor-pointer">
+                                        <svg class="w-3.5 h-3.5 text-black opacity-0 peer-checked:opacity-100 z-10 transition-opacity absolute"
+                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4"
+                                                d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        <div
+                                            class="absolute inset-0 bg-white opacity-0 peer-checked:opacity-100 transition-opacity">
+                                        </div>
                                     </div>
-                                    <span class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">Brand Strategy</span>
+                                    <span
+                                        class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">Brand
+                                        Strategy</span>
                                 </label>
                                 <label class="flex items-center gap-3 cursor-pointer group interactive">
-                                    <div class="relative flex items-center justify-center w-5 h-5 border border-white/30 bg-transparent group-hover:border-white transition-colors">
-                                        <input type="checkbox" class="peer appearance-none w-full h-full absolute inset-0 cursor-pointer">
-                                        <svg class="w-3.5 h-3.5 text-black opacity-0 peer-checked:opacity-100 z-10 transition-opacity absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7"></path></svg>
-                                        <div class="absolute inset-0 bg-white opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+                                    <div
+                                        class="relative flex items-center justify-center w-5 h-5 border border-white/30 bg-transparent group-hover:border-white transition-colors">
+                                        <input type="checkbox"
+                                            class="peer appearance-none w-full h-full absolute inset-0 cursor-pointer">
+                                        <svg class="w-3.5 h-3.5 text-black opacity-0 peer-checked:opacity-100 z-10 transition-opacity absolute"
+                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4"
+                                                d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        <div
+                                            class="absolute inset-0 bg-white opacity-0 peer-checked:opacity-100 transition-opacity">
+                                        </div>
                                     </div>
-                                    <span class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">Brand Identity</span>
+                                    <span
+                                        class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">Brand
+                                        Identity</span>
                                 </label>
                                 <label class="flex items-center gap-3 cursor-pointer group interactive">
-                                    <div class="relative flex items-center justify-center w-5 h-5 border border-white/30 bg-transparent group-hover:border-white transition-colors">
-                                        <input type="checkbox" class="peer appearance-none w-full h-full absolute inset-0 cursor-pointer">
-                                        <svg class="w-3.5 h-3.5 text-black opacity-0 peer-checked:opacity-100 z-10 transition-opacity absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7"></path></svg>
-                                        <div class="absolute inset-0 bg-white opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+                                    <div
+                                        class="relative flex items-center justify-center w-5 h-5 border border-white/30 bg-transparent group-hover:border-white transition-colors">
+                                        <input type="checkbox"
+                                            class="peer appearance-none w-full h-full absolute inset-0 cursor-pointer">
+                                        <svg class="w-3.5 h-3.5 text-black opacity-0 peer-checked:opacity-100 z-10 transition-opacity absolute"
+                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4"
+                                                d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        <div
+                                            class="absolute inset-0 bg-white opacity-0 peer-checked:opacity-100 transition-opacity">
+                                        </div>
                                     </div>
-                                    <span class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">UX / UI Design</span>
+                                    <span
+                                        class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">UX
+                                        / UI Design</span>
                                 </label>
                                 <label class="flex items-center gap-3 cursor-pointer group interactive">
-                                    <div class="relative flex items-center justify-center w-5 h-5 border border-white/30 bg-transparent group-hover:border-white transition-colors">
-                                        <input type="checkbox" class="peer appearance-none w-full h-full absolute inset-0 cursor-pointer">
-                                        <svg class="w-3.5 h-3.5 text-black opacity-0 peer-checked:opacity-100 z-10 transition-opacity absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7"></path></svg>
-                                        <div class="absolute inset-0 bg-white opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+                                    <div
+                                        class="relative flex items-center justify-center w-5 h-5 border border-white/30 bg-transparent group-hover:border-white transition-colors">
+                                        <input type="checkbox"
+                                            class="peer appearance-none w-full h-full absolute inset-0 cursor-pointer">
+                                        <svg class="w-3.5 h-3.5 text-black opacity-0 peer-checked:opacity-100 z-10 transition-opacity absolute"
+                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4"
+                                                d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        <div
+                                            class="absolute inset-0 bg-white opacity-0 peer-checked:opacity-100 transition-opacity">
+                                        </div>
                                     </div>
-                                    <span class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">Visual Content</span>
+                                    <span
+                                        class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">Visual
+                                        Content</span>
                                 </label>
                             </div>
                         </div>
-        
+
                         <!-- Submit Button -->
                         <div class="pt-6">
-                            <button type="button" class="interactive w-fit bg-white hover:bg-gray-200 text-black px-8 py-4 rounded-full text-sm font-bold tracking-wider uppercase transition-all duration-300 flex items-center gap-2">
+                            <button type="button"
+                                class="interactive w-fit bg-white hover:bg-gray-200 text-black px-8 py-4 rounded-full text-sm font-bold tracking-wider uppercase transition-all duration-300 flex items-center gap-2">
                                 Send Message
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
                             </button>
                         </div>
                     </form>
@@ -638,29 +607,39 @@
     <!-- Footer -->
     <footer class="w-full bg-[#050505] text-white py-8 px-6 md:px-12 relative z-50 border-t border-white/10">
         <div class="max-w-[1400px] mx-auto flex flex-col items-center gap-6 text-center">
-            
+
             <!-- Information Row -->
-            <div class="flex flex-col md:flex-row justify-center md:justify-between items-center w-full gap-4 text-[10px] md:text-xs tracking-widest uppercase font-medium">
-                <a href="tel:9920149991" class="interactive hover:text-gray-300 transition-colors">Call or WhatsApp 9920149991</a>
-                <a href="https://maps.google.com/?q=408+Fenkin+9+Phase+1+Wagle+Estate+Thane+West+400604" target="_blank" rel="noopener noreferrer" class="max-w-xl interactive hover:text-gray-300 transition-colors">408, Fenkin 9 Phase 1, Wagle Estate,<br>Behind Satkar Grande Hotel, Thane West 400604</a>
-                <div class="interactive hover:text-gray-300 transition-colors cursor-pointer">&copy; 2026 ChimpzLab. All rights reserved.</div>
+            <div
+                class="flex flex-col md:flex-row justify-center md:justify-between items-center w-full gap-4 text-[10px] md:text-xs tracking-widest uppercase font-medium">
+                <a href="tel:9920149991" class="interactive hover:text-gray-300 transition-colors">Call or WhatsApp
+                    9920149991</a>
+                <a href="https://maps.google.com/?q=408+Fenkin+9+Phase+1+Wagle+Estate+Thane+West+400604" target="_blank"
+                    rel="noopener noreferrer" class="max-w-xl interactive hover:text-gray-300 transition-colors">408,
+                    Fenkin 9 Phase 1, Wagle Estate,<br>Behind Satkar Grande Hotel, Thane West 400604</a>
+                <div class="interactive hover:text-gray-300 transition-colors cursor-pointer">&copy; 2026 ChimpzLab. All
+                    rights reserved.</div>
             </div>
 
             <!-- GIF Icon -->
             <div class="flex justify-center w-full interactive">
-                <img src="./asset/chimpzlab-icon-white.gif" alt="ChimpzLab Icon" class="h-32 md:h-40 w-auto object-contain">
+                <img src="./asset/chimpzlab-icon-white.gif" alt="ChimpzLab Icon"
+                    class="h-32 md:h-40 w-auto object-contain">
             </div>
 
             <!-- Social Media Handles -->
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="https://youtube.com/@chimpzlab" target="_blank" rel="noopener noreferrer" class="px-8 py-3 border border-white/20 rounded hover:border-white transition-colors interactive text-xs uppercase tracking-widest font-bold">YouTube</a>
-                <a href="https://linkedin.com/company/chimpzlab" target="_blank" rel="noopener noreferrer" class="px-8 py-3 border border-white/20 rounded hover:border-white transition-colors interactive text-xs uppercase tracking-widest font-bold">LinkedIn</a>
-                <a href="https://instagram.com/chimpzlab" target="_blank" rel="noopener noreferrer" class="px-8 py-3 border border-white/20 rounded hover:border-white transition-colors interactive text-xs uppercase tracking-widest font-bold">Instagram</a>
+                <a href="https://youtube.com/@chimpzlab" target="_blank" rel="noopener noreferrer"
+                    class="px-8 py-3 border border-white/20 rounded hover:border-white transition-colors interactive text-xs uppercase tracking-widest font-bold">YouTube</a>
+                <a href="https://linkedin.com/company/chimpzlab" target="_blank" rel="noopener noreferrer"
+                    class="px-8 py-3 border border-white/20 rounded hover:border-white transition-colors interactive text-xs uppercase tracking-widest font-bold">LinkedIn</a>
+                <a href="https://instagram.com/chimpzlab" target="_blank" rel="noopener noreferrer"
+                    class="px-8 py-3 border border-white/20 rounded hover:border-white transition-colors interactive text-xs uppercase tracking-widest font-bold">Instagram</a>
             </div>
         </div>
     </footer>
-<script>
-// Mega Menu Logic
+
+    <script>
+        // Mega Menu Logic
         const hasDropdown = document.querySelector('.has-dropdown');
         const megaMenu = document.querySelector('.mega-menu');
 
@@ -692,155 +671,137 @@
             });
         }
 
-        
-</script>
+        // Insights Category Filter
+        const filterBar = document.getElementById('insight-filters');
+        if (filterBar) {
+            const buttons = Array.prototype.slice.call(filterBar.querySelectorAll('.insight-filter'));
+            const cards = Array.prototype.slice.call(document.querySelectorAll('#insight-grid .insight-card'));
+            const emptyMsg = document.getElementById('insight-empty');
+            buttons.forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    buttons.forEach((b) => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+                    btn.classList.add('active');
+                    btn.setAttribute('aria-selected', 'true');
+                    const f = btn.getAttribute('data-filter');
+                    let visible = 0;
+                    cards.forEach((card) => {
+                        const show = f === 'all' || card.getAttribute('data-category') === f;
+                        card.classList.remove('filter-in');
+                        if (show) {
+                            card.style.display = '';
+                            void card.offsetWidth; // force reflow so the animation replays
+                            card.classList.add('filter-in');
+                            visible++;
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                    if (emptyMsg) emptyMsg.classList.toggle('hidden', visible !== 0);
+                });
+            });
+        }
+    </script>
 
-<script>
-const cursor = document.getElementById('cursor');
-const interactiveElements = document.querySelectorAll('.interactive, a, button, input, textarea, select, label');
-document.addEventListener('mousemove', (e) => { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; });
-interactiveElements.forEach(el => { el.addEventListener('mouseenter', () => cursor.classList.add('hovered')); el.addEventListener('mouseleave', () => cursor.classList.remove('hovered')); });
-window.lenis = new Lenis({ wrapper: window, content: document.documentElement, duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), direction: 'vertical', gestureDirection: 'vertical', smooth: true, mouseMultiplier: 1, smoothTouch: false, touchMultiplier: 2, infinite: false, });
-function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-requestAnimationFrame(raf);
-gsap.registerPlugin(ScrollTrigger);
-lenis.on('scroll', ScrollTrigger.update);
-gsap.from(".gsap-reveal-text", { y: 120, opacity: 0, duration: 1.2, stagger: 0.1, ease: "power4.out", delay: 0.2 });
-const revealElements = document.querySelectorAll(".gsap-reveal");
-revealElements.forEach((el) => { gsap.to(el, { scrollTrigger: { trigger: el, start: "top 85%", toggleActions: "play none none reverse" }, opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }); });
-ScrollTrigger.refresh(</script>
+    <script>
+        const cursor = document.getElementById('cursor');
+        const interactiveElements = document.querySelectorAll('.interactive, a, button, input, textarea, select, label');
+        document.addEventListener('mousemove', (e) => { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; });
+        interactiveElements.forEach(el => { el.addEventListener('mouseenter', () => cursor.classList.add('hovered')); el.addEventListener('mouseleave', () => cursor.classList.remove('hovered')); });
+        window.lenis = new Lenis({ wrapper: window, content: document.documentElement, duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), direction: 'vertical', gestureDirection: 'vertical', smooth: true, mouseMultiplier: 1, smoothTouch: false, touchMultiplier: 2, infinite: false, });
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+        gsap.registerPlugin(ScrollTrigger);
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.from(".gsap-reveal-text", { y: 120, opacity: 0, duration: 1.2, stagger: 0.1, ease: "power4.out", delay: 0.2 });
+        const revealElements = document.querySelectorAll(".gsap-reveal");
+        revealElements.forEach((el) => { gsap.to(el, { scrollTrigger: { trigger: el, start: "top 85%", toggleActions: "play none none reverse" }, opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }); });
+        ScrollTrigger.refresh();
+    </script>
 
-<!-- MOBILE_OFFCANVAS_MENU -->
-<style>
-/* === Mobile Offcanvas Menu === */
-body.menu-open { overflow: hidden; }
-.mobile-menu-overlay {
-  position: fixed; inset: 0; z-index: 9990;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
-  opacity: 0; visibility: hidden;
-  transition: opacity 0.35s ease, visibility 0.35s ease;
-}
-.mobile-menu-overlay.open { opacity: 1; visibility: visible; }
-.mobile-menu-panel {
-  position: absolute; top: 0; right: 0; height: 100%;
-  width: min(82vw, 360px); background: #0c0f0f;
-  border-left: 1px solid rgba(255,255,255,0.08);
-  padding: 24px 24px 24px; display: flex; flex-direction: column;
-  transform: translateX(100%);
-  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
-  overflow-y: auto; z-index: 9991;
-  overscroll-behavior: contain; -webkit-overflow-scrolling: touch;
-}
-.mobile-menu-overlay.open .mobile-menu-panel { transform: translateX(0); }
-.mobile-menu-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; flex-shrink: 0; }
-.mobile-menu-logo { color: #fff; font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; }
-.mobile-menu-close { background: transparent; border: none; color: #fff; font-size: 2rem; line-height: 1; cursor: pointer; padding: 4px 8px; }
-.mobile-menu-nav { display: flex; flex-direction: column; gap: 4px; }
-.mobile-menu-link, .mobile-menu-toggle {
-  display: flex; align-items: center; justify-content: space-between;
-  color: #e2e2e2; font-size: 1.05rem; font-weight: 600; padding: 14px 4px;
-  border: 0; border-bottom: 1px solid rgba(255,255,255,0.06);
-  background: transparent; width: 100%; text-align: left; cursor: pointer;
-}
-.mobile-menu-link:hover, .mobile-menu-toggle:hover { color: #fff; }
-.mobile-submenu { display: none; flex-direction: column; padding: 4px 0 12px 12px; }
-.mobile-menu-group.open .mobile-submenu { display: flex; }
-.mobile-submenu-link { color: #b5b5b5; font-size: 0.95rem; font-weight: 500; padding: 10px 4px; border-bottom: 1px solid rgba(255,255,255,0.04); }
-.mobile-submenu-link:hover { color: #fff; }
-.mobile-menu-toggle .chev { transition: transform 0.3s ease; flex-shrink: 0; display: inline-flex; }
-.mobile-menu-group.open .mobile-menu-toggle .chev { transform: rotate(180deg); }
-.mobile-menu-cta {
-  position: sticky; bottom: 0; margin-top: auto; flex-shrink: 0;
-  display: block; text-align: center; background: #fff; color: #000;
-  font-weight: 700; font-size: 0.95rem; letter-spacing: 0.02em; padding: 14px;
-  border-radius: 9999px; box-shadow: 0 -8px 16px rgba(12,15,15,0.95);
-}
-.mobile-menu-cta:hover { background: #e5e5e5; }
-</style>
-<script>
-/* Mobile Offcanvas Menu - built dynamically from each page's nav */
-(function () {
-  var navEl = document.querySelector('nav');
-  var hamburgerBtn = navEl ? navEl.querySelector('button') : null;
-  if (!navEl || !hamburgerBtn) return;
+    <!-- MOBILE_OFFCANVAS_MENU -->
+    
+    <script>
+        /* Mobile Offcanvas Menu - built dynamically from each page's nav */
+        (function () {
+            var navEl = document.querySelector('nav');
+            var hamburgerBtn = navEl ? navEl.querySelector('button') : null;
+            if (!navEl || !hamburgerBtn) return;
 
-  var megaLinks = Array.prototype.slice.call(document.querySelectorAll('nav .mega-menu-grid a')).map(function (a) {
-    var t = a.querySelector('.card-title');
-    var label = t ? t.innerHTML.replace(/<br\s*\/?>/gi, ' ').replace(/\s+/g, ' ').trim() : a.textContent.trim();
-    return { href: a.href, label: label };
-  });
-  var directLinks = Array.prototype.slice.call(document.querySelectorAll('nav .nav-pill > a')).map(function (a) {
-    return { href: a.href, label: a.textContent.trim() };
-  });
-  var ctaLink = Array.prototype.slice.call(document.querySelectorAll('nav a')).find(function (a) {
-    return /connect/i.test(a.textContent);
-  });
-  var homeLink = document.querySelector('nav a[aria-label="Home"]');
+            var megaLinks = Array.prototype.slice.call(document.querySelectorAll('nav .mega-menu-grid a')).map(function (a) {
+                var t = a.querySelector('.card-title');
+                var label = t ? t.innerHTML.replace(/<br\s*\/?>/gi, ' ').replace(/\s+/g, ' ').trim() : a.textContent.trim();
+                return { href: a.href, label: label };
+            });
+            var directLinks = Array.prototype.slice.call(document.querySelectorAll('nav .nav-pill > a')).map(function (a) {
+                return { href: a.href, label: a.textContent.trim() };
+            });
+            var ctaLink = Array.prototype.slice.call(document.querySelectorAll('nav a')).find(function (a) {
+                return /connect/i.test(a.textContent);
+            });
+            var homeLink = document.querySelector('nav a[aria-label="Home"]');
 
-  var overlay = document.createElement('div');
-  overlay.className = 'mobile-menu-overlay';
-  var panel = document.createElement('div');
-  panel.className = 'mobile-menu-panel';
-  panel.setAttribute('data-lenis-prevent', ''); // let the panel scroll natively even when Lenis is stopped
+            var overlay = document.createElement('div');
+            overlay.className = 'mobile-menu-overlay';
+            var panel = document.createElement('div');
+            panel.className = 'mobile-menu-panel';
+            panel.setAttribute('data-lenis-prevent', ''); // let the panel scroll natively even when Lenis is stopped
 
-  var html = '<div class="mobile-menu-head"><a href="' + (homeLink ? homeLink.href : 'index.html') + '" class="mobile-menu-logo">CHIMPZLAB</a>';
-  html += '<button type="button" class="mobile-menu-close" aria-label="Close menu">&times;</button></div>';
-  html += '<nav class="mobile-menu-nav">';
-  html += '<div class="mobile-menu-group"><button type="button" class="mobile-menu-toggle">Services <span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="mobile-submenu">';
-  megaLinks.forEach(function (l) { html += '<a href="' + l.href + '" class="mobile-submenu-link">' + l.label + '</a>'; });
-  html += '</div></div>';
-  directLinks.forEach(function (l) { html += '<a href="' + l.href + '" class="mobile-menu-link">' + l.label + '</a>'; });
-  html += '</nav>';
-  html += '<a href="' + (ctaLink ? ctaLink.href : 'index.html#contact') + '" class="mobile-menu-cta">Let\'s Connect</a>';
+            var html = '<div class="mobile-menu-head"><a href="' + (homeLink ? homeLink.href : 'index.html') + '" class="mobile-menu-logo">CHIMPZLAB</a>';
+            html += '<button type="button" class="mobile-menu-close" aria-label="Close menu">&times;</button></div>';
+            html += '<nav class="mobile-menu-nav">';
+            html += '<div class="mobile-menu-group"><button type="button" class="mobile-menu-toggle">Services <span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="mobile-submenu">';
+            megaLinks.forEach(function (l) { html += '<a href="' + l.href + '" class="mobile-submenu-link">' + l.label + '</a>'; });
+            html += '</div></div>';
+            directLinks.forEach(function (l) { html += '<a href="' + l.href + '" class="mobile-menu-link">' + l.label + '</a>'; });
+            html += '</nav>';
+            html += '<a href="' + (ctaLink ? ctaLink.href : 'index.html#contact') + '" class="mobile-menu-cta">Let\'s Connect</a>';
 
-  panel.innerHTML = html;
-  overlay.appendChild(panel);
-  document.body.appendChild(overlay);
+            panel.innerHTML = html;
+            overlay.appendChild(panel);
+            document.body.appendChild(overlay);
 
-  function lockScroll() {
-    document.body.classList.add('menu-open');
-    if (window.lenis && typeof window.lenis.stop === 'function') window.lenis.stop();
-  }
-  function unlockScroll() {
-    document.body.classList.remove('menu-open');
-    if (window.lenis && typeof window.lenis.start === 'function') window.lenis.start();
-  }
-  function openMenu() {
-    overlay.classList.add('open');
-    hamburgerBtn.classList.add('is-active');
-    hamburgerBtn.setAttribute('aria-expanded', 'true');
-    lockScroll();
-  }
-  function closeMenu() {
-    overlay.classList.remove('open');
-    hamburgerBtn.classList.remove('is-active');
-    hamburgerBtn.setAttribute('aria-expanded', 'false');
-    unlockScroll();
-  }
+            function lockScroll() {
+                document.body.classList.add('menu-open');
+                if (window.lenis && typeof window.lenis.stop === 'function') window.lenis.stop();
+            }
+            function unlockScroll() {
+                document.body.classList.remove('menu-open');
+                if (window.lenis && typeof window.lenis.start === 'function') window.lenis.start();
+            }
+            function openMenu() {
+                overlay.classList.add('open');
+                hamburgerBtn.classList.add('is-active');
+                hamburgerBtn.setAttribute('aria-expanded', 'true');
+                lockScroll();
+            }
+            function closeMenu() {
+                overlay.classList.remove('open');
+                hamburgerBtn.classList.remove('is-active');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+                unlockScroll();
+            }
 
-  hamburgerBtn.addEventListener('click', function () {
-    if (overlay.classList.contains('open')) { closeMenu(); }
-    else { openMenu(); }
-  });
-  overlay.addEventListener('click', function (e) {
-    if (e.target === overlay) closeMenu();
-    if (e.target.closest('a')) closeMenu();
-  });
-  var closeBtn = panel.querySelector('.mobile-menu-close');
-  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+            hamburgerBtn.addEventListener('click', function () {
+                if (overlay.classList.contains('open')) { closeMenu(); }
+                else { openMenu(); }
+            });
+            overlay.addEventListener('click', function (e) {
+                if (e.target === overlay) closeMenu();
+                if (e.target.closest('a')) closeMenu();
+            });
+            var closeBtn = panel.querySelector('.mobile-menu-close');
+            if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+            document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
 
-  var svcToggle = panel.querySelector('.mobile-menu-toggle');
-  if (svcToggle) {
-    svcToggle.addEventListener('click', function () {
-      svcToggle.parentElement.classList.toggle('open');
-    });
-  }
-})();
-</script>
-
-
+            var svcToggle = panel.querySelector('.mobile-menu-toggle');
+            if (svcToggle) {
+                svcToggle.addEventListener('click', function () {
+                    svcToggle.parentElement.classList.toggle('open');
+                });
+            }
+        })();
+    </script>
 
 </body>
+
 </html>
