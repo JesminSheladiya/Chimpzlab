@@ -2162,51 +2162,9 @@ select {
   transition: opacity .65s cubic-bezier(.22, 1, .36, 1), transform .65s cubic-bezier(.22, 1, .36, 1), left .45s ease, top .45s ease, border-color .45s ease;
 }
 
-.cs-card.cs-hover-active {
-  border-color: transparent;
-  animation: hoverBg .8s ease forwards;
-}
-
 .cs-card.in {
   opacity: 1;
   transform: none;
-}
-
-.gsap-reveal-text,
-.gsap-reveal {
-  animation: csRise .9s cubic-bezier(.22, 1, .36, 1) both;
-}
-
-.cs-tag {
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: #fff;
-  backdrop-filter: blur(6px);
-}
-
-.cs-hover-reveal {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height .45s ease;
-}
-
-.cs-card.cs-hover-active .cs-hover-reveal {
-  max-height: 200px;
-}
-
-.cs-hover-inner {
-  opacity: 0;
-  transition: opacity .35s ease .45s;
-}
-
-.cs-card.cs-hover-active .cs-hover-inner {
-  opacity: 1;
 }
 
 .card-height-equal {
@@ -2681,20 +2639,6 @@ section.bg-white ::selection {
 @media (min-width: 768px) {
   .case-study-carousel-outer .swiper-button-prev {
     left: -26px;
-  }
-}
-
-@keyframes hoverBg {
-  0% {
-    background-color: #101010;
-  }
-
-  50% {
-    background-color: transparent;
-  }
-
-  100% {
-    background-color: rgba(255, 255, 255, 0.1);
   }
 }
 

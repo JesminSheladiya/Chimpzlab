@@ -2,7 +2,7 @@
   {
     "slug": "ajmera-realty",
     "title": "Ajmera Realty & Infra India Ltd.",
-    "cover": "https://placehold.co/800x700/161616/ffffff?text=Ajmera%20Realty%20&%20Infra%20India%20Ltd.",
+    "cover": "./casestudy/ajmera-realty/cover.jpg",
     "categories": [
       {
         "key": "brand-strategy",
@@ -200,7 +200,7 @@
   {
     "slug": "munns-mars",
     "title": "Munns & Mars",
-    "cover": "https://placehold.co/800x1000/161616/ffffff?text=Munns%20%26%20Mars",
+    "cover": "./casestudy/munns-mars/cover.jpg",
     "categories": [
       {
         "key": "brand-strategy",
@@ -261,7 +261,7 @@
   {
     "slug": "psiog",
     "title": "Psiog",
-    "cover": "https://placehold.co/800x1000/161616/ffffff?text=Psiog",
+    "cover": "./casestudy/psiog/cover.png",
     "categories": [
       {
         "key": "brand-identity",
