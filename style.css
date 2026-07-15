@@ -1982,13 +1982,14 @@ body.menu-open {
 }
 
 .trust-marquee {
-  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask-image: none;
+  mask-image: none;
 }
 
 .trust-track {
-  animation: trustScroll 20s linear infinite;
-  width: max-content;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
 }
 
 .insight-filter {
