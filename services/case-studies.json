@@ -41,7 +41,7 @@
   {
     "slug": "carnelian-capital",
     "title": "Carnelian Capital",
-    "cover": "https://placehold.co/800x1000/161616/ffffff?text=Carnelian%20Capital",
+    "cover": "./casestudy/carnelian-capital/cover.jpg",
     "categories": [
       {
         "key": "brand-strategy",
@@ -354,7 +354,7 @@
   {
     "slug": "tiger-analytics",
     "title": "Tiger Analytics",
-    "cover": "https://placehold.co/800x1000/161616/ffffff?text=Tiger%20Analytics",
+    "cover": "./casestudy/tiger-analytics/cover.png",
     "categories": [
       {
         "key": "brand-strategy",
