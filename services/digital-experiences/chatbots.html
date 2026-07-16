@@ -617,7 +617,7 @@
                     </svg>
                 </a>
             </div>
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-4xl mx-auto hidden">
                 <a href="../casestudy/soul-skin.html" class="block group interactive gsap-reveal h-full"
                     data-featured-slug="soul-skin">
                     <div
@@ -998,7 +998,7 @@
                 .then(r => r.json())
                 .then(data => {
                     const item = data.find(d => d.slug === slug);
-                    if (!item) return;
+                    if (!item || item.draft) return;
                     const img = card.querySelector('img');
                     const h3 = card.querySelector('h3');
                     const p = card.querySelector('p.line-clamp-2');

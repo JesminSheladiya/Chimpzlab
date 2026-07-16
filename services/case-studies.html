@@ -301,6 +301,7 @@
 
             function renderCards(data) {
                 grid.innerHTML = '';
+                data = data.filter(item => !item.draft);
                 data.forEach((item, i) => {
                     const idx = String(i + 1).padStart(2, '0');
                     const tags = item.categoryKeys.map(k => '<span class="cs-tag">' + (CATS[k] || k) + '</span>').join('');

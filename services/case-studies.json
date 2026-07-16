@@ -305,6 +305,7 @@
   {
     "slug": "soul-skin",
     "title": "Soul Skin",
+    "draft": true,
     "cover": "./casestudy/soul-skin/cover.jpeg",
     "categories": [
       {

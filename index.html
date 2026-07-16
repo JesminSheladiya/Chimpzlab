@@ -739,38 +739,6 @@
 
     <!-- JS Logic -->
     <script>
-        // Mega Menu Logic
-        const hasDropdown = document.querySelector('.has-dropdown');
-        const megaMenu = document.querySelector('.mega-menu');
-
-        if (hasDropdown && megaMenu) {
-            // Open on hover
-            hasDropdown.addEventListener('mouseenter', () => {
-                megaMenu.classList.add('active');
-            });
-
-            // Fallback: Toggle on click
-            const servicesLink = hasDropdown.querySelector('a');
-            if (servicesLink) {
-                servicesLink.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    megaMenu.classList.toggle('active');
-                });
-            }
-
-            // Close when clicking anywhere outside
-            document.addEventListener('click', (e) => {
-                if (!hasDropdown.contains(e.target)) {
-                    megaMenu.classList.remove('active');
-                }
-            });
-
-            // Prevent clicks inside the menu from bubbling to document and closing it
-            megaMenu.addEventListener('click', (e) => {
-                e.stopPropagation();
-            });
-        }
-
         // Custom Cursor Logic
         const cursor = document.getElementById('cursor');
         const interactiveElements = document.querySelectorAll('.interactive, a, button, input, textarea, label');

@@ -932,7 +932,7 @@
             .then(r => r.json())
             .then(data => {
                 const item = data.find(d => d.slug === slug);
-                if (!item) return;
+                if (!item || item.draft) return;
                 const img = card.querySelector('img');
                 const h3 = card.querySelector('h3');
                 const p = card.querySelector('p.line-clamp-2');
