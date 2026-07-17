@@ -66,7 +66,7 @@
         <div class="pointer-events-auto hidden md:flex absolute left-1/2 -translate-x-1/2 z-10">
             <div class="nav-pill px-6 py-3 rounded-full flex items-center gap-8">
                 <div class="has-dropdown">
-                    <a href="#"
+                    <a href="#services-section"
                         class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors flex items-center gap-1">
                         Services
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -154,7 +154,14 @@
     <!-- Hero Section -->
     <header
         class="min-h-screen flex flex-col justify-center px-6 md:px-12 pt-40 pb-20 relative bg-brand-dark overflow-hidden">
-        <div class="w-full max-w-[1400px] mx-auto z-10">
+        <!-- Background Hero Image -->
+        <div class="absolute top-0 right-0 w-full lg:w-[60%] h-full z-0 pointer-events-none transition-opacity duration-500">
+            <img src="asset/home-page.png" alt="ChimpzLab Banner" class="w-full h-full object-cover object-center lg:object-left-top opacity-30 lg:opacity-100">
+            <!-- Fade/Blend Gradients -->
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark to-transparent"></div>
+        </div>
+
+        <div class="w-full max-w-[1400px] mx-auto relative z-10">
             <!-- Huge Heading -->
             <h1 class="text-huge font-extrabold uppercase text-white mb-16">
                 <div class="overflow-hidden"><span class="block gsap-reveal-text">Visibility.</span></div>
@@ -181,16 +188,6 @@
                             WHAT WE DO</a>
                     </div>
                 </div>
-
-                <!-- Chimp Mascot Image Placeholder -->
-                <div class="hidden lg:block lg:col-span-5 relative">
-                    <div class="w-full aspect-[4/3] rounded-3xl overflow-hidden relative group">
-                        <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?q=80&w=1000&auto=format&fit=crop"
-                            alt="ChimpzLab Mascot"
-                            class="w-full h-full object-cover img-bw opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark to-transparent opacity-50"></div>
-                    </div>
-                </div>
             </div>
 
             <!-- Trust Bar -->
@@ -198,20 +195,8 @@
                 <div class="flex flex-col md:flex-row items-center justify-start gap-6 md:gap-12">
                     <span class="text-xs font-bold uppercase tracking-widest text-gray-500 whitespace-nowrap">Trusted
                         by teams at</span>
-                    <div class="trust-marquee overflow-hidden w-full">
-                        <div class="trust-track flex items-center gap-3 md:gap-4"><div
-                                class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0">
-                                <img src="asset/client-logo/nasscom-logo.png" alt="NASSCOM"
-                                    class="w-full h-full object-contain"></div><div
-                                class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0">
-                                <img src="asset/client-logo/evershine.png" alt="Evershine Builders"
-                                    class="w-full h-full object-contain"></div><div
-                                class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0">
-                                <img src="asset/client-logo/tiger-analtics.png" alt="Tiger Analytics"
-                                    class="w-full h-full object-contain"></div><div
-                                class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0">
-                                <img src="asset/client-logo/anita-b.png" alt="AnitaB"
-                                    class="w-full h-full object-contain"></div></div>
+                    <div class="trust-marquee w-full">
+                        <div class="trust-track flex items-center gap-3 md:gap-4"><div class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0"><img src="asset/client-logo/nasscom-logo.png" alt="NASSCOM" class="w-full h-full object-contain"></div><div class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0"><img src="asset/client-logo/evershine.png" alt="Evershine Builders" class="w-full h-full object-contain"></div><div class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0"><img src="asset/client-logo/tiger-analtics.png" alt="Tiger Analytics" class="w-full h-full object-contain"></div><div class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0"><img src="asset/client-logo/anita-b.png" alt="AnitaB" class="w-full h-full object-contain"></div><div class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0"><img src="asset/client-logo/CCoE-Logo.png" alt="CCoE" class="w-full h-full object-contain"></div><div class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0"><img src="asset/client-logo/CII-logo.png" alt="CII" class="w-full h-full object-contain"></div><div class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0"><img src="asset/client-logo/Ebixcash-logo.png" alt="Ebixcash" class="w-full h-full object-contain"></div><div class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0"><img src="asset/client-logo/ibm-logo.png" alt="IBM" class="w-full h-full object-contain"></div><div class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0"><img src="asset/client-logo/national-coe-logo.png" alt="National CoE" class="w-full h-full object-contain"></div><div class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0"><img src="asset/client-logo/new-blue-star-logo.png" alt="Blue Star" class="w-full h-full object-contain"></div><div class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0"><img src="asset/client-logo/new-stl-logo.png" alt="STL" class="w-full h-full object-contain"></div><div class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0"><img src="asset/client-logo/societe-generele-logo.png" alt="Societe Generale" class="w-full h-full object-contain"></div><div class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0"><img src="asset/client-logo/tcs-logo.png" alt="TCS" class="w-full h-full object-contain"></div><div class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0"><img src="asset/client-logo/nasscom-logo.png" alt="NASSCOM" class="w-full h-full object-contain"></div><div class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0"><img src="asset/client-logo/evershine.png" alt="Evershine Builders" class="w-full h-full object-contain"></div><div class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0"><img src="asset/client-logo/tiger-analtics.png" alt="Tiger Analytics" class="w-full h-full object-contain"></div><div class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0"><img src="asset/client-logo/anita-b.png" alt="AnitaB" class="w-full h-full object-contain"></div><div class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0"><img src="asset/client-logo/CCoE-Logo.png" alt="CCoE" class="w-full h-full object-contain"></div><div class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0"><img src="asset/client-logo/CII-logo.png" alt="CII" class="w-full h-full object-contain"></div><div class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0"><img src="asset/client-logo/Ebixcash-logo.png" alt="Ebixcash" class="w-full h-full object-contain"></div><div class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0"><img src="asset/client-logo/ibm-logo.png" alt="IBM" class="w-full h-full object-contain"></div><div class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0"><img src="asset/client-logo/national-coe-logo.png" alt="National CoE" class="w-full h-full object-contain"></div><div class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0"><img src="asset/client-logo/new-blue-star-logo.png" alt="Blue Star" class="w-full h-full object-contain"></div><div class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0"><img src="asset/client-logo/new-stl-logo.png" alt="STL" class="w-full h-full object-contain"></div><div class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0"><img src="asset/client-logo/societe-generele-logo.png" alt="Societe Generale" class="w-full h-full object-contain"></div><div class="flex items-center justify-center w-40 md:w-56 h-20 md:h-24 bg-white rounded-xl p-2 shrink-0"><img src="asset/client-logo/tcs-logo.png" alt="TCS" class="w-full h-full object-contain"></div></div>
                     </div>
                 </div>
             </div>
@@ -331,11 +316,11 @@
     </section>
 
     <!-- Services Section -->
-    <section class="py-32 px-6 md:px-12 bg-zinc-900">
+    <section class="py-32 px-6 md:px-12 bg-zinc-900" id="services-section">
         <div class="max-w-[1400px] mx-auto">
             <div class="mb-20 flex justify-between items-end">
                 <h2 class="text-5xl md:text-7xl font-black tracking-tighter">Services.</h2>
-                <a href="#services"
+                <a href="#services-section"
                     class="interactive btn-outline px-6 py-3 rounded-full text-sm font-semibold uppercase tracking-wider hidden md:inline-block border-white text-white">Explore
                     All</a>
             </div>
@@ -453,28 +438,6 @@
         <div class="max-w-[1400px] mx-auto px-6 md:px-12">
             <div class="swiper work-swiper">
                 <div class="swiper-wrapper">
-                    <!-- Work Card 1 -->
-                    <div class="swiper-slide">
-                        <a href="services/casestudy/blue-star.html"
-                            class="relative block w-full aspect-[4/3] md:aspect-[16/10] bg-black overflow-hidden group interactive rounded-2xl">
-                            <img src="services/casestudy/blue-star/cover.png"
-                                alt="Blue Star India"
-                                class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10"></div>
-
-                            <div
-                                class="absolute top-5 left-5 md:top-8 md:left-8 z-10 text-[10px] md:text-xs font-semibold uppercase tracking-widest text-white/80">
-                                Corporate Communications, Social Media Marketing
-                            </div>
-
-                            <div class="absolute bottom-5 left-5 md:bottom-8 md:left-8 z-10 pr-6">
-                                <h3 class="text-xl md:text-2xl font-bold text-white leading-tight">
-                                    Employer Branding for Blue Star India</h3>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Work Card 2 -->
                     <div class="swiper-slide">
                         <a href="services/casestudy/ajmera-realty.html"
                             class="relative block w-full aspect-[4/3] md:aspect-[16/10] bg-black overflow-hidden group interactive rounded-2xl">
@@ -482,20 +445,77 @@
                                 alt="Ajmera Realty & Infra India Ltd."
                                 class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10"></div>
-
-                            <div
-                                class="absolute top-5 left-5 md:top-8 md:left-8 z-10 text-[10px] md:text-xs font-semibold uppercase tracking-widest text-white/80">
-                                Corporate Communications, Brand Identity
-                            </div>
-
+                            <div class="absolute top-5 left-5 md:top-8 md:left-8 z-10 text-[10px] md:text-xs font-semibold uppercase tracking-widest text-white/80">Brand Strategy, Brand Identity</div>
                             <div class="absolute bottom-5 left-5 md:bottom-8 md:left-8 z-10 pr-6">
-                                <h3 class="text-xl md:text-2xl font-bold text-white leading-tight">
-                                    Investor Presentation Template for Ajmera Realty</h3>
+                                <h3 class="text-xl md:text-2xl font-bold text-white leading-tight">Ajmera Realty & Infra India Ltd.</h3>
                             </div>
                         </a>
                     </div>
-
-                    <!-- Work Card 3 -->
+                    <div class="swiper-slide">
+                        <a href="services/casestudy/blue-star.html"
+                            class="relative block w-full aspect-[4/3] md:aspect-[16/10] bg-black overflow-hidden group interactive rounded-2xl">
+                            <img src="services/casestudy/blue-star/cover.png"
+                                alt="Blue Star India"
+                                class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10"></div>
+                            <div class="absolute top-5 left-5 md:top-8 md:left-8 z-10 text-[10px] md:text-xs font-semibold uppercase tracking-widest text-white/80">Brand Strategy</div>
+                            <div class="absolute bottom-5 left-5 md:bottom-8 md:left-8 z-10 pr-6">
+                                <h3 class="text-xl md:text-2xl font-bold text-white leading-tight">Blue Star India</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="services/casestudy/carnelian-capital.html"
+                            class="relative block w-full aspect-[4/3] md:aspect-[16/10] bg-black overflow-hidden group interactive rounded-2xl">
+                            <img src="services/casestudy/carnelian-capital/cover.jpg"
+                                alt="Carnelian Capital"
+                                class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10"></div>
+                            <div class="absolute top-5 left-5 md:top-8 md:left-8 z-10 text-[10px] md:text-xs font-semibold uppercase tracking-widest text-white/80">Brand Strategy, Visual Content</div>
+                            <div class="absolute bottom-5 left-5 md:bottom-8 md:left-8 z-10 pr-6">
+                                <h3 class="text-xl md:text-2xl font-bold text-white leading-tight">Carnelian Capital</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="services/casestudy/cisco-thingqbator.html"
+                            class="relative block w-full aspect-[4/3] md:aspect-[16/10] bg-black overflow-hidden group interactive rounded-2xl">
+                            <img src="services/casestudy/cisco-thingqbator/cover.jpg"
+                                alt="Cisco thingQbator"
+                                class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10"></div>
+                            <div class="absolute top-5 left-5 md:top-8 md:left-8 z-10 text-[10px] md:text-xs font-semibold uppercase tracking-widest text-white/80">Brand Strategy, UX / UI Design, Web Development</div>
+                            <div class="absolute bottom-5 left-5 md:bottom-8 md:left-8 z-10 pr-6">
+                                <h3 class="text-xl md:text-2xl font-bold text-white leading-tight">Cisco thingQbator</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="services/casestudy/evershine-builders.html"
+                            class="relative block w-full aspect-[4/3] md:aspect-[16/10] bg-black overflow-hidden group interactive rounded-2xl">
+                            <img src="services/casestudy/evershine-builders/cover.png"
+                                alt="Evershine Builders"
+                                class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10"></div>
+                            <div class="absolute top-5 left-5 md:top-8 md:left-8 z-10 text-[10px] md:text-xs font-semibold uppercase tracking-widest text-white/80">Brand Strategy</div>
+                            <div class="absolute bottom-5 left-5 md:bottom-8 md:left-8 z-10 pr-6">
+                                <h3 class="text-xl md:text-2xl font-bold text-white leading-tight">Evershine Builders</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="services/casestudy/forest-hills.html"
+                            class="relative block w-full aspect-[4/3] md:aspect-[16/10] bg-black overflow-hidden group interactive rounded-2xl">
+                            <img src="services/casestudy/forest-hills/cover.jpg"
+                                alt="Forest Hills at Tala"
+                                class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10"></div>
+                            <div class="absolute top-5 left-5 md:top-8 md:left-8 z-10 text-[10px] md:text-xs font-semibold uppercase tracking-widest text-white/80">Brand Strategy, Brand Identity</div>
+                            <div class="absolute bottom-5 left-5 md:bottom-8 md:left-8 z-10 pr-6">
+                                <h3 class="text-xl md:text-2xl font-bold text-white leading-tight">Forest Hills at Tala</h3>
+                            </div>
+                        </a>
+                    </div>
                     <div class="swiper-slide">
                         <a href="services/casestudy/ghci-2024.html"
                             class="relative block w-full aspect-[4/3] md:aspect-[16/10] bg-black overflow-hidden group interactive rounded-2xl">
@@ -503,15 +523,126 @@
                                 alt="Grace Hopper Celebration India 2024"
                                 class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10"></div>
-
-                            <div
-                                class="absolute top-5 left-5 md:top-8 md:left-8 z-10 text-[10px] md:text-xs font-semibold uppercase tracking-widest text-white/80">
-                                Digital Marketing, Social Media Marketing
-                            </div>
-
+                            <div class="absolute top-5 left-5 md:top-8 md:left-8 z-10 text-[10px] md:text-xs font-semibold uppercase tracking-widest text-white/80">Brand Strategy, Visual Content</div>
                             <div class="absolute bottom-5 left-5 md:bottom-8 md:left-8 z-10 pr-6">
-                                <h3 class="text-xl md:text-2xl font-bold text-white leading-tight">
-                                    Digital Marketing GHCI India 2024</h3>
+                                <h3 class="text-xl md:text-2xl font-bold text-white leading-tight">Grace Hopper Celebration India 2024</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="services/casestudy/imbesharam.html"
+                            class="relative block w-full aspect-[4/3] md:aspect-[16/10] bg-black overflow-hidden group interactive rounded-2xl">
+                            <img src="services/casestudy/imbesharam/cover.jpg"
+                                alt="IMBesharam"
+                                class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10"></div>
+                            <div class="absolute top-5 left-5 md:top-8 md:left-8 z-10 text-[10px] md:text-xs font-semibold uppercase tracking-widest text-white/80">Brand Strategy, Visual Content, Web Development</div>
+                            <div class="absolute bottom-5 left-5 md:bottom-8 md:left-8 z-10 pr-6">
+                                <h3 class="text-xl md:text-2xl font-bold text-white leading-tight">IMBesharam</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="services/casestudy/mos-world.html"
+                            class="relative block w-full aspect-[4/3] md:aspect-[16/10] bg-black overflow-hidden group interactive rounded-2xl">
+                            <img src="services/casestudy/mos-world/cover.jpg"
+                                alt="MOS World"
+                                class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10"></div>
+                            <div class="absolute top-5 left-5 md:top-8 md:left-8 z-10 text-[10px] md:text-xs font-semibold uppercase tracking-widest text-white/80">Brand Strategy</div>
+                            <div class="absolute bottom-5 left-5 md:bottom-8 md:left-8 z-10 pr-6">
+                                <h3 class="text-xl md:text-2xl font-bold text-white leading-tight">MOS World</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="services/casestudy/munns-mars.html"
+                            class="relative block w-full aspect-[4/3] md:aspect-[16/10] bg-black overflow-hidden group interactive rounded-2xl">
+                            <img src="services/casestudy/munns-mars/cover.jpg"
+                                alt="Munns & Mars"
+                                class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10"></div>
+                            <div class="absolute top-5 left-5 md:top-8 md:left-8 z-10 text-[10px] md:text-xs font-semibold uppercase tracking-widest text-white/80">Brand Strategy, Visual Content</div>
+                            <div class="absolute bottom-5 left-5 md:bottom-8 md:left-8 z-10 pr-6">
+                                <h3 class="text-xl md:text-2xl font-bold text-white leading-tight">Munns & Mars</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="services/casestudy/nasscom-konnect.html"
+                            class="relative block w-full aspect-[4/3] md:aspect-[16/10] bg-black overflow-hidden group interactive rounded-2xl">
+                            <img src="services/casestudy/nasscom-konnect/cover.jpg"
+                                alt="Nasscom Konnect"
+                                class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10"></div>
+                            <div class="absolute top-5 left-5 md:top-8 md:left-8 z-10 text-[10px] md:text-xs font-semibold uppercase tracking-widest text-white/80">Brand Strategy, Visual Content</div>
+                            <div class="absolute bottom-5 left-5 md:bottom-8 md:left-8 z-10 pr-6">
+                                <h3 class="text-xl md:text-2xl font-bold text-white leading-tight">Nasscom Konnect</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="services/casestudy/nasscom-member-connect.html"
+                            class="relative block w-full aspect-[4/3] md:aspect-[16/10] bg-black overflow-hidden group interactive rounded-2xl">
+                            <img src="https://placehold.co/800x1000/161616/ffffff?text=Nasscom%20Member%20Connect"
+                                alt="Nasscom Member Connect"
+                                class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10"></div>
+                            <div class="absolute top-5 left-5 md:top-8 md:left-8 z-10 text-[10px] md:text-xs font-semibold uppercase tracking-widest text-white/80">Brand Strategy</div>
+                            <div class="absolute bottom-5 left-5 md:bottom-8 md:left-8 z-10 pr-6">
+                                <h3 class="text-xl md:text-2xl font-bold text-white leading-tight">Nasscom Member Connect</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="services/casestudy/psiog.html"
+                            class="relative block w-full aspect-[4/3] md:aspect-[16/10] bg-black overflow-hidden group interactive rounded-2xl">
+                            <img src="services/casestudy/psiog/cover.png"
+                                alt="Psiog"
+                                class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10"></div>
+                            <div class="absolute top-5 left-5 md:top-8 md:left-8 z-10 text-[10px] md:text-xs font-semibold uppercase tracking-widest text-white/80">Brand Identity, Visual Content</div>
+                            <div class="absolute bottom-5 left-5 md:bottom-8 md:left-8 z-10 pr-6">
+                                <h3 class="text-xl md:text-2xl font-bold text-white leading-tight">Psiog</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="services/casestudy/robust-petcare.html"
+                            class="relative block w-full aspect-[4/3] md:aspect-[16/10] bg-black overflow-hidden group interactive rounded-2xl">
+                            <img src="services/casestudy/robust-petcare/cover.jpg"
+                                alt="Robust Petcare"
+                                class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10"></div>
+                            <div class="absolute top-5 left-5 md:top-8 md:left-8 z-10 text-[10px] md:text-xs font-semibold uppercase tracking-widest text-white/80">Brand Identity, Brand Strategy</div>
+                            <div class="absolute bottom-5 left-5 md:bottom-8 md:left-8 z-10 pr-6">
+                                <h3 class="text-xl md:text-2xl font-bold text-white leading-tight">Robust Petcare</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="services/casestudy/stl-digital.html"
+                            class="relative block w-full aspect-[4/3] md:aspect-[16/10] bg-black overflow-hidden group interactive rounded-2xl">
+                            <img src="services/casestudy/stl-digital/cover.jpg"
+                                alt="STL Digital"
+                                class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10"></div>
+                            <div class="absolute top-5 left-5 md:top-8 md:left-8 z-10 text-[10px] md:text-xs font-semibold uppercase tracking-widest text-white/80">Brand Strategy, Visual Content, Web Development</div>
+                            <div class="absolute bottom-5 left-5 md:bottom-8 md:left-8 z-10 pr-6">
+                                <h3 class="text-xl md:text-2xl font-bold text-white leading-tight">STL Digital</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="services/casestudy/tiger-analytics.html"
+                            class="relative block w-full aspect-[4/3] md:aspect-[16/10] bg-black overflow-hidden group interactive rounded-2xl">
+                            <img src="services/casestudy/tiger-analytics/cover.png"
+                                alt="Tiger Analytics"
+                                class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10"></div>
+                            <div class="absolute top-5 left-5 md:top-8 md:left-8 z-10 text-[10px] md:text-xs font-semibold uppercase tracking-widest text-white/80">Brand Strategy, AI Intelligence</div>
+                            <div class="absolute bottom-5 left-5 md:bottom-8 md:left-8 z-10 pr-6">
+                                <h3 class="text-xl md:text-2xl font-bold text-white leading-tight">Tiger Analytics</h3>
                             </div>
                         </a>
                     </div>
@@ -778,6 +909,7 @@
 
         // Our Work Swiper
         const workSwiper = new Swiper('.work-swiper', {
+            loop: true,
             slidesPerView: 1.2,
             spaceBetween: 16,
             speed: 800,

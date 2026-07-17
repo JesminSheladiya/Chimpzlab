@@ -1,5 +1,9 @@
 /* ChimpzLab - consolidated stylesheet (generated). Do not edit inline <style> in HTML. */
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --primary: #ff5d73;
   --background: #121414;
@@ -1982,14 +1986,21 @@ body.menu-open {
 }
 
 .trust-marquee {
-  -webkit-mask-image: none;
-  mask-image: none;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  overflow: hidden !important;
 }
 
 .trust-track {
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .insight-filter {
