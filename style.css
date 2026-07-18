@@ -4,6 +4,54 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Footer service <-> service page relationship highlight */
+footer ul {
+  gap: 0 !important;
+}
+footer ul li {
+  line-height: 1;
+}
+footer a[data-service] {
+  display: block;
+  padding: 7px 0;
+  transition: color .3s ease, background-color .3s ease, font-weight .3s ease, padding .3s ease;
+}
+footer a[data-service].is-active {
+  color: white;
+  font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding-left: 8px;
+}
+footer a[data-company] {
+  display: block;
+  padding: 7px 0;
+  transition: color .3s ease, background-color .3s ease, font-weight .3s ease, padding .3s ease;
+}
+footer a[data-company]:hover {
+  color: white;
+  font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding-left: 8px;
+}
+a[data-parent] {
+  display: block;
+  padding: 5px 0;
+  transition: color .3s ease, opacity .3s ease, background-color .3s ease, padding .3s ease;
+}
+a[data-parent].is-match {
+  color: white;
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.12);
+  padding-left: 8px;
+}
+a[data-parent].is-hovered {
+  box-shadow: inset 2px 0 0 white;
+  padding-left: 8px;
+}
+a[data-parent].is-dim {
+  opacity: 0.25;
+}
+
 :root {
   --primary: #ff5d73;
   --background: #121414;
@@ -1999,8 +2047,13 @@ body.menu-open {
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .insight-filter {
@@ -2703,5 +2756,8 @@ section.bg-white ::selection {
     left: -26px;
   }
 }
+
 /* Equal-height process cards */
-.process-step > div { height: 100%; }
+.process-step>div {
+  height: 100%;
+}
