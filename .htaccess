@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Route /api/* and /crm/* to CRM router (fixes FlightPHP URI in subdirectory)
+RewriteRule ^(api/|crm/) crm-router.php [QSA,L]
+
+# Serve existing files directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.html [L]
