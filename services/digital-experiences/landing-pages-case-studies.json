@@ -1,0 +1,184 @@
+[
+  {
+    "image": "../casestudy/landing-pages/mos.png",
+    "title": "MOS World",
+    "desc": "Listed Digital FinServ Company",
+    "link": "https://mos-world.com/",
+    "category": "FinServ"
+  },
+  {
+    "image": "../casestudy/landing-pages/cirl.png",
+    "title": "CIRL",
+    "desc": "Insurance Repository of CDSL",
+    "link": "https://www.cirl.co.in/",
+    "category": "FinServ"
+  },
+  {
+    "image": "../casestudy/landing-pages/carnelian.png",
+    "title": "Carnelian Capital",
+    "desc": "Boutique Investment Management Firm",
+    "link": "https://carneliancapital.co.in/",
+    "category": "FinServ"
+  },
+  {
+    "image": "../casestudy/landing-pages/dpnc.png",
+    "title": "DPNC",
+    "desc": "Tax & Finance Consulting Firm",
+    "link": "https://dpncglobal.com/",
+    "category": "FinServ"
+  },
+  {
+    "image": "../casestudy/landing-pages/invenia.jpg",
+    "title": "Invenia",
+    "desc": "An STL Group Company (Part of Vedanta Group)",
+    "link": "https://inveniatech.com/",
+    "category": "IT Services"
+  },
+  {
+    "image": "../casestudy/landing-pages/psiog.png",
+    "title": "Psiog",
+    "desc": "Mid Market IT Services Company",
+    "link": "https://psiog.com/",
+    "category": "IT Services"
+  },
+  {
+    "image": "../casestudy/landing-pages/ccoe.png",
+    "title": "CCOE",
+    "desc": "Joint initiative of Government of Telangana & Data Security Council of India",
+    "link": "https://ccoe.dsci.in/",
+    "category": "IT Services"
+  },
+  {
+    "image": "../casestudy/landing-pages/reverbasia.png",
+    "title": "Reverb Asia",
+    "desc": "Tech Accessories E-Commerce Store",
+    "link": "https://reverbasia.com/",
+    "category": "E-Commerce"
+  },
+  {
+    "image": "../casestudy/landing-pages/eduspark.png",
+    "title": "Eduspark",
+    "desc": "Kids Toys E-Commerce Store",
+    "link": "https://edusparktoys.com/",
+    "category": "E-Commerce"
+  },
+  {
+    "image": "../casestudy/landing-pages/jifyfood.png",
+    "title": "JifyFood",
+    "desc": "D2C Food Brand",
+    "link": "https://ifyfood.com/",
+    "category": "E-Commerce"
+  },
+  {
+    "image": "../casestudy/landing-pages/wherefore.png",
+    "title": "Wherefore",
+    "desc": "Mar-Comm Consulting Company",
+    "link": "https://wherefore.in/",
+    "category": "Consulting"
+  },
+  {
+    "image": "../casestudy/landing-pages/ellarra.png",
+    "title": "Ellarra",
+    "desc": "Law Consulting Firm",
+    "link": "https://elarralawoffices.com/",
+    "category": "Consulting"
+  },
+  {
+    "image": "../casestudy/landing-pages/iit-b-trust-labs.png",
+    "title": "IIT B Trust Labs",
+    "desc": "An IIT Bombay Initiative",
+    "link": "https://trustlab.iitb.ac.in/",
+    "category": "Education"
+  },
+  {
+    "image": "../casestudy/landing-pages/ignite.png",
+    "title": "Ignite",
+    "desc": "Training Institute based in UAE",
+    "link": "https://ignitetraininginstitute.com",
+    "category": "Education"
+  },
+  {
+    "image": "../casestudy/landing-pages/owl-academy.png",
+    "title": "Owl Academy",
+    "desc": "International School",
+    "link": "https://owl-academy.com/",
+    "category": "Education"
+  },
+  {
+    "image": "../casestudy/landing-pages/drswathi.jpg",
+    "title": "Dr. Swathi",
+    "desc": "",
+    "link": "",
+    "category": ""
+  },
+  {
+    "image": "../casestudy/landing-pages/evershine-house.jpg",
+    "title": "Evershine House",
+    "desc": "",
+    "link": "",
+    "category": ""
+  },
+  {
+    "image": "../casestudy/landing-pages/evershine.jpg",
+    "title": "Evershine",
+    "desc": "",
+    "link": "",
+    "category": ""
+  },
+  {
+    "image": "../casestudy/landing-pages/gcc-awards-2024.jpg",
+    "title": "GCC Awards 2024",
+    "desc": "",
+    "link": "https://click4demos.co.in/event-sites/gcc/",
+    "category": "Event"
+  },
+  {
+    "image": "../casestudy/landing-pages/ghci-2024.jpg",
+    "title": "GHCI 2024",
+    "desc": "",
+    "link": "https://click4demos.co.in/event-sites/ghci/",
+    "category": "Event"
+  },
+  {
+    "image": "../casestudy/landing-pages/nsc2025.jpg",
+    "title": "NSC 2025",
+    "desc": "",
+    "link": "https://click4demos.co.in/event-sites/nsc-sme/",
+    "category": "Event"
+  },
+  {
+    "image": "../casestudy/landing-pages/ntc2024.jpg",
+    "title": "NTC 2024",
+    "desc": "",
+    "link": "https://click4demos.co.in/event-sites/ntc24/",
+    "category": "Event"
+  },
+  {
+    "image": "../casestudy/landing-pages/ntlf2025.jpg",
+    "title": "NTLF 2025",
+    "desc": "",
+    "link": "https://click4demos.co.in/event-sites/ntlf/",
+    "category": "Event"
+  },
+  {
+    "image": "../casestudy/landing-pages/sme2026.jpg",
+    "title": "SME 2026",
+    "desc": "",
+    "link": "https://click4demos.co.in/event-sites/nsc25/",
+    "category": "Event"
+  },
+  {
+    "image": "../casestudy/landing-pages/soul-clinic.jpg",
+    "title": "Soul Clinic",
+    "desc": "",
+    "link": "",
+    "category": ""
+  },
+  {
+    "image": "../casestudy/landing-pages/soul.jpg",
+    "title": "Soul",
+    "desc": "",
+    "link": "",
+    "category": ""
+  }
+]

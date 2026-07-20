@@ -8,46 +8,55 @@ html {
 footer ul {
   gap: 0 !important;
 }
+
 footer ul li {
   line-height: 1;
 }
+
 footer a[data-service] {
   display: block;
   padding: 7px 0;
   transition: color .3s ease, background-color .3s ease, font-weight .3s ease, padding .3s ease;
 }
+
 footer a[data-service].is-active {
   color: white;
   font-weight: 700;
   background-color: rgba(255, 255, 255, 0.08);
   padding-left: 8px;
 }
+
 footer a[data-company] {
   display: block;
   padding: 7px 0;
   transition: color .3s ease, background-color .3s ease, font-weight .3s ease, padding .3s ease;
 }
+
 footer a[data-company]:hover {
   color: white;
   font-weight: 700;
   background-color: rgba(255, 255, 255, 0.08);
   padding-left: 8px;
 }
+
 a[data-parent] {
   display: block;
   padding: 5px 0;
   transition: color .3s ease, opacity .3s ease, background-color .3s ease, padding .3s ease;
 }
+
 a[data-parent].is-match {
   color: white;
   font-weight: 500;
   background-color: rgba(255, 255, 255, 0.12);
   padding-left: 8px;
 }
+
 a[data-parent].is-hovered {
   box-shadow: inset 2px 0 0 white;
   padding-left: 8px;
 }
+
 a[data-parent].is-dim {
   opacity: 0.25;
 }
@@ -2034,9 +2043,16 @@ body.menu-open {
 }
 
 .trust-marquee {
-  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.25) 3%, rgba(0, 0, 0, 0.75) 7%, black 12%, black 88%, rgba(0, 0, 0, 0.75) 93%, rgba(0, 0, 0, 0.25) 97%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.20) 3%, rgba(0, 0, 0, 0.50) 7%, black 15%, black 85%, rgba(0, 0, 0, 0.50) 93%, rgba(0, 0, 0, 0.20) 97%, transparent 100%);
   overflow: hidden !important;
+}
+
+@media (max-width: 767px) {
+  .trust-marquee {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
 }
 
 .trust-track {

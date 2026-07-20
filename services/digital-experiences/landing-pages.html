@@ -19,6 +19,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script>
         tailwind.config = {
             theme: {
@@ -57,7 +59,7 @@
             ScrollTrigger.refresh();
         });
     </script>
-    
+
 
     <script type="application/ld+json">
     {
@@ -103,7 +105,8 @@
     <nav class="fixed w-full top-0 z-50 px-6 md:px-12 py-6 flex justify-between items-center pointer-events-none backdrop-blur-md"
         style="background: linear-gradient(180deg, #000000cf, transparent);">
         <!-- Logo -->
-        <a href="../../index.html" class="pointer-events-auto interactive z-10 flex items-center gap-2" aria-label="Home">
+        <a href="../../index.html" class="pointer-events-auto interactive z-10 flex items-center gap-2"
+            aria-label="Home">
             <img src="../../asset/chimpzlab-white.png" alt="ChimpzLab" class="h-7 md:h-9 object-contain "
                 onerror="this.style.display='none'; document.getElementById('text-logo').style.display='block';">
             <span id="text-logo"
@@ -127,7 +130,8 @@
                             <a href="../reputation-communications.html" class="service-card-mini">
                                 <div class="icon">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                                     </svg>
                                 </div>
                                 <span class="card-title">Reputation &<br>Communications</span>
@@ -135,7 +139,8 @@
                             <a href="../visibility-search.html" class="service-card-mini">
                                 <div class="icon">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                     </svg>
                                 </div>
                                 <span class="card-title">Visibility &<br>Search</span>
@@ -143,7 +148,8 @@
                             <a href="../creative.html" class="service-card-mini">
                                 <div class="icon">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                     </svg>
                                 </div>
                                 <span class="card-title">Content &<br>Creative</span>
@@ -151,7 +157,8 @@
                             <a href="../demand-generation.html" class="service-card-mini">
                                 <div class="icon">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
                                     </svg>
                                 </div>
                                 <span class="card-title">Demand &<br>Automation</span>
@@ -159,7 +166,8 @@
                             <a href="../digital-experiences.html" class="service-card-mini">
                                 <div class="icon">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                     </svg>
                                 </div>
                                 <span class="card-title">Digital<br>Experiences</span>
@@ -202,10 +210,11 @@
                 <span class="block text-xs font-bold uppercase tracking-[0.2em] text-white/70">Landing Pages</span>
             </div>
             <h1 class="text-4xl sm:text-6xl md:text-8xl font-extrabold text-white mb-12 tracking-tighter uppercase">
-                <div class="overflow-hidden"><span class="block gsap-reveal-text">Campaign pages built fast, built to convert</span></div>
+                <div class="overflow-hidden"><span class="block gsap-reveal-text">Campaign pages built fast, built to
+                        convert</span></div>
             </h1>
             <div class="gsap-reveal">
-                <div >
+                <div>
                     <div class="flex flex-col sm:flex-row items-start sm:items-center gap-8">
                         <a href="#booking-form"
                             class="interactive bg-white hover:bg-gray-200 text-black px-8 py-4 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2">
@@ -218,7 +227,8 @@
                         <div class="flex flex-col">
                             <span class="text-xs font-bold uppercase tracking-widest text-white/50 mb-1">The
                                 Agenda</span>
-                            <span class="text-sm font-medium text-gray-400 leading-tight">30 minutes. Aligning your corporate narrative.</span>
+                            <span class="text-sm font-medium text-gray-400 leading-tight">30 minutes. Aligning your
+                                corporate narrative.</span>
                         </div>
                     </div>
                 </div>
@@ -226,13 +236,12 @@
         </div>
     </header>
 
-        <section class="px-0 md:px-12 bg-white text-brand-dark">
+    <section class="px-0 md:px-12 bg-white text-brand-dark">
         <div class="max-w-[1400px] mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
                 <div class="lg:col-span-6 order-2 lg:order-none gsap-reveal">
                     <div class="relative h-full overflow-hidden md:mr-12">
-                        <img src="../image/digital-experiences/landing-pages.png"
-                            alt="Landing Pages"
+                        <img src="../image/digital-experiences/landing-pages.png" alt="Landing Pages"
                             class="w-full h-full object-contain object-bottom min-h-[300px] lg:min-h-full">
                     </div>
                 </div>
@@ -242,8 +251,13 @@
                         <span class="block text-xs font-bold uppercase tracking-[0.2em] text-gray-500">Our
                             Approach</span>
                     </div>
-                    <p class="text-lg md:text-2xl font-light leading-relaxed text-gray-600 mb-8 max-w-3xl">A landing page is a focused, single-goal page built for a specific campaign and made to convert the traffic you are already paying for. A page that takes weeks to build arrives after the campaign has lost momentum. We build focused, fast-turnaround pages designed around one clear action.</p>
-                    <p class="text-lg md:text-2xl font-light leading-relaxed text-gray-600 mb-10 max-w-3xl">Every element earns its place or it goes. On a landing page, anything that does not push toward the goal is just something to distract the visitor.</p>
+                    <p class="text-lg md:text-2xl font-light leading-relaxed text-gray-600 mb-8 max-w-3xl">A landing
+                        page is a focused, single-goal page built for a specific campaign and made to convert the
+                        traffic you are already paying for. A page that takes weeks to build arrives after the campaign
+                        has lost momentum. We build focused, fast-turnaround pages designed around one clear action.</p>
+                    <p class="text-lg md:text-2xl font-light leading-relaxed text-gray-600 mb-10 max-w-3xl">Every
+                        element earns its place or it goes. On a landing page, anything that does not push toward the
+                        goal is just something to distract the visitor.</p>
                     <div class="flex flex-col sm:flex-row items-start sm:items-center gap-8">
                         <a href="#booking-form"
                             class="interactive bg-brand-dark hover:bg-gray-800 text-white px-8 py-4 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2">
@@ -272,59 +286,76 @@
                         Everything<br>you get</h2>
                 </div>
                 <div class="lg:col-span-7 gsap-reveal">
-                    <p class="text-lg md:text-xl text-gray-400 font-light max-w-xl leading-relaxed">Every message is crafted to build trust and authority across all your stakeholder groups.</p>
+                    <p class="text-lg md:text-xl text-gray-400 font-light max-w-xl leading-relaxed">Every message is
+                        crafted to build trust and authority across all your stakeholder groups.</p>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-5">
 
                 <div class="md:col-span-3 group relative">
-                    <div class="h-full bg-white/[0.03] border border-white/10 rounded-2xl p-10 md:p-12 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-500">
+                    <div
+                        class="h-full bg-white/[0.03] border border-white/10 rounded-2xl p-10 md:p-12 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-500">
                         <div class="flex items-start gap-5">
-                            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-white/20 transition-all duration-500">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-white/20 transition-all duration-500">
                                 <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
                                 </svg>
                             </div>
-                            <p class="text-gray-300 font-medium text-base md:text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
+                            <p
+                                class="text-gray-300 font-medium text-base md:text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
                                 Campaign-specific landing pages</p>
                         </div>
                     </div>
                 </div>
                 <div class="md:col-span-2 group relative">
-                    <div class="h-full bg-white/[0.03] border border-white/10 rounded-2xl p-10 md:p-12 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-500">
+                    <div
+                        class="h-full bg-white/[0.03] border border-white/10 rounded-2xl p-10 md:p-12 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-500">
                         <div class="flex items-start gap-5">
-                            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-white/20 transition-all duration-500">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-white/20 transition-all duration-500">
                                 <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
                                 </svg>
                             </div>
-                            <p class="text-gray-300 font-medium text-base md:text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
+                            <p
+                                class="text-gray-300 font-medium text-base md:text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
                                 A/B-testable page builds</p>
                         </div>
                     </div>
                 </div>
                 <div class="md:col-span-2 group relative">
-                    <div class="h-full bg-white/[0.03] border border-white/10 rounded-2xl p-10 md:p-12 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-500">
+                    <div
+                        class="h-full bg-white/[0.03] border border-white/10 rounded-2xl p-10 md:p-12 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-500">
                         <div class="flex items-start gap-5">
-                            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-white/20 transition-all duration-500">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-white/20 transition-all duration-500">
                                 <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
                                 </svg>
                             </div>
-                            <p class="text-gray-300 font-medium text-base md:text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
+                            <p
+                                class="text-gray-300 font-medium text-base md:text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
                                 Mobile-first design</p>
                         </div>
                     </div>
                 </div>
                 <div class="md:col-span-3 group relative">
-                    <div class="h-full bg-white/[0.03] border border-white/10 rounded-2xl p-10 md:p-12 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-500">
+                    <div
+                        class="h-full bg-white/[0.03] border border-white/10 rounded-2xl p-10 md:p-12 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-500">
                         <div class="flex items-start gap-5">
-                            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-white/20 transition-all duration-500">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-white/20 transition-all duration-500">
                                 <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
                                 </svg>
                             </div>
-                            <p class="text-gray-300 font-medium text-base md:text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
+                            <p
+                                class="text-gray-300 font-medium text-base md:text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
                                 Fast-turnaround development, usually 1 to 2 weeks</p>
                         </div>
                     </div>
@@ -346,24 +377,30 @@
                         How it<br>works</h2>
                 </div>
                 <div class="lg:col-span-7 gsap-reveal">
-                    <p class="text-lg md:text-xl text-gray-500 font-light max-w-xl leading-relaxed">A strategic approach to unifying your corporate voice and messaging framework.</p>
+                    <p class="text-lg md:text-xl text-gray-500 font-light max-w-xl leading-relaxed">A strategic approach
+                        to unifying your corporate voice and messaging framework.</p>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6 relative process-grid">
 
                 <div class="gsap-reveal relative process-step">
-                    <div class="bg-white rounded-2xl p-7 shadow-[0_4px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300 text-center md:text-left">
-                        <div class="w-14 h-14 rounded-2xl bg-brand-dark text-white flex items-center justify-center mx-auto md:mx-0 mb-5 text-xl font-extrabold shadow-lg relative z-10">
+                    <div
+                        class="bg-white rounded-2xl p-7 shadow-[0_4px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300 text-center md:text-left">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-brand-dark text-white flex items-center justify-center mx-auto md:mx-0 mb-5 text-xl font-extrabold shadow-lg relative z-10">
                             01</div>
                         <div class="relative">
                             <div class="w-12 h-[2px] bg-gray-200 mx-auto md:mx-0 mb-5"></div>
-                            <p class="text-gray-700 font-medium text-base md:text-lg leading-relaxed">Campaign goal and brief</p>
+                            <p class="text-gray-700 font-medium text-base md:text-lg leading-relaxed">Campaign goal and
+                                brief</p>
                         </div>
                     </div>
                 </div>
                 <div class="gsap-reveal relative process-step">
-                    <div class="bg-white rounded-2xl p-7 shadow-[0_4px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300 text-center md:text-left">
-                        <div class="w-14 h-14 rounded-2xl bg-brand-dark text-white flex items-center justify-center mx-auto md:mx-0 mb-5 text-xl font-extrabold shadow-lg relative z-10">
+                    <div
+                        class="bg-white rounded-2xl p-7 shadow-[0_4px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300 text-center md:text-left">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-brand-dark text-white flex items-center justify-center mx-auto md:mx-0 mb-5 text-xl font-extrabold shadow-lg relative z-10">
                             02</div>
                         <div class="relative">
                             <div class="w-12 h-[2px] bg-gray-200 mx-auto md:mx-0 mb-5"></div>
@@ -372,8 +409,10 @@
                     </div>
                 </div>
                 <div class="gsap-reveal relative process-step">
-                    <div class="bg-white rounded-2xl p-7 shadow-[0_4px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300 text-center md:text-left">
-                        <div class="w-14 h-14 rounded-2xl bg-brand-dark text-white flex items-center justify-center mx-auto md:mx-0 mb-5 text-xl font-extrabold shadow-lg relative z-10">
+                    <div
+                        class="bg-white rounded-2xl p-7 shadow-[0_4px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300 text-center md:text-left">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-brand-dark text-white flex items-center justify-center mx-auto md:mx-0 mb-5 text-xl font-extrabold shadow-lg relative z-10">
                             03</div>
                         <div class="relative">
                             <div class="w-12 h-[2px] bg-gray-200 mx-auto md:mx-0 mb-5"></div>
@@ -382,12 +421,15 @@
                     </div>
                 </div>
                 <div class="gsap-reveal relative process-step">
-                    <div class="bg-white rounded-2xl p-7 shadow-[0_4px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300 text-center md:text-left">
-                        <div class="w-14 h-14 rounded-2xl bg-brand-dark text-white flex items-center justify-center mx-auto md:mx-0 mb-5 text-xl font-extrabold shadow-lg relative z-10">
+                    <div
+                        class="bg-white rounded-2xl p-7 shadow-[0_4px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300 text-center md:text-left">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-brand-dark text-white flex items-center justify-center mx-auto md:mx-0 mb-5 text-xl font-extrabold shadow-lg relative z-10">
                             04</div>
                         <div class="relative">
                             <div class="w-12 h-[2px] bg-gray-200 mx-auto md:mx-0 mb-5"></div>
-                            <p class="text-gray-700 font-medium text-base md:text-lg leading-relaxed">Launch and testing</p>
+                            <p class="text-gray-700 font-medium text-base md:text-lg leading-relaxed">Launch and testing
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -551,119 +593,37 @@
 
             </div>
         </div>
-    </section> -    <!-- Case Studies Grid Version (Active by default) -->
-    <section class="py-16 md:py-32 px-4 sm:px-6 md:px-12 bg-brand-dark text-white border-t border-white/10">
+    </section>
+
+    <!-- Featured Project Slider — JSON-driven -->
+    <section
+        class="py-16 md:py-32 px-4 sm:px-6 md:px-12 bg-brand-dark text-white border-t border-white/10 overflow-hidden">
         <div class="max-w-[1400px] mx-auto">
             <div class="flex items-center gap-4 mb-4 gsap-reveal">
                 <div class="w-12 h-[1px] bg-white/30"></div>
-                <span class="text-xs font-bold uppercase tracking-[0.2em] text-white/50">Case Studies</span>
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-white/50">Featured Project</span>
             </div>
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16 gsap-reveal">
                 <h2 class="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tighter uppercase m-0">
                     Featured Work
                 </h2>
-                <a href="../case-studies.html" class="inline-flex items-center gap-2 text-white font-bold text-sm hover:gap-3 transition-all duration-300 pb-1 border-b border-white/30 hover:border-white shrink-0 uppercase tracking-wider">
-                    View All Case Studies
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                <a href="featured-project.html"
+                    class="inline-flex items-center gap-2 text-white font-bold text-sm hover:gap-3 transition-all duration-300 pb-1 border-b border-white/30 hover:border-white shrink-0 uppercase tracking-wider">
+                    View Featured Project
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
                 </a>
             </div>
 
-            <!-- Flex container for equal height cards -->
-            <div class="flex flex-col lg:flex-row gap-6 md:gap-8 items-stretch">
-
-                <div class="w-full gsap-reveal tab-card-item group" style="animation-delay: 0s">
-                    <div class="bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden min-h-[400px] lg:min-h-[620px] flex flex-col card-height-equal"
-                        style="">
-                        <div class="relative h-[200px] sm:h-[240px] md:h-[350px] overflow-hidden">
-                            <img src="../../asset/2.jpg" alt="Case Study"
-                                class="w-full h-full object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-110">
-                        </div>
-                        <div class="p-5 sm:p-6 md:p-8 flex flex-col flex-1 min-h-0 overflow-y-auto">
-                            <span
-                                class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/50 mb-2 block">Case
-                                Study</span>
-                            <h3
-                                class="text-lg sm:text-xl md:text-2xl font-extrabold text-white mb-2 sm:mb-3 leading-tight tracking-tight">
-                                Annual Report & Investor Communication — Listed Company</h3>
-                            <p class="text-gray-400 font-medium text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5 flex-1">
-                                Seen
-                                internally as a compliance document, not a trust-building asset. The annual report was
-                                failing to build investor confidence and communicate real value to stakeholders.</p>
-                            <a href="../case-studies.html"
-                                class="inline-flex items-center gap-2 text-white font-bold text-xs sm:text-sm hover:gap-3 transition-all duration-300">
-                                Read More
-                                <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
+            <div class="case-study-carousel-outer relative">
+                <div class="swiper case-study-carousel gsap-reveal">
+                    <div class="swiper-wrapper"></div>
+                    <div class="swiper-pagination !relative !bottom-auto mt-10 md:mt-12"></div>
                 </div>
-
-                <div class="w-full gsap-reveal tab-card-item group" style="animation-delay: 0.1s">
-                    <div class="bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden min-h-[400px] lg:min-h-[620px] flex flex-col card-height-equal"
-                        style="">
-                        <div class="relative h-[200px] sm:h-[240px] md:h-[350px] overflow-hidden">
-                            <img src="../../asset/1.jpg" alt="Case Study"
-                                class="w-full h-full object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-110">
-                        </div>
-                        <div class="p-5 sm:p-6 md:p-8 flex flex-col flex-1 min-h-0 overflow-y-auto">
-                            <span
-                                class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/50 mb-2 block">Case
-                                Study</span>
-                            <h3
-                                class="text-lg sm:text-xl md:text-2xl font-extrabold text-white mb-2 sm:mb-3 leading-tight tracking-tight">
-                                Full Narrative & Design Overhaul Aligned to Investor Priorities</h3>
-                            <p class="text-gray-400 font-medium text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5 flex-1">
-                                Complete
-                                transformation of annual report design and narrative to align with key investor metrics
-                                and priorities.</p>
-                            <a href="../case-studies.html"
-                                class="inline-flex items-center gap-2 text-white font-bold text-xs sm:text-sm hover:gap-3 transition-all duration-300">
-                                Read More
-                                <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-full gsap-reveal tab-card-item group" style="animation-delay: 0.2s">
-                    <div class="bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden min-h-[400px] lg:min-h-[620px] flex flex-col card-height-equal"
-                        style="">
-                        <div class="relative h-[200px] sm:h-[240px] md:h-[350px] overflow-hidden">
-                            <img src="../../asset/3.jpg" alt="Case Study"
-                                class="w-full h-full object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-110">
-                        </div>
-                        <div class="p-5 sm:p-6 md:p-8 flex flex-col flex-1 min-h-0 overflow-y-auto">
-                            <span
-                                class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/50 mb-2 block">Case
-                                Study</span>
-                            <h3
-                                class="text-lg sm:text-xl md:text-2xl font-extrabold text-white mb-2 sm:mb-3 leading-tight tracking-tight">
-                                Positive Analyst & Shareholder Feedback Cited to IR Team</h3>
-                            <p class="text-gray-400 font-medium text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5 flex-1">
-                                Investor
-                                Relations strategy implementation resulting in positive analyst coverage and shareholder
-                                engagement.</p>
-                            <a href="../case-studies.html"
-                                class="inline-flex items-center gap-2 text-white font-bold text-xs sm:text-sm hover:gap-3 transition-all duration-300">
-                                Read More
-                                <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
     </section>
@@ -675,8 +635,13 @@
                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tighter uppercase m-0">
                     Insights
                 </h2>
-                <a href="../../insights.html" class="inline-flex items-center gap-2 text-brand-dark font-bold text-sm hover:gap-3 transition-all duration-300 pb-1 border-b border-brand-dark/30 hover:border-brand-dark shrink-0 uppercase tracking-wider">View All Insights
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                <a href="../../insights.html"
+                    class="inline-flex items-center gap-2 text-brand-dark font-bold text-sm hover:gap-3 transition-all duration-300 pb-1 border-b border-brand-dark/30 hover:border-brand-dark shrink-0 uppercase tracking-wider">View
+                    All Insights
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
                 </a>
             </div>
 
@@ -684,8 +649,10 @@
 
                 <div class="p-6 md:p-8 md:pl-0 border-b md:border-b-0 md:border-r border-gray-300 gsap-reveal">
                     <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-4 block">Strategy</span>
-                    <h3 class="text-lg md:text-xl font-bold mb-8 leading-snug">The difference between activity and actual reputation</h3>
-                    <a href="../../blog-insite.html?slug=the-difference-between-activity-and-actual-reputat" class="text-brand-dark hover:opacity-70 transition-opacity duration-300">
+                    <h3 class="text-lg md:text-xl font-bold mb-8 leading-snug">The difference between activity and
+                        actual reputation</h3>
+                    <a href="../../blog-insite.html?slug=the-difference-between-activity-and-actual-reputat"
+                        class="text-brand-dark hover:opacity-70 transition-opacity duration-300">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -694,9 +661,12 @@
                 </div>
 
                 <div class="p-6 md:p-8 border-b md:border-b-0 md:border-r border-gray-300 gsap-reveal">
-                    <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-4 block">Digital Experience</span>
-                    <h3 class="text-lg md:text-xl font-bold mb-8 leading-snug">Your website is your most important PR asset</h3>
-                    <a href="../../blog-insite.html?slug=your-website-is-your-most-important-pr-asset" class="text-brand-dark hover:opacity-70 transition-opacity duration-300">
+                    <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-4 block">Digital
+                        Experience</span>
+                    <h3 class="text-lg md:text-xl font-bold mb-8 leading-snug">Your website is your most important PR
+                        asset</h3>
+                    <a href="../../blog-insite.html?slug=your-website-is-your-most-important-pr-asset"
+                        class="text-brand-dark hover:opacity-70 transition-opacity duration-300">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -706,8 +676,10 @@
 
                 <div class="p-6 md:p-8 md:pr-0 gsap-reveal">
                     <span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-4 block">Strategy</span>
-                    <h3 class="text-lg md:text-xl font-bold mb-8 leading-snug">Navigating stakeholder trust in complex markets</h3>
-                    <a href="../../blog-insite.html?slug=navigating-stakeholder-trust-in-complex-markets" class="text-brand-dark hover:opacity-70 transition-opacity duration-300">
+                    <h3 class="text-lg md:text-xl font-bold mb-8 leading-snug">Navigating stakeholder trust in complex
+                        markets</h3>
+                    <a href="../../blog-insite.html?slug=navigating-stakeholder-trust-in-complex-markets"
+                        class="text-brand-dark hover:opacity-70 transition-opacity duration-300">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -724,49 +696,66 @@
             <h2 class="text-4xl md:text-7xl font-extrabold tracking-tighter mb-16 uppercase gsap-reveal">FAQ</h2>
             <div class="border-t border-gray-200">
                 <div class="gsap-reveal border-b border-gray-200 faq-item group">
-                    <button class="w-full text-left py-6 font-bold text-base md:text-xl flex justify-between items-center interactive focus:outline-none tracking-tight pr-4">
+                    <button
+                        class="w-full text-left py-6 font-bold text-base md:text-xl flex justify-between items-center interactive focus:outline-none tracking-tight pr-4">
                         How fast can a landing page actually be launched?
-                        <svg class="w-6 h-6 transform transition-transform duration-300 icon text-gray-400 group-hover:text-black shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        <svg class="w-6 h-6 transform transition-transform duration-300 icon text-gray-400 group-hover:text-black shrink-0 ml-4"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
                         </svg>
                     </button>
                     <div class="pb-6 text-gray-600 font-medium text-base leading-relaxed hidden answer max-w-3xl">
-                        A single-campaign landing page usually goes live within 1 to 2 weeks, from brief to launch, so it keeps pace with your ad timeline.
+                        A single-campaign landing page usually goes live within 1 to 2 weeks, from brief to launch, so
+                        it keeps pace with your ad timeline.
                     </div>
                 </div>
                 <div class="gsap-reveal border-b border-gray-200 faq-item group">
-                    <button class="w-full text-left py-6 font-bold text-base md:text-xl flex justify-between items-center interactive focus:outline-none tracking-tight pr-4">
+                    <button
+                        class="w-full text-left py-6 font-bold text-base md:text-xl flex justify-between items-center interactive focus:outline-none tracking-tight pr-4">
                         Can you build multiple variants for A/B testing?
-                        <svg class="w-6 h-6 transform transition-transform duration-300 icon text-gray-400 group-hover:text-black shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        <svg class="w-6 h-6 transform transition-transform duration-300 icon text-gray-400 group-hover:text-black shrink-0 ml-4"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
                         </svg>
                     </button>
                     <div class="pb-6 text-gray-600 font-medium text-base leading-relaxed hidden answer max-w-3xl">
-                        Yes. A/B-testable variants are built as part of the process when your campaign volume justifies testing.
+                        Yes. A/B-testable variants are built as part of the process when your campaign volume justifies
+                        testing.
                     </div>
                 </div>
                 <div class="gsap-reveal border-b border-gray-200 faq-item group">
-                    <button class="w-full text-left py-6 font-bold text-base md:text-xl flex justify-between items-center interactive focus:outline-none tracking-tight pr-4">
+                    <button
+                        class="w-full text-left py-6 font-bold text-base md:text-xl flex justify-between items-center interactive focus:outline-none tracking-tight pr-4">
                         Will the page be mobile-first?
-                        <svg class="w-6 h-6 transform transition-transform duration-300 icon text-gray-400 group-hover:text-black shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        <svg class="w-6 h-6 transform transition-transform duration-300 icon text-gray-400 group-hover:text-black shrink-0 ml-4"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
                         </svg>
                     </button>
                     <div class="pb-6 text-gray-600 font-medium text-base leading-relaxed hidden answer max-w-3xl">
-                        Yes. Since most campaign traffic arrives on mobile, pages are designed for mobile first and then scaled up.
+                        Yes. Since most campaign traffic arrives on mobile, pages are designed for mobile first and then
+                        scaled up.
                     </div>
                 </div>
                 <div class="gsap-reveal border-b border-gray-200 faq-item group">
-                    <button class="w-full text-left py-6 font-bold text-base md:text-xl flex justify-between items-center interactive focus:outline-none tracking-tight pr-4">
+                    <button
+                        class="w-full text-left py-6 font-bold text-base md:text-xl flex justify-between items-center interactive focus:outline-none tracking-tight pr-4">
                         Can this connect to our vetted lead generation setup?
-                        <svg class="w-6 h-6 transform transition-transform duration-300 icon text-gray-400 group-hover:text-black shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        <svg class="w-6 h-6 transform transition-transform duration-300 icon text-gray-400 group-hover:text-black shrink-0 ml-4"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
                         </svg>
                     </button>
                     <div class="pb-6 text-gray-600 font-medium text-base leading-relaxed hidden answer max-w-3xl">
-                        Yes. Landing pages feed directly into lead capture and our verification process, so the leads they generate are checked before handover.
+                        Yes. Landing pages feed directly into lead capture and our verification process, so the leads
+                        they generate are checked before handover.
                     </div>
-                </div></div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -778,7 +767,8 @@
                     <h2
                         class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter mb-4 md:mb-6 uppercase leading-[0.9]">
                         Move from reactive messaging to real market authority.</h2>
-                    <p class="text-lg md:text-2xl text-gray-400 mb-6 md:mb-8 max-w-lg font-light">Let us audit your current communication footprint and build a reputation engine that works as one system.
+                    <p class="text-lg md:text-2xl text-gray-400 mb-6 md:mb-8 max-w-lg font-light">Let us audit your
+                        current communication footprint and build a reputation engine that works as one system.
                     </p>
                 </div>
                 <div class="bg-[#111] border border-white/10 rounded-2xl p-6 md:p-8 gsap-reveal">
@@ -812,8 +802,9 @@
                                 class="w-full bg-transparent border border-white/20 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-white transition-colors cursor-pointer interactive"
                                 required>
                                 <option value="" disabled class="text-black">Service Interested In</option>
-                                <option value="corporate-communications" class="text-black">Corporate Communications</option>
-<option value="landing-pages" class="text-black" selected>Landing Page Design</option>
+                                <option value="corporate-communications" class="text-black">Corporate Communications
+                                </option>
+                                <option value="landing-pages" class="text-black" selected>Landing Page Design</option>
                                 <option value="public-relations" class="text-black">Public Relations</option>
                                 <option value="thought-leadership" class="text-black">Thought Leadership</option>
                                 <option value="employer-branding" class="text-black">Employer Branding</option>
@@ -840,9 +831,9 @@
                 </div>
             </div>
         </div>
-        </section>
+    </section>
 
-                            <footer class="w-full bg-[#050505] text-white py-6 md:py-8 px-5 md:px-12 relative border-t border-white/10">
+    <footer class="w-full bg-[#050505] text-white py-6 md:py-8 px-5 md:px-12 relative border-t border-white/10">
         <div
             class="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center lg:justify-between gap-4 lg:gap-12 text-center">
 
@@ -889,7 +880,8 @@
                             class="interactive text-xs font-medium block py-1">Reputation &amp; Communications</a></li>
                     <li><a href="../../services/visibility-search.html"
                             class="interactive text-xs font-medium block py-1">Visibility &amp; Search</a></li>
-                    <li><a href="../../services/creative.html" class="interactive text-xs font-medium block py-1">Content
+                    <li><a href="../../services/creative.html"
+                            class="interactive text-xs font-medium block py-1">Content
                             &amp; Creative</a></li>
                     <li><a href="../../services/demand-generation.html"
                             class="interactive text-xs font-medium block py-1">Demand &amp; Automation</a></li>
@@ -953,7 +945,8 @@
                     <li><a href="../../about.html" data-company class="interactive text-xs font-medium">About</a></li>
                     <li><a href="../../services/case-studies.html" data-company
                             class="interactive text-xs font-medium">Work</a></li>
-                    <li><a href="../../insights.html" data-company class="interactive text-xs font-medium">Insights</a></li>
+                    <li><a href="../../insights.html" data-company class="interactive text-xs font-medium">Insights</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -965,7 +958,8 @@
                     <h4 class="text-xs font-bold text-white/50 mb-2 pb-2 border-b border-white/10">Services</h4>
                     <h4 class="text-xs font-bold text-white/50 mb-2 pb-2 border-b border-white/10">Service Pages</h4>
                     <!-- Reputation -->
-                    <div><a href="../../services/reputation-communications.html" data-service="reputation-communications"
+                    <div><a href="../../services/reputation-communications.html"
+                            data-service="reputation-communications"
                             class="interactive text-white/80 text-xs font-bold block py-1">Reputation &amp;
                             Communications</a></div>
                     <div>
@@ -1055,7 +1049,8 @@
                             class="interactive text-white/80 text-xs font-bold block py-1">Digital Experiences</a></div>
                     <div>
                         <ul class="flex flex-col">
-                            <li><a href="../../services/digital-experiences/chatbots.html" data-parent="digital-experiences"
+                            <li><a href="../../services/digital-experiences/chatbots.html"
+                                    data-parent="digital-experiences"
                                     class="interactive text-xs leading-tight font-medium block py-1">Chatbots</a></li>
                             <li><a href="../../services/digital-experiences/website-design-development.html"
                                     data-parent="digital-experiences"
@@ -1071,11 +1066,14 @@
                 <div>
                     <h4 class="text-xs font-bold text-white/50 mb-2 pb-2 border-b border-white/10">Company</h4>
                     <ul class="flex flex-col">
-                        <li><a href="../../index.html" data-company class="interactive text-xs font-medium">Home</a></li>
-                        <li><a href="../../about.html" data-company class="interactive text-xs font-medium">About</a></li>
+                        <li><a href="../../index.html" data-company class="interactive text-xs font-medium">Home</a>
+                        </li>
+                        <li><a href="../../about.html" data-company class="interactive text-xs font-medium">About</a>
+                        </li>
                         <li><a href="../../services/case-studies.html" data-company
                                 class="interactive text-xs font-medium">Work</a></li>
-                        <li><a href="../../insights.html" data-company class="interactive text-xs font-medium">Insights</a>
+                        <li><a href="../../insights.html" data-company
+                                class="interactive text-xs font-medium">Insights</a>
                         </li>
                     </ul>
                 </div>
@@ -1167,22 +1165,15 @@
 
         phaseTabs.forEach((tab, index) => {
             tab.addEventListener('click', () => {
-                // Remove active from all
                 phaseTabs.forEach(t => {
                     t.classList.remove('active');
                 });
-
-                // Add active to clicked
                 tab.classList.add('active');
-
-                // Scroll to left card on mobile
                 const tabCardWrapper = document.getElementById('tab-card-wrapper');
                 if (window.innerWidth < 1024 && tabCardWrapper) {
                     tabCardWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
-
-                // Instant content change - no animation
-                if(tabImage && tabDate && tabTitle && tabDesc) {
+                if (tabImage && tabDate && tabTitle && tabDesc) {
                     tabImage.src = phaseData[index].image;
                     tabDate.textContent = phaseData[index].date;
                     tabTitle.textContent = phaseData[index].title;
@@ -1192,7 +1183,52 @@
         });
     </script>
 
-
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            (function initCarousel() {
+                const el = document.querySelector('.case-study-carousel');
+                if (!el) return;
+                const wrapper = el.querySelector('.swiper-wrapper');
+                fetch('./landing-pages-case-studies.json', { cache: 'no-cache' })
+                    .then(r => r.json())
+                    .then(data => {
+                        data.forEach(item => {
+                            const slide = document.createElement('div');
+                            slide.className = 'swiper-slide h-auto';
+                            slide.innerHTML = '<div class="interactive h-full">'
+                                + '<div class="bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden h-full flex flex-col hover:bg-white/[0.08] transition-colors duration-300">'
+                                + '<div class="shrink-0">'
+                                + '<img src="' + item.image + '" '
+                                + 'alt="' + item.title + '" class="w-full block">'
+                                + '</div>'
+                                + '<div class="p-5 sm:p-6 md:p-8 flex flex-col flex-1">'
+                                + '<h3 class="text-lg sm:text-xl md:text-2xl font-extrabold text-white mb-2 sm:mb-3 leading-tight tracking-tight">' + item.title + '</h3>'
+                                + '<p class="text-gray-400 font-medium text-sm leading-relaxed flex-1 line-clamp-2">' + (item.desc || 'Content coming soon.') + '</p>'
+                                + '<a href="' + (item.link || '#') + '" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-white font-bold text-xs sm:text-sm hover:gap-3 transition-all duration-300 mt-4">'
+                                + 'Visit Site'
+                                + '<svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>'
+                                + '</a>'
+                                + '</div></div></div>';
+                            wrapper.appendChild(slide);
+                        });
+                        new Swiper('.case-study-carousel', {
+                            slidesPerView: 1,
+                            spaceBetween: 16,
+                            loop: true,
+                            speed: 600,
+                            pagination: { el: '.swiper-pagination', clickable: true },
+                            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+                            breakpoints: {
+                                640: { slidesPerView: 1.5, spaceBetween: 20 },
+                                768: { slidesPerView: 2, spaceBetween: 24 },
+                                1024: { slidesPerView: 2.5, spaceBetween: 28 },
+                                1280: { slidesPerView: 3, spaceBetween: 32 },
+                            },
+                        });
+                    });
+            })();
+        });
+    </script>
 
     <script>
         // 5. Footer: highlight relationship between Services and Service Pages
@@ -1250,89 +1286,90 @@
 
     <!-- MOBILE_OFFCANVAS_MENU -->
 
-<script>
-/* Mobile Offcanvas Menu - built dynamically from each page's nav */
-(function () {
-  var navEl = document.querySelector('nav');
-  var hamburgerBtn = navEl ? navEl.querySelector('button') : null;
-  if (!navEl || !hamburgerBtn) return;
+    <script>
+        /* Mobile Offcanvas Menu - built dynamically from each page's nav */
+        (function () {
+            var navEl = document.querySelector('nav');
+            var hamburgerBtn = navEl ? navEl.querySelector('button') : null;
+            if (!navEl || !hamburgerBtn) return;
 
-  var megaLinks = Array.prototype.slice.call(document.querySelectorAll('nav .mega-menu-grid a')).map(function (a) {
-    var t = a.querySelector('.card-title');
-    var label = t ? t.innerHTML.replace(/<br\s*\/?>/gi, ' ').replace(/\s+/g, ' ').trim() : a.textContent.trim();
-    return { href: a.href, label: label };
-  });
-  var directLinks = Array.prototype.slice.call(document.querySelectorAll('nav .nav-pill > a')).map(function (a) {
-    return { href: a.href, label: a.textContent.trim() };
-  });
-  var ctaLink = Array.prototype.slice.call(document.querySelectorAll('nav a')).find(function (a) {
-    return /connect/i.test(a.textContent);
-  });
-  var homeLink = document.querySelector('nav a[aria-label="Home"]');
+            var megaLinks = Array.prototype.slice.call(document.querySelectorAll('nav .mega-menu-grid a')).map(function (a) {
+                var t = a.querySelector('.card-title');
+                var label = t ? t.innerHTML.replace(/<br\s*\/?>/gi, ' ').replace(/\s+/g, ' ').trim() : a.textContent.trim();
+                return { href: a.href, label: label };
+            });
+            var directLinks = Array.prototype.slice.call(document.querySelectorAll('nav .nav-pill > a')).map(function (a) {
+                return { href: a.href, label: a.textContent.trim() };
+            });
+            var ctaLink = Array.prototype.slice.call(document.querySelectorAll('nav a')).find(function (a) {
+                return /connect/i.test(a.textContent);
+            });
+            var homeLink = document.querySelector('nav a[aria-label="Home"]');
 
-  var overlay = document.createElement('div');
-  overlay.className = 'mobile-menu-overlay';
-  var panel = document.createElement('div');
-  panel.className = 'mobile-menu-panel';
-  panel.setAttribute('data-lenis-prevent', ''); // let the panel scroll natively even when Lenis is stopped
+            var overlay = document.createElement('div');
+            overlay.className = 'mobile-menu-overlay';
+            var panel = document.createElement('div');
+            panel.className = 'mobile-menu-panel';
+            panel.setAttribute('data-lenis-prevent', ''); // let the panel scroll natively even when Lenis is stopped
 
-  var html = '<div class="mobile-menu-head"><a href="' + (homeLink ? homeLink.href : '../../index.html') + '" class="mobile-menu-logo">CHIMPZLAB</a>';
-  html += '<button type="button" class="mobile-menu-close" aria-label="Close menu">&times;</button></div>';
-  html += '<nav class="mobile-menu-nav">';
-  html += '<div class="mobile-menu-group"><button type="button" class="mobile-menu-toggle">Services <span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="mobile-submenu">';
-  megaLinks.forEach(function (l) { html += '<a href="' + l.href + '" class="mobile-submenu-link">' + l.label + '</a>'; });
-  html += '</div></div>';
-  directLinks.forEach(function (l) { html += '<a href="' + l.href + '" class="mobile-menu-link">' + l.label + '</a>'; });
-  html += '</nav>';
-  html += '<a href="' + (ctaLink ? ctaLink.href : '#booking-form') + '" class="mobile-menu-cta">Let\'s Connect</a>';
+            var html = '<div class="mobile-menu-head"><a href="' + (homeLink ? homeLink.href : '../../index.html') + '" class="mobile-menu-logo">CHIMPZLAB</a>';
+            html += '<button type="button" class="mobile-menu-close" aria-label="Close menu">&times;</button></div>';
+            html += '<nav class="mobile-menu-nav">';
+            html += '<div class="mobile-menu-group"><button type="button" class="mobile-menu-toggle">Services <span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="mobile-submenu">';
+            megaLinks.forEach(function (l) { html += '<a href="' + l.href + '" class="mobile-submenu-link">' + l.label + '</a>'; });
+            html += '</div></div>';
+            directLinks.forEach(function (l) { html += '<a href="' + l.href + '" class="mobile-menu-link">' + l.label + '</a>'; });
+            html += '</nav>';
+            html += '<a href="' + (ctaLink ? ctaLink.href : '#booking-form') + '" class="mobile-menu-cta">Let\'s Connect</a>';
 
-  panel.innerHTML = html;
-  overlay.appendChild(panel);
-  document.body.appendChild(overlay);
+            panel.innerHTML = html;
+            overlay.appendChild(panel);
+            document.body.appendChild(overlay);
 
-  function lockScroll() {
-    document.body.classList.add('menu-open');
-    if (window.lenis && typeof window.lenis.stop === 'function') window.lenis.stop();
-  }
-  function unlockScroll() {
-    document.body.classList.remove('menu-open');
-    if (window.lenis && typeof window.lenis.start === 'function') window.lenis.start();
-  }
-  function openMenu() {
-    overlay.classList.add('open');
-    hamburgerBtn.classList.add('is-active');
-    hamburgerBtn.setAttribute('aria-expanded', 'true');
-    lockScroll();
-  }
-  function closeMenu() {
-    overlay.classList.remove('open');
-    hamburgerBtn.classList.remove('is-active');
-    hamburgerBtn.setAttribute('aria-expanded', 'false');
-    unlockScroll();
-  }
+            function lockScroll() {
+                document.body.classList.add('menu-open');
+                if (window.lenis && typeof window.lenis.stop === 'function') window.lenis.stop();
+            }
+            function unlockScroll() {
+                document.body.classList.remove('menu-open');
+                if (window.lenis && typeof window.lenis.start === 'function') window.lenis.start();
+            }
+            function openMenu() {
+                overlay.classList.add('open');
+                hamburgerBtn.classList.add('is-active');
+                hamburgerBtn.setAttribute('aria-expanded', 'true');
+                lockScroll();
+            }
+            function closeMenu() {
+                overlay.classList.remove('open');
+                hamburgerBtn.classList.remove('is-active');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+                unlockScroll();
+            }
 
-  hamburgerBtn.addEventListener('click', function () {
-    if (overlay.classList.contains('open')) { closeMenu(); }
-    else { openMenu(); }
-  });
-  overlay.addEventListener('click', function (e) {
-    if (e.target === overlay) closeMenu();
-    if (e.target.closest('a')) closeMenu();
-  });
-  var closeBtn = panel.querySelector('.mobile-menu-close');
-  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+            hamburgerBtn.addEventListener('click', function () {
+                if (overlay.classList.contains('open')) { closeMenu(); }
+                else { openMenu(); }
+            });
+            overlay.addEventListener('click', function (e) {
+                if (e.target === overlay) closeMenu();
+                if (e.target.closest('a')) closeMenu();
+            });
+            var closeBtn = panel.querySelector('.mobile-menu-close');
+            if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+            document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
 
-  var svcToggle = panel.querySelector('.mobile-menu-toggle');
-  if (svcToggle) {
-    svcToggle.addEventListener('click', function () {
-      svcToggle.parentElement.classList.toggle('open');
-    });
-  }
-})();
-</script>
+            var svcToggle = panel.querySelector('.mobile-menu-toggle');
+            if (svcToggle) {
+                svcToggle.addEventListener('click', function () {
+                    svcToggle.parentElement.classList.toggle('open');
+                });
+            }
+        })();
+    </script>
 
 
 
 </body>
+
 </html>
