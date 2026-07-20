@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Featured Project | ChimpzLab</title>
-    <meta name="description" content="Featured project showcase by ChimpzLab.">
+    <title>Email Marketing Featured Project | ChimpzLab</title>
+    <meta name="description" content="Email marketing featured project showcase by ChimpzLab.">
     <link rel="icon" type="image/gif" href="../../asset/chimpzlab-icon.gif">
     <link rel="apple-touch-icon" href="../../asset/chimpzlab-icon.gif">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,6 +27,14 @@
         }
     </script>
     <link rel="stylesheet" href="../../style.css">
+    <style>
+        .swiper-pagination-bullet { background: rgba(255,255,255,0.4) !important; opacity: 1 !important; }
+        .swiper-pagination-bullet-active { background: #fff !important; }
+        [data-lenis-prevent]::-webkit-scrollbar { width: 4px; }
+        [data-lenis-prevent]::-webkit-scrollbar-track { background: transparent; }
+        [data-lenis-prevent]::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 4px; }
+        [data-lenis-prevent]::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.3); }
+    </style>
 </head>
 
 <body class="selection:bg-white selection:text-black">
@@ -395,7 +403,7 @@
             });
 
             // Load project cards from JSON first, then set up scroll reveals
-            fetch('./landing-pages-case-studies.json', { cache: 'no-cache' })
+            fetch('./email-marketing-case-studies.json', { cache: 'no-cache' })
                 .then(r => r.json())
                 .then(data => {
                     const grid = document.getElementById('project-grid');
@@ -419,7 +427,7 @@
                             card.className = 'gsap-reveal';
                             card.dataset.category = item.category || 'uncategorized';
                             card.innerHTML = '<div class="bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden h-full flex flex-col hover:bg-white/[0.08] transition-colors duration-300">'
-                                + '<div class="shrink-0">'
+                                + '<div data-lenis-prevent style="height:400px;overflow-y:auto;flex-shrink:0">'
                                 + '<img src="' + item.image + '" alt="' + item.title + '" class="w-full block">'
                                 + '</div>'
                                 + '<div class="p-5 sm:p-6 md:p-8 flex flex-col flex-1">'
