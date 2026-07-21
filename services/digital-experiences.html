@@ -608,86 +608,11 @@
                 </button>
 
                 <div class="testimonial-carousel overflow-hidden">
-                    <div class="testimonial-track flex transition-transform duration-500 ease-in-out">
-                        <!-- Testimonial 1 -->
-                        <div class="testimonial-slide min-w-full px-2">
-                            <div class="bg-white rounded-3xl p-10 md:p-14 relative shadow-sm">
-                                <div
-                                    class="absolute top-8 right-10 text-[120px] leading-none font-serif text-gray-100 select-none pointer-events-none">
-                                    "</div>
-                                <p
-                                    class="text-xl md:text-2xl font-medium leading-relaxed text-gray-800 mb-10 relative z-10 italic max-w-[800px]">
-                                    "ChimpzLab redefined our digital footprint. They didn't just give us rankings; they
-                                    gave us absolute authority in a sector where trust is non-negotiable. Their SXO
-                                    approach is the future of corporate growth."
-                                </p>
-                                <div class="flex items-center gap-4 relative z-10">
-                                    <img src="https://i.pravatar.cc/100?img=1" alt="Elena Sterling"
-                                        class="w-14 h-14 rounded-full object-cover">
-                                    <div>
-                                        <p class="font-bold text-base text-brand-dark">Elena Sterling</p>
-                                        <p class="text-sm text-gray-500">Director of Global Reputation, Alpha Nexus</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Testimonial 2 -->
-                        <div class="testimonial-slide min-w-full px-2">
-                            <div class="bg-white rounded-3xl p-10 md:p-14 relative shadow-sm">
-                                <div
-                                    class="absolute top-8 right-10 text-[120px] leading-none font-serif text-gray-100 select-none pointer-events-none">
-                                    "</div>
-                                <p
-                                    class="text-xl md:text-2xl font-medium leading-relaxed text-gray-800 mb-10 relative z-10 italic max-w-[800px]">
-                                    "The integrated communications approach transformed how our stakeholders perceive
-                                    us. Media coverage, investor confidence, and employer brand all moved in the same
-                                    direction for the first time."
-                                </p>
-                                <div class="flex items-center gap-4 relative z-10">
-                                    <img src="https://i.pravatar.cc/100?img=3" alt="Rajesh Mehta"
-                                        class="w-14 h-14 rounded-full object-cover">
-                                    <div>
-                                        <p class="font-bold text-base text-brand-dark">Rajesh Mehta</p>
-                                        <p class="text-sm text-gray-500">CEO, FinServ Capital</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Testimonial 3 -->
-                        <div class="testimonial-slide min-w-full px-2">
-                            <div class="bg-white rounded-3xl p-10 md:p-14 relative shadow-sm">
-                                <div
-                                    class="absolute top-8 right-10 text-[120px] leading-none font-serif text-gray-100 select-none pointer-events-none">
-                                    "</div>
-                                <p
-                                    class="text-xl md:text-2xl font-medium leading-relaxed text-gray-800 mb-10 relative z-10 italic max-w-[800px]">
-                                    "Our annual report went from a compliance document to a trust-building asset. The
-                                    narrative overhaul directly contributed to stronger analyst ratings and shareholder
-                                    engagement."
-                                </p>
-                                <div class="flex items-center gap-4 relative z-10">
-                                    <img src="https://i.pravatar.cc/100?img=5" alt="Priya Kapoor"
-                                        class="w-14 h-14 rounded-full object-cover">
-                                    <div>
-                                        <p class="font-bold text-base text-brand-dark">Priya Kapoor</p>
-                                        <p class="text-sm text-gray-500">Head of Investor Relations, Nexus Industries
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="testimonial-track flex transition-transform duration-500 ease-in-out"></div>
                 </div>
 
                 <!-- Dots -->
-                <div class="flex items-center justify-center gap-2 mt-4 md:mt-6">
-                    <button class="testimonial-dot w-2.5 h-2.5 rounded-full bg-black transition-all duration-300"
-                        data-index="0" aria-label="Go to slide 1"></button>
-                    <button class="testimonial-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-all duration-300"
-                        data-index="1" aria-label="Go to slide 2"></button>
-                    <button class="testimonial-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-all duration-300"
-                        data-index="2" aria-label="Go to slide 3"></button>
-                </div>
+                <div class="flex items-center justify-center gap-2 mt-4 md:mt-6" id="testimonial-dots"></div>
             </div>
         </div>
     </section>
@@ -1111,107 +1036,144 @@
             });
         });
 
-        // Testimonial Carousel Logic
+        // Testimonial Carousel Logic - Data Driven
         const testimonialTrack = document.querySelector('.testimonial-track');
-        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
         const prevBtn = document.querySelector('.testimonial-prev');
         const nextBtn = document.querySelector('.testimonial-next');
-        const dots = document.querySelectorAll('.testimonial-dot');
+        const dotsContainer = document.getElementById('testimonial-dots');
         let currentSlide = 0;
-        const totalSlides = testimonialSlides.length;
+        let totalSlides = 0;
         let autoplayInterval;
 
-        function goToSlide(index) {
-            if (index < 0) index = totalSlides - 1;
-            if (index >= totalSlides) index = 0;
-            currentSlide = index;
-            testimonialTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('bg-black', i === currentSlide);
-                dot.classList.toggle('bg-gray-300', i !== currentSlide);
-            });
+        function renderTestimonials(data) {
+            totalSlides = data.length;
+
+            testimonialTrack.innerHTML = data.map((t, i) => `
+                        <div class="testimonial-slide min-w-full px-2">
+                            <div class="bg-white rounded-3xl p-10 md:p-14 relative shadow-sm h-full flex flex-col justify-center">
+                                <div class="absolute top-8 right-10 text-[120px] leading-none font-serif text-gray-100 select-none pointer-events-none">"</div>
+                                <p class="text-xl md:text-2xl font-medium leading-relaxed text-gray-800 mb-10 relative z-10 italic max-w-[800px] ">"${t.quote}"</p>
+                                <div class="flex items-center gap-4 relative z-10 shrink-0">
+                                    ${t.image
+                                        ? `<img src="${t.image}" alt="${t.author}" class="w-14 h-14 rounded-full object-cover">`
+                                        : `<div class="w-14 h-14 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 font-bold text-lg shrink-0">${t.letter}</div>`
+                                    }
+                                    <div>
+                                        <p class="font-bold text-base text-brand-dark">${t.author}</p>
+                                        <p class="text-sm text-gray-500">${t.title}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            `).join('');
+
+            dotsContainer.innerHTML = data.map((_, i) => `
+                <button class="testimonial-dot w-2.5 h-2.5 rounded-full ${i === 0 ? 'bg-black' : 'bg-gray-300'} transition-all duration-300"
+                    data-index="${i}" aria-label="Go to slide ${i + 1}"></button>
+            `).join('');
+
+            initCarousel();
         }
 
-        function startAutoplay() {
-            autoplayInterval = setInterval(() => {
-                goToSlide(currentSlide + 1);
-            }, 5000);
-        }
+        function initCarousel() {
+            const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+            const dots = document.querySelectorAll('.testimonial-dot');
 
-        function stopAutoplay() {
-            clearInterval(autoplayInterval);
-        }
+            function goToSlide(index) {
+                if (index < 0) index = totalSlides - 1;
+                if (index >= totalSlides) index = 0;
+                currentSlide = index;
+                testimonialTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('bg-black', i === currentSlide);
+                    dot.classList.toggle('bg-gray-300', i !== currentSlide);
+                });
+            }
 
-        prevBtn.addEventListener('click', () => {
-            stopAutoplay();
-            goToSlide(currentSlide - 1);
-            startAutoplay();
-        });
+            function startAutoplay() {
+                autoplayInterval = setInterval(() => goToSlide(currentSlide + 1), 5000);
+            }
 
-        nextBtn.addEventListener('click', () => {
-            stopAutoplay();
-            goToSlide(currentSlide + 1);
-            startAutoplay();
-        });
+            function stopAutoplay() {
+                clearInterval(autoplayInterval);
+            }
 
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => {
+            prevBtn.addEventListener('click', () => {
                 stopAutoplay();
-                goToSlide(parseInt(dot.dataset.index));
+                goToSlide(currentSlide - 1);
                 startAutoplay();
             });
-        });
 
-        // Drag / Swipe Support
-        const carouselEl = document.querySelector('.testimonial-carousel');
-        let dragStartX = 0;
-        let dragDeltaX = 0;
-        let isDragging = false;
-
-        function setTransition(v) {
-            testimonialTrack.style.transition = v ? 'transform 0.5s ease' : 'none';
-        }
-
-        function onDragStart(e) {
-            if (e.type === 'mousedown' && e.button !== 0) return;
-            isDragging = true;
-            dragStartX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
-            dragDeltaX = 0;
-            setTransition(false);
-            stopAutoplay();
-        }
-
-        function onDragMove(e) {
-            if (!isDragging) return;
-            const x = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
-            dragDeltaX = x - dragStartX;
-            const offset = -(currentSlide * 100) + (dragDeltaX / carouselEl.offsetWidth * 100);
-            testimonialTrack.style.transform = `translateX(${offset}%)`;
-        }
-
-        function onDragEnd() {
-            if (!isDragging) return;
-            isDragging = false;
-            setTransition(true);
-            if (dragDeltaX < -50) {
+            nextBtn.addEventListener('click', () => {
+                stopAutoplay();
                 goToSlide(currentSlide + 1);
-            } else if (dragDeltaX > 50) {
-                goToSlide(currentSlide - 1);
-            } else {
-                goToSlide(currentSlide);
+                startAutoplay();
+            });
+
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    stopAutoplay();
+                    goToSlide(parseInt(dot.dataset.index));
+                    startAutoplay();
+                });
+            });
+
+            // Drag / Swipe Support
+            const carouselEl = document.querySelector('.testimonial-carousel');
+            let dragStartX = 0;
+            let dragDeltaX = 0;
+            let isDragging = false;
+
+            function setTransition(v) {
+                testimonialTrack.style.transition = v ? 'transform 0.5s ease' : 'none';
             }
+
+            function onDragStart(e) {
+                if (e.type === 'mousedown' && e.button !== 0) return;
+                isDragging = true;
+                dragStartX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+                dragDeltaX = 0;
+                setTransition(false);
+                stopAutoplay();
+            }
+
+            function onDragMove(e) {
+                if (!isDragging) return;
+                const x = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+                dragDeltaX = x - dragStartX;
+                const offset = -(currentSlide * 100) + (dragDeltaX / carouselEl.offsetWidth * 100);
+                testimonialTrack.style.transform = `translateX(${offset}%)`;
+            }
+
+            function onDragEnd() {
+                if (!isDragging) return;
+                isDragging = false;
+                setTransition(true);
+                if (dragDeltaX < -50) {
+                    goToSlide(currentSlide + 1);
+                } else if (dragDeltaX > 50) {
+                    goToSlide(currentSlide - 1);
+                } else {
+                    goToSlide(currentSlide);
+                }
+                startAutoplay();
+            }
+
+            carouselEl.addEventListener('touchstart', onDragStart, { passive: true });
+            carouselEl.addEventListener('touchmove', onDragMove, { passive: true });
+            carouselEl.addEventListener('touchend', onDragEnd);
+            carouselEl.addEventListener('mousedown', onDragStart);
+            carouselEl.addEventListener('mousemove', onDragMove);
+            carouselEl.addEventListener('mouseup', onDragEnd);
+            carouselEl.addEventListener('mouseleave', onDragEnd);
+
             startAutoplay();
         }
 
-        carouselEl.addEventListener('touchstart', onDragStart, { passive: true });
-        carouselEl.addEventListener('touchmove', onDragMove, { passive: true });
-        carouselEl.addEventListener('touchend', onDragEnd);
-        carouselEl.addEventListener('mousedown', onDragStart);
-        carouselEl.addEventListener('mousemove', onDragMove);
-        carouselEl.addEventListener('mouseup', onDragEnd);
-        carouselEl.addEventListener('mouseleave', onDragEnd);
-
-        startAutoplay();
+        fetch('../data/testimonials.json')
+            .then(res => res.json())
+            .then(renderTestimonials)
+            .catch(err => console.error('Failed to load testimonials:', err));
     </script>
     <!-- Footer -->
     <footer class="w-full bg-[#050505] text-white py-6 md:py-8 px-5 md:px-12 relative border-t border-white/10 d-none">
