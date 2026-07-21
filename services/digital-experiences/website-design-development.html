@@ -19,6 +19,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script>
         tailwind.config = {
             theme: {
@@ -33,27 +35,6 @@
 
         // Initialize GSAP animations when page loads
         document.addEventListener('DOMContentLoaded', function () {
-            // Ensure equal height cards are working
-            function setEqualCardHeights() {
-                const cards = document.querySelectorAll('.tab-card-item');
-                cards.forEach(card => {
-                    card.style.height = 'auto';
-                });
-            }
-
-            // Set equal heights on DOM load and window resize
-            setEqualCardHeights();
-            window.addEventListener('resize', setEqualCardHeights);
-
-            // Custom GSAP animation for tab cards
-            gsap.utils.toArray('.tab-card-item').forEach((card, index) => {
-                gsap.fromTo(card,
-                    { opacity: 0, y: 40, scale: 0.95 },
-                    { opacity: 1, y: 0, scale: 1, duration: 0.6, delay: index * 0.1, ease: 'power2.out' }
-                );
-            });
-
-            // Initial ScrollTrigger refresh
             ScrollTrigger.refresh();
         });
     </script>
@@ -94,6 +75,13 @@
     </script>
 
     <link rel="stylesheet" href="../../style.css">
+    <style>
+        @media (max-width: 767px) {
+            .swiper-button-next, .swiper-button-prev { display: none !important; }
+        }
+        .swiper-pagination-bullet { background: rgba(255,255,255,0.4) !important; opacity: 1 !important; }
+        .swiper-pagination-bullet-active { background: #fff !important; }
+    </style>
 </head>
 
 <body class="selection:bg-white selection:text-black">
@@ -395,275 +383,35 @@
         </div>
     </section>
 
-    <!-- Featured Article & Case Study Section (Hidden by default) -->
-    <!-- <section class="py-16 md:py-32 px-4 sm:px-6 md:px-12 bg-brand-dark text-white border-t border-white/10">
-        <div class="max-w-[1400px] mx-auto">
-
-            <div class="flex items-center gap-4 mb-4 gsap-reveal">
-                <div class="w-12 h-[1px] bg-white/30"></div>
-                <span class="text-xs font-bold uppercase tracking-[0.2em] text-white/50">Case Studies</span>
-            </div>
-            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16 gsap-reveal">
-                <h2 class="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tighter uppercase m-0">
-                    Featured Case Studies
-                </h2>
-                <a href="../case-studies.html" class="inline-flex items-center gap-2 text-white font-bold text-sm hover:gap-3 transition-all duration-300 pb-1 border-b border-white/30 hover:border-white shrink-0 uppercase tracking-wider">
-                    View All Case Studies
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                </a>
-            </div>
-
-            <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch">
-                <div id="tab-card-wrapper" class="lg:w-6/12 gsap-reveal">
-                    <div id="tab-card"
-                        class="bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden min-h-[400px] lg:min-h-[620px] flex flex-col"
-                        style="">
-                        <div class="relative h-[200px] sm:h-[240px] md:h-[350px] overflow-hidden">
-                            <img id="tab-image" src="../../asset/2.jpg" alt="Case Study"
-                                class="w-full h-full object-cover transition-all duration-500">
-                        </div>
-                        <div class="p-5 sm:p-6 md:p-8 flex flex-col flex-1 min-h-0 overflow-y-auto">
-                            <span id="tab-date"
-                                class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/50 mb-2 block">Case
-                                Study</span>
-                            <h3 id="tab-title"
-                                class="text-lg sm:text-xl md:text-2xl font-extrabold text-white mb-2 sm:mb-3 leading-tight tracking-tight">
-                                Annual Report & Investor Communication — Listed Company</h3>
-                            <p id="tab-desc"
-                                class="text-gray-400 font-medium text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5 flex-1">
-                                Seen
-                                internally as a compliance document, not a trust-building asset. The annual report was
-                                failing to build investor confidence and communicate real value to stakeholders.</p>
-                            <a href="../case-studies.html"
-                                class="inline-flex items-center gap-2 text-white font-bold text-xs sm:text-sm hover:gap-3 transition-all duration-300">
-                                Read More
-                                <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:w-6/12 flex flex-col gsap-reveal">
-                    <div class="flex-1 overflow-y-auto max-h-[400px] sm:max-h-[480px] md:max-h-[520px] pr-1 sm:pr-2 space-y-3 sm:space-y-4"
-                        style="scrollbar-width: thin; scrollbar-color: #444 transparent;">
-
-                        <div class="phase-tab active group cursor-pointer rounded-xl sm:rounded-2xl p-3 sm:p-4 transition-all duration-300 hover:-translate-y-0.5"
-                            data-tab="0">
-                            <div class="flex gap-3 sm:gap-4 items-center">
-                                <div
-                                    class="w-[80px] h-[60px] sm:w-[120px] sm:h-[90px] md:w-[150px] md:h-[120px] rounded-lg sm:rounded-xl overflow-hidden shrink-0">
-                                    <img src="../../asset/2.jpg" alt="Phase 01"
-                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <span
-                                        class="tab-label text-[9px] sm:text-[10px] font-bold uppercase tracking-widest block mb-1">Phase
-                                        01: Problem</span>
-                                    <p
-                                        class="tab-title font-bold text-xs sm:text-sm leading-snug mb-1 sm:mb-2 line-clamp-2">
-                                        Annual Report & Investor Communication — Listed Company</p>
-                                    <a href="../../blog-insite.html"
-                                        class="tab-link inline-flex items-center gap-1 font-bold text-[10px] sm:text-xs hover:gap-2 transition-all duration-300">
-                                        Read More
-                                        <svg class="w-2.5 h-2.5 sm:w-3 sm:h-3" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="phase-tab group cursor-pointer rounded-xl sm:rounded-2xl p-3 sm:p-4 transition-all duration-300 hover:-translate-y-0.5"
-                            data-tab="1">
-                            <div class="flex gap-3 sm:gap-4 items-center">
-                                <div
-                                    class="w-[80px] h-[60px] sm:w-[120px] sm:h-[90px] md:w-[150px] md:h-[120px] rounded-lg sm:rounded-xl overflow-hidden shrink-0">
-                                    <img src="../../asset/1.jpg" alt="Phase 02"
-                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <span
-                                        class="tab-label text-[9px] sm:text-[10px] font-bold uppercase tracking-widest block mb-1">Phase
-                                        02: Action</span>
-                                    <p
-                                        class="tab-title font-bold text-xs sm:text-sm leading-snug mb-1 sm:mb-2 line-clamp-2">
-                                        Full Narrative & Design Overhaul Aligned to Investor Priorities</p>
-                                    <a href="../../blog-insite.html"
-                                        class="tab-link inline-flex items-center gap-1 font-bold text-[10px] sm:text-xs hover:gap-2 transition-all duration-300">
-                                        Read More
-                                        <svg class="w-2.5 h-2.5 sm:w-3 sm:h-3" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="phase-tab group cursor-pointer rounded-xl sm:rounded-2xl p-3 sm:p-4 transition-all duration-300 hover:-translate-y-0.5"
-                            data-tab="2">
-                            <div class="flex gap-3 sm:gap-4 items-center">
-                                <div
-                                    class="w-[80px] h-[60px] sm:w-[120px] sm:h-[90px] md:w-[150px] md:h-[120px] rounded-lg sm:rounded-xl overflow-hidden shrink-0">
-                                    <img src="../../asset/3.jpg" alt="Phase 03"
-                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <span
-                                        class="tab-label text-[9px] sm:text-[10px] font-bold uppercase tracking-widest block mb-1">Phase
-                                        03: Result</span>
-                                    <p
-                                        class="tab-title font-bold text-xs sm:text-sm leading-snug mb-1 sm:mb-2 line-clamp-2">
-                                        Positive Analyst & Shareholder Feedback Cited to IR Team</p>
-                                    <a href="../../blog-insite.html"
-                                        class="tab-link inline-flex items-center gap-1 font-bold text-[10px] sm:text-xs hover:gap-2 transition-all duration-300">
-                                        Read More
-                                        <svg class="w-2.5 h-2.5 sm:w-3 sm:h-3" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="mt-5 sm:mt-6 pt-5 sm:pt-6 border-t border-white/10">
-                        <a href="../../blog-insite.html"
-                            class="inline-flex items-center gap-2 border-2 border-white text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-brand-dark transition-all duration-300">
-                            See More Blogs
-                            <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section> -    <!-- Case Studies Grid Version (Active by default) -->
-    <section class="py-16 md:py-32 px-4 sm:px-6 md:px-12 bg-brand-dark text-white border-t border-white/10">
+    <!-- Featured Project Slider — JSON-driven -->
+    <section
+        class="py-16 md:py-32 px-4 sm:px-6 md:px-12 bg-brand-dark text-white border-t border-white/10 overflow-hidden">
         <div class="max-w-[1400px] mx-auto">
             <div class="flex items-center gap-4 mb-4 gsap-reveal">
                 <div class="w-12 h-[1px] bg-white/30"></div>
-                <span class="text-xs font-bold uppercase tracking-[0.2em] text-white/50">Case Studies</span>
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-white/50">Featured Project</span>
             </div>
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16 gsap-reveal">
                 <h2 class="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tighter uppercase m-0">
                     Featured Work
                 </h2>
-                <a href="../case-studies.html" class="inline-flex items-center gap-2 text-white font-bold text-sm hover:gap-3 transition-all duration-300 pb-1 border-b border-white/30 hover:border-white shrink-0 uppercase tracking-wider">
-                    View All Case Studies
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                <a href="website-design-project.html"
+                    class="inline-flex items-center gap-2 text-white font-bold text-sm hover:gap-3 transition-all duration-300 pb-1 border-b border-white/30 hover:border-white shrink-0 uppercase tracking-wider">
+                    View Featured Project
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
                 </a>
             </div>
 
-            <!-- Flex container for equal height cards -->
-            <div class="flex flex-col lg:flex-row gap-6 md:gap-8 items-stretch">
-
-                <div class="w-full gsap-reveal tab-card-item group" style="animation-delay: 0s">
-                    <div class="bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden min-h-[400px] lg:min-h-[620px] flex flex-col card-height-equal"
-                        style="">
-                        <div class="relative h-[200px] sm:h-[240px] md:h-[350px] overflow-hidden">
-                            <img src="../../asset/2.jpg" alt="Case Study"
-                                class="w-full h-full object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-110">
-                        </div>
-                        <div class="p-5 sm:p-6 md:p-8 flex flex-col flex-1 min-h-0 overflow-y-auto">
-                            <span
-                                class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/50 mb-2 block">Case
-                                Study</span>
-                            <h3
-                                class="text-lg sm:text-xl md:text-2xl font-extrabold text-white mb-2 sm:mb-3 leading-tight tracking-tight">
-                                Annual Report & Investor Communication — Listed Company</h3>
-                            <p class="text-gray-400 font-medium text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5 flex-1">
-                                Seen
-                                internally as a compliance document, not a trust-building asset. The annual report was
-                                failing to build investor confidence and communicate real value to stakeholders.</p>
-                            <a href="../case-studies.html"
-                                class="inline-flex items-center gap-2 text-white font-bold text-xs sm:text-sm hover:gap-3 transition-all duration-300">
-                                Read More
-                                <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
+            <div class="case-study-carousel-outer relative">
+                <div class="swiper case-study-carousel gsap-reveal">
+                    <div class="swiper-wrapper"></div>
+                    <div class="swiper-pagination !relative !bottom-auto mt-10 md:mt-12"></div>
                 </div>
-
-                <div class="w-full gsap-reveal tab-card-item group" style="animation-delay: 0.1s">
-                    <div class="bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden min-h-[400px] lg:min-h-[620px] flex flex-col card-height-equal"
-                        style="">
-                        <div class="relative h-[200px] sm:h-[240px] md:h-[350px] overflow-hidden">
-                            <img src="../../asset/1.jpg" alt="Case Study"
-                                class="w-full h-full object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-110">
-                        </div>
-                        <div class="p-5 sm:p-6 md:p-8 flex flex-col flex-1 min-h-0 overflow-y-auto">
-                            <span
-                                class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/50 mb-2 block">Case
-                                Study</span>
-                            <h3
-                                class="text-lg sm:text-xl md:text-2xl font-extrabold text-white mb-2 sm:mb-3 leading-tight tracking-tight">
-                                Full Narrative & Design Overhaul Aligned to Investor Priorities</h3>
-                            <p class="text-gray-400 font-medium text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5 flex-1">
-                                Complete
-                                transformation of annual report design and narrative to align with key investor metrics
-                                and priorities.</p>
-                            <a href="../case-studies.html"
-                                class="inline-flex items-center gap-2 text-white font-bold text-xs sm:text-sm hover:gap-3 transition-all duration-300">
-                                Read More
-                                <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-full gsap-reveal tab-card-item group" style="animation-delay: 0.2s">
-                    <div class="bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden min-h-[400px] lg:min-h-[620px] flex flex-col card-height-equal"
-                        style="">
-                        <div class="relative h-[200px] sm:h-[240px] md:h-[350px] overflow-hidden">
-                            <img src="../../asset/3.jpg" alt="Case Study"
-                                class="w-full h-full object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-110">
-                        </div>
-                        <div class="p-5 sm:p-6 md:p-8 flex flex-col flex-1 min-h-0 overflow-y-auto">
-                            <span
-                                class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/50 mb-2 block">Case
-                                Study</span>
-                            <h3
-                                class="text-lg sm:text-xl md:text-2xl font-extrabold text-white mb-2 sm:mb-3 leading-tight tracking-tight">
-                                Positive Analyst & Shareholder Feedback Cited to IR Team</h3>
-                            <p class="text-gray-400 font-medium text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5 flex-1">
-                                Investor
-                                Relations strategy implementation resulting in positive analyst coverage and shareholder
-                                engagement.</p>
-                            <a href="../case-studies.html"
-                                class="inline-flex items-center gap-2 text-white font-bold text-xs sm:text-sm hover:gap-3 transition-all duration-300">
-                                Read More
-                                <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
     </section>
@@ -1134,61 +882,49 @@
 
 
 
-        // Phase Tabs Logic
-        const phaseData = [
-            {
-                image: '../../asset/2.jpg',
-                date: 'Case Study',
-                title: 'Annual Report & Investor Communication — Listed Company',
-                desc: 'Seen internally as a compliance document, not a trust-building asset. The annual report was failing to build investor confidence and communicate real value to stakeholders.',
-                link: '#'
-            },
-            {
-                image: '../../asset/1.jpg',
-                date: 'Case Study',
-                title: 'Full Narrative & Design Overhaul Aligned to Investor Priorities',
-                desc: 'Complete narrative restructuring and design overhaul aligned to investor priorities. Messaging architecture rebuilt to position the company as a trusted, growth-oriented enterprise.',
-                link: '#'
-            },
-            {
-                image: '../../asset/3.jpg',
-                date: 'Case Study',
-                title: 'Positive Analyst & Shareholder Feedback Cited to IR Team',
-                desc: 'Positive analyst and shareholder feedback cited directly to the IR team, transforming the annual report into a trust-building asset.',
-                link: '#'
-            }
-        ];
-
-        const phaseTabs = document.querySelectorAll('.phase-tab');
-        const tabImage = document.getElementById('tab-image');
-        const tabDate = document.getElementById('tab-date');
-        const tabTitle = document.getElementById('tab-title');
-        const tabDesc = document.getElementById('tab-desc');
-
-        phaseTabs.forEach((tab, index) => {
-            tab.addEventListener('click', () => {
-                // Remove active from all
-                phaseTabs.forEach(t => {
-                    t.classList.remove('active');
-                });
-
-                // Add active to clicked
-                tab.classList.add('active');
-
-                // Scroll to left card on mobile
-                const tabCardWrapper = document.getElementById('tab-card-wrapper');
-                if (window.innerWidth < 1024 && tabCardWrapper) {
-                    tabCardWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-
-                // Instant content change - no animation
-                if(tabImage && tabDate && tabTitle && tabDesc) {
-                    tabImage.src = phaseData[index].image;
-                    tabDate.textContent = phaseData[index].date;
-                    tabTitle.textContent = phaseData[index].title;
-                    tabDesc.textContent = phaseData[index].desc;
-                }
-            });
+        document.addEventListener('DOMContentLoaded', function () {
+            (function initCarousel() {
+                const el = document.querySelector('.case-study-carousel');
+                if (!el) return;
+                const wrapper = el.querySelector('.swiper-wrapper');
+                fetch('./website-design-development-case-studies.json', { cache: 'no-cache' })
+                    .then(r => r.json())
+                    .then(data => {
+                        data.forEach(item => {
+                            const slide = document.createElement('div');
+                            slide.className = 'swiper-slide h-auto';
+                            slide.innerHTML = '<div class="interactive h-full">'
+                                + '<div class="bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden h-full flex flex-col hover:bg-white/[0.08] transition-colors duration-300">'
+                                + '<div class="shrink-0">'
+                                + '<img src="' + item.image + '" '
+                                + 'alt="' + item.title + '" class="w-full block">'
+                                + '</div>'
+                                + '<div class="p-5 sm:p-6 md:p-8 flex flex-col flex-1">'
+                                + '<h3 class="text-lg sm:text-xl md:text-2xl font-extrabold text-white mb-2 sm:mb-3 leading-tight tracking-tight">' + item.title + '</h3>'
+                                + '<p class="text-gray-400 font-medium text-sm leading-relaxed flex-1 line-clamp-2">' + (item.desc || '') + '</p>'
+                                + '<a href="' + (item.link || '#') + '" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-white font-bold text-xs sm:text-sm hover:gap-3 transition-all duration-300 mt-4">'
+                                + 'Visit Site'
+                                + '<svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>'
+                                + '</a>'
+                                + '</div></div></div>';
+                            wrapper.appendChild(slide);
+                        });
+                        new Swiper('.case-study-carousel', {
+                            slidesPerView: 1,
+                            spaceBetween: 16,
+                            loop: true,
+                            speed: 600,
+                            pagination: { el: '.swiper-pagination', clickable: true },
+                            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+                            breakpoints: {
+                                640: { slidesPerView: 1.5, spaceBetween: 20 },
+                                768: { slidesPerView: 2, spaceBetween: 24 },
+                                1024: { slidesPerView: 2.5, spaceBetween: 28 },
+                                1280: { slidesPerView: 3, spaceBetween: 32 },
+                            },
+                        });
+                    });
+            })();
         });
     </script>
 

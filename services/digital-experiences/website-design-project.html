@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Featured Website Projects | ChimpzLab</title>
+    <meta name="description" content="Featured website design and development projects by ChimpzLab.">
+    <link rel="icon" type="image/gif" href="../../asset/chimpzlab-icon.gif">
+    <link rel="apple-touch-icon" href="../../asset/chimpzlab-icon.gif">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Manrope', 'sans-serif'] },
+                    colors: { brand: { dark: '#0a0a0a' } },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body class="selection:bg-white selection:text-black">
+
+    <div id="cursor"></div>
+
+    <nav class="fixed w-full top-0 z-50 px-6 md:px-12 py-6 flex justify-between items-center pointer-events-none backdrop-blur-md"
+        style="background: linear-gradient(180deg, #000000cf, transparent);">
+        <a href="../../index.html" class="pointer-events-auto interactive z-10 flex items-center gap-2" aria-label="Home">
+            <img src="../../asset/chimpzlab-white.png" alt="ChimpzLab" class="h-7 md:h-9 object-contain "
+                onerror="this.style.display='none'; document.getElementById('text-logo').style.display='block';">
+            <span id="text-logo"
+                class="hidden text-white font-extrabold text-2xl md:text-3xl tracking-tighter">CHIMPZLAB</span>
+        </a>
+        <div class="pointer-events-auto hidden md:flex absolute left-1/2 -translate-x-1/2 z-10">
+            <div class="nav-pill px-6 py-3 rounded-full flex items-center gap-8">
+                <div class="has-dropdown">
+                    <a href="../../index.html#services-section"
+                        class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors flex items-center gap-1">
+                        Services
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-grid">
+                            <a href="../reputation-communications.html" class="service-card-mini">
+                                <div class="icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                    </svg>
+                                </div>
+                                <span class="card-title">Reputation &<br>Communications</span>
+                            </a>
+                            <a href="../visibility-search.html" class="service-card-mini">
+                                <div class="icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                    </svg>
+                                </div>
+                                <span class="card-title">Visibility &<br>Search</span>
+                            </a>
+                            <a href="../creative.html" class="service-card-mini">
+                                <div class="icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                    </svg>
+                                </div>
+                                <span class="card-title">Content &<br>Creative</span>
+                            </a>
+                            <a href="../demand-generation.html" class="service-card-mini">
+                                <div class="icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                </div>
+                                <span class="card-title">Demand &<br>Automation</span>
+                            </a>
+                            <a href="../digital-experiences.html" class="service-card-mini">
+                                <div class="icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <span class="card-title">Digital<br>Experiences</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="../case-studies.html"
+                    class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors">Work</a>
+                <a href="../../about.html"
+                    class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors">About</a>
+                <a href="../../insights.html"
+                    class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors">Insights</a>
+            </div>
+        </div>
+        <div class="flex items-center gap-4 z-10">
+            <div class="pointer-events-auto hidden md:flex">
+                <a href="../../index.html#booking-form"
+                    class="interactive bg-white hover:bg-gray-200 text-black px-7 py-3 rounded-full text-sm font-bold tracking-wide transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.15)]">
+                    Let's Connect
+                </a>
+            </div>
+            <button class="pointer-events-auto md:hidden text-white interactive p-2 z-10">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <header
+        class="min-h-[50vh] flex flex-col justify-center px-6 md:px-12 pt-32 pb-20 relative bg-brand-dark overflow-hidden">
+        <div class="w-full max-w-[1400px] mx-auto z-10">
+            <div class="flex items-center gap-4 mb-8 gsap-reveal-text">
+                <div class="w-12 h-[1px] bg-white/30"></div>
+                <span class="block text-xs font-bold uppercase tracking-[0.2em] text-white/70">Website Design & Development Projects</span>
+            </div>
+            <h1 class="text-4xl sm:text-6xl md:text-8xl font-extrabold text-white mb-12 tracking-tighter uppercase">
+                <div class="overflow-hidden"><span class="block gsap-reveal-text">Our Featured Website Projects</span></div>
+            </h1>
+        </div>
+    </header>
+
+    <section class="px-4 sm:px-6 md:px-12 py-12 md:py-16 bg-brand-dark text-white border-t border-white/10">
+        <div class="max-w-[1400px] mx-auto">
+            <div id="filter-bar"
+                class="flex flex-wrap gap-3 mb-12 py-2 backdrop-blur-md bg-brand-dark/80 -mx-2 px-2 rounded-xl sticky top-24 z-40">
+            </div>
+            <div id="project-grid"
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            </div>
+            <p id="cs-empty" class="hidden text-center text-white/40 py-20 text-lg">No projects in this category yet.</p>
+        </div>
+    </section>
+
+    <footer class="w-full bg-[#050505] text-white py-6 md:py-8 px-5 md:px-12 relative border-t border-white/10 d-none">
+        <div
+            class="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center lg:justify-between gap-4 lg:gap-12 text-center">
+            <a href="tel:9920149991"
+                class="interactive hover:text-gray-300 transition-colors whitespace-nowrap text-[10px] md:text-xs tracking-widest uppercase font-medium">Call
+                or WhatsApp 9920149991</a>
+            <div class="flex flex-col items-center gap-4 w-full lg:w-auto">
+                <div class="flex-shrink-0 interactive">
+                    <img src="../../asset/chimpzlab-white-logo.gif" alt="ChimpzLab Icon"
+                        class="h-24 md:h-32 w-auto object-contain">
+                </div>
+                <a href="https://maps.google.com/?q=408+Fenkin+9+Phase+1+Wagle+Estate+Thane+West+400604" target="_blank"
+                    rel="noopener noreferrer" class="max-w-xl interactive hover:text-gray-300 transition-colors">408,
+                    Fenkin 9 Phase 1, Wagle Estate,<br>Behind Satkar Grande Hotel, Thane West 400604</a>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="https://youtube.com/@chimpzlab" target="_blank" rel="noopener noreferrer"
+                        class="px-8 py-3 border border-white/20 rounded hover:border-white transition-colors interactive text-xs uppercase tracking-widest font-bold">YouTube</a>
+                    <a href="https://linkedin.com/company/chimpzlab" target="_blank" rel="noopener noreferrer"
+                        class="px-8 py-3 border border-white/20 rounded hover:border-white transition-colors interactive text-xs uppercase tracking-widest font-bold">LinkedIn</a>
+                    <a href="https://instagram.com/chimpzlab" target="_blank" rel="noopener noreferrer"
+                        class="px-8 py-3 border border-white/20 rounded hover:border-white transition-colors interactive text-xs uppercase tracking-widest font-bold">Instagram</a>
+                </div>
+            </div>
+            <div
+                class="interactive hover:text-gray-300 transition-colors cursor-pointer whitespace-nowrap text-[10px] md:text-xs tracking-widest uppercase font-medium">
+                &copy; 2026 ChimpzLab. All rights reserved.</div>
+        </div>
+        <div class="max-w-[1400px] mx-auto border-t border-white/15 my-6 md:my-10"></div>
+        <div class="max-w-4xl mx-auto grid grid-cols-1 gap-6 md:hidden text-center">
+            <div>
+                <h4 class="text-xs font-bold text-white/50 mb-2 pb-2 border-b border-white/10 inline-block">Services
+                </h4>
+                <ul class="flex flex-col">
+                    <li><a href="../reputation-communications.html"
+                            class="interactive text-xs font-medium block py-1">Reputation &amp; Communications</a></li>
+                    <li><a href="../visibility-search.html"
+                            class="interactive text-xs font-medium block py-1">Visibility &amp; Search</a></li>
+                    <li><a href="../creative.html" class="interactive text-xs font-medium block py-1">Content
+                            &amp; Creative</a></li>
+                    <li><a href="../demand-generation.html"
+                            class="interactive text-xs font-medium block py-1">Demand &amp; Automation</a></li>
+                    <li><a href="../digital-experiences.html"
+                            class="interactive text-xs font-medium block py-1">Digital Experiences</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold text-white/50 mb-2 pb-2 border-b border-white/10 inline-block">Service
+                    Pages</h4>
+                <ul class="flex flex-col">
+                    <li><a href="../reputation-communications/thought-leadership.html"
+                            class="interactive text-xs leading-tight font-medium block py-1">Thought Leadership</a></li>
+                    <li><a href="../reputation-communications/public-relations.html"
+                            class="interactive text-xs leading-tight font-medium block py-1">Public Relations</a></li>
+                    <li><a href="../reputation-communications/employer-branding.html"
+                            class="interactive text-xs leading-tight font-medium block py-1">Employer Branding</a></li>
+                    <li><a href="../reputation-communications/corporate-communications.html"
+                            class="interactive text-xs leading-tight font-medium block py-1">Corporate
+                            Communications</a></li>
+                    <li><a href="../visibility-search/seo-aeo.html"
+                            class="interactive text-xs leading-tight font-medium block py-1">SEO &amp; AEO</a></li>
+                    <li><a href="../visibility-search/social-media-marketing.html"
+                            class="interactive text-xs leading-tight font-medium block py-1">Social Media Marketing</a>
+                    </li>
+                    <li><a href="../visibility-search/influencer-marketing.html"
+                            class="interactive text-xs leading-tight font-medium block py-1">Influencer Marketing</a>
+                    </li>
+                    <li><a href="../visibility-search/content-writing.html"
+                            class="interactive text-xs leading-tight font-medium block py-1">Content Writing</a></li>
+                    <li><a href="../creative/video-production.html"
+                            class="interactive text-xs leading-tight font-medium block py-1">Video Production</a></li>
+                    <li><a href="../creative/design.html"
+                            class="interactive text-xs leading-tight font-medium block py-1">Design</a></li>
+                    <li><a href="../creative/branding.html"
+                            class="interactive text-xs leading-tight font-medium block py-1">Branding</a></li>
+                    <li><a href="../demand-generation/vetted-lead-generation.html"
+                            class="interactive text-xs leading-tight font-medium block py-1">Vetted Lead Generation</a>
+                    </li>
+                    <li><a href="../demand-generation/performance-marketing.html"
+                            class="interactive text-xs leading-tight font-medium block py-1">Performance Marketing</a>
+                    </li>
+                    <li><a href="../demand-generation/marketing-automation.html"
+                            class="interactive text-xs leading-tight font-medium block py-1">Marketing Automations</a>
+                    </li>
+                    <li><a href="../demand-generation/email-marketing.html"
+                            class="interactive text-xs leading-tight font-medium block py-1">Email Marketing</a></li>
+                    <li><a href="../digital-experiences/chatbots.html"
+                            class="interactive text-xs leading-tight font-medium block py-1">Chatbots</a></li>
+                    <li><a href="../digital-experiences/website-design-development.html"
+                            class="interactive text-xs leading-tight font-medium block py-1">Website Design &amp;
+                            Development</a></li>
+                    <li><a href="../digital-experiences/landing-pages.html"
+                            class="interactive text-xs leading-tight font-medium block py-1">Landing Pages</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold text-white/50 mb-2 pb-2 border-b border-white/10 inline-block">Company</h4>
+                <ul class="flex flex-col">
+                    <li><a href="../../index.html" data-company class="interactive text-xs font-medium">Home</a></li>
+                    <li><a href="../../about.html" data-company class="interactive text-xs font-medium">About</a></li>
+                    <li><a href="../case-studies.html" data-company
+                            class="interactive text-xs font-medium">Work</a></li>
+                    <li><a href="../../insights.html" data-company class="interactive text-xs font-medium">Insights</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="hidden md:block max-w-4xl mx-auto">
+            <div class="grid grid-cols-3 gap-12">
+                <div class="col-span-2 grid grid-cols-2 gap-x-12">
+                    <h4 class="text-xs font-bold text-white/50 mb-2 pb-2 border-b border-white/10">Services</h4>
+                    <h4 class="text-xs font-bold text-white/50 mb-2 pb-2 border-b border-white/10">Service Pages</h4>
+                    <div><a href="../reputation-communications.html" data-service="reputation-communications"
+                            class="interactive text-white/80 text-xs font-bold block py-1">Reputation &amp;
+                            Communications</a></div>
+                    <div>
+                        <ul class="flex flex-col">
+                            <li><a href="../reputation-communications/thought-leadership.html"
+                                    data-parent="reputation-communications"
+                                    class="interactive text-xs leading-tight font-medium block py-1">Thought
+                                    Leadership</a></li>
+                            <li><a href="../reputation-communications/public-relations.html"
+                                    data-parent="reputation-communications"
+                                    class="interactive text-xs leading-tight font-medium block py-1">Public
+                                    Relations</a></li>
+                            <li><a href="../reputation-communications/employer-branding.html"
+                                    data-parent="reputation-communications"
+                                    class="interactive text-xs leading-tight font-medium block py-1">Employer
+                                    Branding</a></li>
+                            <li><a href="../reputation-communications/corporate-communications.html"
+                                    data-parent="reputation-communications"
+                                    class="interactive text-xs leading-tight font-medium block py-1">Corporate
+                                    Communications</a></li>
+                        </ul>
+                    </div>
+                    <div><a href="../visibility-search.html" data-service="visibility-search"
+                            class="interactive text-white/80 text-xs font-bold block py-1">Visibility &amp; Search</a>
+                    </div>
+                    <div>
+                        <ul class="flex flex-col">
+                            <li><a href="../visibility-search/seo-aeo.html" data-parent="visibility-search"
+                                    class="interactive text-xs leading-tight font-medium block py-1">SEO &amp; AEO</a>
+                            </li>
+                            <li><a href="../visibility-search/social-media-marketing.html"
+                                    data-parent="visibility-search"
+                                    class="interactive text-xs leading-tight font-medium block py-1">Social Media
+                                    Marketing</a></li>
+                            <li><a href="../visibility-search/influencer-marketing.html"
+                                    data-parent="visibility-search"
+                                    class="interactive text-xs leading-tight font-medium block py-1">Influencer
+                                    Marketing</a></li>
+                            <li><a href="../visibility-search/content-writing.html" data-parent="visibility-search"
+                                    class="interactive text-xs leading-tight font-medium block py-1">Content Writing</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div><a href="../creative.html" data-service="creative"
+                            class="interactive text-white/80 text-xs font-bold block py-1">Content &amp; Creative</a>
+                    </div>
+                    <div>
+                        <ul class="flex flex-col">
+                            <li><a href="../creative/video-production.html" data-parent="creative"
+                                    class="interactive text-xs leading-tight font-medium block py-1">Video
+                                    Production</a></li>
+                            <li><a href="../creative/design.html" data-parent="creative"
+                                    class="interactive text-xs leading-tight font-medium block py-1">Design</a></li>
+                            <li><a href="../creative/branding.html" data-parent="creative"
+                                    class="interactive text-xs leading-tight font-medium block py-1">Branding</a></li>
+                        </ul>
+                    </div>
+                    <div><a href="../demand-generation.html" data-service="demand-generation"
+                            class="interactive text-white/80 text-xs font-bold block py-1">Demand &amp; Automation</a>
+                    </div>
+                    <div>
+                        <ul class="flex flex-col">
+                            <li><a href="../demand-generation/vetted-lead-generation.html"
+                                    data-parent="demand-generation"
+                                    class="interactive text-xs leading-tight font-medium block py-1">Vetted Lead
+                                    Generation</a></li>
+                            <li><a href="../demand-generation/performance-marketing.html"
+                                    data-parent="demand-generation"
+                                    class="interactive text-xs leading-tight font-medium block py-1">Performance
+                                    Marketing</a></li>
+                            <li><a href="../demand-generation/marketing-automation.html"
+                                    data-parent="demand-generation"
+                                    class="interactive text-xs leading-tight font-medium block py-1">Marketing
+                                    Automations</a></li>
+                            <li><a href="../demand-generation/email-marketing.html" data-parent="demand-generation"
+                                    class="interactive text-xs leading-tight font-medium block py-1">Email Marketing</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div><a href="../digital-experiences.html" data-service="digital-experiences"
+                            class="interactive text-white/80 text-xs font-bold block py-1">Digital Experiences</a></div>
+                    <div>
+                        <ul class="flex flex-col">
+                            <li><a href="../digital-experiences/chatbots.html" data-parent="digital-experiences"
+                                    class="interactive text-xs leading-tight font-medium block py-1">Chatbots</a></li>
+                            <li><a href="../digital-experiences/website-design-development.html"
+                                    data-parent="digital-experiences"
+                                    class="interactive text-xs leading-tight font-medium block py-1">Website Design
+                                    &amp; Development</a></li>
+                            <li><a href="../digital-experiences/landing-pages.html"
+                                    data-parent="digital-experiences"
+                                    class="interactive text-xs leading-tight font-medium block py-1">Landing Pages</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold text-white/50 mb-2 pb-2 border-b border-white/10">Company</h4>
+                    <ul class="flex flex-col">
+                        <li><a href="../../index.html" data-company class="interactive text-xs font-medium">Home</a></li>
+                        <li><a href="../../about.html" data-company class="interactive text-xs font-medium">About</a></li>
+                        <li><a href="../case-studies.html" data-company
+                                class="interactive text-xs font-medium">Work</a></li>
+                        <li><a href="../../insights.html" data-company
+                                class="interactive text-xs font-medium">Insights</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const cursor = document.getElementById('cursor');
+            const interactiveElements = document.querySelectorAll('.interactive, a, button, input, textarea, select, label');
+            document.addEventListener('mousemove', (e) => { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; });
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+            });
+            window.lenis = new Lenis({
+                wrapper: window,
+                content: document.documentElement,
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                direction: 'vertical', gestureDirection: 'vertical', smooth: true,
+                mouseMultiplier: 1, smoothTouch: false, touchMultiplier: 2, infinite: false,
+            });
+            function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+            requestAnimationFrame(raf);
+            gsap.registerPlugin(ScrollTrigger);
+            lenis.on('scroll', ScrollTrigger.update);
+            gsap.from(".gsap-reveal-text", {
+                y: 120, opacity: 0, duration: 1.2, stagger: 0.1, ease: "power4.out", delay: 0.2
+            });
+
+            // Load project cards from JSON first, then set up scroll reveals
+            fetch('./website-design-development-case-studies.json', { cache: 'no-cache' })
+                .then(r => r.json())
+                .then(data => {
+                    const grid = document.getElementById('project-grid');
+                    const filterBar = document.getElementById('filter-bar');
+                    const emptyMsg = document.getElementById('cs-empty');
+
+                    // Extract unique non-empty categories
+                    const cats = [...new Set(data.map(d => d.category).filter(Boolean))].sort();
+
+                    // Build filter buttons
+                    let filterHtml = '<button data-filter="all" class="cs-filter active interactive px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 bg-white text-brand-dark">All</button>';
+                    cats.forEach(cat => {
+                        filterHtml += '<button data-filter="' + cat + '" class="cs-filter interactive px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 bg-white/10 text-white/70 hover:bg-white/20 hover:text-white">' + cat + '</button>';
+                    });
+                    filterBar.innerHTML = filterHtml;
+
+                    function renderCards(items) {
+                        grid.innerHTML = '';
+                        items.forEach((item) => {
+                            const card = document.createElement('div');
+                            card.className = '';
+                            card.dataset.category = item.category || 'uncategorized';
+                            card.innerHTML = '<div class="bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden h-full flex flex-col hover:bg-white/[0.08] transition-colors duration-300">'
+                                + '<div class="shrink-0">'
+                                + '<img src="' + item.image + '" alt="' + item.title + '" class="w-full block">'
+                                + '</div>'
+                                + '<div class="p-5 sm:p-6 md:p-8 flex flex-col flex-1">'
+                                + '<h3 class="text-lg sm:text-xl md:text-2xl font-extrabold text-white mb-2 sm:mb-3 leading-tight tracking-tight">' + item.title + '</h3>'
+                                + '<p class="text-gray-400 font-medium text-sm leading-relaxed flex-1 line-clamp-2">' + (item.desc || '') + '</p>'
+                                + '<a href="' + (item.link || '#') + '" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-white font-bold text-xs sm:text-sm hover:gap-3 transition-all duration-300 mt-4">'
+                                + 'Visit Site'
+                                + '<svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>'
+                                + '</a>'
+                                + '</div></div>';
+                            grid.appendChild(card);
+                        });
+                    }
+
+                    renderCards(data);
+
+                    // Filter logic
+                    const filterBtns = filterBar.querySelectorAll('.cs-filter');
+                    let filterBusy = false;
+                    filterBtns.forEach(btn => {
+                        btn.addEventListener('click', () => {
+                            if (btn.classList.contains('active') || filterBusy) return;
+                            filterBtns.forEach(b => {
+                                b.classList.remove('active', 'bg-white', 'text-brand-dark');
+                                b.classList.add('bg-white/10', 'text-white/70');
+                            });
+                            btn.classList.add('active');
+                            btn.classList.remove('bg-white/10', 'text-white/70');
+                            btn.classList.add('bg-white', 'text-brand-dark');
+
+                            const f = btn.dataset.filter;
+                            filterBusy = true;
+                            grid.style.opacity = '0';
+                            grid.style.transition = 'opacity .28s ease';
+
+                            setTimeout(() => {
+                                const cards = grid.querySelectorAll('.gsap-reveal');
+                                let visible = 0;
+                                cards.forEach(card => {
+                                    const match = f === 'all' || card.dataset.category === f;
+                                    card.classList.toggle('hidden', !match);
+                                    if (match) visible++;
+                                });
+                                emptyMsg.classList.toggle('hidden', visible > 0);
+                                grid.style.opacity = '1';
+                                filterBusy = false;
+
+                                // Re-trigger GSAP reveal for visible cards
+                                const revealElements = document.querySelectorAll(".gsap-reveal:not(.hidden)");
+                                revealElements.forEach((el) => {
+                                    const instance = ScrollTrigger.getById(el.id);
+                                    if (!instance) {
+                                        gsap.to(el, {
+                                            scrollTrigger: { trigger: el, start: "top 85%", toggleActions: "play none none reverse" },
+                                            opacity: 1, y: 0, duration: 0.8, ease: "power3.out"
+                                        });
+                                    }
+                                });
+                                ScrollTrigger.refresh();
+                            }, 300);
+                        });
+                    });
+
+                    // Now set up scroll reveal for all .gsap-reveal elements
+                    const revealElements = document.querySelectorAll(".gsap-reveal");
+                    revealElements.forEach((el) => {
+                        gsap.to(el, {
+                            scrollTrigger: { trigger: el, start: "top 85%", toggleActions: "play none none reverse" },
+                            opacity: 1, y: 0, duration: 0.8, ease: "power3.out"
+                        });
+                    });
+                    ScrollTrigger.refresh();
+                });
+        });
+    </script>
+
+    <script>
+        (function () {
+            const serviceLinks = document.querySelectorAll('footer a[data-service]');
+            const pageLinks = document.querySelectorAll('footer a[data-parent]');
+            if (!serviceLinks.length || !pageLinks.length) return;
+            function clearAll() {
+                serviceLinks.forEach(s => s.classList.remove('is-active'));
+                pageLinks.forEach(p => p.classList.remove('is-match', 'is-dim', 'is-hovered'));
+            }
+            serviceLinks.forEach(link => {
+                const key = link.getAttribute('data-service');
+                link.addEventListener('mouseenter', () => {
+                    serviceLinks.forEach(s => s.classList.remove('is-active'));
+                    link.classList.add('is-active');
+                    pageLinks.forEach(p => {
+                        if (p.getAttribute('data-parent') === key) {
+                            p.classList.add('is-match');
+                            p.classList.remove('is-dim');
+                        } else {
+                            p.classList.add('is-dim');
+                            p.classList.remove('is-match');
+                        }
+                    });
+                });
+                link.addEventListener('mouseleave', clearAll);
+            });
+            pageLinks.forEach(link => {
+                const key = link.getAttribute('data-parent');
+                link.addEventListener('mouseenter', () => {
+                    serviceLinks.forEach(s => {
+                        if (s.getAttribute('data-service') === key) s.classList.add('is-active');
+                        else s.classList.remove('is-active');
+                    });
+                    pageLinks.forEach(p => {
+                        if (p.getAttribute('data-parent') === key) {
+                            p.classList.add('is-match');
+                            p.classList.remove('is-dim');
+                        } else {
+                            p.classList.add('is-dim');
+                            p.classList.remove('is-match');
+                        }
+                        p.classList.remove('is-hovered');
+                    });
+                    link.classList.add('is-hovered');
+                });
+                link.addEventListener('mouseleave', clearAll);
+            });
+        })();
+    </script>
+
+    <script>
+        (function () {
+            var navEl = document.querySelector('nav');
+            var hamburgerBtn = navEl ? navEl.querySelector('button') : null;
+            if (!navEl || !hamburgerBtn) return;
+            var megaLinks = Array.prototype.slice.call(document.querySelectorAll('nav .mega-menu-grid a')).map(function (a) {
+                var t = a.querySelector('.card-title');
+                var label = t ? t.innerHTML.replace(/<br\s*\/?>/gi, ' ').replace(/\s+/g, ' ').trim() : a.textContent.trim();
+                return { href: a.href, label: label };
+            });
+            var directLinks = Array.prototype.slice.call(document.querySelectorAll('nav .nav-pill > a')).map(function (a) {
+                return { href: a.href, label: a.textContent.trim() };
+            });
+            var ctaLink = Array.prototype.slice.call(document.querySelectorAll('nav a')).find(function (a) {
+                return /connect/i.test(a.textContent);
+            });
+            var homeLink = document.querySelector('nav a[aria-label="Home"]');
+            var overlay = document.createElement('div');
+            overlay.className = 'mobile-menu-overlay';
+            var panel = document.createElement('div');
+            panel.className = 'mobile-menu-panel';
+            panel.setAttribute('data-lenis-prevent', '');
+            var html = '<div class="mobile-menu-head"><a href="' + (homeLink ? homeLink.href : '../../index.html') + '" class="mobile-menu-logo">CHIMPZLAB</a>';
+            html += '<button type="button" class="mobile-menu-close" aria-label="Close menu">&times;</button></div>';
+            html += '<nav class="mobile-menu-nav">';
+            html += '<div class="mobile-menu-group"><button type="button" class="mobile-menu-toggle">Services <span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="mobile-submenu">';
+            megaLinks.forEach(function (l) { html += '<a href="' + l.href + '" class="mobile-submenu-link">' + l.label + '</a>'; });
+            html += '</div></div>';
+            directLinks.forEach(function (l) { html += '<a href="' + l.href + '" class="mobile-menu-link">' + l.label + '</a>'; });
+            html += '</nav>';
+            html += '<a href="' + (ctaLink ? ctaLink.href : '#booking-form') + '" class="mobile-menu-cta">Let\'s Connect</a>';
+            panel.innerHTML = html;
+            overlay.appendChild(panel);
+            document.body.appendChild(overlay);
+            function lockScroll() {
+                document.body.classList.add('menu-open');
+                if (window.lenis && typeof window.lenis.stop === 'function') window.lenis.stop();
+            }
+            function unlockScroll() {
+                document.body.classList.remove('menu-open');
+                if (window.lenis && typeof window.lenis.start === 'function') window.lenis.start();
+            }
+            function openMenu() {
+                overlay.classList.add('open');
+                hamburgerBtn.classList.add('is-active');
+                hamburgerBtn.setAttribute('aria-expanded', 'true');
+                lockScroll();
+            }
+            function closeMenu() {
+                overlay.classList.remove('open');
+                hamburgerBtn.classList.remove('is-active');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+                unlockScroll();
+            }
+            hamburgerBtn.addEventListener('click', function () {
+                if (overlay.classList.contains('open')) { closeMenu(); }
+                else { openMenu(); }
+            });
+            overlay.addEventListener('click', function (e) {
+                if (e.target === overlay) closeMenu();
+                if (e.target.closest('a')) closeMenu();
+            });
+            var closeBtn = panel.querySelector('.mobile-menu-close');
+            if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+            document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+            var svcToggle = panel.querySelector('.mobile-menu-toggle');
+            if (svcToggle) {
+                svcToggle.addEventListener('click', function () {
+                    svcToggle.parentElement.classList.toggle('open');
+                });
+            }
+        })();
+    </script>
+
+    <footer class="footer-v2">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-col-brand">
+                    <img src="../../asset/chimpzlab-white-logo.gif" alt="ChimpzLab" class="footer-logo-mark interactive"
+                        onerror="this.style.display='none'">
+
+                    <div class="footer-block">
+                        <h5 class="footer-label">Location</h5>
+                        <a href="https://maps.google.com/?q=408+Fenkin+9+Phase+1+Wagle+Estate+Thane+West+400604"
+                            target="_blank" rel="noopener noreferrer" class="interactive footer-address">408, Fenkin 9
+                            Phase 1, Wagle Estate,<br>Behind Satkar Grande Hotel, Thane West 400604</a>
+                    </div>
+
+                    <div class="footer-block">
+                        <h5 class="footer-label">Contact</h5>
+                        <a href="tel:9920149991" class="interactive footer-address">Call or WhatsApp 9920149991</a>
+                    </div>
+
+                    <div class="footer-block">
+                        <h5 class="footer-label">Social</h5>
+                        <div class="footer-social-btns">
+                            <a href="https://youtube.com/@chimpzlab" target="_blank" rel="noopener noreferrer"
+                                class="interactive">YouTube</a>
+                            <a href="https://linkedin.com/company/chimpzlab" target="_blank" rel="noopener noreferrer"
+                                class="interactive">LinkedIn</a>
+                            <a href="https://instagram.com/chimpzlab" target="_blank" rel="noopener noreferrer"
+                                class="interactive">Instagram</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-group">
+                    <a href="../../services/reputation-communications.html" data-service="reputation-communications"
+                        class="interactive footer-group-title">Reputation &amp; Communications</a>
+                    <ul>
+                        <li><a href="../../services/reputation-communications/thought-leadership.html"
+                                data-parent="reputation-communications" class="interactive">Thought Leadership</a></li>
+                        <li><a href="../../services/reputation-communications/public-relations.html"
+                                data-parent="reputation-communications" class="interactive">Public Relations</a></li>
+                        <li><a href="../../services/reputation-communications/employer-branding.html"
+                                data-parent="reputation-communications" class="interactive">Employer Branding</a></li>
+                        <li><a href="../../services/reputation-communications/corporate-communications.html"
+                                data-parent="reputation-communications" class="interactive">Corporate Communications</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-group">
+                    <a href="../../services/visibility-search.html" data-service="visibility-search"
+                        class="interactive footer-group-title">Visibility &amp; Search</a>
+                    <ul>
+                        <li><a href="../../services/visibility-search/seo-aeo.html" data-parent="visibility-search"
+                                class="interactive">SEO &amp; AEO</a></li>
+                        <li><a href="../../services/visibility-search/social-media-marketing.html"
+                                data-parent="visibility-search" class="interactive">Social Media Marketing</a></li>
+                        <li><a href="../../services/visibility-search/influencer-marketing.html"
+                                data-parent="visibility-search" class="interactive">Influencer Marketing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-group">
+                    <a href="../../services/creative.html" data-service="creative"
+                        class="interactive footer-group-title">Content &amp; Creative</a>
+                    <ul>
+                        <li><a href="../../services/visibility-search/content-writing.html" data-parent="creative"
+                                class="interactive">Content Writing</a></li>
+                        <li><a href="../../services/creative/video-production.html" data-parent="creative"
+                                class="interactive">Video Production</a></li>
+                        <li><a href="../../services/creative/design.html" data-parent="creative"
+                                class="interactive">Design</a></li>
+                        <li><a href="../../services/creative/branding.html" data-parent="creative"
+                                class="interactive">Branding</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-group">
+                    <a href="../../services/demand-generation.html" data-service="demand-generation"
+                        class="interactive footer-group-title">Demand &amp; Automation</a>
+                    <ul>
+                        <li><a href="../../services/demand-generation/vetted-lead-generation.html"
+                                data-parent="demand-generation" class="interactive">Vetted Lead Generation</a></li>
+                        <li><a href="../../services/demand-generation/performance-marketing.html"
+                                data-parent="demand-generation" class="interactive">Performance Marketing</a></li>
+                        <li><a href="../../services/demand-generation/marketing-automation.html"
+                                data-parent="demand-generation" class="interactive">Marketing Automations</a></li>
+                        <li><a href="../../services/demand-generation/email-marketing.html" data-parent="demand-generation"
+                                class="interactive">Email Marketing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-group">
+                    <a href="../../services/digital-experiences.html" data-service="digital-experiences"
+                        class="interactive footer-group-title">Digital Experiences</a>
+                    <ul>
+                        <li><a href="../../services/digital-experiences/chatbots.html" data-parent="digital-experiences"
+                                class="interactive">Chatbots</a></li>
+                        <li><a href="../../services/digital-experiences/website-design-development.html"
+                                data-parent="digital-experiences" class="interactive">Website Design &amp; Dev</a></li>
+                        <li><a href="../../services/digital-experiences/landing-pages.html" data-parent="digital-experiences"
+                                class="interactive">Landing Pages</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-group">
+                    <span class="footer-group-title">Company</span>
+                    <ul>
+                        <li><a href="../../" class="interactive">Home</a></li>
+                        <li><a href="../../about.html" class="interactive">About</a></li>
+                        <li><a href="../../services/case-studies.html" class="interactive">Work</a></li>
+                        <li><a href="../../insights.html" class="interactive">Insights</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-logo-end">
+                <img src="../../asset/chimpzlab-footer.png" alt="ChimpzLab" class="footer-end-logo interactive">
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 ChimpzLab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
