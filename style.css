@@ -13,19 +13,6 @@ footer ul li {
   line-height: 1;
 }
 
-footer a[data-service] {
-  display: block;
-  padding: 7px 0;
-  transition: color .3s ease, background-color .3s ease, font-weight .3s ease, padding .3s ease;
-}
-
-footer a[data-service].is-active {
-  color: white;
-  font-weight: 700;
-  background-color: rgba(255, 255, 255, 0.08);
-  padding-left: 8px;
-}
-
 footer a[data-company] {
   display: block;
   padding: 7px 0;
@@ -37,28 +24,6 @@ footer a[data-company]:hover {
   font-weight: 700;
   background-color: rgba(255, 255, 255, 0.08);
   padding-left: 8px;
-}
-
-a[data-parent] {
-  display: block;
-  padding: 5px 0;
-  transition: color .3s ease, opacity .3s ease, background-color .3s ease, padding .3s ease;
-}
-
-a[data-parent].is-match {
-  color: white;
-  font-weight: 500;
-  background-color: rgba(255, 255, 255, 0.12);
-  padding-left: 8px;
-}
-
-a[data-parent].is-hovered {
-  box-shadow: inset 2px 0 0 white;
-  padding-left: 8px;
-}
-
-a[data-parent].is-dim {
-  opacity: 0.25;
 }
 
 :root {
@@ -2776,4 +2741,249 @@ section.bg-white ::selection {
 /* Equal-height process cards */
 .process-step>div {
   height: 100%;
+}
+
+/* ============================================
+   Footer v2 — matches new 4-column footer layout
+   (Location/Contact/Social + 3 grouped service columns
+   + Company, with bottom copyright bar)
+   ============================================ */
+
+.footer-v2 {
+  width: 100%;
+  background-color: #050505;
+  color: #ffffff;
+  padding: 56px 20px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.footer-v2 .footer-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ── Brand column ── */
+.footer-v2 .footer-logo-mark {
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 24px;
+  opacity: 0.9;
+}
+
+.footer-v2 .footer-block {
+  margin-bottom: 18px;
+}
+
+.footer-v2 .footer-label {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.35);
+  margin-bottom: 8px;
+}
+
+.footer-v2 .footer-address {
+  display: block;
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-v2 .footer-address:hover {
+  color: #ffffff;
+}
+
+.footer-v2 .footer-social-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-v2 .footer-social-btns a {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 10px 18px;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  color: #ffffff;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.footer-v2 .footer-social-btns a:hover {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* ── Groups grid ── */
+.footer-v2 .footer-grid {
+  display: grid;
+  grid-template-columns: 360px repeat(3, 1fr);
+  gap: 20px 40px;
+  text-align: left;
+}
+
+.footer-v2 .footer-col-brand {
+  grid-row: span 2;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  padding-right: 20px;
+}
+
+.footer-v2 .footer-group {
+  margin: 0;
+}
+
+.footer-v2 .footer-group-title {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin-bottom: 14px;
+  padding-bottom: 0;
+}
+
+
+.footer-v2 .footer-group ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+  padding-left: 12px;
+}
+
+.footer-v2 .footer-group ul li {
+  margin-bottom: 6px;
+  line-height: 1;
+}
+
+.footer-v2 .footer-group ul li:last-child {
+  margin-bottom: 0;
+}
+
+.footer-v2 .footer-group a {
+  display: block;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 500;
+  transition: color 0.25s ease, padding-left 0.25s ease;
+  padding: 3px 0;
+  line-height: 1.5;
+}
+
+.footer-v2 .footer-group a:hover {
+  color: rgba(255, 255, 255, 0.95);
+  padding-left: 3px;
+}
+
+/* ── Bottom copyright bar ── */
+.footer-v2 .footer-bottom {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border: none;
+}
+
+.footer-v2 .footer-bottom p {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.footer-v2 .footer-logo-end {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 40px;
+  padding-top: 20px;
+  text-align: center;
+  user-select: none;
+}
+
+.footer-v2 .footer-end-logo {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  object-fit: contain;
+  opacity: 0.05;
+  transition: opacity 0.3s ease;
+}
+
+.footer-v2 .footer-end-logo:hover {
+  opacity: 0.08;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .footer-v2 .footer-grid {
+    grid-template-columns: 280px 1fr 1fr;
+    gap: 36px 32px;
+  }
+
+  .footer-v2 .footer-col-brand {
+    grid-row: span 3;
+    border-right: 1px solid rgba(255, 255, 255, 0.18);
+    padding-right: 32px;
+  }
+
+  .footer-v2 .footer-social-btns {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-v2 .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px 28px;
+  }
+
+  .footer-v2 .footer-col-brand {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    border-right: none;
+    padding-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 28px;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .footer-v2 .footer-col-brand .footer-logo-mark {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-v2 .footer-social-btns {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer-v2 .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 24px;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer-v2 .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer-v2 {
+    padding: 32px 16px 16px;
+  }
 }
