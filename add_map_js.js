@@ -1,37 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+const fs = require('fs');
+const path = require('path');
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/gif" href="asset/chimpzlab-icon.gif">
+const rootDir = '/Users/fenmac2/Jesmin/chimpzlab';
 
-    <meta name="robots" content="noindex, nofollow">
-    <title>Thank You — ChimpzLab</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body class="bg-white min-h-screen flex items-center justify-center px-6">
-    <div class="text-center max-w-lg">
-        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8">
-            <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-        </div>
-        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tighter text-gray-900 mb-4">Thank You!</h1>
-        <p class="text-xl text-gray-600 mb-8">Your enquiry has been sent successfully. We'll get back to you within 24
-            hours.</p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="javascript:history.back()"
-                class="inline-block border-2 border-gray-900 text-gray-900 px-8 py-4 rounded-full text-sm font-bold tracking-wider hover:bg-gray-100 transition-all duration-300">&larr;
-                Go Back</a>
-            <a href="index.html"
-                class="inline-block bg-gray-900 hover:bg-black text-white px-8 py-4 rounded-full text-sm font-bold tracking-wider transition-all duration-300">Back
-                to Home</a>
-        </div>
-    </div>
-
+const scriptToAdd = `
     <script>
         // Location Map Modal Functionality
         (function() {
@@ -76,6 +48,32 @@
             }
         })();
     </script>
-</body>
+`;
 
-</html>
+function processFiles(dir) {
+    const files = fs.readdirSync(dir);
+    for (const file of files) {
+        if (['node_modules', '.git', 'asset', 'data', 'crm'].includes(file)) continue;
+        
+        const fullPath = path.join(dir, file);
+        const stat = fs.statSync(fullPath);
+        
+        if (stat.isDirectory()) {
+            processFiles(fullPath);
+        } else if (file.endsWith('.html') && fullPath !== path.join(rootDir, 'index.html')) {
+            let content = fs.readFileSync(fullPath, 'utf8');
+            if (!content.includes('// Location Map Modal Functionality')) {
+                // Add right before </body>
+                const bodyEndIndex = content.lastIndexOf('</body>');
+                if (bodyEndIndex !== -1) {
+                    content = content.substring(0, bodyEndIndex) + scriptToAdd + content.substring(bodyEndIndex);
+                    fs.writeFileSync(fullPath, content, 'utf8');
+                    console.log(`Added JS to ${fullPath}`);
+                }
+            }
+        }
+    }
+}
+
+processFiles(rootDir);
+console.log("Done adding map JS.");
