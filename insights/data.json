@@ -134,7 +134,7 @@
         "and How Can a Business Become One in India?"
       ],
       "titleFull": "How Do AI Answer Engines Choose Which Sources to Cite, and How Can a Business Become One in India?",
-      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop",
+      "image": "asset/blogs/2nd-blog.jpg",
       "alt": "AI answer engines and citation strategy — abstract digital brain with search and data nodes",
       "intro": "AI answer engines like ChatGPT, Perplexity, and Google AI Overviews each run their own citation logic, weighing signals like entity clarity, third-party validation, freshness, and source diversity differently, so there is no single \"rank\" a business can win across all of them. Getting cited means treating each engine as a separate discovery channel with its own rules, not optimizing for one universal AI ranking.",
       "takeaways": [
@@ -268,7 +268,7 @@
         "in 2026?"
       ],
       "titleFull": "Who Is Liable for AI-Generated Google Ads in 2026?",
-      "image": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200&auto=format&fit=crop",
+      "image": "asset/blogs/3rd-blog.jpg",
       "alt": "AI-generated Google Ads liability — gavel and digital advertising interface",
       "intro": "The advertiser is liable, not Google. Google's revised Google Ads Terms of Service, which took effect automatically on every account on July 1, 2026, explicitly states that advertisers remain fully responsible for reviewing, approving, editing, or removing campaigns and ad assets, including those generated automatically by Google's own AI tools.",
       "takeaways": [
@@ -386,7 +386,7 @@
         "Use in 2026?"
       ],
       "titleFull": "Which AI Video Generator Should an Indian Marketing Team Use in 2026?",
-      "image": "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200&auto=format&fit=crop",
+      "image": "asset/blogs/4th-blog.jpg",
       "alt": "AI video generation — camera and digital interface with AI nodes",
       "intro": "Google Veo 3.1 is the strongest general-purpose choice for most Indian marketing teams in 2026, offering native audio generation, 4K output, and flexible API or subscription access, while Kling AI leads for long-form or character-consistent storytelling and Runway Gen-4 leads for teams that need tight integration into a professional editing pipeline.",
       "takeaways": [
@@ -484,7 +484,7 @@
         "In-Platform Search?"
       ],
       "titleFull": "What Is Social SEO and How Do You Optimize for In-Platform Search?",
-      "image": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1200&auto=format&fit=crop",
+      "image": "asset/blogs/5th-Blog.jpg",
       "alt": "Social SEO — magnifying glass over social media platform icons and search bar",
       "intro": "Social SEO is the practice of structuring social media content, captions, profile information, and on-screen text so it surfaces when someone searches directly inside a platform like Instagram, YouTube, or LinkedIn, rather than relying only on the feed algorithm to distribute it.",
       "takeaways": [
@@ -602,7 +602,7 @@
         "Actually Cite It?"
       ],
       "titleFull": "How Should Content Be Structured So AI Engines Actually Cite It?",
-      "image": "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1200&auto=format&fit=crop",
+      "image": "asset/blogs/6th-Blog.jpg",
       "alt": "AI citation content structure — document with AI extraction nodes and structured headings",
       "intro": "Content earns AI citation by leading every section with a direct, self-contained answer in the first sentence, using question-shaped headings that mirror how people actually ask AI tools, and backing claims with specific statistics and named sources, because AI engines chunk content into fragments and score each fragment for extractability rather than reading a page the way a human does.",
       "takeaways": [
@@ -728,7 +728,7 @@
         "in 2026?"
       ],
       "titleFull": "How Must AI or Virtual Influencers Be Disclosed in India in 2026?",
-      "image": "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=1200&auto=format&fit=crop",
+      "image": "asset/blogs/7th-blog.jpg",
       "alt": "AI influencer disclosure — virtual avatar with legal gavel and ASCI guidelines",
       "intro": "Any AI-generated or virtual influencer used in Indian advertising must carry a clear, prominent disclosure stating the persona is virtual or AI-generated, under updated Advertising Standards Council of India guidelines, and that disclosure requirement sits on top of India's existing influencer rules for paid partnerships and credential disclosure requirements as well.",
       "takeaways": [
@@ -838,7 +838,7 @@
         "Answers?"
       ],
       "titleFull": "How Does PR Help a Brand Show Up in AI-Generated Answers?",
-      "image": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=1200&auto=format&fit=crop",
+      "image": "asset/blogs/8th-Blog.jpg",
       "alt": "PR for AI visibility — press coverage and media mentions feeding into AI answer engine",
       "intro": "PR helps a brand get cited by AI answer engines because those engines weight independent, third-party coverage far more heavily than a brand's own website content when deciding which sources to trust and cite, meaning traditional earned media, press coverage, expert quotes, and founder-led thought leadership, functions as direct infrastructure for AI visibility rather than a separate discipline from it.",
       "takeaways": [
@@ -952,7 +952,7 @@
         "Consent in India?"
       ],
       "titleFull": "How Does the DPDP Act Affect Email and Marketing Consent in India?",
-      "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=1200&auto=format&fit=crop",
+      "image": "asset/blogs/9th-blog.jpg",
       "alt": "DPDP Act email marketing compliance — data protection shield with email and consent interface",
       "intro": "India's Digital Personal Data Protection Act requires that consent for email and marketing communication be specific, granular, and easy to withdraw, with two hard compliance dates on the calendar: the Consent Manager framework becomes operational on November 13, 2026, and full substantive compliance is required by May 13, 2027.",
       "takeaways": [
@@ -1054,7 +1054,7 @@
         "Does It Cost in India?"
       ],
       "titleFull": "How Does a WhatsApp AI Chatbot Work and What Does It Cost in India?",
-      "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1200&auto=format&fit=crop",
+      "image": "asset/blogs/10th-Blog.jpg",
       "alt": "WhatsApp AI chatbot for business — smartphone with chat interface and automation nodes",
       "intro": "A WhatsApp AI chatbot for an Indian business runs on Meta's WhatsApp Business Platform API, requires a registered Business Solution Provider rather than the free consumer app, and costs a combination of Meta's per-message or per-conversation charges plus a separate monthly platform fee.",
       "takeaways": [
