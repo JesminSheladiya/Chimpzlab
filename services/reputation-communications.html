@@ -705,7 +705,7 @@
                 Insights
             </h2>
 
-            <div id="insight-grid" class="grid grid-cols-1 md:grid-cols-3"></div>
+            <div id="insight-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
         </div>
     </section>
 
@@ -714,7 +714,7 @@
     <!-- FAQ Section -->
     <section class="py-32 px-6 md:px-12 bg-white text-brand-dark border-t border-gray-200">
         <div class="max-w-[1000px] mx-auto">
-            <h2 class="text-4xl md:text-7xl font-extrabold tracking-tighter mb-16 uppercase gsap-reveal">FAQ</h2>
+            <h2 class="text-4xl md:text-5xl font-extrabold tracking-tighter mb-16 uppercase gsap-reveal">FAQ's</h2>
 
             <div class="border-t border-gray-200">
                 <!-- Q1 -->
@@ -1998,19 +1998,30 @@
             const grid = document.getElementById('insight-grid');
             if (!grid) return;
             try {
-                const depth = window.location.pathname.replace(/\/[^\/]*$/, '').split('/').filter(Boolean).length;
-                const prefix = depth > 0 ? '../'.repeat(depth) : './';
+                const prefix = '../';
+                const targetSlugs = ["pr-for-ai-search-visibility-geo-india"];
                 const res = await fetch(prefix + 'insights/data.json');
                 const data = await res.json();
-                const articles = (data.articles || []).slice(0, 3);
+
+                let articles = [];
+                if (targetSlugs.length > 0) {
+                    articles = data.articles.filter(a => targetSlugs.includes(a.slug));
+                    // Sort articles in the exact order specified in targetSlugs
+                    articles.sort((a, b) => targetSlugs.indexOf(a.slug) - targetSlugs.indexOf(b.slug));
+                } else {
+                    // Fallback for pages not explicitly mapped: show 3 recent
+                    articles = (data.articles || []).slice(0, 3);
+                }
+
                 if (articles.length === 0) return;
                 function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
                 grid.innerHTML = articles.map(function (a, i) {
-                    var b = i === 0 ? 'md:pl-0 border-b md:border-b-0 md:border-r' : i === articles.length - 1 ? 'md:pr-0' : 'border-b md:border-b-0 md:border-r';
-                    return '<div class="p-6 md:p-8 ' + b + ' border-gray-300">' +
+                    // Replaced vertical border logic with a clean boxed card design to support wrapping grids
+                    return '<div class="p-6 md:p-8 border border-gray-200 rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow duration-300">' +
                         '<span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-4 block">' + (a.tag || cap(a.category)) + '</span>' +
                         '<h3 class="text-lg md:text-xl font-bold mb-8 leading-snug">' + a.titleFull + '</h3>' +
-                        '<a href="' + prefix + 'blog-insite.html?slug=' + a.slug + '" class="text-brand-dark hover:opacity-70 transition-opacity duration-300">' +
+                        '<a href="' + prefix + 'blog-insite.html?slug=' + a.slug + '" class="text-brand-dark hover:opacity-70 transition-opacity duration-300 inline-flex items-center gap-2 font-semibold text-sm uppercase tracking-wider">' +
+                        'Read More' +
                         '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>' +
                         '</a></div>';
                 }).join('');
