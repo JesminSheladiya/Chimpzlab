@@ -2049,6 +2049,29 @@ body.menu-open {
   }
 }
 
+.insights-swiper .swiper-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.insights-swiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 1;
+  border-radius: 50%;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  margin: 0 !important;
+}
+
+.insights-swiper .swiper-pagination-bullet-active {
+  width: 30px;
+  background: #ffffff;
+  border-radius: 9999px;
+}
+
 .insight-filter {
   background-color: transparent;
   color: #9ca3af;
