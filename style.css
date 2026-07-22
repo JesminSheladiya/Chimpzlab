@@ -68,6 +68,11 @@ a {
   color: inherit;
 }
 
+b,
+strong {
+  font-weight: 700;
+}
+
 button {
   cursor: pointer;
   font-family: inherit;
@@ -1709,18 +1714,6 @@ html.lenis {
   width: 80px;
   height: 80px;
   background-color: #ffffff;
-}
-
-#progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 4px;
-  background-color: #ffffff;
-  width: 0%;
-  z-index: 10000;
-  transform-origin: left;
-  transition: width 0.1s linear;
 }
 
 .img-bw {

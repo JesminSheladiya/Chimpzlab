@@ -123,659 +123,138 @@
       "description": "Google removed FAQ rich results — but FAQPage schema still feeds AI search engines like ChatGPT, Perplexity, and AI Overviews. Here's what changed, what to keep, and what to rewrite."
     },
     {
-      "slug": "the-difference-between-activity-and-actual-reputat",
-      "category": "reputation",
-      "tag": "Strategy",
-      "readTime": "5 Min Read",
-      "date": "June 2026",
-      "titleParts": [
-        "The difference",
-        "between activity",
-        "and actual reputation"
-      ],
-      "titleFull": "The difference between activity and actual reputation",
-      "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800&auto=format&fit=crop",
-      "alt": "Reputation",
-      "intro": "Most brands are busy. Few are\n                        believed. We break down what separates noise from earned trust.",
-      "takeaways": [
-        "Narrative control requires proactive architecture, not reactive messaging",
-        "Algorithmic consensus is becoming the primary driver of stakeholder perception",
-        "Integrated cross-functional teams outperform siloed communications departments"
-      ],
-      "body": [
-        {
-          "type": "p",
-          "text": "Most brands are busy. Few are believed. We break down what separates noise from earned trust."
-        },
-        {
-          "type": "p",
-          "text": "In today's fast-evolving reputation landscape, the rules are being rewritten faster than most organizations can adapt. Leaders who treat reputation as a static function rather than a dynamic capability risk being left behind as stakeholder expectations shift."
-        },
-        {
-          "type": "h2",
-          "text": "The New Reputation Playbook"
-        },
-        {
-          "type": "p",
-          "text": "The convergence of digital-native behavior, algorithmic curation, and heightened stakeholder scrutiny means that reputation can no longer be managed in isolation. It must be embedded into every facet of how a company operates, communicates, and delivers value."
-        },
-        {
-          "type": "p",
-          "text": "Organizations that have embraced this shift are seeing measurable outcomes — from improved trust scores to faster crisis recovery and stronger talent attraction. Those that haven't are finding themselves reacting to narratives rather than shaping them."
-        },
-        {
-          "type": "blockquote",
-          "text": "\"Reputation isn't what you say about yourself. It's what the algorithm remembers and what the market believes — and in an AI-first world, those two are increasingly the same thing.\""
-        },
-        {
-          "type": "h2",
-          "text": "Key Strategic Pillars"
-        },
-        {
-          "type": "p",
-          "text": "Building a resilient reputation strategy requires three interconnected pillars: proactive narrative control, data-driven stakeholder intelligence, and cross-functional integration across communications, marketing, and digital teams."
-        },
-        {
-          "type": "p",
-          "text": "Without these pillars operating in concert, even well-funded initiatives can fall short. The most successful programs are those where the C-suite treats narrative architecture with the same rigor as financial planning."
-        },
-        {
-          "type": "h2",
-          "text": "Looking Ahead"
-        },
-        {
-          "type": "p",
-          "text": "As we move deeper into 2026, the separation between reputation and business strategy will continue to dissolve. Companies that invest in integrated approaches today will be the ones setting the agenda tomorrow."
-        },
-        {
-          "type": "p",
-          "text": "The question isn't whether your organization needs a more sophisticated approach to {cat}. It's whether you'll start building it before the next inflection point arrives."
-        }
-      ],
-      "audioDuration": "4:00",
-      "description": "Most brands are busy. Few are believed. We break down what separates noise from earned trust."
-    },
-    {
-      "slug": "why-your-brand-search-footprint-is-a-boardroom-iss",
+      "slug": "how-do-ai-answer-engines-choose-sources",
       "category": "visibility",
-      "tag": "Visibility",
-      "readTime": "7 Min Read",
+      "tag": "SEO/AEO",
+      "readTime": "16 Min Read",
       "date": "July 2026",
       "titleParts": [
-        "Why your brand's",
-        "search footprint is",
-        "a boardroom issue"
+        "How Do AI Answer Engines",
+        "Choose Which Sources to Cite,",
+        "and How Can a Business Become One in India?"
       ],
-      "titleFull": "Why your brand's search footprint is a boardroom issue",
-      "image": "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?q=80&w=800&auto=format&fit=crop",
-      "alt": "Visibility",
-      "intro": "Generative AI has rewritten the\n                        rules of discovery. Here's how to stay visible when answers replace links.",
+      "titleFull": "How Do AI Answer Engines Choose Which Sources to Cite, and How Can a Business Become One in India?",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop",
+      "alt": "AI answer engines and citation strategy — abstract digital brain with search and data nodes",
+      "intro": "AI answer engines like ChatGPT, Perplexity, and Google AI Overviews each run their own citation logic, weighing signals like entity clarity, third-party validation, freshness, and source diversity differently, so there is no single \"rank\" a business can win across all of them. Getting cited means treating each engine as a separate discovery channel with its own rules, not optimizing for one universal AI ranking.",
       "takeaways": [
-        "Narrative control requires proactive architecture, not reactive messaging",
-        "Algorithmic consensus is becoming the primary driver of stakeholder perception",
-        "Integrated cross-functional teams outperform siloed communications departments"
+        "Only 11% of domains are cited by both ChatGPT and Perplexity — each engine has its own editorial identity",
+        "85% of brand mentions in AI answers come from third-party pages, not the brand's own website",
+        "ChatGPT cites fewer sources but extracts 4.2x more per source; Perplexity casts a wider net",
+        "India is roughly 18 months behind the US in AEO maturity — creating a temporary competitive window"
       ],
       "body": [
         {
           "type": "p",
-          "text": "Generative AI has rewritten the rules of discovery. Here's how to stay visible when answers replace links."
+          "text": "AI answer engines like ChatGPT, Perplexity, and Google AI Overviews each run their own citation logic, weighing signals like entity clarity, third-party validation, freshness, and source diversity differently, so there is no single \"rank\" a business can win across all of them. Getting cited means treating each engine as a separate discovery channel with its own rules, not optimizing for one universal AI ranking."
         },
         {
           "type": "p",
-          "text": "In today's fast-evolving visibility landscape, the rules are being rewritten faster than most organizations can adapt. Leaders who treat visibility as a static function rather than a dynamic capability risk being left behind as stakeholder expectations shift."
+          "text": "That single fact changes how a business should think about visibility budgets. A page that gets cited constantly by Perplexity can be invisible to ChatGPT, and the reverse happens just as often."
         },
         {
           "type": "h2",
-          "text": "The New Visibility Playbook"
+          "text": "Do the Major AI Engines Actually Cite Different Sources for the Same Question"
         },
         {
           "type": "p",
-          "text": "The convergence of digital-native behavior, algorithmic curation, and heightened stakeholder scrutiny means that visibility can no longer be managed in isolation. It must be embedded into every facet of how a company operates, communicates, and delivers value."
+          "text": "Yes, and the divergence is large. A citation analysis covering roughly 680 million citations across ChatGPT, Google AI Overviews, and Perplexity found that only 11% of domains were cited by both ChatGPT and Perplexity for comparable queries (Leapd, April 2026). A separate study of 34,234 AI responses recorded a 46-times difference in brand citation rates between platforms, with ChatGPT citing brands in just 0.59% of responses compared to 13.05% for Perplexity and 27% for Grok (Leapd, April 2026, citing a 2026 platform study)."
         },
         {
           "type": "p",
-          "text": "Organizations that have embraced this shift are seeing measurable outcomes — from improved trust scores to faster crisis recovery and stronger talent attraction. Those that haven't are finding themselves reacting to narratives rather than shaping them."
+          "text": "The practical reading is that each engine has developed its own editorial identity: ChatGPT leans on Wikipedia and Bing's index, Perplexity leans heavily on Reddit and named expert authors, Claude favors technical documentation, and Google AI Overviews largely mirror its own existing search rankings (Munder Difflin, June 2026; Chudi.dev, 2026)."
         },
         {
           "type": "blockquote",
-          "text": "\"Visibility isn't what you say about yourself. It's what the algorithm remembers and what the market believes — and in an AI-first world, those two are increasingly the same thing.\""
+          "text": "\"Each engine has developed its own editorial identity: ChatGPT leans on Wikipedia and Bing's index, Perplexity leans heavily on Reddit and named expert authors, Claude favors technical documentation, and Google AI Overviews largely mirror its own existing search rankings.\""
         },
         {
           "type": "h2",
-          "text": "Key Strategic Pillars"
+          "text": "Is Being Cited by AI the Same as Ranking on Google"
         },
         {
           "type": "p",
-          "text": "Building a resilient visibility strategy requires three interconnected pillars: proactive narrative control, data-driven stakeholder intelligence, and cross-functional integration across communications, marketing, and digital teams."
+          "text": "No, and the gap is bigger than most SEO teams assume. Independent analysis puts overlap between Google's organic top 10 and AI citations at roughly 12 to 17%, meaning the large majority of what AI engines cite is not what appears on page one of a traditional Google search (Chudi.dev, 2026; BrightEdge, February 2026). Google AI Overviews is the one partial exception, since it draws primarily from Google's existing organic results, with one study finding 97% of its cited sources coming from the top 20 organic positions (AI Labs Audit, May 2026)."
         },
         {
           "type": "p",
-          "text": "Without these pillars operating in concert, even well-funded initiatives can fall short. The most successful programs are those where the C-suite treats narrative architecture with the same rigor as financial planning."
-        },
-        {
-          "type": "h2",
-          "text": "Looking Ahead"
-        },
-        {
-          "type": "p",
-          "text": "As we move deeper into 2026, the separation between visibility and business strategy will continue to dissolve. Companies that invest in integrated approaches today will be the ones setting the agenda tomorrow."
-        },
-        {
-          "type": "p",
-          "text": "The question isn't whether your organization needs a more sophisticated approach to {cat}. It's whether you'll start building it before the next inflection point arrives."
-        }
-      ],
-      "audioDuration": "3:42",
-      "description": "Generative AI has rewritten the rules of discovery. Here's how to stay visible when answers replace links."
-    },
-    {
-      "slug": "building-a-content-engine-that-compounds",
-      "category": "content",
-      "tag": "Content",
-      "readTime": "6\n                        Min Read",
-      "date": "May 2026",
-      "titleParts": [
-        "Building a",
-        "content engine",
-        "that compounds"
-      ],
-      "titleFull": "Building a content engine that compounds",
-      "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop",
-      "alt": "Content",
-      "intro": "One-off posts fade. A connected\n                        narrative builds authority. A practical system for steady output.",
-      "takeaways": [
-        "Narrative control requires proactive architecture, not reactive messaging",
-        "Algorithmic consensus is becoming the primary driver of stakeholder perception",
-        "Integrated cross-functional teams outperform siloed communications departments"
-      ],
-      "body": [
-        {
-          "type": "p",
-          "text": "One-off posts fade. A connected narrative builds authority. A practical system for steady output."
-        },
-        {
-          "type": "p",
-          "text": "In today's fast-evolving content landscape, the rules are being rewritten faster than most organizations can adapt. Leaders who treat content as a static function rather than a dynamic capability risk being left behind as stakeholder expectations shift."
-        },
-        {
-          "type": "h2",
-          "text": "The New Content Playbook"
-        },
-        {
-          "type": "p",
-          "text": "The convergence of digital-native behavior, algorithmic curation, and heightened stakeholder scrutiny means that content can no longer be managed in isolation. It must be embedded into every facet of how a company operates, communicates, and delivers value."
-        },
-        {
-          "type": "p",
-          "text": "Organizations that have embraced this shift are seeing measurable outcomes — from improved trust scores to faster crisis recovery and stronger talent attraction. Those that haven't are finding themselves reacting to narratives rather than shaping them."
+          "text": "For ChatGPT and Perplexity specifically, a strong Google ranking is close to irrelevant to citation odds. These are two largely separate optimization problems that happen to share some underlying content-quality fundamentals."
         },
         {
           "type": "blockquote",
-          "text": "\"Content isn't what you say about yourself. It's what the algorithm remembers and what the market believes — and in an AI-first world, those two are increasingly the same thing.\""
+          "text": "\"For ChatGPT and Perplexity specifically, a strong Google ranking is close to irrelevant to citation odds. These are two largely separate optimization problems that happen to share some underlying content-quality fundamentals.\""
         },
         {
           "type": "h2",
-          "text": "Key Strategic Pillars"
+          "text": "What Actually Earns a Citation"
         },
         {
           "type": "p",
-          "text": "Building a resilient content strategy requires three interconnected pillars: proactive narrative control, data-driven stakeholder intelligence, and cross-functional integration across communications, marketing, and digital teams."
+          "text": "Across the engines, seven signals show up repeatedly in 2026 research: crawler accessibility, structured content density, recency, cross-source agreement, schema and metadata that matches the visible page, third-party validation, and community discussion signals (SolCrys, May 2026). Third-party validation deserves particular weight. One analysis found that 85% of brand mentions in AI answers come from third-party pages rather than a brand's own website, and that ChatGPT and Claude draw more than 93% of their citations from earned media rather than owned content (AuthorityTech, May 2026). That means a brand's own blog, however well written, is only one part of the equation. Independent coverage, community mentions, and expert-authored third-party pieces carry disproportionate weight in what the models choose to cite."
         },
         {
           "type": "p",
-          "text": "Without these pillars operating in concert, even well-funded initiatives can fall short. The most successful programs are those where the C-suite treats narrative architecture with the same rigor as financial planning."
+          "text": "Freshness compounds this. Pages carrying accurate dateModified schema receive roughly 1.8 times more citations than static pages, but only when the update reflects genuinely new content rather than a cosmetic date change (Chudi.dev, 2026)."
         },
         {
           "type": "h2",
-          "text": "Looking Ahead"
+          "text": "How Many Sources Does Each Engine Actually Cite, and Does That Change Strategy"
         },
         {
           "type": "p",
-          "text": "As we move deeper into 2026, the separation between content and business strategy will continue to dissolve. Companies that invest in integrated approaches today will be the ones setting the agenda tomorrow."
+          "text": "It changes strategy significantly. Perplexity casts the widest net, citing a mean of roughly 16 sources per answer, but a 2026 study across 602 prompts and 21,143 citations found each individual citation contributes comparatively little extractable content. ChatGPT cites fewer sources, roughly 7 on average, but extracts about 4.2 times more language and evidence from each one it does cite (AuthorityTech, May 2026). The implication for content strategy is direct: a business optimizing for Perplexity should aim for broad discoverability and topical presence, since even a partial citation among 16 has value, while a business optimizing for ChatGPT needs deeper, more extractable, more complete pages, since a citation there does much more work per source."
+        },
+        {
+          "type": "h2",
+          "text": "How Should an Indian Business Approach This Differently"
         },
         {
           "type": "p",
-          "text": "The question isn't whether your organization needs a more sophisticated approach to {cat}. It's whether you'll start building it before the next inflection point arrives."
+          "text": "India is one of the fastest-adopting AI markets globally, with one 2026 analysis placing India's AI adoption rate at 59%, ahead of the UAE, Singapore, and China (Omnibound, May 2026), while separate industry estimates put ChatGPT's Indian user base at 15 to 20 million monthly active users and growing roughly 350% year over year (NaviGo Tech Solutions, 2026). At the same time, most Indian small and mid-sized businesses have done close to zero structured preparation for AI search visibility, according to multiple 2026 India-focused AEO guides (SEORevive, May 2026; Adexorb, 2026). That combination, fast-growing demand paired with low competitive saturation, is unusual and temporary. Practitioners estimate India is roughly 18 months behind the US in AEO maturity, which is a real head start for any business that moves now rather than waiting for the category to get crowded (SEORevive, May 2026)."
+        },
+        {
+          "type": "p",
+          "text": "One India-specific nuance worth flagging: Google product documentation and Google's Search Central guidance emphasize that AI Overviews and AI Mode require no special schema markup, only that any structured data used matches the visible content on the page exactly. That single rule applies globally, but it matters more in markets like India where teams are often tempted to over-invest in schema hacks rather than the underlying content quality that actually earns citations."
+        },
+        {
+          "type": "h2",
+          "text": "What a Business Should Actually Do About This"
+        },
+        {
+          "type": "p",
+          "text": "Prioritize third-party visibility over owned-content volume, since earned media and community mentions carry more citation weight than a business's own site. Keep crawler access open for GPTBot, PerplexityBot, and ClaudeBot rather than blocking them by default, which some Indian hosting setups do unintentionally. Write for depth and extractability if ChatGPT visibility matters most, or for breadth and topical presence if Perplexity-driven, high-intent B2B traffic is the priority. And treat freshness as a genuine content-quality signal rather than a checkbox, since a stale dateModified tag on unchanged content does not move citation rates."
+        },
+        {
+          "type": "h2",
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "type": "p",
+          "text": "<strong>Do AI answer engines use the same ranking system as Google?</strong><br>No. Only Google AI Overviews closely mirrors Google's existing organic rankings, with roughly 97% of its citations coming from pages already in the top 20 organic results. ChatGPT and Perplexity operate on largely separate citation logic, and a strong Google ranking does not reliably predict citation on either platform."
+        },
+        {
+          "type": "p",
+          "text": "<strong>Which AI engine should a business prioritize for citations?</strong><br>It depends on the goal. ChatGPT has the largest reach and rewards deep, extractable content from fewer, more authoritative sources. Perplexity rewards topical breadth and community presence, cites more sources per answer, and tends to drive higher-intent B2B traffic. Most businesses need a strategy for both rather than picking one."
+        },
+        {
+          "type": "p",
+          "text": "<strong>Does a business's own website content matter for AI citations?</strong><br>It matters, but less than most businesses assume. Independent research found 85% of brand mentions in AI answers come from third-party pages, not the brand's own site, and ChatGPT and Claude draw more than 93% of citations from earned media. Owned content should be excellent, but third-party visibility is what moves citation frequency."
+        },
+        {
+          "type": "p",
+          "text": "<strong>Is India behind other markets on AI search readiness?</strong><br>Yes, on the business-preparation side specifically, even though Indian consumer AI adoption is among the fastest-growing in the world. Multiple 2026 industry analyses describe India as roughly 18 months behind the US in AEO maturity, which currently means less competition for businesses that invest in AI visibility now."
+        },
+        {
+          "type": "p",
+          "text": "<strong>Do I need special schema markup to be cited by Google AI Overviews?</strong><br>No. Google's own guidance states there is no special schema.org markup required for AI Overviews or AI Mode. Any structured data used should simply match what is visibly on the page."
+        },
+        {
+          "type": "p",
+          "text": "<strong>How quickly can a business start showing up in AI citations?</strong><br>Fixing crawler access and basic structural issues can produce measurable change within roughly 4 to 8 weeks, according to industry benchmarks, while competitive commercial queries and genuine third-party authority building take considerably longer and require sustained effort."
         }
       ],
-      "audioDuration": "6:45",
-      "description": "One-off posts fade. A connected narrative builds authority. A practical system for steady output."
-    },
-    {
-      "slug": "turning-thought-leadership-into-pipeline",
-      "category": "demand",
-      "tag": "Demand Gen",
-      "readTime": "4\n                        Min Read",
-      "date": "April 2026",
-      "titleParts": [
-        "Turning thought leadership",
-        "into pipeline"
-      ],
-      "titleFull": "Turning thought leadership into pipeline",
-      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
-      "alt": "Demand",
-      "intro": "Reputation doesn't pay bills on its\n                        own. How to connect ideas to measurable demand.",
-      "takeaways": [
-        "Narrative control requires proactive architecture, not reactive messaging",
-        "Algorithmic consensus is becoming the primary driver of stakeholder perception",
-        "Integrated cross-functional teams outperform siloed communications departments"
-      ],
-      "body": [
-        {
-          "type": "p",
-          "text": "Reputation doesn't pay bills on its own. How to connect ideas to measurable demand."
-        },
-        {
-          "type": "p",
-          "text": "In today's fast-evolving demand landscape, the rules are being rewritten faster than most organizations can adapt. Leaders who treat demand as a static function rather than a dynamic capability risk being left behind as stakeholder expectations shift."
-        },
-        {
-          "type": "h2",
-          "text": "The New Demand Playbook"
-        },
-        {
-          "type": "p",
-          "text": "The convergence of digital-native behavior, algorithmic curation, and heightened stakeholder scrutiny means that demand can no longer be managed in isolation. It must be embedded into every facet of how a company operates, communicates, and delivers value."
-        },
-        {
-          "type": "p",
-          "text": "Organizations that have embraced this shift are seeing measurable outcomes — from improved trust scores to faster crisis recovery and stronger talent attraction. Those that haven't are finding themselves reacting to narratives rather than shaping them."
-        },
-        {
-          "type": "blockquote",
-          "text": "\"Demand isn't what you say about yourself. It's what the algorithm remembers and what the market believes — and in an AI-first world, those two are increasingly the same thing.\""
-        },
-        {
-          "type": "h2",
-          "text": "Key Strategic Pillars"
-        },
-        {
-          "type": "p",
-          "text": "Building a resilient demand strategy requires three interconnected pillars: proactive narrative control, data-driven stakeholder intelligence, and cross-functional integration across communications, marketing, and digital teams."
-        },
-        {
-          "type": "p",
-          "text": "Without these pillars operating in concert, even well-funded initiatives can fall short. The most successful programs are those where the C-suite treats narrative architecture with the same rigor as financial planning."
-        },
-        {
-          "type": "h2",
-          "text": "Looking Ahead"
-        },
-        {
-          "type": "p",
-          "text": "As we move deeper into 2026, the separation between demand and business strategy will continue to dissolve. Companies that invest in integrated approaches today will be the ones setting the agenda tomorrow."
-        },
-        {
-          "type": "p",
-          "text": "The question isn't whether your organization needs a more sophisticated approach to {cat}. It's whether you'll start building it before the next inflection point arrives."
-        }
-      ],
-      "audioDuration": "5:25",
-      "description": "Reputation doesn't pay bills on its own. How to connect ideas to measurable demand."
-    },
-    {
-      "slug": "your-website-is-your-most-important-pr-asset",
-      "category": "experience",
-      "tag": "Digital Experience",
-      "readTime": "5 Min Read",
-      "date": "June 2026",
-      "titleParts": [
-        "Your website",
-        "is your",
-        "most important PR asset"
-      ],
-      "titleFull": "Your website is your most important PR asset",
-      "image": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800&auto=format&fit=crop",
-      "alt": "Experience",
-      "intro": "Before a journalist quotes you, a\n                        stakeholder screens your site. Make the first impression count.",
-      "takeaways": [
-        "Narrative control requires proactive architecture, not reactive messaging",
-        "Algorithmic consensus is becoming the primary driver of stakeholder perception",
-        "Integrated cross-functional teams outperform siloed communications departments"
-      ],
-      "body": [
-        {
-          "type": "p",
-          "text": "Before a journalist quotes you, a stakeholder screens your site. Make the first impression count."
-        },
-        {
-          "type": "p",
-          "text": "In today's fast-evolving experience landscape, the rules are being rewritten faster than most organizations can adapt. Leaders who treat experience as a static function rather than a dynamic capability risk being left behind as stakeholder expectations shift."
-        },
-        {
-          "type": "h2",
-          "text": "The New Experience Playbook"
-        },
-        {
-          "type": "p",
-          "text": "The convergence of digital-native behavior, algorithmic curation, and heightened stakeholder scrutiny means that experience can no longer be managed in isolation. It must be embedded into every facet of how a company operates, communicates, and delivers value."
-        },
-        {
-          "type": "p",
-          "text": "Organizations that have embraced this shift are seeing measurable outcomes — from improved trust scores to faster crisis recovery and stronger talent attraction. Those that haven't are finding themselves reacting to narratives rather than shaping them."
-        },
-        {
-          "type": "blockquote",
-          "text": "\"Experience isn't what you say about yourself. It's what the algorithm remembers and what the market believes — and in an AI-first world, those two are increasingly the same thing.\""
-        },
-        {
-          "type": "h2",
-          "text": "Key Strategic Pillars"
-        },
-        {
-          "type": "p",
-          "text": "Building a resilient experience strategy requires three interconnected pillars: proactive narrative control, data-driven stakeholder intelligence, and cross-functional integration across communications, marketing, and digital teams."
-        },
-        {
-          "type": "p",
-          "text": "Without these pillars operating in concert, even well-funded initiatives can fall short. The most successful programs are those where the C-suite treats narrative architecture with the same rigor as financial planning."
-        },
-        {
-          "type": "h2",
-          "text": "Looking Ahead"
-        },
-        {
-          "type": "p",
-          "text": "As we move deeper into 2026, the separation between experience and business strategy will continue to dissolve. Companies that invest in integrated approaches today will be the ones setting the agenda tomorrow."
-        },
-        {
-          "type": "p",
-          "text": "The question isn't whether your organization needs a more sophisticated approach to {cat}. It's whether you'll start building it before the next inflection point arrives."
-        }
-      ],
-      "audioDuration": "4:55",
-      "description": "Before a journalist quotes you, a stakeholder screens your site. Make the first impression count."
-    },
-    {
-      "slug": "answer-engine-optimization-explained-simply",
-      "category": "visibility",
-      "tag": "Visibility",
-      "readTime": "6 Min Read",
-      "date": "July 2026",
-      "titleParts": [
-        "Answer Engine Optimization,",
-        "explained simply"
-      ],
-      "titleFull": "Answer Engine Optimization, explained simply",
-      "image": "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?q=80&w=800&auto=format&fit=crop",
-      "alt": "Visibility",
-      "intro": "SEO got you ranked. AEO gets you\n                        cited. What changed and what to do on Monday.",
-      "takeaways": [
-        "Narrative control requires proactive architecture, not reactive messaging",
-        "Algorithmic consensus is becoming the primary driver of stakeholder perception",
-        "Integrated cross-functional teams outperform siloed communications departments"
-      ],
-      "body": [
-        {
-          "type": "p",
-          "text": "SEO got you ranked. AEO gets you cited. What changed and what to do on Monday."
-        },
-        {
-          "type": "p",
-          "text": "In today's fast-evolving visibility landscape, the rules are being rewritten faster than most organizations can adapt. Leaders who treat visibility as a static function rather than a dynamic capability risk being left behind as stakeholder expectations shift."
-        },
-        {
-          "type": "h2",
-          "text": "The New Visibility Playbook"
-        },
-        {
-          "type": "p",
-          "text": "The convergence of digital-native behavior, algorithmic curation, and heightened stakeholder scrutiny means that visibility can no longer be managed in isolation. It must be embedded into every facet of how a company operates, communicates, and delivers value."
-        },
-        {
-          "type": "p",
-          "text": "Organizations that have embraced this shift are seeing measurable outcomes — from improved trust scores to faster crisis recovery and stronger talent attraction. Those that haven't are finding themselves reacting to narratives rather than shaping them."
-        },
-        {
-          "type": "blockquote",
-          "text": "\"Visibility isn't what you say about yourself. It's what the algorithm remembers and what the market believes — and in an AI-first world, those two are increasingly the same thing.\""
-        },
-        {
-          "type": "h2",
-          "text": "Key Strategic Pillars"
-        },
-        {
-          "type": "p",
-          "text": "Building a resilient visibility strategy requires three interconnected pillars: proactive narrative control, data-driven stakeholder intelligence, and cross-functional integration across communications, marketing, and digital teams."
-        },
-        {
-          "type": "p",
-          "text": "Without these pillars operating in concert, even well-funded initiatives can fall short. The most successful programs are those where the C-suite treats narrative architecture with the same rigor as financial planning."
-        },
-        {
-          "type": "h2",
-          "text": "Looking Ahead"
-        },
-        {
-          "type": "p",
-          "text": "As we move deeper into 2026, the separation between visibility and business strategy will continue to dissolve. Companies that invest in integrated approaches today will be the ones setting the agenda tomorrow."
-        },
-        {
-          "type": "p",
-          "text": "The question isn't whether your organization needs a more sophisticated approach to {cat}. It's whether you'll start building it before the next inflection point arrives."
-        }
-      ],
-      "audioDuration": "3:20",
-      "description": "SEO got you ranked. AEO gets you cited. What changed and what to do on Monday."
-    },
-    {
-      "slug": "navigating-stakeholder-trust-in-complex-markets",
-      "category": "reputation",
-      "tag": "Strategy",
-      "readTime": "5 Min Read",
-      "date": "May 2026",
-      "titleParts": [
-        "Navigating stakeholder",
-        "trust in",
-        "complex markets"
-      ],
-      "titleFull": "Navigating stakeholder trust in complex markets",
-      "image": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=800&auto=format&fit=crop",
-      "alt": "Reputation",
-      "intro": "When everyone is watching,\n                        consistency is the strategy. A field guide for comms leaders.",
-      "takeaways": [
-        "Narrative control requires proactive architecture, not reactive messaging",
-        "Algorithmic consensus is becoming the primary driver of stakeholder perception",
-        "Integrated cross-functional teams outperform siloed communications departments"
-      ],
-      "body": [
-        {
-          "type": "p",
-          "text": "When everyone is watching, consistency is the strategy. A field guide for comms leaders."
-        },
-        {
-          "type": "p",
-          "text": "In today's fast-evolving reputation landscape, the rules are being rewritten faster than most organizations can adapt. Leaders who treat reputation as a static function rather than a dynamic capability risk being left behind as stakeholder expectations shift."
-        },
-        {
-          "type": "h2",
-          "text": "The New Reputation Playbook"
-        },
-        {
-          "type": "p",
-          "text": "The convergence of digital-native behavior, algorithmic curation, and heightened stakeholder scrutiny means that reputation can no longer be managed in isolation. It must be embedded into every facet of how a company operates, communicates, and delivers value."
-        },
-        {
-          "type": "p",
-          "text": "Organizations that have embraced this shift are seeing measurable outcomes — from improved trust scores to faster crisis recovery and stronger talent attraction. Those that haven't are finding themselves reacting to narratives rather than shaping them."
-        },
-        {
-          "type": "blockquote",
-          "text": "\"Reputation isn't what you say about yourself. It's what the algorithm remembers and what the market believes — and in an AI-first world, those two are increasingly the same thing.\""
-        },
-        {
-          "type": "h2",
-          "text": "Key Strategic Pillars"
-        },
-        {
-          "type": "p",
-          "text": "Building a resilient reputation strategy requires three interconnected pillars: proactive narrative control, data-driven stakeholder intelligence, and cross-functional integration across communications, marketing, and digital teams."
-        },
-        {
-          "type": "p",
-          "text": "Without these pillars operating in concert, even well-funded initiatives can fall short. The most successful programs are those where the C-suite treats narrative architecture with the same rigor as financial planning."
-        },
-        {
-          "type": "h2",
-          "text": "Looking Ahead"
-        },
-        {
-          "type": "p",
-          "text": "As we move deeper into 2026, the separation between reputation and business strategy will continue to dissolve. Companies that invest in integrated approaches today will be the ones setting the agenda tomorrow."
-        },
-        {
-          "type": "p",
-          "text": "The question isn't whether your organization needs a more sophisticated approach to {cat}. It's whether you'll start building it before the next inflection point arrives."
-        }
-      ],
-      "audioDuration": "5:37",
-      "description": "When everyone is watching, consistency is the strategy. A field guide for comms leaders."
-    },
-    {
-      "slug": "the-editorial-standards-your-brand-actually-needs",
-      "category": "content",
-      "tag": "Content",
-      "readTime": "4\n                        Min Read",
-      "date": "April 2026",
-      "titleParts": [
-        "The editorial",
-        "standards your",
-        "brand actually needs"
-      ],
-      "titleFull": "The editorial standards your brand actually needs",
-      "image": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=800&auto=format&fit=crop",
-      "alt": "Content",
-      "intro": "Quality isn't subjective when the\n                        algorithm is reading. Set the bar before you scale output.",
-      "takeaways": [
-        "Narrative control requires proactive architecture, not reactive messaging",
-        "Algorithmic consensus is becoming the primary driver of stakeholder perception",
-        "Integrated cross-functional teams outperform siloed communications departments"
-      ],
-      "body": [
-        {
-          "type": "p",
-          "text": "Quality isn't subjective when the algorithm is reading. Set the bar before you scale output."
-        },
-        {
-          "type": "p",
-          "text": "In today's fast-evolving content landscape, the rules are being rewritten faster than most organizations can adapt. Leaders who treat content as a static function rather than a dynamic capability risk being left behind as stakeholder expectations shift."
-        },
-        {
-          "type": "h2",
-          "text": "The New Content Playbook"
-        },
-        {
-          "type": "p",
-          "text": "The convergence of digital-native behavior, algorithmic curation, and heightened stakeholder scrutiny means that content can no longer be managed in isolation. It must be embedded into every facet of how a company operates, communicates, and delivers value."
-        },
-        {
-          "type": "p",
-          "text": "Organizations that have embraced this shift are seeing measurable outcomes — from improved trust scores to faster crisis recovery and stronger talent attraction. Those that haven't are finding themselves reacting to narratives rather than shaping them."
-        },
-        {
-          "type": "blockquote",
-          "text": "\"Content isn't what you say about yourself. It's what the algorithm remembers and what the market believes — and in an AI-first world, those two are increasingly the same thing.\""
-        },
-        {
-          "type": "h2",
-          "text": "Key Strategic Pillars"
-        },
-        {
-          "type": "p",
-          "text": "Building a resilient content strategy requires three interconnected pillars: proactive narrative control, data-driven stakeholder intelligence, and cross-functional integration across communications, marketing, and digital teams."
-        },
-        {
-          "type": "p",
-          "text": "Without these pillars operating in concert, even well-funded initiatives can fall short. The most successful programs are those where the C-suite treats narrative architecture with the same rigor as financial planning."
-        },
-        {
-          "type": "h2",
-          "text": "Looking Ahead"
-        },
-        {
-          "type": "p",
-          "text": "As we move deeper into 2026, the separation between content and business strategy will continue to dissolve. Companies that invest in integrated approaches today will be the ones setting the agenda tomorrow."
-        },
-        {
-          "type": "p",
-          "text": "The question isn't whether your organization needs a more sophisticated approach to {cat}. It's whether you'll start building it before the next inflection point arrives."
-        }
-      ],
-      "audioDuration": "4:09",
-      "description": "Quality isn't subjective when the algorithm is reading. Set the bar before you scale output."
-    },
-    {
-      "slug": "automation-without-losing-the-human-voice",
-      "category": "demand",
-      "tag": "Demand Gen",
-      "readTime": "6\n                        Min Read",
-      "date": "June 2026",
-      "titleParts": [
-        "Automation without",
-        "losing the",
-        "human voice"
-      ],
-      "titleFull": "Automation without losing the human voice",
-      "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop",
-      "alt": "Demand",
-      "intro": "Scale personalization without\n                        sounding like a robot. The balance smart teams are striking.",
-      "takeaways": [
-        "Narrative control requires proactive architecture, not reactive messaging",
-        "Algorithmic consensus is becoming the primary driver of stakeholder perception",
-        "Integrated cross-functional teams outperform siloed communications departments"
-      ],
-      "body": [
-        {
-          "type": "p",
-          "text": "Scale personalization without sounding like a robot. The balance smart teams are striking."
-        },
-        {
-          "type": "p",
-          "text": "In today's fast-evolving demand landscape, the rules are being rewritten faster than most organizations can adapt. Leaders who treat demand as a static function rather than a dynamic capability risk being left behind as stakeholder expectations shift."
-        },
-        {
-          "type": "h2",
-          "text": "The New Demand Playbook"
-        },
-        {
-          "type": "p",
-          "text": "The convergence of digital-native behavior, algorithmic curation, and heightened stakeholder scrutiny means that demand can no longer be managed in isolation. It must be embedded into every facet of how a company operates, communicates, and delivers value."
-        },
-        {
-          "type": "p",
-          "text": "Organizations that have embraced this shift are seeing measurable outcomes — from improved trust scores to faster crisis recovery and stronger talent attraction. Those that haven't are finding themselves reacting to narratives rather than shaping them."
-        },
-        {
-          "type": "blockquote",
-          "text": "\"Demand isn't what you say about yourself. It's what the algorithm remembers and what the market believes — and in an AI-first world, those two are increasingly the same thing.\""
-        },
-        {
-          "type": "h2",
-          "text": "Key Strategic Pillars"
-        },
-        {
-          "type": "p",
-          "text": "Building a resilient demand strategy requires three interconnected pillars: proactive narrative control, data-driven stakeholder intelligence, and cross-functional integration across communications, marketing, and digital teams."
-        },
-        {
-          "type": "p",
-          "text": "Without these pillars operating in concert, even well-funded initiatives can fall short. The most successful programs are those where the C-suite treats narrative architecture with the same rigor as financial planning."
-        },
-        {
-          "type": "h2",
-          "text": "Looking Ahead"
-        },
-        {
-          "type": "p",
-          "text": "As we move deeper into 2026, the separation between demand and business strategy will continue to dissolve. Companies that invest in integrated approaches today will be the ones setting the agenda tomorrow."
-        },
-        {
-          "type": "p",
-          "text": "The question isn't whether your organization needs a more sophisticated approach to {cat}. It's whether you'll start building it before the next inflection point arrives."
-        }
-      ],
-      "audioDuration": "7:29",
-      "description": "Scale personalization without sounding like a robot. The balance smart teams are striking."
+      "audioDuration": "16:00",
+      "description": "AI answer engines like ChatGPT, Perplexity, and Google AI Overviews each use different citation logic. Learn how to get your business cited in India's fastest-growing AI search market."
     }
   ]
 }

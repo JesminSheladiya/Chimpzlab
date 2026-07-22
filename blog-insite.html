@@ -50,9 +50,6 @@
     <!-- Custom Cursor -->
     <div id="cursor"></div>
 
-    <!-- Reading Progress -->
-    <div id="progress-bar"></div>
-
     <!-- Navigation (Light Mode Adapted) -->
     <nav class="fixed w-full top-0 z-50 px-6 md:px-12 py-6 flex justify-between items-center pointer-events-none backdrop-blur-md"
         style="background: linear-gradient(180deg, #000000cf, transparent);">
@@ -220,10 +217,10 @@
 
                 <!-- Right: Cover Image (5 Cols) -->
                 <div class="lg:col-span-5 gsap-reveal mt-12 lg:mt-0">
-                    <div class="w-full aspect-[4/5] bg-gray-100 overflow-hidden rounded-2xl relative shadow-2xl">
+                    <div class="w-full bg-gray-100 overflow-hidden rounded-2xl relative shadow-2xl">
                         <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop"
                             alt="Corporate Strategy"
-                            class="w-full h-full object-cover grayscale hover:grayscale-0 hover:scale-105 transition-transform duration-700">
+                            class="w-full h-auto grayscale hover:grayscale-0 hover:scale-105 transition-transform duration-700">
                     </div>
                 </div>
 
@@ -403,33 +400,25 @@
                             Recent Insights</h4>
                         <ul class="space-y-6">
                             <li class="group">
-                                <a href="blog-insite.html?slug=your-website-is-your-most-important-pr-asset" class="interactive block">
+                                <a href="blog-insite.html?slug=does-faq-schema-still-matter-2026"
+                                    class="interactive block">
                                     <span
-                                        class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-1">Digital
-                                        • 4 Min Read</span>
+                                        class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-1">SEO/AEO
+                                        • 8 Min Read</span>
                                     <h5
                                         class="text-lg font-bold tracking-tight text-black group-hover:text-gray-500 transition-colors leading-tight">
-                                        Your website is your most important PR asset</h5>
+                                        Does FAQ Schema Still Matter After Google Removed FAQ Rich Results?</h5>
                                 </a>
                             </li>
                             <li class="group">
-                                <a href="blog-insite.html?slug=navigating-stakeholder-trust-in-complex-markets" class="interactive block">
+                                <a href="blog-insite.html?slug=how-do-ai-answer-engines-choose-sources"
+                                    class="interactive block">
                                     <span
-                                        class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-1">Engagement
-                                        • 6 Min Read</span>
+                                        class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-1">SEO/AEO
+                                        • 16 Min Read</span>
                                     <h5
                                         class="text-lg font-bold tracking-tight text-black group-hover:text-gray-500 transition-colors leading-tight">
-                                        Navigating stakeholder trust in complex markets</h5>
-                                </a>
-                            </li>
-                            <li class="group">
-                                <a href="blog-insite.html?slug=the-difference-between-activity-and-actual-reputat" class="interactive block">
-                                    <span
-                                        class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-1">Corporate
-                                        Comms • 5 Min Read</span>
-                                    <h5
-                                        class="text-lg font-bold tracking-tight text-black group-hover:text-gray-500 transition-colors leading-tight">
-                                        The difference between activity and actual reputation</h5>
+                                        How Do AI Answer Engines Choose Which Sources to Cite?</h5>
                                 </a>
                             </li>
                         </ul>
@@ -452,37 +441,39 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8">
                 <!-- Related Blog 1 -->
-                <a href="blog-insite.html?slug=your-website-is-your-most-important-pr-asset" class="group interactive block gsap-reveal">
+                <a href="blog-insite.html?slug=does-faq-schema-still-matter-2026"
+                    class="group interactive block gsap-reveal">
                     <div class="w-full aspect-[16/9] bg-gray-100 overflow-hidden rounded-xl mb-6 relative">
-                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800&auto=format&fit=crop"
-                            alt="Strategy Planning"
+                        <img src="asset/blogs/first-blog-cover.jpg"
+                            alt="FAQ Schema and AI Search"
                             class="w-full h-full object-cover grayscale group-hover:grayscale-0 opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                     </div>
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-3">Digital Experience • 5
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-3">SEO/AEO • 8
                         Min Read</span>
                     <h4
                         class="text-2xl md:text-3xl font-bold tracking-tight text-black group-hover:text-gray-500 transition-colors leading-tight mb-4">
-                        Your website is your most important PR asset</h4>
+                        Does FAQ Schema Still Matter After Google Removed FAQ Rich Results?</h4>
                 </a>
                 <!-- Related Blog 2 -->
-                <a href="blog-insite.html?slug=navigating-stakeholder-trust-in-complex-markets" class="group interactive block gsap-reveal">
+                <a href="blog-insite.html?slug=how-do-ai-answer-engines-choose-sources"
+                    class="group interactive block gsap-reveal">
                     <div class="w-full aspect-[16/9] bg-gray-100 overflow-hidden rounded-xl mb-6 relative">
-                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=800&auto=format&fit=crop"
-                            alt="Market Analysis"
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop"
+                            alt="AI Answer Engines"
                             class="w-full h-full object-cover grayscale group-hover:grayscale-0 opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                     </div>
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-3">Strategy • 5
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-3">SEO/AEO • 16
                         Min Read</span>
                     <h4
                         class="text-2xl md:text-3xl font-bold tracking-tight text-black group-hover:text-gray-500 transition-colors leading-tight mb-4">
-                        Navigating stakeholder trust in complex markets</h4>
+                        How Do AI Answer Engines Choose Which Sources to Cite?</h4>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-                            <footer class="w-full bg-[#050505] text-white py-6 md:py-8 px-5 md:px-12 relative border-t border-white/10 d-none">
+    <footer class="w-full bg-[#050505] text-white py-6 md:py-8 px-5 md:px-12 relative border-t border-white/10 d-none">
         <div
             class="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center lg:justify-between gap-4 lg:gap-12 text-center">
 
@@ -741,21 +732,6 @@
         revealElements.forEach((el) => { gsap.to(el, { scrollTrigger: { trigger: el, start: "top 85%", toggleActions: "play none none reverse" }, opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }); });
         ScrollTrigger.refresh();
 
-        // Reading Progress Bar
-        const progressBar = document.getElementById('progress-bar');
-        if (progressBar) {
-            const updateProgress = () => {
-                const h = document.documentElement;
-                const scrolled = h.scrollTop || document.body.scrollTop || window.scrollY || 0;
-                const height = h.scrollHeight - h.clientHeight;
-                const pct = height > 0 ? (scrolled / height) * 100 : 0;
-                progressBar.style.width = pct + '%';
-            };
-            window.addEventListener('scroll', updateProgress, { passive: true });
-            if (window.lenis && typeof window.lenis.on === 'function') window.lenis.on('scroll', updateProgress);
-            updateProgress();
-        }
-
         // Blog Audio Player (visual toggle; set an audio src on #blog-audio to enable playback)
         window.toggleAudio = function () {
             const audio = document.getElementById('blog-audio');
@@ -775,7 +751,7 @@
         };
     </script>
 
-    
+
     <script>
         // 5. Footer: highlight relationship between Services and Service Pages
         (function () {
@@ -950,7 +926,7 @@
                     }
                 }
 
-                const coverImg = document.querySelector('.aspect-\\[4\\/5\\] img');
+                const coverImg = document.querySelector('.rounded-2xl.relative img');
                 if (coverImg) { coverImg.src = article.image; coverImg.alt = article.alt; }
 
                 const audioDurationEl = document.querySelector('#play-pause-btn + div .text-sm.font-bold.text-white');
@@ -964,11 +940,16 @@
 
                     html += '<p class="gsap-reveal text-2xl md:text-3xl text-black font-medium mb-12 leading-tight">' + article.intro + '</p>';
 
+                    function slugify(text) {
+                        return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                    }
+
                     article.body.forEach(function (section) {
                         if (section.type === 'p') {
                             html += '<p class="gsap-reveal mb-6">' + section.text + '</p>';
                         } else if (section.type === 'h2') {
-                            html += '<h2 class="gsap-reveal uppercase tracking-tight text-2xl md:text-3xl font-bold mt-14 mb-6">' + section.text + '</h2>';
+                            var id = slugify(section.text);
+                            html += '<h2 id="' + id + '" class="gsap-reveal uppercase tracking-tight text-2xl md:text-3xl font-bold mt-14 mb-6 scroll-mt-24">' + section.text + '</h2>';
                         } else if (section.type === 'blockquote') {
                             html += '<blockquote class="gsap-reveal border-l-4 border-black pl-6 my-12 text-xl md:text-2xl font-medium italic">' + section.text + '</blockquote>';
                         }
@@ -995,7 +976,8 @@
                     });
                     if (tocItems.length > 0) {
                         tocList.innerHTML = tocItems.map(function (h, i) {
-                            return '<li class="flex items-center gap-3 text-sm md:text-base text-gray-500 hover:text-black transition-colors cursor-pointer"><span class="font-bold text-black/30 text-xs">0' + (i + 1) + '</span><span>' + h + '</span></li>';
+                            var id = slugify(h);
+                            return '<li><a href="#' + id + '" class="flex items-center gap-3 text-sm md:text-base text-gray-500 hover:text-black transition-colors"><span class="font-bold text-black/30 text-xs">0' + (i + 1) + '</span><span>' + h + '</span></a></li>';
                         }).join('');
                     }
                 }
