@@ -141,9 +141,13 @@
                 </a>
             </div>
             <!-- Mobile Menu Button -->
-            <button class="pointer-events-auto md:hidden text-white interactive p-2 z-10">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <button class="pointer-events-auto md:hidden text-white interactive p-2 z-10" aria-label="Toggle menu" aria-expanded="false">
+                <svg class="w-8 h-8 menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+                <svg class="w-8 h-8 close-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
                     </path>
                 </svg>
             </button>
@@ -162,7 +166,7 @@
                         <span
                             class="text-xs font-bold uppercase tracking-widest text-white px-4 py-2 border border-white/20 rounded-full">Strategy</span>
                         <span class="text-xs font-bold uppercase tracking-widest text-gray-400">5 Min Read</span>
-                        <span class="text-xs font-bold uppercase tracking-widest text-gray-400 hidden md:inline">• July
+                        <span class="text-xs font-bold uppercase tracking-widest text-gray-400 hidden sm:inline">• July
                             1, 2026</span>
                     </div>
 
@@ -217,10 +221,10 @@
 
                 <!-- Right: Cover Image (5 Cols) -->
                 <div class="lg:col-span-5 gsap-reveal mt-12 lg:mt-0">
-                    <div class="w-full bg-gray-100 overflow-hidden rounded-2xl relative shadow-2xl">
+                    <div class="w-full bg-gray-100 overflow-hidden rounded-2xl relative shadow-2xl aspect-[4/3]">
                         <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop"
                             alt="Corporate Strategy"
-                            class="w-full h-auto grayscale hover:grayscale-0 hover:scale-105 transition-transform duration-700">
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 hover:scale-105 transition-transform duration-700">
                     </div>
                 </div>
 
@@ -230,13 +234,13 @@
 
     <!-- Main Content & Sidebar Layout -->
     <section class="px-6 md:px-12 pt-20 pb-32 bg-white text-brand-dark">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+        <div class="w-full max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
 
             <!-- Left: Article Body (Spans 8 columns) -->
             <article class="lg:col-span-8 article-content text-lg md:text-xl font-light">
 
                 <!-- Share Options (Moved to Top) -->
-                <div class="mb-12 pb-8 border-b border-gray-200 flex items-center gap-6 gsap-reveal">
+                <div class="mb-12 pb-8 border-b border-gray-200 flex items-center gap-2 md:gap-6 flex-wrap gsap-reveal">
                     <span class="text-xs font-bold uppercase tracking-widest text-gray-500">Share Article</span>
                     <a href="https://linkedin.com/company/chimpzlab" target="_blank" rel="noopener noreferrer"
                         class="text-black hover:text-gray-400 transition-colors interactive">
@@ -252,6 +256,84 @@
                                 d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
                         </svg>
                     </a>
+                </div>
+
+                <!-- Mobile: Key Takeaways + TOC + Services (visible only on mobile/tablet) -->
+                <div class="lg:hidden mb-12 p-6 bg-gray-50 rounded-2xl border border-gray-200">
+
+                    <!-- Mobile Key Takeaways -->
+                    <div class="mb-8 sidebar-takeaways-mobile">
+                        <h4 class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4 border-b border-gray-200 pb-3">
+                            Key Takeaways</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3 text-sm">
+                                <svg class="w-4 h-4 shrink-0 mt-0.5 text-black" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Building authentic brand authority requires consistent, expert-level content
+                                    across owned channels.</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm">
+                                <svg class="w-4 h-4 shrink-0 mt-0.5 text-black" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>AI-driven search engines synthesize multiple sources; inconsistent narratives
+                                    undermine trust.</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm">
+                                <svg class="w-4 h-4 shrink-0 mt-0.5 text-black" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Unified PR and digital strategy is no longer optional—it is a boardroom
+                                    imperative.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Mobile TOC -->
+                    <div class="mb-8 sidebar-toc-mobile">
+                        <h4 class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4 border-b border-gray-200 pb-3">
+                            In This Article</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-3 text-sm text-gray-500">
+                                <span class="font-bold text-black/30 text-xs">01</span>
+                                <span>The Shift from SEO to AEO</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-gray-500">
+                                <span class="font-bold text-black/30 text-xs">02</span>
+                                <span>How to Audit Your AI Footprint</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Mobile Services -->
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4 border-b border-gray-200 pb-3">
+                            Explore by Service</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="services/reputation-communications.html"
+                                class="interactive border border-black/20 rounded-full px-3 py-1.5 text-xs font-semibold tracking-wide text-black hover:bg-black hover:text-white transition-colors">Reputation
+                                & Comms</a>
+                            <a href="services/visibility-search.html"
+                                class="interactive border border-black/20 rounded-full px-3 py-1.5 text-xs font-semibold tracking-wide text-black hover:bg-black hover:text-white transition-colors">Visibility
+                                & Search</a>
+                            <a href="services/creative.html"
+                                class="interactive border border-black/20 rounded-full px-3 py-1.5 text-xs font-semibold tracking-wide text-black hover:bg-black hover:text-white transition-colors">Content
+                                & Creative</a>
+                            <a href="services/demand-generation.html"
+                                class="interactive border border-black/20 rounded-full px-3 py-1.5 text-xs font-semibold tracking-wide text-black hover:bg-black hover:text-white transition-colors">Demand
+                                & Automation</a>
+                            <a href="services/digital-experiences.html"
+                                class="interactive border border-black/20 rounded-full px-3 py-1.5 text-xs font-semibold tracking-wide text-black hover:bg-black hover:text-white transition-colors">Digital
+                                Experiences</a>
+                        </div>
+                    </div>
                 </div>
 
                 <p class="gsap-reveal text-2xl md:text-3xl text-black font-medium mb-12 leading-tight">
@@ -314,35 +396,35 @@
             <aside class="lg:col-span-4 hidden lg:block">
 
                     <!-- Blog Categorization by Services -->
-                    <div class="mb-16 gsap-reveal">
+                    <div class="mb-12 gsap-reveal">
                         <h4
-                            class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-6 border-b border-gray-200 pb-4">
+                            class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4 border-b border-gray-200 pb-3">
                             Explore by Service</h4>
                         <div class="flex flex-wrap gap-2">
                             <a href="services/reputation-communications.html"
-                                class="interactive border border-black/20 rounded-full px-4 py-2 text-xs font-semibold tracking-wide text-black hover:bg-black hover:text-white transition-colors">Reputation
+                                class="interactive border border-black/20 rounded-full px-3 py-1.5 text-xs font-semibold tracking-wide text-black hover:bg-black hover:text-white transition-colors">Reputation
                                 & Comms</a>
                             <a href="services/visibility-search.html"
-                                class="interactive border border-black/20 rounded-full px-4 py-2 text-xs font-semibold tracking-wide text-black hover:bg-black hover:text-white transition-colors">Visibility
+                                class="interactive border border-black/20 rounded-full px-3 py-1.5 text-xs font-semibold tracking-wide text-black hover:bg-black hover:text-white transition-colors">Visibility
                                 & Search</a>
                             <a href="services/creative.html"
-                                class="interactive border border-black/20 rounded-full px-4 py-2 text-xs font-semibold tracking-wide text-black hover:bg-black hover:text-white transition-colors">Content
+                                class="interactive border border-black/20 rounded-full px-3 py-1.5 text-xs font-semibold tracking-wide text-black hover:bg-black hover:text-white transition-colors">Content
                                 & Creative</a>
                             <a href="services/demand-generation.html"
-                                class="interactive border border-black/20 rounded-full px-4 py-2 text-xs font-semibold tracking-wide text-black hover:bg-black hover:text-white transition-colors">Demand
+                                class="interactive border border-black/20 rounded-full px-3 py-1.5 text-xs font-semibold tracking-wide text-black hover:bg-black hover:text-white transition-colors">Demand
                                 & Automation</a>
                             <a href="services/digital-experiences.html"
-                                class="interactive border border-black/20 rounded-full px-4 py-2 text-xs font-semibold tracking-wide text-black hover:bg-black hover:text-white transition-colors">Digital
+                                class="interactive border border-black/20 rounded-full px-3 py-1.5 text-xs font-semibold tracking-wide text-black hover:bg-black hover:text-white transition-colors">Digital
                                 Experiences</a>
                         </div>
                     </div>
 
                     <!-- Key Takeaways -->
-                    <div class="mb-16 gsap-reveal sidebar-takeaways">
+                    <div class="mb-12 gsap-reveal sidebar-takeaways">
                         <h4
-                            class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-6 border-b border-gray-200 pb-4">
+                            class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4 border-b border-gray-200 pb-3">
                             Key Takeaways</h4>
-                        <ul class="space-y-4">
+                        <ul class="space-y-3">
                             <li class="flex items-start gap-3 text-sm md:text-base">
                                 <svg class="w-5 h-5 shrink-0 mt-0.5 text-black" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24">
@@ -374,11 +456,11 @@
                     </div>
 
                     <!-- Table of Contents -->
-                    <div class="sticky top-24 md:top-28 mb-16 gsap-reveal sidebar-toc">
+                    <div class="sticky top-24 md:top-28 gsap-reveal sidebar-toc">
                         <h4
-                            class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-6 border-b border-gray-200 pb-4">
+                            class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4 border-b border-gray-200 pb-3">
                             In This Article</h4>
-                        <ul class="space-y-4">
+                        <ul class="space-y-3">
                             <li
                                 class="flex items-center gap-3 text-sm md:text-base text-gray-500 hover:text-black transition-colors cursor-pointer">
                                 <span class="font-bold text-black/30 text-xs">01</span>
@@ -439,250 +521,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="w-full bg-[#050505] text-white py-6 md:py-8 px-5 md:px-12 relative border-t border-white/10 d-none">
-        <div
-            class="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center lg:justify-between gap-4 lg:gap-12 text-center">
-
-            <!-- Block 1: WhatsApp -->
-            <a href="tel:9920149991"
-                class="interactive hover:text-gray-300 transition-colors whitespace-nowrap text-[10px] md:text-xs tracking-widest uppercase font-medium">Call
-                or WhatsApp 9920149991</a>
-
-            <!-- Block 2 (column): Logo + Address + Social -->
-            <div class="flex flex-col items-center gap-4 w-full lg:w-auto">
-                <div class="flex-shrink-0 interactive">
-                    <img src="/asset/chimpzlab-white-logo.gif" alt="ChimpzLab Icon"
-                        class="h-24 md:h-32 w-auto object-contain">
-                </div>
-                <a href="https://maps.google.com/?q=408+Fenkin+9+Phase+1+Wagle+Estate+Thane+West+400604" target="_blank"
-                    rel="noopener noreferrer" class="max-w-xl interactive hover:text-gray-300 transition-colors">408,
-                    Fenkin 9 Phase 1, Wagle Estate,<br>Behind Satkar Grande Hotel, Thane West 400604</a>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="https://youtube.com/@chimpzlab" target="_blank" rel="noopener noreferrer"
-                        class="px-8 py-3 border border-white/20 rounded hover:border-white transition-colors interactive text-xs uppercase tracking-widest font-bold">YouTube</a>
-                    <a href="https://linkedin.com/company/chimpzlab" target="_blank" rel="noopener noreferrer"
-                        class="px-8 py-3 border border-white/20 rounded hover:border-white transition-colors interactive text-xs uppercase tracking-widest font-bold">LinkedIn</a>
-                    <a href="https://instagram.com/chimpzlab" target="_blank" rel="noopener noreferrer"
-                        class="px-8 py-3 border border-white/20 rounded hover:border-white transition-colors interactive text-xs uppercase tracking-widest font-bold">Instagram</a>
-                </div>
-            </div>
-
-            <!-- Block 3: Copyright -->
-            <div
-                class="interactive hover:text-gray-300 transition-colors cursor-pointer whitespace-nowrap text-[10px] md:text-xs tracking-widest uppercase font-medium">
-                &copy; 2026 ChimpzLab. All rights reserved.</div>
-        </div>
-
-        <!-- White divider line -->
-        <div class="max-w-[1400px] mx-auto border-t border-white/15 my-6 md:my-10"></div>
-
-        <!-- Mobile: stacked blocks -->
-        <div class="max-w-4xl mx-auto grid grid-cols-1 gap-6 md:hidden text-center">
-            <div>
-                <h4 class="text-xs font-bold text-white/50 mb-2 pb-2 border-b border-white/10 inline-block">Services
-                </h4>
-                <ul class="flex flex-col">
-                    <li><a href="services/reputation-communications.html"
-                            class="interactive text-xs font-medium block py-1">Reputation &amp; Communications</a></li>
-                    <li><a href="services/visibility-search.html"
-                            class="interactive text-xs font-medium block py-1">Visibility &amp; Search</a></li>
-                    <li><a href="services/creative.html" class="interactive text-xs font-medium block py-1">Content
-                            &amp; Creative</a></li>
-                    <li><a href="services/demand-generation.html"
-                            class="interactive text-xs font-medium block py-1">Demand &amp; Automation</a></li>
-                    <li><a href="services/digital-experiences.html"
-                            class="interactive text-xs font-medium block py-1">Digital Experiences</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-xs font-bold text-white/50 mb-2 pb-2 border-b border-white/10 inline-block">Service
-                    Pages</h4>
-                <ul class="flex flex-col">
-                    <li><a href="services/reputation-communications/thought-leadership.html"
-                            class="interactive text-xs leading-tight font-medium block py-1">Thought Leadership</a></li>
-                    <li><a href="services/reputation-communications/public-relations.html"
-                            class="interactive text-xs leading-tight font-medium block py-1">Public Relations</a></li>
-                    <li><a href="services/reputation-communications/employer-branding.html"
-                            class="interactive text-xs leading-tight font-medium block py-1">Employer Branding</a></li>
-                    <li><a href="services/reputation-communications/corporate-communications.html"
-                            class="interactive text-xs leading-tight font-medium block py-1">Corporate
-                            Communications</a></li>
-                    <li><a href="services/visibility-search/seo-aeo.html"
-                            class="interactive text-xs leading-tight font-medium block py-1">SEO &amp; AEO</a></li>
-                    <li><a href="services/visibility-search/social-media-marketing.html"
-                            class="interactive text-xs leading-tight font-medium block py-1">Social Media Marketing</a>
-                    </li>
-                    <li><a href="services/visibility-search/influencer-marketing.html"
-                            class="interactive text-xs leading-tight font-medium block py-1">Influencer Marketing</a>
-                    </li>
-                    <li><a href="services/visibility-search/content-writing.html"
-                            class="interactive text-xs leading-tight font-medium block py-1">Content Writing</a></li>
-                    <li><a href="services/creative/video-production.html"
-                            class="interactive text-xs leading-tight font-medium block py-1">Video Production</a></li>
-                    <li><a href="services/creative/design.html"
-                            class="interactive text-xs leading-tight font-medium block py-1">Design</a></li>
-                    <li><a href="services/creative/branding.html"
-                            class="interactive text-xs leading-tight font-medium block py-1">Branding</a></li>
-                    <li><a href="services/demand-generation/vetted-lead-generation.html"
-                            class="interactive text-xs leading-tight font-medium block py-1">Vetted Lead Generation</a>
-                    </li>
-                    <li><a href="services/demand-generation/performance-marketing.html"
-                            class="interactive text-xs leading-tight font-medium block py-1">Performance Marketing</a>
-                    </li>
-                    <li><a href="services/demand-generation/marketing-automation.html"
-                            class="interactive text-xs leading-tight font-medium block py-1">Marketing Automations</a>
-                    </li>
-                    <li><a href="services/demand-generation/email-marketing.html"
-                            class="interactive text-xs leading-tight font-medium block py-1">Email Marketing</a></li>
-                    <li><a href="services/digital-experiences/chatbots.html"
-                            class="interactive text-xs leading-tight font-medium block py-1">Chatbots</a></li>
-                    <li><a href="services/digital-experiences/website-design-development.html"
-                            class="interactive text-xs leading-tight font-medium block py-1">Website Design &amp;
-                            Development</a></li>
-                    <li><a href="services/digital-experiences/landing-pages.html"
-                            class="interactive text-xs leading-tight font-medium block py-1">Landing Pages</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-xs font-bold text-white/50 mb-2 pb-2 border-b border-white/10 inline-block">Company</h4>
-                <ul class="flex flex-col">
-                    <li><a href="index.html" data-company class="interactive text-xs font-medium">Home</a></li>
-                    <li><a href="about.html" data-company class="interactive text-xs font-medium">About</a></li>
-                    <li><a href="services/case-studies.html" data-company
-                            class="interactive text-xs font-medium">Work</a></li>
-                    <li><a href="insights.html" data-company class="interactive text-xs font-medium">Insights</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Desktop: Service <-> Service Page grouped navigation -->
-        <div class="hidden md:block max-w-4xl mx-auto">
-            <div class="grid grid-cols-3 gap-12">
-                <div class="col-span-2 grid grid-cols-2 gap-x-12">
-                    <h4 class="text-xs font-bold text-white/50 mb-2 pb-2 border-b border-white/10">Services</h4>
-                    <h4 class="text-xs font-bold text-white/50 mb-2 pb-2 border-b border-white/10">Service Pages</h4>
-                    <!-- Reputation -->
-                    <div><a href="services/reputation-communications.html" data-service="reputation-communications"
-                            class="interactive text-white/80 text-xs font-bold block py-1">Reputation &amp;
-                            Communications</a></div>
-                    <div>
-                        <ul class="flex flex-col">
-                            <li><a href="services/reputation-communications/thought-leadership.html"
-                                    data-parent="reputation-communications"
-                                    class="interactive text-xs leading-tight font-medium block py-1">Thought
-                                    Leadership</a></li>
-                            <li><a href="services/reputation-communications/public-relations.html"
-                                    data-parent="reputation-communications"
-                                    class="interactive text-xs leading-tight font-medium block py-1">Public
-                                    Relations</a></li>
-                            <li><a href="services/reputation-communications/employer-branding.html"
-                                    data-parent="reputation-communications"
-                                    class="interactive text-xs leading-tight font-medium block py-1">Employer
-                                    Branding</a></li>
-                            <li><a href="services/reputation-communications/corporate-communications.html"
-                                    data-parent="reputation-communications"
-                                    class="interactive text-xs leading-tight font-medium block py-1">Corporate
-                                    Communications</a></li>
-                        </ul>
-                    </div>
-                    <!-- Visibility -->
-                    <div><a href="services/visibility-search.html" data-service="visibility-search"
-                            class="interactive text-white/80 text-xs font-bold block py-1">Visibility &amp; Search</a>
-                    </div>
-                    <div>
-                        <ul class="flex flex-col">
-                            <li><a href="services/visibility-search/seo-aeo.html" data-parent="visibility-search"
-                                    class="interactive text-xs leading-tight font-medium block py-1">SEO &amp; AEO</a>
-                            </li>
-                            <li><a href="services/visibility-search/social-media-marketing.html"
-                                    data-parent="visibility-search"
-                                    class="interactive text-xs leading-tight font-medium block py-1">Social Media
-                                    Marketing</a></li>
-                            <li><a href="services/visibility-search/influencer-marketing.html"
-                                    data-parent="visibility-search"
-                                    class="interactive text-xs leading-tight font-medium block py-1">Influencer
-                                    Marketing</a></li>
-                            <li><a href="services/visibility-search/content-writing.html"
-                                    data-parent="visibility-search"
-                                    class="interactive text-xs leading-tight font-medium block py-1">Content Writing</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- Creative -->
-                    <div><a href="services/creative.html" data-service="creative"
-                            class="interactive text-white/80 text-xs font-bold block py-1">Content &amp; Creative</a>
-                    </div>
-                    <div>
-                        <ul class="flex flex-col">
-                            <li><a href="services/creative/video-production.html" data-parent="creative"
-                                    class="interactive text-xs leading-tight font-medium block py-1">Video
-                                    Production</a></li>
-                            <li><a href="services/creative/design.html" data-parent="creative"
-                                    class="interactive text-xs leading-tight font-medium block py-1">Design</a></li>
-                            <li><a href="services/creative/branding.html" data-parent="creative"
-                                    class="interactive text-xs leading-tight font-medium block py-1">Branding</a></li>
-                        </ul>
-                    </div>
-                    <!-- Demand -->
-                    <div><a href="services/demand-generation.html" data-service="demand-generation"
-                            class="interactive text-white/80 text-xs font-bold block py-1">Demand &amp; Automation</a>
-                    </div>
-                    <div>
-                        <ul class="flex flex-col">
-                            <li><a href="services/demand-generation/vetted-lead-generation.html"
-                                    data-parent="demand-generation"
-                                    class="interactive text-xs leading-tight font-medium block py-1">Vetted Lead
-                                    Generation</a></li>
-                            <li><a href="services/demand-generation/performance-marketing.html"
-                                    data-parent="demand-generation"
-                                    class="interactive text-xs leading-tight font-medium block py-1">Performance
-                                    Marketing</a></li>
-                            <li><a href="services/demand-generation/marketing-automation.html"
-                                    data-parent="demand-generation"
-                                    class="interactive text-xs leading-tight font-medium block py-1">Marketing
-                                    Automations</a></li>
-                            <li><a href="services/demand-generation/email-marketing.html"
-                                    data-parent="demand-generation"
-                                    class="interactive text-xs leading-tight font-medium block py-1">Email Marketing</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- Digital -->
-                    <div><a href="services/digital-experiences.html" data-service="digital-experiences"
-                            class="interactive text-white/80 text-xs font-bold block py-1">Digital Experiences</a></div>
-                    <div>
-                        <ul class="flex flex-col">
-                            <li><a href="services/digital-experiences/chatbots.html" data-parent="digital-experiences"
-                                    class="interactive text-xs leading-tight font-medium block py-1">Chatbots</a></li>
-                            <li><a href="services/digital-experiences/website-design-development.html"
-                                    data-parent="digital-experiences"
-                                    class="interactive text-xs leading-tight font-medium block py-1">Website Design
-                                    &amp; Development</a></li>
-                            <li><a href="services/digital-experiences/landing-pages.html"
-                                    data-parent="digital-experiences"
-                                    class="interactive text-xs leading-tight font-medium block py-1">Landing Pages</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="text-xs font-bold text-white/50 mb-2 pb-2 border-b border-white/10">Company</h4>
-                    <ul class="flex flex-col">
-                        <li><a href="index.html" data-company class="interactive text-xs font-medium">Home</a></li>
-                        <li><a href="about.html" data-company class="interactive text-xs font-medium">About</a></li>
-                        <li><a href="services/case-studies.html" data-company
-                                class="interactive text-xs font-medium">Work</a></li>
-                        <li><a href="insights.html" data-company class="interactive text-xs font-medium">Insights</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script>
-
-    </script>
 
     <script>
         const cursor = document.getElementById('cursor');
@@ -861,13 +699,14 @@
         // Article loader - reads slug from URL and renders content from insights/data.json
         (async function () {
             try {
-                const params = new URLSearchParams(window.location.search);
-                const slug = params.get('slug');
-                if (!slug) return;
-
                 const res = await fetch('insights/data.json');
                 const data = await res.json();
-                const article = data.articles.find(a => a.slug === slug);
+                if (!data.articles || data.articles.length === 0) return;
+
+                const params = new URLSearchParams(window.location.search);
+                const slug = params.get('slug');
+                let article = slug ? data.articles.find(a => a.slug === slug) : null;
+                if (!article) article = data.articles[0];
                 if (!article) return;
 
                 // Update page title

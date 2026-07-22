@@ -1746,6 +1746,13 @@ html.lenis {
   letter-spacing: -0.02em;
 }
 
+@media (max-width: 767px) {
+  .article-content h2 {
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+  }
+}
+
 .article-content blockquote {
   border-left: 3px solid #0a0a0a;
   padding-left: 2rem;
@@ -1755,6 +1762,14 @@ html.lenis {
   font-style: italic;
   color: #0a0a0a;
   line-height: 1.5;
+}
+
+@media (max-width: 767px) {
+  .article-content blockquote {
+    font-size: 1.125rem;
+    padding-left: 1rem;
+    margin: 2rem 0;
+  }
 }
 
 .has-dropdown>a {
@@ -1768,6 +1783,10 @@ html.lenis {
   inset: auto -16px -20px -16px;
   height: 40px;
   z-index: 1;
+  pointer-events: none;
+}
+
+.has-dropdown:hover::before {
   pointer-events: auto;
 }
 
@@ -2999,4 +3018,12 @@ section.bg-white ::selection {
   .footer-v2 {
     padding: 32px 16px 16px;
   }
+}
+
+nav button.is-active .menu-icon {
+  display: none;
+}
+
+nav button.is-active .close-icon {
+  display: block;
 }
