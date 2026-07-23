@@ -204,7 +204,7 @@
             <div
                 class="gsap-reveal rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 relative">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
-                <img src="evershine-house/cover.jpg" alt="Evershine House Cover"
+                <img src="evershine-house/cover.png" alt="Evershine House Cover"
                     class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700">
             </div>
         </div>
@@ -403,6 +403,26 @@
         </div>
     </section>
 
+    <!-- Auto Scroll Marquee -->
+    <div class="relative overflow-hidden py-12 md:py-20 bg-brand-dark border-t border-white/10 interactive-drag">
+        <div class="swiper auto-scroll-swiper w-full">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide w-auto"><img src="evershine-house/gallery-1.png"
+                        class="h-56 sm:h-72 lg:h-[550px] w-auto object-cover rounded-xl shadow-2xl cursor-pointer"
+                        alt="Evershine House Aura Chatbot"></div>
+                <div class="swiper-slide w-auto"><img src="evershine-house/gallery-2.png"
+                        class="h-56 sm:h-72 lg:h-[550px] w-auto object-cover rounded-xl shadow-2xl cursor-pointer"
+                        alt="Evershine House Lead Qualification"></div>
+                <div class="swiper-slide w-auto"><img src="evershine-house/gallery-3.png"
+                        class="h-56 sm:h-72 lg:h-[550px] w-auto object-cover rounded-xl shadow-2xl cursor-pointer"
+                        alt="Evershine House Property Discovery"></div>
+                <div class="swiper-slide w-auto"><img src="evershine-house/gallery-4.png"
+                        class="h-56 sm:h-72 lg:h-[550px] w-auto object-cover rounded-xl shadow-2xl cursor-pointer"
+                        alt="Evershine House Sales Handover"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- Testimonial Carousel Section -->
     <section class="py-32 px-6 md:px-12 bg-[#f5f5f5] text-brand-dark border-t border-gray-200 overflow-hidden">
         <div class="max-w-[950px] mx-auto">
@@ -500,7 +520,7 @@
 
                         <!-- Hidden fields -->
                         <input type="hidden" name="api_key" value="3afc0840e1193e58397159d4af15cf4a15b5b35c">
-                        <input type="hidden" name="_redirect" value="../../thanks.html">
+                        <input type="hidden" name="_redirect" value="thanks.html">
 
                         <!-- Submit Button -->
                         <div class="pt-6">
@@ -1358,6 +1378,13 @@
                 });
             }
         })();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof Swiper !== 'undefined') { new Swiper('.auto-scroll-swiper', { slidesPerView: 'auto', spaceBetween: 32, loop: true, speed: 4000, autoplay: { delay: 0, disableOnInteraction: false, pauseOnMouseEnter: true }, grabCursor: false, allowTouchMove: true, on: { click: function (swiper, event) { const clickedImg = event.target.closest('img'); if (clickedImg) { openLightbox(clickedImg.src); } } } }); }
+        });
     </script>
 </body>
 
