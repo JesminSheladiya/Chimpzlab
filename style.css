@@ -2861,7 +2861,7 @@ section.bg-white ::selection {
 /* ── Groups grid ── */
 .footer-v2 .footer-grid {
   display: grid;
-  grid-template-columns: 360px repeat(3, 1fr);
+  grid-template-columns: 360px 0.7fr repeat(2, 1fr);
   gap: 20px 60px;
   text-align: left;
 }
@@ -2973,8 +2973,7 @@ section.bg-white ::selection {
 
   .footer-v2 .footer-col-brand {
     grid-row: span 3;
-    border-right: 1px solid rgba(255, 255, 255, 0.18);
-    padding-right: 32px;
+    padding-right: 35px;
   }
 
   .footer-v2 .footer-social-btns {
