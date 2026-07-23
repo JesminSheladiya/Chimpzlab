@@ -2236,6 +2236,20 @@ select {
   border-color: #fff;
 }
 
+.insight-card-item:first-child { border-top-width: 0; }
+@media (max-width: 767px) {
+  .insight-card-item { border-left-width: 0; }
+}
+@media (min-width: 768px) {
+  .insight-card-item { border-top-width: 0; }
+  .insight-card-item:nth-child(2n+1) { border-left-width: 0; }
+}
+@media (min-width: 1024px) {
+  .insight-card-item:nth-child(3n+1) { border-left-width: 0; }
+  .insight-card-item:nth-child(3n+2),
+  .insight-card-item:nth-child(3n+3) { border-left-width: 1px; }
+}
+
 .cs-masonry {
   position: relative;
   width: 100%;

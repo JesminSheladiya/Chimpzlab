@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Public Relations (PR) Agency in Thane | ChimpzLab</title>
+    <title>AI-Powered Property Concierge for Commercial Real Estate | ChimpzLab</title>
     <meta name="description"
-        content="Media relations, press outreach and spokesperson training that build real credibility, not just coverage counts. Book a strategy call.">
+        content="Turn every website visitor into a qualified sales conversation with Aura, an AI Property Concierge for Evershine House commercial offices in Mumbai.">
     <meta name="keywords"
-        content="PR agency India, public relations services, media relations agency, press outreach agency Thane">
+        content="AI property concierge, commercial real estate chatbot, real estate lead qualification, Mumbai office space, Evershine Group">
     <link rel="icon" type="image/gif" href="../../asset/chimpzlab-icon.gif">
     <link rel="apple-touch-icon" href="../../asset/chimpzlab-icon.gif">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,213 +30,41 @@
                 }
             }
         }
-
-        // Initialize GSAP animations when page loads
         document.addEventListener('DOMContentLoaded', function () {
-            // Ensure equal height cards are working
-            function setEqualCardHeights() {
-                const cards = document.querySelectorAll('.tab-card-item');
-                cards.forEach(card => {
-                    card.style.height = 'auto';
-                });
-            }
-
-            // Set equal heights on DOM load and window resize
+            function setEqualCardHeights() { const cards = document.querySelectorAll('.tab-card-item'); cards.forEach(card => { card.style.height = 'auto'; }); }
             setEqualCardHeights();
             window.addEventListener('resize', setEqualCardHeights);
-
-            // Custom GSAP animation for tab cards
-            gsap.utils.toArray('.tab-card-item').forEach((card, index) => {
-                gsap.fromTo(card,
-                    { opacity: 0, y: 40, scale: 0.95 },
-                    { opacity: 1, y: 0, scale: 1, duration: 0.6, delay: index * 0.1, ease: 'power2.out' }
-                );
-            });
-
-            // Initial ScrollTrigger refresh
+            gsap.utils.toArray('.tab-card-item').forEach((card, index) => { gsap.fromTo(card, { opacity: 0, y: 40, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, delay: index * 0.1, ease: 'power2.out' }); });
             ScrollTrigger.refresh();
         });
     </script>
 
-
-    <script type="application/ld+json">
-    {
-"@context": "https://schema.org",
-"@type": "Service",
-"name": "Corporate Communications Agency in Thane",
-"provider": {"@type": "Organization","name":"ChimpzLab"},
-"areaServed": "Thane",
-"serviceType": "Corporate Communications Agency in Thane"
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-"@context": "https://schema.org",
-"@type": "BreadcrumbList",
-"itemListElement": [
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "AI-Powered Property Concierge for Commercial Real Estate",
+      "provider": {"@type": "Organization","name":"ChimpzLab"},
+      "areaServed": "Mumbai",
+      "serviceType": "AI Property Concierge"
+    }</script>
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
         {"@type":"ListItem","position":1,"name":"Services","item":"https://chimpzlab.com/services/"},
-        {"@type":"ListItem","position":2,"name":"Reputation & Communications","item":"https://chimpzlab.com/services/reputation-communications/"},
-        {"@type":"ListItem","position":3,"name":"Corporate Communications Agency in Thane"}
+        {"@type":"ListItem","position":2,"name":"Demand Generation","item":"https://chimpzlab.com/services/demand-generation/"},
+        {"@type":"ListItem","position":3,"name":"AI Property Concierge"}
       ]
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-"@context": "https://schema.org",
-"@type": "FAQPage",
-"mainEntity": [
-        {"@type":"Question","name":"Do you handle crisis communication as part of this?","acceptedAnswer":{"@type":"Answer","text":"Yes. Crisis-readiness and response planning are part of the core offering, so you are not writing a plan for the first time in the middle of a crisis."}},
-    {"@type":"Question","name":"Is this only for large companies?","acceptedAnswer":{"@type":"Answer","text":"No. Even founder-led or growth-stage companies benefit once their messaging starts reaching media, investors or a growing team in inconsistent ways."}},
-    {"@type":"Question","name":"What is a messaging framework, in plain terms?","acceptedAnswer":{"@type":"Answer","text":"It is a short, agreed set of core messages, proof points and positioning that everyone writes from. It keeps your website, your press outreach and your leadership content saying the same thing."}},
-    {"@type":"Question","name":"How is this different from PR?","acceptedAnswer":{"@type":"Answer","text":"PR is about earning coverage. Corporate communications is the layer underneath it, the narrative and systems that make sure every message, coverage included, stays consistent."}}
-      ]
-    }
-    
-        // Testimonial Carousel Logic - Data Driven
-        const testimonialTrack = document.querySelector('.testimonial-track');
-        const prevBtn = document.querySelector('.testimonial-prev');
-        const nextBtn = document.querySelector('.testimonial-next');
-        const dotsContainer = document.getElementById('testimonial-dots');
-        let currentSlide = 0;
-        let totalSlides = 0;
-        let autoplayInterval;
-
-        function renderTestimonials(data) {
-            totalSlides = data.length;
-
-            testimonialTrack.innerHTML = data.map((t, i) => `
-                        <div class="testimonial-slide min-w-full px-2">
-                            <div class="bg-white rounded-3xl p-10 md:p-14 relative shadow-sm h-full flex flex-col justify-center">
-                                <div class="absolute top-8 right-10 text-[120px] leading-none font-serif text-gray-100 select-none pointer-events-none">"</div>
-                                <p class="text-xl md:text-2xl font-medium leading-relaxed text-gray-800 mb-10 relative z-10 italic max-w-[800px]">"${t.quote}"</p>
-                                <div class="flex items-center gap-4 relative z-10 shrink-0">
-                                    ${t.image
-                                        ? `<img src="${t.image}" alt="${t.author}" class="w-14 h-14 rounded-full object-cover">`
-                                        : `<div class="w-14 h-14 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 font-bold text-lg shrink-0">${t.letter}</div>`
-                                    }
-                                    <div>
-                                        <p class="font-bold text-base text-brand-dark">${t.author}</p>
-                                        <p class="text-sm text-gray-500">${t.title}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-            `).join('');
-
-            dotsContainer.innerHTML = data.map((_, i) => `
-                <button class="testimonial-dot w-2.5 h-2.5 rounded-full ${i === 0 ? 'bg-black' : 'bg-gray-300'} transition-all duration-300"
-                    data-index="${i}" aria-label="Go to slide ${i + 1}"></button>
-            `).join('');
-
-            initCarousel();
-        }
-
-        function initCarousel() {
-            const testimonialSlides = document.querySelectorAll('.testimonial-slide');
-            const dots = document.querySelectorAll('.testimonial-dot');
-
-            function goToSlide(index) {
-                if (index < 0) index = totalSlides - 1;
-                if (index >= totalSlides) index = 0;
-                currentSlide = index;
-                testimonialTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
-                dots.forEach((dot, i) => {
-                    dot.classList.toggle('bg-black', i === currentSlide);
-                    dot.classList.toggle('bg-gray-300', i !== currentSlide);
-                });
-            }
-
-            function startAutoplay() {
-                autoplayInterval = setInterval(() => goToSlide(currentSlide + 1), 5000);
-            }
-
-            function stopAutoplay() {
-                clearInterval(autoplayInterval);
-            }
-
-            prevBtn.addEventListener('click', () => {
-                stopAutoplay();
-                goToSlide(currentSlide - 1);
-                startAutoplay();
-            });
-
-            nextBtn.addEventListener('click', () => {
-                stopAutoplay();
-                goToSlide(currentSlide + 1);
-                startAutoplay();
-            });
-
-            dots.forEach(dot => {
-                dot.addEventListener('click', () => {
-                    stopAutoplay();
-                    goToSlide(parseInt(dot.dataset.index));
-                    startAutoplay();
-                });
-            });
-
-            const carouselEl = document.querySelector('.testimonial-carousel');
-            let dragStartX = 0;
-            let dragDeltaX = 0;
-            let isDragging = false;
-
-            function setTransition(v) {
-                testimonialTrack.style.transition = v ? 'transform 0.5s ease' : 'none';
-            }
-
-            function onDragStart(e) {
-                if (e.type === 'mousedown' && e.button !== 0) return;
-                isDragging = true;
-                dragStartX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
-                dragDeltaX = 0;
-                setTransition(false);
-                stopAutoplay();
-            }
-
-            function onDragMove(e) {
-                if (!isDragging) return;
-                const x = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
-                dragDeltaX = x - dragStartX;
-                const offset = -(currentSlide * 100) + (dragDeltaX / carouselEl.offsetWidth * 100);
-                testimonialTrack.style.transform = `translateX(${offset}%)`;
-            }
-
-            function onDragEnd() {
-                if (!isDragging) return;
-                isDragging = false;
-                setTransition(true);
-                if (dragDeltaX < -50) {
-                    goToSlide(currentSlide + 1);
-                } else if (dragDeltaX > 50) {
-                    goToSlide(currentSlide - 1);
-                } else {
-                    goToSlide(currentSlide);
-                }
-                startAutoplay();
-            }
-
-            carouselEl.addEventListener('touchstart', onDragStart, { passive: true });
-            carouselEl.addEventListener('touchmove', onDragMove, { passive: true });
-            carouselEl.addEventListener('touchend', onDragEnd);
-            carouselEl.addEventListener('mousedown', onDragStart);
-            carouselEl.addEventListener('mousemove', onDragMove);
-            carouselEl.addEventListener('mouseup', onDragEnd);
-            carouselEl.addEventListener('mouseleave', onDragEnd);
-
-            startAutoplay();
-        }
-
-        fetch('../../data/testimonials.json')
-            .then(res => res.json())
-            .then(renderTestimonials)
-            .catch(err => console.error('Failed to load testimonials:', err));
-</script>
-
+    }</script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="../../style.css">
 </head>
 
 <body class="selection:bg-white selection:text-black">
 
-    <div id="cursor"></div>
+    <div id="cursor"><span id="cursor-text"
+            class="text-black font-bold uppercase text-sm absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-300 pointer-events-none tracking-widest">DRAG</span>
+    </div>
 
     <nav class="fixed w-full top-0 z-50 px-6 md:px-12 py-6 flex justify-between items-center pointer-events-none backdrop-blur-md"
         style="background: linear-gradient(180deg, #000000cf, transparent);">
@@ -338,559 +166,242 @@
         </div>
     </nav>
 
-    <header
-        class="min-h-screen flex flex-col justify-center px-6 md:px-12 pt-32 pb-20 relative bg-brand-dark overflow-hidden">
-        <div class="w-full max-w-[1400px] mx-auto z-10">
-            <div class="flex items-center gap-4 mb-8 gsap-reveal-text">
-                <div class="w-12 h-[1px] bg-white/30"></div>
-                <span class="block text-xs font-bold uppercase tracking-[0.2em] text-white/70">Public Relations</span>
+    <!-- Hero Section -->
+    <section
+        class="pt-40 md:pt-56 pb-20 px-6 md:px-12 relative overflow-hidden bg-brand-dark min-h-[80vh] flex flex-col justify-center">
+        <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+            <div
+                class="absolute top-[-10%] right-[-5%] w-[60vw] h-[60vw] rounded-full bg-gradient-to-br from-white/10 to-transparent blur-3xl">
             </div>
-            <h1 class="text-4xl sm:text-6xl md:text-8xl font-extrabold text-white mb-12 tracking-tighter uppercase">
-                <div class="overflow-hidden"><span class="block gsap-reveal-text">Coverage that builds credibility, not
-                        just clippings</span></div>
-            </h1>
-            <div class="gsap-reveal">
+            <div
+                class="absolute bottom-[-20%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-gradient-to-tr from-white/5 to-transparent blur-3xl">
+            </div>
+            <div
+                class="absolute inset-0 bg-[url('../../asset/grid-pattern.svg')] bg-repeat opacity-10 mix-blend-overlay">
+            </div>
+        </div>
+        <div class="max-w-[1400px] mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="flex items-center gap-4 mb-8 gsap-reveal">
+                    <div class="w-12 h-[1px] bg-white/30"></div>
+                    <span class="text-xs font-bold uppercase tracking-[0.2em] text-white/70">DEMAND GENERATION &middot;
+                        VETTED LEAD GENERATION &middot; PERFORMANCE MARKETING</span>
+                </div>
+                <h1
+                    class="text-4xl sm:text-6xl md:text-7xl lg:text-6xl font-extrabold text-white tracking-tighter uppercase leading-[0.9] mb-12">
+                    <div class="overflow-hidden"><span class="block gsap-reveal-text">Turning Every Website</span></div>
+                    <div class="overflow-hidden"><span class="block text-white/40 gsap-reveal-text">Visitor Into
+                            a</span>
+                    </div>
+                    <div class="overflow-hidden"><span class="block gsap-reveal-text">Qualified Sales
+                            Conversation</span></div>
+                </h1>
+                <div class="flex items-center gap-4 gsap-reveal">
+                    <div class="w-2 h-2 bg-white rounded-full"></div>
+                    <p class="text-xl font-bold tracking-widest uppercase">Evershine House</p>
+                </div>
+            </div>
+            <div
+                class="gsap-reveal rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 relative">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+                <img src="evershine-house/cover.jpg" alt="Evershine House Cover"
+                    class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700">
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Mandate -->
+    <section class="py-24 px-6 md:px-12 bg-white text-brand-dark">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+                <div class="gsap-reveal">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-[1px] bg-brand-dark/30"></div>
+                        <span class="text-xs font-bold uppercase tracking-[0.2em] text-brand-dark/50">About Brand</span>
+                    </div>
+                    <p class="text-xl md:text-2xl font-light leading-relaxed text-gray-800">
+                        <strong class="font-bold">Evershine House</strong> is a premium commercial office destination in
+                        Mumbai by the Evershine Group, designed for businesses looking for modern office spaces in a
+                        well-connected business district. While the website attracted a steady flow of prospective
+                        buyers and leasing enquiries, visitors often left before speaking with a sales representative or
+                        finding the information they were looking for.
+                    </p>
+                </div>
+                <div class="gsap-reveal">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-[1px] bg-brand-dark/30"></div>
+                        <span class="text-xs font-bold uppercase tracking-[0.2em] text-brand-dark/50">The Mandate</span>
+                    </div>
+                    <p class="text-xl md:text-2xl font-light leading-relaxed text-gray-800">
+                        Chimpzlab was engaged to build Aura, an AI-powered Property Concierge that could become the
+                        first point of interaction for every website visitor. The objective was to answer
+                        property-related questions instantly, qualify prospects, guide users to relevant information,
+                        and seamlessly connect high-intent visitors with the sales team; all without requiring constant
+                        manual intervention.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Challenge -->
+    <section class="py-32 px-6 md:px-12 bg-brand-dark text-white border-t border-white/10 overflow-hidden relative">
+        <div class="max-w-[1400px] mx-auto relative z-10">
+            <div class="flex items-center gap-4 mb-12 gsap-reveal">
+                <div class="w-12 h-[1px] bg-white/30"></div>
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-white/50">The Challenge</span>
+            </div>
+            <h2
+                class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter uppercase leading-[0.95] gsap-reveal max-w-5xl">
+                Commercial real estate enquiries rarely follow a predictable path.
+                <span class="text-white/40">converting anonymous visitors into qualified conversations.</span>
+            </h2>
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
+                <div class="gsap-reveal"></div>
+                <div class="gsap-reveal border-l border-white/20 pl-8 md:pl-12">
+                    <p class="text-lg md:text-xl text-gray-400 font-light leading-relaxed">
+                        Some visitors want project specifications, others compare floor plans, ask about leasing
+                        options, enquire about amenities, location connectivity, or simply want to schedule a site
+                        visit. Relying solely on enquiry forms meant the sales team only engaged after a visitor had
+                        already decided to reach out. Many potential buyers left the website before taking that step,
+                        while repetitive questions consumed valuable time that could have been spent nurturing serious
+                        prospects.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Approach -->
+    <section class="py-32 px-6 md:px-12 bg-[#f5f5f5] text-brand-dark overflow-hidden">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-[1px] bg-brand-dark/30"></div>
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-brand-dark/50">Our
+                    Approach</span>
+            </div>
+            <div class="flex flex-col md:flex-row items-start justify-between gap-8 mb-16 gsap-reveal">
                 <div>
-                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-8">
-                        <a href="#booking-form"
-                            class="interactive bg-white hover:bg-gray-200 text-black px-8 py-4 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2">
-                            Book a Strategy Call
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </a>
-                        <div class="flex flex-col">
-                            <span class="text-xs font-bold uppercase tracking-widest text-white/50 mb-1">The
-                                Agenda</span>
-                            <span class="text-sm font-medium text-gray-400 leading-tight">30 minutes. Aligning your
-                                corporate narrative.</span>
-                        </div>
-                    </div>
+                    <h2
+                        class="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tighter uppercase m-0 max-w-3xl">
+                        Intelligent Conversations at Scale</h2>
+                </div>
+                <div class="max-w-sm">
+                    <p class="text-base text-gray-600 font-medium">Rather than building a conventional chatbot,
+                        Chimpzlab developed Aura, an AI Property Concierge trained specifically on Evershine House's
+                        commercial offering, enabling visitors to have natural conversations instead of navigating
+                        static menus.</p>
                 </div>
             </div>
-        </div>
-    </header>
 
-    <section class="px-0 md:px-12 bg-white text-brand-dark">
-        <div class="max-w-[1400px] mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
-                <div class="lg:col-span-6 order-2 lg:order-none gsap-reveal">
-                    <div class="relative h-full overflow-hidden md:mr-12">
-                        <img src="../image/reputation-and-communication/public-relations.png"
-                            alt="Public Relations Agency in India"
-                            class="w-full h-full object-contain object-bottom min-h-[300px] lg:min-h-full">
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mt-16 gsap-reveal">
+                <div
+                    class="bg-white rounded-3xl p-8 md:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.05)] border border-gray-100 transition-transform duration-500 hover:-translate-y-2 flex flex-col justify-center min-h-[300px]">
+                    <div class="text-5xl font-extrabold text-gray-200 mb-6">01</div>
+                    <h3 class="text-2xl md:text-3xl font-extrabold tracking-tighter uppercase mb-4">AI-Powered Property
+                        Discovery</h3>
+                    <p class="text-gray-600 leading-relaxed font-light text-lg">Visitors can ask questions naturally
+                        about office spaces, project specifications, amenities, leasing information, pricing, and
+                        availability, receiving contextual responses instead of being redirected through multiple pages.
+                    </p>
                 </div>
-                <div class="lg:col-span-6 order-1 lg:order-none py-16 md:py-24 px-6 md:px-0 gsap-reveal">
-                    <div class="flex items-center gap-4 mb-8">
-                        <div class="w-12 h-[1px] bg-gray-300"></div>
-                        <span class="block text-xs font-bold uppercase tracking-[0.2em] text-gray-500">Our
-                            Approach</span>
-                    </div>
-                    <p class="text-lg md:text-2xl font-light leading-relaxed text-gray-600 mb-8">Public relations is the
-                        work of earning credible third-party coverage through real media relationships, not just pushing
-                        out releases and hoping. Being mentioned in the press is not the same as being seen as a voice
-                        worth listening to. We run media relations that put your leadership and your brand where the
-                        right audiences already pay attention.</p>
-                    <p class="text-lg md:text-2xl font-light leading-relaxed text-gray-600 mb-10">Journalists cover
-                        stories, not announcements. So we start with what actually makes your business worth writing
-                        about, then take it to the people who cover your space.</p>
-                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-8">
-                        <a href="#booking-form"
-                            class="interactive bg-brand-dark hover:bg-gray-800 text-white px-8 py-4 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2">
-                            Book a Strategy Call
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </a>
-                    </div>
+                <div
+                    class="bg-white rounded-3xl p-8 md:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.05)] border border-gray-100 transition-transform duration-500 hover:-translate-y-2 flex flex-col justify-center min-h-[300px]">
+                    <div class="text-5xl font-extrabold text-gray-200 mb-6">02</div>
+                    <h3 class="text-2xl md:text-3xl font-extrabold tracking-tighter uppercase mb-4">Intelligent Lead
+                        Qualification</h3>
+                    <p class="text-gray-600 leading-relaxed font-light text-lg">Aura understands visitor intent and
+                        progressively captures key qualification details such as business requirements, office size,
+                        investment interest, preferred location, and contact information before routing qualified
+                        enquiries to the sales team.</p>
+                </div>
+                <div
+                    class="bg-white rounded-3xl p-8 md:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.05)] border border-gray-100 transition-transform duration-500 hover:-translate-y-2 flex flex-col justify-center min-h-[300px]">
+                    <div class="text-5xl font-extrabold text-gray-200 mb-6">03</div>
+                    <h3 class="text-2xl md:text-3xl font-extrabold tracking-tighter uppercase mb-4">Knowledge-Driven
+                        Assistance</h3>
+                    <p class="text-gray-600 leading-relaxed font-light text-lg">The concierge provides instant answers
+                        around project highlights, location advantages, floor plans, amenities, commercial
+                        specifications, and frequently asked questions, helping visitors make informed decisions without
+                        waiting for a sales executive.</p>
+                </div>
+                <div
+                    class="bg-white rounded-3xl p-8 md:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.05)] border border-gray-100 transition-transform duration-500 hover:-translate-y-2 flex flex-col justify-center min-h-[300px]">
+                    <div class="text-5xl font-extrabold text-gray-200 mb-6">04</div>
+                    <h3 class="text-2xl md:text-3xl font-extrabold tracking-tighter uppercase mb-4">Seamless Sales
+                        Handover</h3>
+                    <p class="text-gray-600 leading-relaxed font-light text-lg">When a visitor expresses buying or
+                        leasing intent, Aura transitions the conversation into a consultation request or site visit
+                        booking, ensuring qualified leads reach the sales team with complete context.</p>
+                </div>
+                <div
+                    class="bg-white rounded-3xl p-8 md:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.05)] border border-gray-100 transition-transform duration-500 hover:-translate-y-2 flex flex-col justify-center min-h-[300px]">
+                    <div class="text-5xl font-extrabold text-gray-200 mb-6">05</div>
+                    <h3 class="text-2xl md:text-3xl font-extrabold tracking-tighter uppercase mb-4">24×7 Engagement</h3>
+                    <p class="text-gray-600 leading-relaxed font-light text-lg">Whether enquiries arrive during office
+                        hours or late at night, every visitor receives immediate assistance, ensuring no opportunity is
+                        lost because a representative wasn't available.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-32 px-6 md:px-12 bg-brand-dark text-white border-t border-white/10 overflow-hidden">
+    <!-- Outcome -->
+    <section class="py-32 px-6 md:px-12 bg-brand-dark text-white border-t border-white/10">
         <div class="max-w-[1400px] mx-auto">
             <div class="flex items-center gap-4 mb-8 gsap-reveal">
                 <div class="w-12 h-[1px] bg-white/30"></div>
-                <span class="text-xs font-bold uppercase tracking-[0.2em] text-white/50">What This Includes</span>
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-white/50">The Impact</span>
             </div>
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 mb-16">
-                <div class="lg:col-span-5 gsap-reveal">
-                    <h2
-                        class="text-3xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-extrabold tracking-tighter uppercase leading-[0.9]">
-                        Everything<br>you get</h2>
-                </div>
-                <div class="lg:col-span-7 gsap-reveal">
-                    <p class="text-lg md:text-xl text-gray-400 font-light max-w-xl leading-relaxed">Every message is
-                        crafted to build trust and authority across all your stakeholder groups.</p>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-5">
+            <h2
+                class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter uppercase mb-16 gsap-reveal max-w-4xl">
+                Every website visitor is a potential buyer, tenant, or investor—<span class="text-white/40">but only if
+                    someone is available to engage them at the right moment.</span>
+            </h2>
 
-                <div class="md:col-span-3 group relative">
-                    <div
-                        class="h-full bg-white/[0.03] border border-white/10 rounded-2xl p-10 md:p-12 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-500">
-                        <div class="flex items-start gap-5">
-                            <div
-                                class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-white/20 transition-all duration-500">
-                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                            </div>
-                            <p
-                                class="text-gray-300 font-medium text-base md:text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
-                                Media relations and press outreach</p>
-                        </div>
-                    </div>
+            <!-- Metrics Grid -->
+            <div class="mb-16 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 gsap-reveal">
+                <div
+                    class="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 text-center backdrop-blur-md hover:bg-white/10 transition-colors duration-500">
+                    <div class="text-3xl md:text-5xl font-extrabold text-white mb-2">&lt;30 sec</div>
+                    <div class="text-xs md:text-sm tracking-widest uppercase font-bold text-white/50">AVERAGE FIRST
+                        RESPONSE TIME</div>
                 </div>
-                <div class="md:col-span-2 group relative">
-                    <div
-                        class="h-full bg-white/[0.03] border border-white/10 rounded-2xl p-10 md:p-12 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-500">
-                        <div class="flex items-start gap-5">
-                            <div
-                                class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-white/20 transition-all duration-500">
-                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                            </div>
-                            <p
-                                class="text-gray-300 font-medium text-base md:text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
-                                Product and company launch PR</p>
-                        </div>
-                    </div>
+                <div
+                    class="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 text-center backdrop-blur-md hover:bg-white/10 transition-colors duration-500">
+                    <div class="text-3xl md:text-5xl font-extrabold text-white mb-2">70%</div>
+                    <div class="text-xs md:text-sm tracking-widest uppercase font-bold text-white/50">VISITOR QUERIES
+                        HANDLED INSTANTLY</div>
                 </div>
-                <div class="md:col-span-2 group relative">
-                    <div
-                        class="h-full bg-white/[0.03] border border-white/10 rounded-2xl p-10 md:p-12 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-500">
-                        <div class="flex items-start gap-5">
-                            <div
-                                class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-white/20 transition-all duration-500">
-                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                            </div>
-                            <p
-                                class="text-gray-300 font-medium text-base md:text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
-                                Spokesperson media training</p>
-                        </div>
-                    </div>
+                <div
+                    class="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 text-center backdrop-blur-md hover:bg-white/10 transition-colors duration-500">
+                    <div class="text-3xl md:text-5xl font-extrabold text-white mb-2">35%</div>
+                    <div class="text-xs md:text-sm tracking-widest uppercase font-bold text-white/50">MORE QUALIFIED
+                        SALES CONVERSATIONS</div>
                 </div>
-                <div class="md:col-span-3 group relative">
-                    <div
-                        class="h-full bg-white/[0.03] border border-white/10 rounded-2xl p-10 md:p-12 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-500">
-                        <div class="flex items-start gap-5">
-                            <div
-                                class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-white/20 transition-all duration-500">
-                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                            </div>
-                            <p
-                                class="text-gray-300 font-medium text-base md:text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
-                                Award and speaking placement support</p>
-                        </div>
-                    </div>
+                <div
+                    class="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 text-center backdrop-blur-md hover:bg-white/10 transition-colors duration-500">
+                    <div class="text-3xl md:text-5xl font-extrabold text-white mb-2">24 x 7</div>
+                    <div class="text-xs md:text-sm tracking-widest uppercase font-bold text-white/50">AI PROPERTY
+                        CONCIERGE AVAILABLE</div>
                 </div>
-                <div class="md:col-span-5 group relative">
-                    <div
-                        class="h-full bg-white/[0.03] border border-white/10 rounded-2xl p-10 md:p-12 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-500">
-                        <div class="flex items-start gap-5">
-                            <div
-                                class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-white/20 transition-all duration-500">
-                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                            </div>
-                            <p
-                                class="text-gray-300 font-medium text-base md:text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
-                                Press release strategy and drafting</p>
-                        </div>
-                    </div>
-                </div>
+            </div>
+
+            <div class="mt-20 max-w-4xl mx-auto text-center gsap-reveal">
+                <div class="w-16 h-[1px] bg-white/20 mx-auto mb-8"></div>
+                <p class="text-lg md:text-2xl text-gray-400 font-light leading-relaxed italic">
+                    In commercial real estate, every website visitor is a potential buyer, tenant, or investor—but only
+                    if someone is available to engage them at the right moment.
+                </p>
+                <p class="text-base md:text-lg text-gray-400 font-light leading-relaxed mt-6">
+                    Aura transforms the website from a static brochure into an intelligent sales assistant that
+                    understands visitor intent, answers complex property questions instantly, and guides prospects
+                    towards meaningful conversations with the sales team. Instead of waiting for visitors to fill out a
+                    contact form, Evershine House now starts qualifying opportunities from the very first interaction.
+                </p>
             </div>
         </div>
     </section>
-
-    <section class="py-32 px-6 md:px-12 bg-white text-brand-dark border-t border-gray-200 overflow-hidden">
-        <div class="max-w-[1400px] mx-auto">
-            <div class="flex items-center gap-4 mb-8 gsap-reveal">
-                <div class="w-12 h-[1px] bg-gray-300"></div>
-                <span class="text-xs font-bold uppercase tracking-[0.2em] text-gray-500">Our Process</span>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 mb-16">
-                <div class="lg:col-span-5 gsap-reveal">
-                    <h2
-                        class="text-3xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-extrabold tracking-tighter uppercase leading-[0.9]">
-                        How it<br>works</h2>
-                </div>
-                <div class="lg:col-span-7 gsap-reveal">
-                    <p class="text-lg md:text-xl text-gray-500 font-light max-w-xl leading-relaxed">A strategic approach
-                        to unifying your corporate voice and messaging framework.</p>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6 relative process-grid">
-
-                <div class="gsap-reveal relative process-step">
-                    <div
-                        class="bg-white rounded-2xl p-7 shadow-[0_4px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300 text-center md:text-left">
-                        <div
-                            class="w-14 h-14 rounded-2xl bg-brand-dark text-white flex items-center justify-center mx-auto md:mx-0 mb-5 text-xl font-extrabold shadow-lg relative z-10">
-                            01</div>
-                        <div class="relative">
-                            <div class="w-12 h-[2px] bg-gray-200 mx-auto md:mx-0 mb-5"></div>
-                            <p class="text-gray-700 font-medium text-base md:text-lg leading-relaxed">Media landscape
-                                audit</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="gsap-reveal relative process-step">
-                    <div
-                        class="bg-white rounded-2xl p-7 shadow-[0_4px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300 text-center md:text-left">
-                        <div
-                            class="w-14 h-14 rounded-2xl bg-brand-dark text-white flex items-center justify-center mx-auto md:mx-0 mb-5 text-xl font-extrabold shadow-lg relative z-10">
-                            02</div>
-                        <div class="relative">
-                            <div class="w-12 h-[2px] bg-gray-200 mx-auto md:mx-0 mb-5"></div>
-                            <p class="text-gray-700 font-medium text-base md:text-lg leading-relaxed">Story and angle
-                                development</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="gsap-reveal relative process-step">
-                    <div
-                        class="bg-white rounded-2xl p-7 shadow-[0_4px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300 text-center md:text-left">
-                        <div
-                            class="w-14 h-14 rounded-2xl bg-brand-dark text-white flex items-center justify-center mx-auto md:mx-0 mb-5 text-xl font-extrabold shadow-lg relative z-10">
-                            03</div>
-                        <div class="relative">
-                            <div class="w-12 h-[2px] bg-gray-200 mx-auto md:mx-0 mb-5"></div>
-                            <p class="text-gray-700 font-medium text-base md:text-lg leading-relaxed">Outreach and
-                                placement</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="gsap-reveal relative process-step">
-                    <div
-                        class="bg-white rounded-2xl p-7 shadow-[0_4px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300 text-center md:text-left">
-                        <div
-                            class="w-14 h-14 rounded-2xl bg-brand-dark text-white flex items-center justify-center mx-auto md:mx-0 mb-5 text-xl font-extrabold shadow-lg relative z-10">
-                            04</div>
-                        <div class="relative">
-                            <div class="w-12 h-[2px] bg-gray-200 mx-auto md:mx-0 mb-5"></div>
-                            <p class="text-gray-700 font-medium text-base md:text-lg leading-relaxed">Coverage tracking
-                                and follow-up</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Article & Case Study Section (Hidden by default) -->
-    <!-- <section class="py-16 md:py-32 px-4 sm:px-6 md:px-12 bg-brand-dark text-white border-t border-white/10">
-        <div class="max-w-[1400px] mx-auto">
-
-            <div class="flex items-center gap-4 mb-4 gsap-reveal">
-                <div class="w-12 h-[1px] bg-white/30"></div>
-                <span class="text-xs font-bold uppercase tracking-[0.2em] text-white/50">Case Studies</span>
-            </div>
-            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16 gsap-reveal">
-                <h2 class="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tighter uppercase m-0">
-                    Featured Case Studies
-                </h2>
-                <a href="../case-studies.html" class="inline-flex items-center gap-2 text-white font-bold text-sm hover:gap-3 transition-all duration-300 pb-1 border-b border-white/30 hover:border-white shrink-0 uppercase tracking-wider">
-                    View All Case Studies
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                </a>
-            </div>
-
-            <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch">
-                <div id="tab-card-wrapper" class="lg:w-6/12 gsap-reveal">
-                    <div id="tab-card"
-                        class="bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden min-h-[400px] lg:min-h-[620px] flex flex-col"
-                        style="">
-                        <div class="relative h-[200px] sm:h-[240px] md:h-[350px] overflow-hidden">
-                            <img id="tab-image" src="../../asset/2.jpg" alt="Case Study"
-                                class="w-full h-full object-cover transition-all duration-500">
-                        </div>
-                        <div class="p-5 sm:p-6 md:p-8 flex flex-col flex-1 min-h-0 overflow-y-auto">
-                            <span id="tab-date"
-                                class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/50 mb-2 block">Case
-                                Study</span>
-                            <h3 id="tab-title"
-                                class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-3 sm:mb-4 leading-tight tracking-tight">
-                                Annual Report & Investor Communication — Listed Company</h3>
-                            <p id="tab-desc"
-                                class="text-gray-400 font-medium text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5 flex-1">
-                                Seen
-                                internally as a compliance document, not a trust-building asset. The annual report was
-                                failing to build investor confidence and communicate real value to stakeholders.</p>
-                            <a href="../case-studies.html"
-                                class="inline-flex items-center gap-2 text-white font-bold text-xs sm:text-sm hover:gap-3 transition-all duration-300">
-                                Read More
-                                <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:w-6/12 flex flex-col gsap-reveal">
-                    <div class="flex-1 overflow-y-auto max-h-[400px] sm:max-h-[480px] md:max-h-[520px] pr-1 sm:pr-2 space-y-3 sm:space-y-4"
-                        style="scrollbar-width: thin; scrollbar-color: #444 transparent;">
-
-                        <div class="phase-tab active group cursor-pointer rounded-xl sm:rounded-2xl p-3 sm:p-4 transition-all duration-300 hover:-translate-y-0.5"
-                            data-tab="0">
-                            <div class="flex gap-3 sm:gap-4 items-center">
-                                <div
-                                    class="w-[80px] h-[60px] sm:w-[120px] sm:h-[90px] md:w-[150px] md:h-[120px] rounded-lg sm:rounded-xl overflow-hidden shrink-0">
-                                    <img src="../../asset/2.jpg" alt="Phase 01"
-                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <span
-                                        class="tab-label text-[9px] sm:text-[10px] font-bold uppercase tracking-widest block mb-1">Phase
-                                        01: Problem</span>
-                                    <p
-                                        class="tab-title font-bold text-xs sm:text-sm leading-snug mb-1 sm:mb-2 line-clamp-2">
-                                        Annual Report & Investor Communication — Listed Company</p>
-                                    <a href="../../blog-insite.html"
-                                        class="tab-link inline-flex items-center gap-1 font-bold text-[10px] sm:text-xs hover:gap-2 transition-all duration-300">
-                                        Read More
-                                        <svg class="w-2.5 h-2.5 sm:w-3 sm:h-3" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="phase-tab group cursor-pointer rounded-xl sm:rounded-2xl p-3 sm:p-4 transition-all duration-300 hover:-translate-y-0.5"
-                            data-tab="1">
-                            <div class="flex gap-3 sm:gap-4 items-center">
-                                <div
-                                    class="w-[80px] h-[60px] sm:w-[120px] sm:h-[90px] md:w-[150px] md:h-[120px] rounded-lg sm:rounded-xl overflow-hidden shrink-0">
-                                    <img src="../../asset/1.jpg" alt="Phase 02"
-                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <span
-                                        class="tab-label text-[9px] sm:text-[10px] font-bold uppercase tracking-widest block mb-1">Phase
-                                        02: Action</span>
-                                    <p
-                                        class="tab-title font-bold text-xs sm:text-sm leading-snug mb-1 sm:mb-2 line-clamp-2">
-                                        Full Narrative & Design Overhaul Aligned to Investor Priorities</p>
-                                    <a href="../../blog-insite.html"
-                                        class="tab-link inline-flex items-center gap-1 font-bold text-[10px] sm:text-xs hover:gap-2 transition-all duration-300">
-                                        Read More
-                                        <svg class="w-2.5 h-2.5 sm:w-3 sm:h-3" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="phase-tab group cursor-pointer rounded-xl sm:rounded-2xl p-3 sm:p-4 transition-all duration-300 hover:-translate-y-0.5"
-                            data-tab="2">
-                            <div class="flex gap-3 sm:gap-4 items-center">
-                                <div
-                                    class="w-[80px] h-[60px] sm:w-[120px] sm:h-[90px] md:w-[150px] md:h-[120px] rounded-lg sm:rounded-xl overflow-hidden shrink-0">
-                                    <img src="../../asset/3.jpg" alt="Phase 03"
-                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <span
-                                        class="tab-label text-[9px] sm:text-[10px] font-bold uppercase tracking-widest block mb-1">Phase
-                                        03: Result</span>
-                                    <p
-                                        class="tab-title font-bold text-xs sm:text-sm leading-snug mb-1 sm:mb-2 line-clamp-2">
-                                        Positive Analyst & Shareholder Feedback Cited to IR Team</p>
-                                    <a href="../../blog-insite.html"
-                                        class="tab-link inline-flex items-center gap-1 font-bold text-[10px] sm:text-xs hover:gap-2 transition-all duration-300">
-                                        Read More
-                                        <svg class="w-2.5 h-2.5 sm:w-3 sm:h-3" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="mt-5 sm:mt-6 pt-5 sm:pt-6 border-t border-white/10">
-                        <a href="../../blog-insite.html"
-                            class="inline-flex items-center gap-2 border-2 border-white text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-brand-dark transition-all duration-300">
-                            See More Blogs
-                            <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section> -                <!-- Case Studies Grid Version (Active by default) -->
-    <section class="py-16 md:py-32 px-4 sm:px-6 md:px-12 bg-brand-dark text-white border-t border-white/10">
-        <div class="max-w-[1400px] mx-auto">
-            <div class="flex items-center gap-4 mb-4 gsap-reveal">
-                <div class="w-12 h-[1px] bg-white/30"></div>
-                <span class="text-xs font-bold uppercase tracking-[0.2em] text-white/50">Case Studies</span>
-            </div>
-            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16 gsap-reveal">
-                <h2 class="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tighter uppercase m-0">
-                    Featured Work
-                </h2>
-                <a href="../case-studies.html"
-                    class="inline-flex items-center gap-2 text-white font-bold text-sm hover:gap-3 transition-all duration-300 pb-1 border-b border-white/30 hover:border-white shrink-0 uppercase tracking-wider">
-                    View All Case Studies
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                    </svg>
-                </a>
-            </div>
-            <div class="max-w-4xl mx-auto">
-                <a href="../casestudy/evershine-builders.html" class="block group interactive gsap-reveal h-full"
-                    data-featured-slug="evershine-builders">
-                    <div
-                        class="bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden h-full flex flex-col md:flex-row">
-                        <div class="relative h-[220px] sm:h-[280px] md:h-[440px] md:w-1/2 overflow-hidden shrink-0">
-                            <img src="../casestudy/evershine-builders/cover.png" alt="Evershine Builders"
-                                class="w-full h-full object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-110">
-                        </div>
-                        <div class="p-5 sm:p-6 md:p-8 flex flex-col flex-1 md:w-1/2 md:justify-center">
-                            <h3
-                                class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-3 sm:mb-4 leading-tight tracking-tight">
-                                Evershine Builders</h3>
-                            <p
-                                class="text-gray-400 font-medium text-base sm:text-lg md:text-xl leading-relaxed mb-5 sm:mb-6 line-clamp-2">
-                                Building Director-Led Thought Leadership</p>
-                            <span
-                                class="inline-flex items-center gap-2 text-white font-bold text-xs sm:text-sm group-hover:gap-3 transition-all duration-300">
-                                Read More
-                                <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                </svg>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Insights Section -->
-    <section class="py-16 px-4 sm:px-6 md:px-12 bg-[#f5f5f5] text-brand-dark border-t border-gray-200">
-        <div class="max-w-[1400px] mx-auto">
-            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 gsap-reveal">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tighter uppercase m-0">
-                    Insights
-                </h2>
-                <a href="../../insights.html"
-                    class="inline-flex items-center gap-2 text-brand-dark font-bold text-sm hover:gap-3 transition-all duration-300 pb-1 border-b border-brand-dark/30 hover:border-brand-dark shrink-0 uppercase tracking-wider">View
-                    All Insights
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                    </svg>
-                </a>
-            </div>
-
-            <div id="insight-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"></div>
-    </section>
-
-    <section class="py-32 px-6 md:px-12 bg-white text-brand-dark border-t border-gray-200">
-        <div class="max-w-[1000px] mx-auto">
-            <h2 class="text-4xl md:text-5xl font-extrabold tracking-tighter mb-16 uppercase gsap-reveal">FAQ's</h2>
-            <div class="border-t border-gray-200">
-                <div class="gsap-reveal border-b border-gray-200 faq-item group">
-                    <button
-                        class="w-full text-left py-6 font-bold text-base md:text-xl flex justify-between items-center interactive focus:outline-none tracking-tight pr-4">
-                        How is this different from just sending press releases?
-                        <svg class="w-6 h-6 transform transition-transform duration-300 icon text-gray-400 group-hover:text-black shrink-0 ml-4"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </button>
-                    <div class="pb-6 text-gray-600 font-medium text-base leading-relaxed hidden answer max-w-3xl">
-                        A press release is one tactic. We build relationships with the right journalists and pitch
-                        stories that fit what they actually cover, which is what earns real coverage. Mass-blasted
-                        releases rarely do.
-                    </div>
-                </div>
-                <div class="gsap-reveal border-b border-gray-200 faq-item group">
-                    <button
-                        class="w-full text-left py-6 font-bold text-base md:text-xl flex justify-between items-center interactive focus:outline-none tracking-tight pr-4">
-                        Do you guarantee coverage?
-                        <svg class="w-6 h-6 transform transition-transform duration-300 icon text-gray-400 group-hover:text-black shrink-0 ml-4"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </button>
-                    <div class="pb-6 text-gray-600 font-medium text-base leading-relaxed hidden answer max-w-3xl">
-                        No honest agency can. What we guarantee is a structured, consistent outreach process built on
-                        real media relationships and stories worth covering.
-                    </div>
-                </div>
-                <div class="gsap-reveal border-b border-gray-200 faq-item group">
-                    <button
-                        class="w-full text-left py-6 font-bold text-base md:text-xl flex justify-between items-center interactive focus:outline-none tracking-tight pr-4">
-                        How long before we see coverage?
-                        <svg class="w-6 h-6 transform transition-transform duration-300 icon text-gray-400 group-hover:text-black shrink-0 ml-4"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </button>
-                    <div class="pb-6 text-gray-600 font-medium text-base leading-relaxed hidden answer max-w-3xl">
-                        First placements usually land within 60 to 90 days, once the media list and story angles are in
-                        place. Momentum builds from there as relationships deepen.
-                    </div>
-                </div>
-                <div class="gsap-reveal border-b border-gray-200 faq-item group">
-                    <button
-                        class="w-full text-left py-6 font-bold text-base md:text-xl flex justify-between items-center interactive focus:outline-none tracking-tight pr-4">
-                        Can you train our spokespeople for interviews?
-                        <svg class="w-6 h-6 transform transition-transform duration-300 icon text-gray-400 group-hover:text-black shrink-0 ml-4"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </button>
-                    <div class="pb-6 text-gray-600 font-medium text-base leading-relaxed hidden answer max-w-3xl">
-                        Yes. Spokesperson media training is part of the offering, so your leaders go into interviews
-                        clear on the message and comfortable on the record.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
 
     <!-- Testimonial Carousel Section -->
     <section class="py-32 px-6 md:px-12 bg-[#f5f5f5] text-brand-dark border-t border-gray-200 overflow-hidden">
@@ -933,14 +444,12 @@
         style="min-height: 100dvh; align-items: center; display: flex; flex-wrap: wrap;">
         <div class="max-w-[1400px] mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-                <!-- Left Side: Copy -->
                 <div class="gsap-reveal">
                     <h2
-                        class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter mb-8 uppercase leading-[0.9]">
-                        Move from reactive messaging to real market authority.
-                    </h2>
-                    <p class="text-lg md:text-2xl text-gray-400 mb-12 max-w-lg font-light">Let us audit your current
-                        communication footprint and build a reputation engine that works as one system.</p>
+                        class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter mb-4 md:mb-6 uppercase leading-[0.9]">
+                        Ready to turn your website into an intelligent sales assistant?</h2>
+                    <p class="text-lg md:text-2xl text-gray-400 mb-6 md:mb-8 max-w-lg font-light">Let us build an AI
+                        concierge that qualifies and converts your visitors around the clock.</p>
                 </div>
                 <div class="bg-[#111] border border-white/10 rounded-2xl p-6 md:p-8 gsap-reveal">
                     <form id="contactForm" class="space-y-6" method="POST" action="../../lead-capture.php">
@@ -1261,134 +770,44 @@
     <script>
         const cursor = document.getElementById('cursor');
         const interactiveElements = document.querySelectorAll('.interactive, a, button, input, textarea, select, label');
+        const interactiveDragElements = document.querySelectorAll('.interactive-drag');
+        interactiveDragElements.forEach(el => { el.addEventListener('mouseenter', () => cursor.classList.add('hovered-drag')); el.addEventListener('mouseleave', () => cursor.classList.remove('hovered-drag')); });
         document.addEventListener('mousemove', (e) => { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; });
-        interactiveElements.forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
-            el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
-        });
-        window.lenis = new Lenis({
-            wrapper: window,
-            content: document.documentElement,
-            duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            direction: 'vertical', gestureDirection: 'vertical', smooth: true,
-            mouseMultiplier: 1, smoothTouch: false, touchMultiplier: 2, infinite: false,
-        });
+        interactiveElements.forEach(el => { el.addEventListener('mouseenter', () => cursor.classList.add('hovered')); el.addEventListener('mouseleave', () => cursor.classList.remove('hovered')); });
+        window.lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), direction: 'vertical', gestureDirection: 'vertical', smooth: true, mouseMultiplier: 1, smoothTouch: false, touchMultiplier: 2, infinite: false });
         function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
         requestAnimationFrame(raf);
         gsap.registerPlugin(ScrollTrigger);
         lenis.on('scroll', ScrollTrigger.update);
-        gsap.from(".gsap-reveal-text", {
-            y: 120, opacity: 0, duration: 1.2, stagger: 0.1, ease: "power4.out", delay: 0.2
-        });
+        gsap.from(".gsap-reveal-text", { y: 120, opacity: 0, duration: 1.2, stagger: 0.1, ease: "power4.out", delay: 0.2 });
         const revealElements = document.querySelectorAll(".gsap-reveal");
-        revealElements.forEach((el) => {
-            gsap.to(el, {
-                scrollTrigger: { trigger: el, start: "top 85%", toggleActions: "play none none reverse" },
-                opacity: 1, y: 0, duration: 0.8, ease: "power3.out"
-            });
-        });
-        ScrollTrigger.refresh();
+        revealElements.forEach((el) => { gsap.to(el, { scrollTrigger: { trigger: el, start: "top 85%", toggleActions: "play none none reverse" }, opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }); });
         const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            const button = item.querySelector('button');
-            const answer = item.querySelector('.answer');
-            const icon = item.querySelector('.icon');
-            button.addEventListener('click', () => {
-                const isOpen = !answer.classList.contains('hidden');
-                faqItems.forEach(otherItem => {
-                    otherItem.querySelector('.answer').classList.add('hidden');
-                    otherItem.querySelector('.icon').style.transform = 'rotate(0deg)';
-                });
-                if (!isOpen) {
-                    answer.classList.remove('hidden');
-                    icon.style.transform = 'rotate(180deg)';
-                }
-            });
-        });
-
-
-
-        // Phase Tabs Logic
+        faqItems.forEach(item => { const button = item.querySelector('button'); const answer = item.querySelector('.answer'); const icon = item.querySelector('.icon'); button.addEventListener('click', () => { const isOpen = !answer.classList.contains('hidden'); faqItems.forEach(otherItem => { otherItem.querySelector('.answer').classList.add('hidden'); otherItem.querySelector('.icon').style.transform = 'rotate(0deg)'; }); if (!isOpen) { answer.classList.remove('hidden'); icon.style.transform = 'rotate(180deg)'; } }); });
         const phaseData = [
-            {
-                image: '../../asset/2.jpg',
-                date: 'Case Study',
-                title: 'Annual Report & Investor Communication — Listed Company',
-                desc: 'Seen internally as a compliance document, not a trust-building asset. The annual report was failing to build investor confidence and communicate real value to stakeholders.',
-                link: '#'
-            },
-            {
-                image: '../../asset/1.jpg',
-                date: 'Case Study',
-                title: 'Full Narrative & Design Overhaul Aligned to Investor Priorities',
-                desc: 'Complete narrative restructuring and design overhaul aligned to investor priorities. Messaging architecture rebuilt to position the company as a trusted, growth-oriented enterprise.',
-                link: '#'
-            },
-            {
-                image: '../../asset/3.jpg',
-                date: 'Case Study',
-                title: 'Positive Analyst & Shareholder Feedback Cited to IR Team',
-                desc: 'Positive analyst and shareholder feedback cited directly to the IR team, transforming the annual report into a trust-building asset.',
-                link: '#'
-            }
+            { image: '../../asset/2.jpg', date: 'Case Study', title: 'Annual Report & Investor Communication — Listed Company', desc: 'Seen internally as a compliance document, not a trust-building asset. The annual report was failing to build investor confidence and communicate real value to stakeholders.', link: '#' },
+            { image: '../../asset/1.jpg', date: 'Case Study', title: 'Full Narrative & Design Overhaul Aligned to Investor Priorities', desc: 'Complete narrative restructuring and design overhaul aligned to investor priorities. Messaging architecture rebuilt to position the company as a trusted, growth-oriented enterprise.', link: '#' },
+            { image: '../../asset/3.jpg', date: 'Case Study', title: 'Positive Analyst & Shareholder Feedback Cited to IR Team', desc: 'Positive analyst and shareholder feedback cited directly to the IR team, transforming the annual report into a trust-building asset.', link: '#' }
         ];
-
         const phaseTabs = document.querySelectorAll('.phase-tab');
         const tabImage = document.getElementById('tab-image');
         const tabDate = document.getElementById('tab-date');
         const tabTitle = document.getElementById('tab-title');
         const tabDesc = document.getElementById('tab-desc');
-
-        phaseTabs.forEach((tab, index) => {
-            tab.addEventListener('click', () => {
-                // Remove active from all
-                phaseTabs.forEach(t => {
-                    t.classList.remove('active');
-                });
-
-                // Add active to clicked
-                tab.classList.add('active');
-
-                // Scroll to left card on mobile
-                const tabCardWrapper = document.getElementById('tab-card-wrapper');
-                if (window.innerWidth < 1024 && tabCardWrapper) {
-                    tabCardWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-
-                // Instant content change - no animation
-                if (tabImage && tabDate && tabTitle && tabDesc) {
-                    tabImage.src = phaseData[index].image;
-                    tabDate.textContent = phaseData[index].date;
-                    tabTitle.textContent = phaseData[index].title;
-                    tabDesc.textContent = phaseData[index].desc;
-                }
-            });
-        });
+        phaseTabs.forEach((tab, index) => { tab.addEventListener('click', () => { phaseTabs.forEach(t => { t.classList.remove('active'); }); tab.classList.add('active'); const tabCardWrapper = document.getElementById('tab-card-wrapper'); if (window.innerWidth < 1024 && tabCardWrapper) { tabCardWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' }); } if (tabImage && tabDate && tabTitle && tabDesc) { tabImage.src = phaseData[index].image; tabDate.textContent = phaseData[index].date; tabTitle.textContent = phaseData[index].title; tabDesc.textContent = phaseData[index].desc; } }); });
     </script>
 
+    <div id="image-modal"
+        class="fixed inset-0 z-[10000] bg-black/95 hidden items-center justify-center opacity-0 transition-opacity duration-300 backdrop-blur-sm interactive">
+        <button id="close-modal"
+            class="absolute top-6 right-6 md:top-10 md:right-10 text-white hover:text-gray-400 transition-colors z-[10001]"><svg
+                class="w-10 h-10 md:w-12 md:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg></button>
+        <img id="modal-image" src=""
+            class="max-h-[85vh] max-w-[90vw] object-contain rounded-xl shadow-2xl transform scale-95 transition-transform duration-300 pointer-events-none">
+    </div>
 
-    <script>
-        // Featured Case Study — JSON-driven
-        (function initFeatured() {
-            const card = document.querySelector('[data-featured-slug]');
-            if (!card) return;
-            const slug = card.dataset.featuredSlug;
-            fetch('../case-studies.json', { cache: 'no-cache' })
-                .then(r => r.json())
-                .then(data => {
-                    const item = data.find(d => d.slug === slug);
-                    if (!item || item.draft) return;
-                    const img = card.querySelector('img');
-                    const h3 = card.querySelector('h3');
-                    const p = card.querySelector('p.line-clamp-2');
-                    if (img) { img.src = (item.cover.startsWith('http') ? item.cover : '../' + item.cover); img.alt = item.title; }
-                    if (h3) h3.textContent = item.title;
-                    if (p) p.textContent = item.desc || '';
-                    card.href = '../casestudy/' + slug + '.html';
-                });
-        })();
-    </script>
 
 
     <script>
@@ -1471,7 +890,7 @@
             overlay.className = 'mobile-menu-overlay';
             var panel = document.createElement('div');
             panel.className = 'mobile-menu-panel';
-            panel.setAttribute('data-lenis-prevent', ''); // let the panel scroll natively even when Lenis is stopped
+            panel.setAttribute('data-lenis-prevent', '');
 
             var html = '<div class="mobile-menu-head"><a href="' + (homeLink ? homeLink.href : '../../index.html') + '" class="mobile-menu-logo">CHIMPZLAB</a>';
             html += '<button type="button" class="mobile-menu-close" aria-label="Close menu">&times;</button></div>';
@@ -1588,9 +1007,6 @@
                             </a>
                         </div>
                     </div>
-
-
-
 
                     <div class="footer-block">
                         <h5 class="footer-label">Social</h5>
@@ -1896,41 +1312,6 @@
             } else {
                 initTestimonials();
             }
-        })();
-    </script>
-
-    <script>
-        // Dynamic insights loader
-        (async function () {
-            const grid = document.getElementById('insight-grid');
-            if (!grid) return;
-            try {
-                const prefix = '../../';
-                const targetSlugs = ["pr-for-ai-search-visibility-geo-india"];
-                const res = await fetch(prefix + 'insights/data.json');
-                const data = await res.json();
-
-                let articles = [];
-                if (targetSlugs.length > 0) {
-                    articles = data.articles.filter(a => targetSlugs.includes(a.slug));
-                    // Sort articles in the exact order specified in targetSlugs
-                    articles.sort((a, b) => targetSlugs.indexOf(a.slug) - targetSlugs.indexOf(b.slug));
-                } else {
-                    // Fallback for pages not explicitly mapped: show 3 recent
-                    articles = (data.articles || []).slice(0, 3);
-                }
-
-                if (articles.length === 0) return;
-                function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
-                grid.innerHTML = articles.map(function (a, i) {
-                    return '<div class="insight-card-item p-6 md:p-8 border-l border-t md:border-t-0 border-gray-300">' +
-                        '<span class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-4 block">' + (a.tag || cap(a.category)) + '</span>' +
-                        '<h3 class="text-lg md:text-xl font-bold mb-8 leading-snug">' + a.titleFull + '</h3>' +
-                        '<a href="' + prefix + 'blog-insite.html?slug=' + a.slug + '" class="text-brand-dark hover:opacity-70 transition-opacity duration-300">' +
-                        '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>' +
-                        '</a></div>';
-                }).join('');
-            } catch (e) { console.warn('Insights load error:', e); }
         })();
     </script>
 
