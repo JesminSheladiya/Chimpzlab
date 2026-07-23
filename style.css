@@ -2876,10 +2876,10 @@ section.bg-white ::selection {
   margin: 0;
 }
 
-.footer-v2 .footer-group:nth-child(3),
+/* .footer-v2 .footer-group:nth-child(3),
 .footer-v2 .footer-group:nth-child(6) {
   padding-left: 24px;
-}
+} */
 
 .footer-v2 .footer-group-title {
   display: block;

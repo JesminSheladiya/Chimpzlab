@@ -484,8 +484,8 @@
 
     <!-- Embedded in Your Journey -->
     <section class="relative py-20 md:py-24 bg-black text-white overflow-hidden">
-        <!-- Background Image with Overlay -->
-        <div class="absolute inset-0 z-0">
+        <!-- Background Image with Overlay (Desktop only) -->
+        <div class="hidden lg:block absolute inset-0 z-0">
             <img src="asset/about.jpg" alt="Team Collaboration"
                 class="w-full h-full object-cover object-right opacity-90">
             <div class="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent"></div>
@@ -515,6 +515,12 @@
                     </p>
                 </div>
             </div>
+        </div>
+
+        <!-- Mobile Journey Image -->
+        <div class="block lg:hidden mt-5 px-6">
+            <img src="asset/about.jpg" alt="Team Collaboration"
+                class="w-full max-w-2xl mx-auto object-contain rounded-2xl">
         </div>
     </section>
 
@@ -1036,7 +1042,7 @@
         <div class="footer-inner">
             <div class="footer-grid">
                 <div class="footer-col-brand">
-                    <img src="/asset/chimpzlab-white-logo.gif" alt="ChimpzLab" class="footer-logo-mark interactive"
+                    <img src="asset/chimpzlab-white-logo.gif" alt="ChimpzLab" class="footer-logo-mark interactive"
                         onerror="this.style.display='none'">
 
                     <div class="footer-block">
@@ -1091,10 +1097,7 @@
                     </div>
 
 
-                    <div class="footer-block">
-                        <h5 class="footer-label">Contact</h5>
-                        <a href="tel:9920149991" class="interactive footer-address">Call or WhatsApp 9920149991</a>
-                    </div>
+
 
                     <div class="footer-block">
                         <h5 class="footer-label">Social</h5>
@@ -1120,7 +1123,8 @@
                 </div>
 
                 <div class="footer-group">
-                    <span class="footer-group-title">Reputation &amp; Communications</span>
+                    <a href="services/reputation-communications.html" class="footer-group-title">Reputation &amp;
+                        Communications</a>
                     <ul>
                         <li><a href="services/reputation-communications/corporate-communications.html"
                                 class="interactive">Corporate Communications</a></li>
@@ -1134,7 +1138,7 @@
                 </div>
 
                 <div class="footer-group">
-                    <span class="footer-group-title">Visibility &amp; Search</span>
+                    <a href="services/visibility-search.html" class="footer-group-title">Visibility &amp; Search</a>
                     <ul>
                         <li><a href="services/visibility-search/social-media-marketing.html" class="interactive">Social
                                 Media Marketing</a></li>
@@ -1147,7 +1151,7 @@
                 </div>
 
                 <div class="footer-group">
-                    <span class="footer-group-title">Creative</span>
+                    <a href="services/creative.html" class="footer-group-title">Creative</a>
                     <ul>
                         <li><a href="services/creative/branding.html" class="interactive">Branding</a></li>
                         <li><a href="services/creative/design.html" class="interactive">Design</a></li>
@@ -1157,7 +1161,7 @@
                 </div>
 
                 <div class="footer-group">
-                    <span class="footer-group-title">Demand Generation</span>
+                    <a href="services/demand-generation.html" class="footer-group-title">Demand Generation</a>
                     <ul>
                         <li><a href="services/demand-generation/performance-marketing.html"
                                 class="interactive">Performance Marketing</a></li>
@@ -1171,7 +1175,7 @@
                 </div>
 
                 <div class="footer-group">
-                    <span class="footer-group-title">Digital Experiences</span>
+                    <a href="services/digital-experiences.html" class="footer-group-title">Digital Experiences</a>
                     <ul>
                         <li><a href="services/digital-experiences/website-design-development.html"
                                 class="interactive">Web Design &amp; Development</a></li>
@@ -1185,7 +1189,7 @@
             </div>
 
             <div class="footer-logo-end">
-                <img src="/asset/chimpzlab-footer.png" alt="ChimpzLab" class="footer-end-logo interactive">
+                <img src="asset/chimpzlab-footer.png" alt="ChimpzLab" class="footer-end-logo interactive">
             </div>
 
             <div class="footer-bottom">
