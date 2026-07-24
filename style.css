@@ -2982,7 +2982,8 @@ section.bg-white ::selection {
   border: none;
 }
 
-.footer-v2 .footer-bottom p {
+.footer-v2 .footer-bottom p,
+.footer-v2 .footer-bottom a {
   font-size: 10px;
   letter-spacing: 0.15em;
   text-transform: uppercase;

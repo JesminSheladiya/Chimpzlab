@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | ChimpzLab</title>
+    <meta name="description"
+        content="Privacy Policy for ChimpzLab. Learn how we collect, use, and safeguard your personal information.">
+
+    <!-- Fonts: Manrope -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lenis for Smooth Scrolling -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0a0a0a',
+                            pill: '#1a1a1a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .text-huge {
+            font-size: clamp(2.5rem, 5vw, 5rem);
+            line-height: 1;
+            letter-spacing: -0.04em;
+        }
+    </style>
+</head>
+
+<body class="selection:bg-white selection:text-black bg-brand-dark text-white">
+
+    <!-- Custom Cursor -->
+    <div id="cursor"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 px-6 md:px-12 py-6 flex justify-between items-center pointer-events-none backdrop-blur-md"
+        style="background: linear-gradient(180deg, #000000cf, transparent);">
+        <!-- Logo -->
+        <a href="index.html" class="pointer-events-auto interactive z-10 flex items-center gap-2" aria-label="Home">
+            <img src="asset/chimpzlab-white.png" alt="ChimpzLab" class="h-7 md:h-9 object-contain"
+                onerror="this.style.display='none'; document.getElementById('text-logo').style.display='block';">
+            <span id="text-logo"
+                class="hidden text-white font-extrabold text-2xl md:text-3xl tracking-tighter">CHIMPZLAB</span>
+        </a>
+
+        <!-- Desktop Centered Menu -->
+        <div class="pointer-events-auto hidden md:flex absolute left-1/2 -translate-x-1/2 z-10">
+            <div class="nav-pill px-6 py-3 rounded-full flex items-center gap-8">
+                <div class="has-dropdown">
+                    <a href="index.html#services-section"
+                        class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors flex items-center gap-1">
+                        Services
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-grid">
+                            <a href="services/reputation-communications.html" class="service-card-mini">
+                                <div class="icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                    </svg>
+                                </div>
+                                <span class="card-title">Reputation &<br>Communications</span>
+                            </a>
+                            <a href="services/visibility-search.html" class="service-card-mini">
+                                <div class="icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                    </svg>
+                                </div>
+                                <span class="card-title">Visibility &<br>Search</span>
+                            </a>
+                            <a href="services/creative.html" class="service-card-mini">
+                                <div class="icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                    </svg>
+                                </div>
+                                <span class="card-title">Creative</span>
+                            </a>
+                            <a href="services/demand-generation.html" class="service-card-mini">
+                                <div class="icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                </div>
+                                <span class="card-title">Demand <br>Generation</span>
+                            </a>
+                            <a href="services/digital-experiences.html" class="service-card-mini">
+                                <div class="icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <span class="card-title">Digital<br>Experiences</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="services/case-studies.html"
+                    class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors">Work</a>
+                <a href="about.html"
+                    class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors">About</a>
+                <a href="insights.html"
+                    class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors">Insights</a>
+            </div>
+        </div>
+
+        <!-- Right: CTA + Mobile -->
+        <div class="flex items-center gap-4 z-10">
+            <div class="pointer-events-auto hidden md:flex">
+                <a href="index.html#contact"
+                    class="interactive bg-white hover:bg-gray-200 text-black px-7 py-3 rounded-full text-sm font-bold tracking-wide transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.15)]">
+                    Let's Connect
+                </a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="pointer-events-auto md:hidden text-white interactive p-2 z-10" id="mobile-menu-btn">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay"
+        class="fixed inset-0 bg-black z-40 flex flex-col justify-between p-8 opacity-0 pointer-events-none transition-all duration-500">
+        <div class="flex justify-between items-center">
+            <a href="index.html" class="interactive">
+                <img src="asset/chimpzlab-white.png" alt="ChimpzLab" class="h-8">
+            </a>
+            <button class="text-white p-2 interactive" id="mobile-menu-close">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <div class="flex flex-col gap-6 text-3xl font-bold tracking-tight my-auto">
+            <a href="index.html" class="hover:text-gray-400 transition-colors interactive">Home</a>
+            <a href="about.html" class="hover:text-gray-400 transition-colors interactive">About</a>
+            <a href="services/case-studies.html" class="hover:text-gray-400 transition-colors interactive">Work</a>
+            <a href="insights.html" class="hover:text-gray-400 transition-colors interactive">Insights</a>
+            <a href="index.html#contact" class="hover:text-gray-400 transition-colors interactive">Contact</a>
+        </div>
+        <div class="text-xs text-white/50 tracking-widest uppercase">
+            © 2026 ChimpzLab
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-40 pb-24 px-6 md:px-12 max-w-4xl mx-auto">
+        <h1 class="text-huge font-extrabold mb-12 tracking-tighter">Privacy Policy</h1>
+
+        <div
+            class="prose prose-invert max-w-none text-gray-300 space-y-8 text-base md:text-lg leading-relaxed font-light">
+            <p>
+                Chimpzlab.com (“we,” “our,” or “us”) respects your privacy and is committed to protecting the personal
+                information you share with us. This Privacy Policy explains how we collect, use, and safeguard your
+                information when you visit our website (www.chimpzlab.com) and use our services.
+            </p>
+
+            <div class="space-y-4">
+                <h2 class="text-2xl font-bold text-white mt-8 mb-4 border-b border-white/10 pb-2">1. Information We
+                    Collect</h2>
+                <p>We may collect the following types of information:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Personal Information:</strong> Name, email address, phone number, company name, and
+                        other details you provide when contacting us.</li>
+                    <li><strong>Non-Personal Information:</strong> IP address, browser type, device information, and
+                        browsing patterns on our website.</li>
+                    <li><strong>Cookies and Tracking Data:</strong> We use cookies to enhance your browsing experience
+                        and analyze site traffic.</li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h2 class="text-2xl font-bold text-white mt-8 mb-4 border-b border-white/10 pb-2">2. How We Use Your
+                    Information</h2>
+                <p>We use the collected data for the following purposes:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>To provide and improve our services.</li>
+                    <li>To respond to inquiries and support requests.</li>
+                    <li>To personalize user experience and optimize website functionality.</li>
+                    <li>To analyze trends and website performance.</li>
+                    <li>To send updates, newsletters, or promotional content (only with your consent).</li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h2 class="text-2xl font-bold text-white mt-8 mb-4 border-b border-white/10 pb-2">3. How We Protect Your
+                    Information</h2>
+                <p>
+                    We implement appropriate security measures to safeguard your personal data against unauthorized
+                    access, alteration, disclosure, or destruction. However, no method of transmission over the internet
+                    is 100% secure, and we cannot guarantee absolute security.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <h2 class="text-2xl font-bold text-white mt-8 mb-4 border-b border-white/10 pb-2">4. Sharing Your
+                    Information</h2>
+                <p>We do not sell, trade, or rent your personal information to third parties. However, we may share data
+                    with:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Trusted third-party service providers who assist in website operations, marketing, and
+                        analytics.</li>
+                    <li>Law enforcement or regulatory authorities if required by law.</li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h2 class="text-2xl font-bold text-white mt-8 mb-4 border-b border-white/10 pb-2">5. Your Rights &
+                    Choices</h2>
+                <p>You have the right to:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Request access to, correction, or deletion of your personal data.</li>
+                    <li>Opt out of receiving promotional emails by clicking the “unsubscribe” link in our emails.</li>
+                    <li>Disable cookies through your browser settings.</li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h2 class="text-2xl font-bold text-white mt-8 mb-4 border-b border-white/10 pb-2">6. Third-Party Links
+                </h2>
+                <p>
+                    Our website may contain links to third-party sites. We are not responsible for the privacy practices
+                    of these websites and encourage you to review their privacy policies.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <h2 class="text-2xl font-bold text-white mt-8 mb-4 border-b border-white/10 pb-2">7. Children’s Privacy
+                </h2>
+                <p>
+                    Our services are not intended for children under 13 years of age. We do not knowingly collect
+                    personal information from children.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <h2 class="text-2xl font-bold text-white mt-8 mb-4 border-b border-white/10 pb-2">8. Changes to This
+                    Policy</h2>
+                <p>
+                    We may update this Privacy Policy from time to time. Any changes will be posted on this page with an
+                    updated effective date.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <h2 class="text-2xl font-bold text-white mt-8 mb-4 border-b border-white/10 pb-2">9. Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+                <div class="bg-brand-pill border border-white/10 rounded-2xl p-6 space-y-2 mt-4">
+                    <p class="font-bold text-white">Chimpzlab</p>
+                    <p>Email: <a href="mailto:hello@chimpzlab.com"
+                            class="text-white hover:underline">hello@chimpzlab.com</a></p>
+                    <p>Website: <a href="https://www.chimpzlab.com" target="_blank"
+                            class="text-white hover:underline">www.chimpzlab.com</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-v2">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-col-brand">
+                    <img src="asset/chimpzlab-white-logo.gif" alt="ChimpzLab" class="footer-logo-mark interactive"
+                        onerror="this.style.display='none'">
+
+                    <div class="footer-block">
+                        <h5 class="footer-label">Location</h5>
+                        <a href="https://maps.google.com/?q=408+Fenkin+9+Phase+1+Wagle+Estate+Thane+West+400604"
+                            target="_blank" rel="noopener noreferrer"
+                            class="interactive footer-address text-gray-400 hover:text-white transition-colors">408,
+                            Fenkin 9
+                            Phase 1, Wagle Estate,<br>Behind Satkar Grande Hotel, Thane West 400604</a>
+                    </div>
+
+                    <div class="flex flex-col justify-center md:justify-start sm:flex-row flex-wrap gap-5 gap-y-1">
+                        <div class="footer-block">
+                            <h5 class="footer-label">Email</h5>
+                            <a href="mailto:hello@chimpzlab.com" class="interactive footer-address">
+                                hello@chimpzlab.com
+                            </a>
+                        </div>
+
+                        <div class="footer-block">
+                            <h5 class="footer-label">Contact</h5>
+                            <a href="tel:+917415741562" class="interactive footer-address">
+                                +91 74157 41562
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-block">
+                        <h5 class="footer-label">Social</h5>
+                        <div class="footer-social-btns">
+                            <a href="https://youtube.com/@chimpzlab" target="_blank" rel="noopener noreferrer"
+                                class="interactive">YouTube</a>
+                            <a href="https://linkedin.com/company/chimpzlab" target="_blank" rel="noopener noreferrer"
+                                class="interactive">LinkedIn</a>
+                            <a href="https://instagram.com/chimpzlab" target="_blank" rel="noopener noreferrer"
+                                class="interactive">Instagram</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-group">
+                    <span class="footer-group-title">Company</span>
+                    <ul>
+                        <li><a href="index.html" class="interactive">Home</a></li>
+                        <li><a href="about.html" class="interactive">About</a></li>
+                        <li><a href="services/case-studies.html" class="interactive">Work</a></li>
+                        <li><a href="insights.html" class="interactive">Insights</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-group">
+                    <a href="services/reputation-communications.html" class="footer-group-title">Reputation &amp;
+                        Communications</a>
+                    <ul>
+                        <li><a href="services/reputation-communications/corporate-communications.html"
+                                class="interactive">Corporate Communications</a></li>
+                        <li><a href="services/reputation-communications/public-relations.html"
+                                class="interactive">Public Relations</a></li>
+                        <li><a href="services/reputation-communications/thought-leadership.html"
+                                class="interactive">Thought Leadership</a></li>
+                        <li><a href="services/reputation-communications/employer-branding.html"
+                                class="interactive">Employer Branding</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-group">
+                    <a href="services/visibility-search.html" class="footer-group-title">Visibility &amp; Search</a>
+                    <ul>
+                        <li><a href="services/visibility-search/social-media-marketing.html" class="interactive">Social
+                                Media Marketing</a></li>
+                        <li><a href="services/visibility-search/seo-aeo.html" class="interactive">SEO / AEO</a></li>
+                        <li><a href="services/visibility-search/content-writing.html" class="interactive">Content
+                                Writing</a>
+                        </li>
+                        <li><a href="services/visibility-search/influencer-marketing.html"
+                                class="interactive">Influencer Marketing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-group">
+                    <a href="services/creative.html" class="footer-group-title">Creative</a>
+                    <ul>
+                        <li><a href="services/creative/branding.html" class="interactive">Branding</a></li>
+                        <li><a href="services/creative/design.html" class="interactive">Design</a></li>
+                        <li><a href="services/creative/video-production.html" class="interactive">Video Production</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-group">
+                    <a href="services/demand-generation.html" class="footer-group-title">Demand Generation</a>
+                    <ul>
+                        <li><a href="services/demand-generation/performance-marketing.html"
+                                class="interactive">Performance Marketing</a></li>
+                        <li><a href="services/demand-generation/email-marketing.html" class="interactive">Email
+                                Marketing</a></li>
+                        <li><a href="services/demand-generation/vetted-lead-generation.html" class="interactive">Vetted
+                                Lead Generation</a></li>
+                        <li><a href="services/demand-generation/marketing-automation.html" class="interactive">Marketing
+                                Automation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-group">
+                    <a href="services/digital-experiences.html" class="footer-group-title">Digital Experiences</a>
+                    <ul>
+                        <li><a href="services/digital-experiences/website-design-development.html"
+                                class="interactive">Web Design &amp; Development</a></li>
+                        <li><a href="services/digital-experiences/landing-pages.html" class="interactive">Landing
+                                Pages</a></li>
+                        <li><a href="services/digital-experiences/chatbots.html" class="interactive">Chatbot &amp;
+                                Virtual Assistant</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-logo-end">
+                <img src="asset/chimpzlab-footer.png" alt="ChimpzLab" class="footer-end-logo interactive">
+            </div>
+
+            <div class="footer-bottom flex md:flex-row items-center justify-between gap-4">
+                    <p>&copy; 2026 ChimpzLab. All rights reserved.</p>
+                    <a href="privacy-policy.html"
+                        class="text-gray-400 hover:text-white transition-colors text-sm interactive">Privacy Policy</a>
+                </div>
+        </div>
+    </footer>
+
+    <!-- Lenis Smooth Scroll Initialization -->
+    <script>
+        // Custom Cursor Logic
+        const cursor = document.getElementById('cursor');
+        const interactiveElements = document.querySelectorAll('.interactive, a, button, input, textarea, label');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+        });
+
+        const lenis = new Lenis();
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // Mobile Menu Functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+        if (mobileMenuBtn && mobileMenuOverlay && mobileMenuClose) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuOverlay.classList.remove('opacity-0', 'pointer-events-none');
+            });
+
+            mobileMenuClose.addEventListener('click', () => {
+                mobileMenuOverlay.classList.add('opacity-0', 'pointer-events-none');
+            });
+        }
+    </script>
+</body>
+
+</html>
