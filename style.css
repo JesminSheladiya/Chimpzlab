@@ -2221,6 +2221,12 @@ select {
   left: -8px;
 }
 
+.featured-single-mode .swiper-button-next,
+.featured-single-mode .swiper-button-prev,
+.featured-single-mode .swiper-pagination { display: none; }
+.featured-single-mode .swiper-wrapper { display: flex; justify-content: center; }
+.featured-single-card { max-width: 900px; width: 100%; }
+
 .cs-filter {
   border: 1px solid rgba(255, 255, 255, 0.18);
   color: rgba(255, 255, 255, 0.85);
