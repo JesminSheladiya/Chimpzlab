@@ -235,52 +235,85 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <style>
-        .case-study-carousel-outer { position: relative; }
-        .case-study-carousel .swiper-slide { height: auto; }
-        .case-study-carousel .swiper-slide > a { height: 100%; }
+        .case-study-carousel-outer {
+            position: relative;
+        }
+
+        .case-study-carousel .swiper-slide {
+            height: auto;
+        }
+
+        .case-study-carousel .swiper-slide>a {
+            height: 100%;
+        }
+
         .case-study-carousel .swiper-pagination-bullet {
             background: rgba(255, 255, 255, 0.25);
-            width: 10px; height: 10px; opacity: 1;
+            width: 10px;
+            height: 10px;
+            opacity: 1;
             transition: all 0.3s ease;
         }
+
         .case-study-carousel .swiper-pagination-bullet-active {
             background: #fff;
-            width: 32px; border-radius: 5px;
+            width: 32px;
+            border-radius: 5px;
         }
+
         .case-study-carousel-outer .swiper-button-next,
         .case-study-carousel-outer .swiper-button-prev {
             color: #fff;
             background: rgba(255, 255, 255, 0.06);
-            width: 52px; height: 52px;
+            width: 52px;
+            height: 52px;
             border-radius: 50%;
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.12);
             transition: all 0.3s ease;
-            position: absolute; top: 50%;
+            position: absolute;
+            top: 50%;
             transform: translateY(-50%);
             z-index: 10;
         }
+
         .case-study-carousel-outer .swiper-button-next:hover,
         .case-study-carousel-outer .swiper-button-prev:hover {
             background: rgba(255, 255, 255, 0.15);
         }
+
         .case-study-carousel-outer .swiper-button-next:hover {
             transform: translateY(-50%) scale(1.08);
         }
+
         .case-study-carousel-outer .swiper-button-prev:hover {
             transform: translateY(-50%) scale(1.08);
         }
+
         .case-study-carousel-outer .swiper-button-next::after,
         .case-study-carousel-outer .swiper-button-prev::after {
-            font-size: 16px; font-weight: 700;
+            font-size: 16px;
+            font-weight: 700;
         }
-        .case-study-carousel-outer .swiper-button-next { right: -8px; }
-        @media (min-width: 768px) {
-            .case-study-carousel-outer .swiper-button-next { right: -26px; }
+
+        .case-study-carousel-outer .swiper-button-next {
+            right: -8px;
         }
-        .case-study-carousel-outer .swiper-button-prev { left: -8px; }
+
         @media (min-width: 768px) {
-            .case-study-carousel-outer .swiper-button-prev { left: -26px; }
+            .case-study-carousel-outer .swiper-button-next {
+                right: -26px;
+            }
+        }
+
+        .case-study-carousel-outer .swiper-button-prev {
+            left: -8px;
+        }
+
+        @media (min-width: 768px) {
+            .case-study-carousel-outer .swiper-button-prev {
+                left: -26px;
+            }
         }
     </style>
 </head>
@@ -804,7 +837,8 @@
         </div>
     </section> -->
     <!-- Case Studies Grid Version (Active by default) -->
-    <section class="py-16 md:py-32 px-4 sm:px-6 md:px-12 bg-brand-dark text-white border-t border-white/10 overflow-hidden">
+    <section
+        class="py-16 md:py-32 px-4 sm:px-6 md:px-12 bg-brand-dark text-white border-t border-white/10 overflow-hidden">
         <div class="max-w-[1400px] mx-auto">
             <div class="flex items-center gap-4 mb-4 gsap-reveal">
                 <div class="w-12 h-[1px] bg-white/30"></div>
@@ -825,7 +859,8 @@
             </div>
             <div class="case-study-carousel-outer relative">
                 <div class="swiper case-study-carousel gsap-reveal">
-                    <div class="swiper-wrapper" data-slugs="munns-mars" data-link-prefix="../casestudy/" data-cover-prefix="../">
+                    <div class="swiper-wrapper" data-slugs="munns-mars" data-link-prefix="../casestudy/"
+                        data-cover-prefix="../">
                     </div>
                     <div class="swiper-pagination !relative !bottom-auto mt-10 md:mt-12"></div>
                 </div>
@@ -1414,7 +1449,8 @@
                         .then(r => r.json())
                         .then(data => {
                             const items = [];
-                            slugs.forEach(slug => {
+                            const uniqueSlugs = [...new Set(slugs)];
+                            uniqueSlugs.forEach(slug => {
                                 const item = data.find(d => d.slug === slug);
                                 if (item && !item.draft) items.push(item);
                             });
@@ -1697,7 +1733,7 @@
                                 Media Marketing</a></li>
                         <li><a href="../../services/visibility-search/seo-aeo.html" class="interactive">SEO / AEO</a>
                         </li>
-                        <li><a href="../../services/creative/content-writing.html" class="interactive">Content
+                        <li><a href="../../services/visibility-search/content-writing.html" class="interactive">Content
                                 Writing</a>
                         </li>
                         <li><a href="../../services/visibility-search/influencer-marketing.html"

@@ -672,7 +672,8 @@
             </div>
             <div class="case-study-carousel-outer relative">
                 <div class="swiper case-study-carousel gsap-reveal">
-                    <div class="swiper-wrapper" data-slugs="forest-hills,psiog,mos-world,robust-petcare"
+                    <div class="swiper-wrapper"
+                        data-slugs="forest-hills,psiog,mos-world,robust-petcare,ajmera-realty,stl-digital,ghci-2024,imbesharam"
                         data-link-prefix="casestudy/"></div>
                     <div class="swiper-pagination !relative !bottom-auto mt-10 md:mt-12"></div>
                 </div>
@@ -1423,7 +1424,8 @@
                     fetch('./case-studies.json', { cache: 'no-cache' })
                         .then(r => r.json())
                         .then(data => {
-                            slugs.forEach(slug => {
+                            const uniqueSlugs = [...new Set(slugs)];
+                            uniqueSlugs.forEach(slug => {
                                 const item = data.find(d => d.slug === slug);
                                 if (!item || item.draft) return;
                                 const slide = document.createElement('div');
@@ -1706,7 +1708,8 @@
                                 class="interactive">Social
                                 Media Marketing</a></li>
                         <li><a href="../services/visibility-search/seo-aeo.html" class="interactive">SEO / AEO</a></li>
-                        <li><a href="../services/creative/content-writing.html" class="interactive">Content Writing</a>
+                        <li><a href="../services/visibility-search/content-writing.html" class="interactive">Content
+                                Writing</a>
                         </li>
                         <li><a href="../services/visibility-search/influencer-marketing.html"
                                 class="interactive">Influencer Marketing</a></li>

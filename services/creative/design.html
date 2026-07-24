@@ -1228,7 +1228,8 @@
                     fetch('../case-studies.json', { cache: 'no-cache' })
                         .then(r => r.json())
                         .then(data => {
-                            slugs.forEach(slug => {
+                            const uniqueSlugs = [...new Set(slugs)];
+                            uniqueSlugs.forEach(slug => {
                                 const item = data.find(d => d.slug === slug);
                                 if (!item || item.draft) return;
                                 const slide = document.createElement('div');
@@ -1513,7 +1514,7 @@
                                 Media Marketing</a></li>
                         <li><a href="../../services/visibility-search/seo-aeo.html" class="interactive">SEO / AEO</a>
                         </li>
-                        <li><a href="../../services/creative/content-writing.html" class="interactive">Content
+                        <li><a href="../../services/visibility-search/content-writing.html" class="interactive">Content
                                 Writing</a>
                         </li>
                         <li><a href="../../services/visibility-search/influencer-marketing.html"
