@@ -2223,9 +2223,19 @@ select {
 
 .featured-single-mode .swiper-button-next,
 .featured-single-mode .swiper-button-prev,
-.featured-single-mode .swiper-pagination { display: none; }
-.featured-single-mode .swiper-wrapper { display: flex; justify-content: center; }
-.featured-single-card { max-width: 900px; width: 100%; }
+.featured-single-mode .swiper-pagination {
+  display: none;
+}
+
+.featured-single-mode .swiper-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.featured-single-card {
+  max-width: 900px;
+  width: 100%;
+}
 
 .cs-filter {
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -2990,7 +3000,7 @@ section.bg-white ::selection {
 
 .footer-v2 .footer-end-logo {
   width: 100%;
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
   object-fit: contain;
   opacity: 0.05;

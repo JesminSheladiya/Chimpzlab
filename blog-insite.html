@@ -174,11 +174,9 @@
                     <!-- Title -->
                     <h1
                         class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-[0.95] text-white mb-10 uppercase">
-                        <div class="overflow-hidden"><span class="block gsap-reveal-text">The Future of</span></div>
-                        <div class="overflow-hidden"><span class="block gsap-reveal-text">Corporate Reputation</span>
-                        </div>
-                        <div class="overflow-hidden"><span class="block gsap-reveal-text text-gray-400">in an AI-First
-                                World</span></div>
+                        <span class="gsap-reveal-text">The Future of</span>
+                        <span class="gsap-reveal-text">Corporate Reputation</span>
+                        <span class="gsap-reveal-text text-gray-400">in an AI-First World</span>
                     </h1>
 
                     <!-- Custom Audio Player -->
@@ -252,11 +250,26 @@
                     </a>
                     <a href="https://twitter.com/chimpzlab" target="_blank" rel="noopener noreferrer"
                         class="text-black hover:text-gray-400 transition-colors interactive">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-twitter-x" viewBox="0 0 16 16">
                             <path
-                                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                                d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
                         </svg>
                     </a>
+                    <button onclick="shareArticle()"
+                        class="text-black hover:text-gray-400 transition-colors interactive" title="Share article">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                        </svg>
+                    </button>
+                    <button onclick="copyPageLink()"
+                        class="text-black hover:text-gray-400 transition-colors interactive" title="Copy page link">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                        </svg>
+                    </button>
                 </div>
 
                 <!-- Mobile: Key Takeaways + TOC + Services (visible only on mobile/tablet) -->
@@ -546,6 +559,10 @@
             const playIcon = document.getElementById('icon-play');
             const pauseIcon = document.getElementById('icon-pause');
             if (!audio || !playIcon || !pauseIcon) return;
+            if (!audio.getAttribute('src') || audio.getAttribute('src') === '') {
+                showToast('Audio not available for now', 'warning');
+                return;
+            }
             if (audio.paused) {
                 const p = audio.play();
                 if (p && typeof p.catch === 'function') p.catch(function () { });
@@ -557,6 +574,52 @@
                 pauseIcon.classList.add('hidden');
             }
         };
+
+        function shareArticle() {
+            const title = document.title;
+            const url = window.location.href;
+            if (navigator.share) {
+                navigator.share({ title, url }).catch(function (err) {
+                    if (err.name !== 'AbortError') copyPageLink();
+                });
+            } else {
+                copyPageLink();
+            }
+        }
+
+        function copyPageLink() {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(function () {
+                showToast('Link copied!', 'check');
+            }).catch(function () {
+                const input = document.createElement('input');
+                input.value = url;
+                document.body.appendChild(input);
+                input.select();
+                document.execCommand('copy');
+                document.body.removeChild(input);
+                showToast('Link copied!', 'check');
+            });
+        }
+
+        function showToast(msg, type) {
+            const el = document.getElementById('toast-notification');
+            if (!el) return;
+            let icon = '';
+            if (type === 'check') {
+                icon = '<svg class="w-5 h-5 mr-2 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>';
+            } else if (type === 'warning') {
+                icon = '<svg class="w-5 h-5 mr-2 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>';
+            }
+            el.innerHTML = icon + msg;
+            el.classList.remove('opacity-0', 'translate-y-4');
+            el.classList.add('opacity-100', 'translate-y-0');
+            clearTimeout(el._hide);
+            el._hide = setTimeout(function () {
+                el.classList.remove('opacity-100', 'translate-y-0');
+                el.classList.add('opacity-0', 'translate-y-4');
+            }, 2500);
+        }
     </script>
 
 
@@ -1115,6 +1178,11 @@
             }
         })();
     </script>
+
+    <div id="toast-notification"
+        class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 px-6 py-3 rounded-full bg-black text-white text-sm font-medium shadow-2xl transition-all duration-400 opacity-0 translate-y-4 pointer-events-none">
+    </div>
+
 </body>
 
 </html>
