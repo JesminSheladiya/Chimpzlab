@@ -1,5 +1,43 @@
 RewriteEngine On
 
+# 301 Redirects from old site structure - use RewriteRule with full URL for fragments
+RewriteRule ^services/?$ https://chimpzlab.com/#services-section [R=301,L]
+RewriteRule ^about/?$ https://chimpzlab.com/about.html [R=301,L]
+RewriteRule ^work/?$ https://chimpzlab.com/services/case-studies.html [R=301,L]
+RewriteRule ^contact/?$ https://chimpzlab.com/#booking-form [R=301,L]
+RewriteRule ^blog/?$ https://chimpzlab.com/insights.html [R=301,L]
+RewriteRule ^privacy-policy/?$ https://chimpzlab.com/privacy-policy.html [R=301,L]
+RewriteRule ^tag/designing/?$ https://chimpzlab.com/services/creative/design.html [R=301,L]
+RewriteRule ^tag/content/?$ https://chimpzlab.com/services/visibility-search/content-writing.html [R=301,L]
+RewriteRule ^tag/seo/?$ https://chimpzlab.com/services/visibility-search/seo-aeo.html [R=301,L]
+
+# Founder profile redirects
+RewriteRule ^rahul-pursawani/?$ https://chimpzlab.com/about.html#founders [R=301,L]
+RewriteRule ^nishant-asnani/?$ https://chimpzlab.com/about.html#founders [R=301,L]
+RewriteRule ^purvi-patel/?$ https://chimpzlab.com/about.html#founders [R=301,L]
+
+# Tag redirects - mapped to relevant service pages
+RewriteRule ^tag/ads/?$ https://chimpzlab.com/services/demand-generation/performance-marketing.html [R=301,L]
+RewriteRule ^tag/corporate-communications/?$ https://chimpzlab.com/services/reputation-communications/corporate-communications.html [R=301,L]
+RewriteRule ^tag/wordpress-development/?$ https://chimpzlab.com/services/digital-experiences/website-design-development.html [R=301,L]
+RewriteRule ^tag/digital-pr/?$ https://chimpzlab.com/services/reputation-communications/public-relations.html [R=301,L]
+RewriteRule ^tag/social-media-marketing/?$ https://chimpzlab.com/services/visibility-search/social-media-marketing.html [R=301,L]
+
+# Case study redirects - mapped to existing case study files
+RewriteRule ^valuex/investor-conference/?$ https://chimpzlab.com/services/casestudy/nasscom-member-connect.html [R=301,L]
+RewriteRule ^valuex/?$ https://valuexir.com/ [R=301,L]
+RewriteRule ^packaging-design-robust-petcare/?$ https://chimpzlab.com/services/casestudy/robust-petcare.html [R=301,L]
+RewriteRule ^social-media-marketing-for-imbesharam/?$ https://chimpzlab.com/services/casestudy/imbesharam.html [R=301,L]
+RewriteRule ^presentation-design-for-ajmera-realty/?$ https://chimpzlab.com/services/casestudy/ajmera-realty.html [R=301,L]
+RewriteRule ^search-engine-optimization-for-karma-capital/?$ https://chimpzlab.com/ [R=301,L]
+RewriteRule ^social-media-for-stl-digital-2/?$ https://chimpzlab.com/services/casestudy/stl-digital.html [R=301,L]
+RewriteRule ^employer-branding-for-blue-star-india/?$ https://chimpzlab.com/services/casestudy/blue-star.html [R=301,L]
+RewriteRule ^social-media-marketing-for-cisco-thingqbator/?$ https://chimpzlab.com/services/casestudy/cisco-thingqbator.html [R=301,L]
+
+# Case study redirects without direct matches - redirect to case studies index
+RewriteRule ^digital-marketing-anitab-india/?$ https://chimpzlab.com/services/casestudy/ghci-2024.html [R=301,L]
+RewriteRule ^search-engine-optimization-for-ccoe/?$ https://chimpzlab.com/services/visibility-search/seo-aeo.html [R=301,L]
+
 # Route /api/* and /crm/* to CRM router (fixes FlightPHP URI in subdirectory)
 RewriteRule ^(api/|crm/) crm-router.php [QSA,L]
 
