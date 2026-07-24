@@ -161,10 +161,9 @@
     "slug": "psiog",
     "title": "Psiog",
     "cover": "./casestudy/psiog/cover.png",
-    "cats": "BRANDING  ·  DESIGN",
+    "cats": "BRANDING",
     "categoryKeys": [
-      "branding",
-      "design"
+      "branding"
     ],
     "link": "./casestudy/psiog.html",
     "hasDetail": true,
@@ -228,10 +227,9 @@
     "slug": "evershine-house",
     "title": "Evershine House",
     "cover": "./casestudy/evershine-house/cover.png",
-    "cats": "VETTED LEAD GENERATION  ·  PERFORMANCE MARKETING",
+    "cats": "CHATBOT & VIRTUAL ASSISTANT",
     "categoryKeys": [
-      "vetted-lead-generation",
-      "performance-marketing"
+      "chatbot-virtual-assistant"
     ],
     "link": "./casestudy/evershine-house.html",
     "hasDetail": true,
@@ -241,9 +239,8 @@
     "slug": "evershine-amavi",
     "title": "Evershine Amavi",
     "cover": "./casestudy/evershine-amavi/cover.jpg",
-    "cats": "PERFORMANCE MARKETING  ·  VETTED LEAD GENERATION",
+    "cats": "VETTED LEAD GENERATION",
     "categoryKeys": [
-      "performance-marketing",
       "vetted-lead-generation"
     ],
     "link": "./casestudy/evershine-amavi.html",
@@ -254,10 +251,9 @@
     "slug": "quantumapps-ai",
     "title": "QuantumApps.AI",
     "cover": "./casestudy/quantumapps-ai/cover.jpg",
-    "cats": "BRANDING  ·  DESIGN",
+    "cats": "BRANDING",
     "categoryKeys": [
-      "branding",
-      "design"
+      "branding"
     ],
     "link": "./casestudy/quantumapps-ai.html",
     "hasDetail": true,
