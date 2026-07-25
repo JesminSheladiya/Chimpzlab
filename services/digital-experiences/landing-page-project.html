@@ -3,11 +3,14 @@
 
 <head>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MVP2NQBM');</script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MVP2NQBM');</script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,9 +50,9 @@
 
             testimonialTrack.innerHTML = data.map((t, i) => `
                         <div class="testimonial-slide min-w-full px-2">
-                            <div class="bg-white rounded-3xl p-10 md:p-14 relative shadow-sm h-full flex flex-col justify-center">
+                            <div class="bg-white rounded-3xl p-6 md:p-14 relative shadow-sm h-full flex flex-col justify-center">
                                 <div class="absolute top-8 right-10 text-[120px] leading-none font-serif text-gray-100 select-none pointer-events-none">"</div>
-                                <p class="text-xl md:text-2xl font-medium leading-relaxed text-gray-800 mb-10 relative z-10 italic max-w-[800px]">"${t.quote}"</p>
+                                <p class="text-sm sm:text-lg md:text-xl lg:text-2xl font-medium leading-relaxed text-gray-800 mb-10 relative z-10 italic max-w-[800px]">"${t.quote}"</p>
                                 <div class="flex items-center gap-4 relative z-10 shrink-0">
                                     ${t.image
                     ? `<img src="${t.image}" alt="${t.author}" class="w-14 h-14 rounded-full object-cover">`
@@ -176,8 +179,8 @@
 
 <body class="selection:bg-white selection:text-black">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVP2NQBM"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVP2NQBM" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <div id="cursor"></div>
@@ -1032,10 +1035,10 @@
             </div>
 
             <div class="footer-bottom flex md:flex-row items-center justify-between gap-4">
-                    <p>&copy; 2026 ChimpzLab. All rights reserved.</p>
-                    <a href="../../privacy-policy.html"
-                        class="text-gray-400 hover:text-white transition-colors text-sm interactive">Privacy Policy</a>
-                </div>
+                <p>&copy; 2026 ChimpzLab. All rights reserved.</p>
+                <a href="../../privacy-policy.html"
+                    class="text-gray-400 hover:text-white transition-colors text-sm interactive">Privacy Policy</a>
+            </div>
         </div>
     </footer>
 
@@ -1096,9 +1099,9 @@
 
                     testimonialTrack.innerHTML = data.map((t, i) => `
                 <div class="testimonial-slide min-w-full px-2">
-                    <div class="bg-white rounded-3xl p-10 md:p-14 relative shadow-sm h-full flex flex-col justify-center">
+                    <div class="bg-white rounded-3xl p-6 md:p-14 relative shadow-sm h-full flex flex-col justify-center">
                         <div class="absolute top-8 right-10 text-[120px] leading-none font-serif text-gray-100 select-none pointer-events-none">"</div>
-                        <p class="text-xl md:text-2xl font-medium leading-relaxed text-gray-800 mb-10 relative z-10 italic max-w-[800px]">"${t.quote}"</p>
+                        <p class="text-sm sm:text-lg md:text-xl lg:text-2xl font-medium leading-relaxed text-gray-800 mb-10 relative z-10 italic max-w-[800px]">"${t.quote}"</p>
                         <div class="flex items-center gap-4 relative z-10 shrink-0">
                             ${t.image
                             ? `<img src="${t.image}" alt="${t.author}" class="w-14 h-14 rounded-full object-cover">`

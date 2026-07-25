@@ -411,21 +411,21 @@
         <div class="max-w-[1400px] mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 divide-y md:divide-y-0 md:divide-x divide-white/10">
                 <div class="gsap-reveal md:px-8 first:px-0 pt-8 md:pt-0">
-                    <div class="text-5xl md:text-6xl font-extrabold mb-4 text-white tracking-tighter">
+                    <div class="text-5xl md:text-4xl lg:text-6xl font-extrabold mb-4 text-white tracking-tighter">
                         <span class="counter-value" data-target="10">0</span>+ years
                     </div>
                     <p class="text-gray-400 font-medium text-lg leading-relaxed uppercase tracking-wide text-sm">—
                         building brand reputation since 2016</p>
                 </div>
                 <div class="gsap-reveal md:px-8 pt-8 md:pt-0">
-                    <div class="text-5xl md:text-6xl font-extrabold mb-4 text-white tracking-tighter">
+                    <div class="text-5xl md:text-4xl lg:text-6xl font-extrabold mb-4 text-white tracking-tighter">
                         <span class="counter-value" data-target="60">0</span>+ brands
                     </div>
                     <p class="text-gray-400 font-medium text-lg leading-relaxed uppercase tracking-wide text-sm">—
                         across technology, BFSI, healthcare and more</p>
                 </div>
                 <div class="gsap-reveal md:px-8 pt-8 md:pt-0">
-                    <div class="text-5xl md:text-6xl font-extrabold mb-4 text-white tracking-tighter">
+                    <div class="text-5xl md:text-4xl lg:text-6xl font-extrabold mb-4 text-white tracking-tighter">
                         <span class="counter-value" data-target="12">0</span> industries
                     </div>
                     <p class="text-gray-400 font-medium text-lg leading-relaxed uppercase tracking-wide text-sm">—
@@ -1039,7 +1039,7 @@
     </section>
 
     <!-- Testimonial Carousel Section -->
-    <section class="py-32 px-6 md:px-12 bg-[#f5f5f5] text-brand-dark border-t border-gray-200 overflow-hidden">
+    <section class="py-16 md:py-32 px-6 md:px-12 bg-[#f5f5f5] text-brand-dark border-t border-gray-200 overflow-hidden">
         <div class="max-w-[950px] mx-auto">
             <div class="flex items-center gap-4 mb-12 gsap-reveal">
                 <div class="w-12 h-[1px] bg-gray-300"></div>
@@ -1879,9 +1879,9 @@
 
             testimonialTrack.innerHTML = data.map((t, i) => `
                         <div class="testimonial-slide min-w-full px-2">
-                            <div class="bg-white rounded-3xl p-10 md:p-14 relative shadow-sm h-full flex flex-col justify-center">
+                            <div class="bg-white rounded-3xl p-6 md:p-14 relative shadow-sm h-full flex flex-col justify-center">
                                 <div class="absolute top-8 right-10 text-[120px] leading-none font-serif text-gray-100 select-none pointer-events-none">"</div>
-                                <p class="text-xl md:text-2xl font-medium leading-relaxed text-gray-800 mb-10 relative z-10 italic max-w-[800px]">"${t.quote}"</p>
+                                <p class="text-sm sm:text-lg md:text-xl lg:text-2xl font-medium leading-relaxed text-gray-800 mb-10 relative z-10 italic max-w-[800px]">"${t.quote}"</p>
                                 <div class="flex items-center gap-4 relative z-10 shrink-0">
                                     ${t.image
                     ? `<img src="${t.image}" alt="${t.author}" class="w-14 h-14 rounded-full object-cover">`
@@ -2063,9 +2063,9 @@
 
                     testimonialTrack.innerHTML = data.map((t, i) => `
                 <div class="testimonial-slide min-w-full px-2">
-                    <div class="bg-white rounded-3xl p-10 md:p-14 relative shadow-sm h-full flex flex-col justify-center">
+                    <div class="bg-white rounded-3xl p-6 md:p-14 relative shadow-sm h-full flex flex-col justify-center">
                         <div class="absolute top-8 right-10 text-[120px] leading-none font-serif text-gray-100 select-none pointer-events-none">"</div>
-                        <p class="text-xl md:text-2xl font-medium leading-relaxed text-gray-800 mb-10 relative z-10 italic max-w-[800px]">"${t.quote}"</p>
+                        <p class="text-sm sm:text-lg md:text-xl lg:text-2xl font-medium leading-relaxed text-gray-800 mb-10 relative z-10 italic max-w-[800px]">"${t.quote}"</p>
                         <div class="flex items-center gap-4 relative z-10 shrink-0">
                             ${t.image
                             ? `<img src="${t.image}" alt="${t.author}" class="w-14 h-14 rounded-full object-cover">`

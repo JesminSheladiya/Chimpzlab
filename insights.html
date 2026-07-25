@@ -172,7 +172,7 @@
                     Insights</span>
             </div>
             <h1
-                class="text-6xl sm:text-8xl md:text-[9rem] font-extrabold uppercase text-white mb-10 tracking-tighter leading-[0.85]">
+                class="text-4xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold text-white tracking-tighter uppercase leading-[0.9] mb-8">
                 <div class="overflow-hidden"><span class="block gsap-reveal-text">Perspectives</span></div>
                 <div class="overflow-hidden"><span class="block text-white/40 gsap-reveal-text">That Move</span></div>
                 <div class="overflow-hidden"><span class="block gsap-reveal-text">Markets</span></div>
@@ -192,25 +192,25 @@
                 </h3>
             </div>
 
-            <div class="sticky top-20 md:top-24 z-40 flex flex-wrap gap-3 mb-12 py-2 backdrop-blur-md bg-brand-dark/80 -mx-2 px-2 rounded-xl"
+            <div class="sticky top-24 z-40 flex flex-wrap gap-1 md:gap-3 mb-12 py-2 backdrop-blur-md bg-brand-dark/80 -mx-2 px-2 rounded-xl"
                 id="insight-filters" role="tablist" aria-label="Filter insights by topic">
                 <button
-                    class="insight-filter active interactive px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300"
+                    class="insight-filter active interactive px-2 sm:px-3 py-1 md:px-5 md:py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300"
                     data-filter="all" role="tab" aria-selected="true">All</button>
                 <button
-                    class="insight-filter interactive px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300"
+                    class="insight-filter interactive px-2 sm:px-3 py-1 md:px-5 md:py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300"
                     data-filter="creative" role="tab" aria-selected="false">Creative</button>
                 <button
-                    class="insight-filter interactive px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300"
+                    class="insight-filter interactive px-2 sm:px-3 py-1 md:px-5 md:py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300"
                     data-filter="demand" role="tab" aria-selected="false">Demand</button>
                 <button
-                    class="insight-filter interactive px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300"
+                    class="insight-filter interactive px-2 sm:px-3 py-1 md:px-5 md:py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300"
                     data-filter="experience" role="tab" aria-selected="false">Experience</button>
                 <button
-                    class="insight-filter interactive px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300"
+                    class="insight-filter interactive px-2 sm:px-3 py-1 md:px-5 md:py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300"
                     data-filter="reputation" role="tab" aria-selected="false">Reputation</button>
                 <button
-                    class="insight-filter interactive px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300"
+                    class="insight-filter interactive px-2 sm:px-3 py-1 md:px-5 md:py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300"
                     data-filter="visibility" role="tab" aria-selected="false">Visibility</button>
                 <span class="insight-count ml-auto self-center text-sm text-white/50 font-medium tracking-wide"></span>
             </div>
@@ -652,7 +652,7 @@
                         </div>
                         <div class="p-6 pt-5">
                             <span class="text-[11px] font-bold uppercase tracking-widest text-gray-500 block mb-2.5">${capitalize(article.category)} • ${article.readTime.replace(/\s+/g, ' ').trim()}</span>
-                            <h4 class="text-xl md:text-2xl font-bold tracking-tight text-white group-hover:text-white/80 transition-colors leading-snug mb-2.5">${article.titleFull}</h4>
+                            <h4 class="text-1xl sm:text-2xl md:text-lg lg:text-lg xl:text-xl font-bold tracking-tight text-white group-hover:text-white/80 transition-colors leading-snug mb-2.5">${article.titleFull}</h4>
                             <span class="text-xs font-bold uppercase tracking-widest text-white/60 group-hover:text-white transition-colors">Read Article →</span>
                         </div>
                     `;

@@ -1993,7 +1993,6 @@ body.menu-open {
   opacity: 0.2;
   width: 10px;
   height: 10px;
-  margin: 0 6px !important;
 }
 
 .work-swiper .swiper-pagination-bullet-active {
