@@ -601,7 +601,7 @@
                         grid.innerHTML = '';
                         items.forEach((item) => {
                             const card = document.createElement('div');
-                            card.className = '';
+                            card.className = 'gsap-reveal';
                             card.dataset.category = item.category || 'uncategorized';
                             card.innerHTML = '<div class="bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden h-full flex flex-col hover:bg-white/[0.08] transition-colors duration-300">'
                                 + '<div class="shrink-0">'
