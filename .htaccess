@@ -1,5 +1,16 @@
 RewriteEngine On
 
+# Remove index.html from URLs
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s.*/index\.html[?\s] [NC]
+RewriteRule ^(.*)index\.html$ /$1 [R=301,L,NC]
+
+# Redirect blog-insite.html?slug=xxx to blog/xxx
+RewriteCond %{QUERY_STRING} ^slug=([^&]+)$
+RewriteRule ^blog-insite\.html$ /blog/%1? [R=301,L,NC]
+
+# Serve blog/xxx from blog-insite.html?slug=xxx
+RewriteRule ^blog/([^/]+)/?$ blog-insite.html?slug=$1 [QSA,L,NC]
+
 # 301 Redirects from old site structure - use RewriteRule with full URL for fragments
 RewriteRule ^services/?$ https://chimpzlab.com/#services-section [R=301,L]
 RewriteRule ^about/?$ https://chimpzlab.com/about.html [R=301,L]
