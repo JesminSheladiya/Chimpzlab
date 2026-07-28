@@ -1,5 +1,82 @@
 RewriteEngine On
 
+# ============================================
+# SEO-FRIENDLY URL REDIRECTS (old .html → new)
+# ============================================
+
+# Redirect old .html URLs to new extensionless SEO URLs
+RewriteRule ^services/creative/video-production\.html$ https://chimpzlab.com/services/creative/video-production-services-in-thane [R=301,L,NC]
+RewriteRule ^services/creative/branding\.html$ https://chimpzlab.com/services/creative/branding-agency-in-thane [R=301,L,NC]
+# services/creative/design.html stays unchanged
+
+RewriteRule ^services/reputation-communications/public-relations\.html$ https://chimpzlab.com/services/reputation-communications/public-relations-agency-in-thane [R=301,L,NC]
+RewriteRule ^services/reputation-communications/corporate-communications\.html$ https://chimpzlab.com/services/reputation-communications/corporate-communications-agency-in-thane [R=301,L,NC]
+RewriteRule ^services/reputation-communications/employer-branding\.html$ https://chimpzlab.com/services/reputation-communications/employer-branding-agency-in-thane [R=301,L,NC]
+RewriteRule ^services/reputation-communications/thought-leadership\.html$ https://chimpzlab.com/services/reputation-communications/thought-leadership-agency-in-thane [R=301,L,NC]
+
+RewriteRule ^services/visibility-search/seo-aeo\.html$ https://chimpzlab.com/services/visibility-search/seo-aeo-agency-in-thane [R=301,L,NC]
+RewriteRule ^services/visibility-search/social-media-marketing\.html$ https://chimpzlab.com/services/visibility-search/social-media-marketing-agency-in-thane [R=301,L,NC]
+RewriteRule ^services/visibility-search/influencer-marketing\.html$ https://chimpzlab.com/services/visibility-search/influencer-marketing-agency-in-thane [R=301,L,NC]
+RewriteRule ^services/visibility-search/content-writing\.html$ https://chimpzlab.com/services/visibility-search/content-writing-services-in-thane [R=301,L,NC]
+
+RewriteRule ^services/demand-generation/performance-marketing\.html$ https://chimpzlab.com/services/demand-generation/performance-marketing-agency-in-thane [R=301,L,NC]
+RewriteRule ^services/demand-generation/vetted-lead-generation\.html$ https://chimpzlab.com/services/demand-generation/vetted-lead-generation-services-in-thane [R=301,L,NC]
+RewriteRule ^services/demand-generation/email-marketing\.html$ https://chimpzlab.com/services/demand-generation/email-marketing-services-in-thane [R=301,L,NC]
+RewriteRule ^services/demand-generation/marketing-automation\.html$ https://chimpzlab.com/services/demand-generation/marketing-automation-services-in-thane [R=301,L,NC]
+
+RewriteRule ^services/digital-experiences/landing-pages\.html$ https://chimpzlab.com/services/digital-experiences/landing-page-services-in-thane [R=301,L,NC]
+RewriteRule ^services/digital-experiences/chatbots\.html$ https://chimpzlab.com/services/digital-experiences/chatbot-development-services-in-thane [R=301,L,NC]
+RewriteRule ^services/digital-experiences/website-design-development\.html$ https://chimpzlab.com/services/digital-experiences/website-design-development-services-in-thane [R=301,L,NC]
+
+# Case studies old → new (services/case-studies.html → /case-studies.html)
+RewriteRule ^services/case-studies\.html$ https://chimpzlab.com/case-studies.html [R=301,L,NC]
+
+# Case studies old → new (services/casestudy/xxx.html → case-studies/xxx)
+RewriteRule ^services/casestudy/(.+)\.html$ https://chimpzlab.com/case-studies/$1 [R=301,L,NC]
+
+
+
+
+# ============================================
+# INTERNAL REWRITES (new URL → actual .html file)
+# ============================================
+
+# Creative
+RewriteRule ^services/creative/video-production-services-in-thane/?$ services/creative/video-production.html [L,NC]
+RewriteRule ^services/creative/branding-agency-in-thane/?$ services/creative/branding.html [L,NC]
+# RewriteRule ^services/creative/design-services-in-thane/?$ services/creative/design.html [L,NC]
+
+# Reputation & Communications
+RewriteRule ^services/reputation-communications/public-relations-agency-in-thane/?$ services/reputation-communications/public-relations.html [L,NC]
+RewriteRule ^services/reputation-communications/corporate-communications-agency-in-thane/?$ services/reputation-communications/corporate-communications.html [L,NC]
+RewriteRule ^services/reputation-communications/employer-branding-agency-in-thane/?$ services/reputation-communications/employer-branding.html [L,NC]
+RewriteRule ^services/reputation-communications/thought-leadership-agency-in-thane/?$ services/reputation-communications/thought-leadership.html [L,NC]
+
+# Visibility & Search
+RewriteRule ^services/visibility-search/seo-aeo-agency-in-thane/?$ services/visibility-search/seo-aeo.html [L,NC]
+RewriteRule ^services/visibility-search/social-media-marketing-agency-in-thane/?$ services/visibility-search/social-media-marketing.html [L,NC]
+RewriteRule ^services/visibility-search/influencer-marketing-agency-in-thane/?$ services/visibility-search/influencer-marketing.html [L,NC]
+RewriteRule ^services/visibility-search/content-writing-services-in-thane/?$ services/visibility-search/content-writing.html [L,NC]
+
+# Demand Generation
+RewriteRule ^services/demand-generation/performance-marketing-agency-in-thane/?$ services/demand-generation/performance-marketing.html [L,NC]
+RewriteRule ^services/demand-generation/vetted-lead-generation-services-in-thane/?$ services/demand-generation/vetted-lead-generation.html [L,NC]
+RewriteRule ^services/demand-generation/email-marketing-services-in-thane/?$ services/demand-generation/email-marketing.html [L,NC]
+RewriteRule ^services/demand-generation/marketing-automation-services-in-thane/?$ services/demand-generation/marketing-automation.html [L,NC]
+
+# Digital Experiences
+RewriteRule ^services/digital-experiences/landing-page-services-in-thane/?$ services/digital-experiences/landing-pages.html [L,NC]
+RewriteRule ^services/digital-experiences/chatbot-development-services-in-thane/?$ services/digital-experiences/chatbots.html [L,NC]
+RewriteRule ^services/digital-experiences/website-design-development-services-in-thane/?$ services/digital-experiences/website-design-development.html [L,NC]
+
+# Case studies (case-studies/xxx → casestudy/xxx.html)
+RewriteRule ^case-studies/([^/]+)/?$ casestudy/$1.html [L,NC]
+
+
+# ============================================
+# EXISTING RULES
+# ============================================
+
 # Remove index.html from URLs
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s.*/index\.html[?\s] [NC]
 RewriteRule ^(.*)index\.html$ /$1 [R=301,L,NC]
@@ -11,48 +88,50 @@ RewriteRule ^blog-insite\.html$ /blog/%1? [R=301,L,NC]
 # Serve blog/xxx from blog-insite.html?slug=xxx
 RewriteRule ^blog/([^/]+)/?$ blog-insite.html?slug=$1 [QSA,L,NC]
 
-# 301 Redirects from old site structure - use RewriteRule with full URL for fragments
+# 301 Redirects from old site structure
 RewriteRule ^services/?$ https://chimpzlab.com/#services-section [R=301,L]
 RewriteRule ^about/?$ https://chimpzlab.com/about.html [R=301,L]
-RewriteRule ^work/?$ https://chimpzlab.com/services/case-studies.html [R=301,L]
+RewriteRule ^work/?$ https://chimpzlab.com/case-studies.html [R=301,L]
 RewriteRule ^contact/?$ https://chimpzlab.com/#booking-form [R=301,L]
 RewriteRule ^blog/?$ https://chimpzlab.com/insights.html [R=301,L]
 RewriteRule ^privacy-policy/?$ https://chimpzlab.com/privacy-policy.html [R=301,L]
 RewriteRule ^tag/designing/?$ https://chimpzlab.com/services/creative/design.html [R=301,L]
-RewriteRule ^tag/content/?$ https://chimpzlab.com/services/visibility-search/content-writing.html [R=301,L]
-RewriteRule ^tag/seo/?$ https://chimpzlab.com/services/visibility-search/seo-aeo.html [R=301,L]
+RewriteRule ^tag/content/?$ https://chimpzlab.com/services/visibility-search/content-writing-services-in-thane [R=301,L]
+RewriteRule ^tag/seo/?$ https://chimpzlab.com/services/visibility-search/seo-aeo-agency-in-thane [R=301,L]
 
 # Founder profile redirects
 RewriteRule ^rahul-pursawani/?$ https://chimpzlab.com/about.html#founders [R=301,L]
 RewriteRule ^nishant-asnani/?$ https://chimpzlab.com/about.html#founders [R=301,L]
 RewriteRule ^purvi-patel/?$ https://chimpzlab.com/about.html#founders [R=301,L]
 
-# Tag redirects - mapped to relevant service pages
-RewriteRule ^tag/ads/?$ https://chimpzlab.com/services/demand-generation/performance-marketing.html [R=301,L]
-RewriteRule ^tag/corporate-communications/?$ https://chimpzlab.com/services/reputation-communications/corporate-communications.html [R=301,L]
-RewriteRule ^tag/wordpress-development/?$ https://chimpzlab.com/services/digital-experiences/website-design-development.html [R=301,L]
-RewriteRule ^tag/digital-pr/?$ https://chimpzlab.com/services/reputation-communications/public-relations.html [R=301,L]
-RewriteRule ^tag/social-media-marketing/?$ https://chimpzlab.com/services/visibility-search/social-media-marketing.html [R=301,L]
+# Tag redirects
+RewriteRule ^tag/ads/?$ https://chimpzlab.com/services/demand-generation/performance-marketing-agency-in-thane [R=301,L]
+RewriteRule ^tag/corporate-communications/?$ https://chimpzlab.com/services/reputation-communications/corporate-communications-agency-in-thane [R=301,L]
+RewriteRule ^tag/wordpress-development/?$ https://chimpzlab.com/services/digital-experiences/website-design-development-services-in-thane [R=301,L]
+RewriteRule ^tag/digital-pr/?$ https://chimpzlab.com/services/reputation-communications/public-relations-agency-in-thane [R=301,L]
+RewriteRule ^tag/social-media-marketing/?$ https://chimpzlab.com/services/visibility-search/social-media-marketing-agency-in-thane [R=301,L]
 
-# Case study redirects - mapped to existing case study files
-RewriteRule ^valuex/investor-conference/?$ https://chimpzlab.com/services/casestudy/nasscom-member-connect.html [R=301,L]
+# Case study old SEO slugs - redirect to new case-studies/ URLs
+RewriteRule ^packaging-design-robust-petcare/?$ https://chimpzlab.com/case-studies/robust-petcare [R=301,L]
+RewriteRule ^social-media-marketing-for-imbesharam/?$ https://chimpzlab.com/case-studies/imbesharam [R=301,L]
+RewriteRule ^presentation-design-for-ajmera-realty/?$ https://chimpzlab.com/case-studies/ajmera-realty [R=301,L]
+RewriteRule ^social-media-for-stl-digital-2/?$ https://chimpzlab.com/case-studies/stl-digital [R=301,L]
+RewriteRule ^employer-branding-for-blue-star-india/?$ https://chimpzlab.com/case-studies/blue-star [R=301,L]
+RewriteRule ^social-media-marketing-for-cisco-thingqbator/?$ https://chimpzlab.com/case-studies/cisco-thingqbator [R=301,L]
+RewriteRule ^digital-marketing-anitab-india/?$ https://chimpzlab.com/case-studies/ghci-2024 [R=301,L]
+# valuex redirects
+RewriteRule ^search-engine-optimization-for-ccoe/?$ https://chimpzlab.com/services/visibility-search/seo-aeo-agency-in-thane [R=301,L]
+RewriteRule ^search-engine-optimization-for-karma-capital/?$ https://chimpzlab.com [R=301,L]
 RewriteRule ^valuex/?$ https://valuexir.com/ [R=301,L]
-RewriteRule ^packaging-design-robust-petcare/?$ https://chimpzlab.com/services/casestudy/robust-petcare.html [R=301,L]
-RewriteRule ^social-media-marketing-for-imbesharam/?$ https://chimpzlab.com/services/casestudy/imbesharam.html [R=301,L]
-RewriteRule ^presentation-design-for-ajmera-realty/?$ https://chimpzlab.com/services/casestudy/ajmera-realty.html [R=301,L]
-RewriteRule ^search-engine-optimization-for-karma-capital/?$ https://chimpzlab.com/ [R=301,L]
-RewriteRule ^social-media-for-stl-digital-2/?$ https://chimpzlab.com/services/casestudy/stl-digital.html [R=301,L]
-RewriteRule ^employer-branding-for-blue-star-india/?$ https://chimpzlab.com/services/casestudy/blue-star.html [R=301,L]
-RewriteRule ^social-media-marketing-for-cisco-thingqbator/?$ https://chimpzlab.com/services/casestudy/cisco-thingqbator.html [R=301,L]
+RewriteRule ^valuex/investor-conference/?$ https://valuexir.com/ [R=301,L]
 
-# Case study redirects without direct matches - redirect to case studies index
-RewriteRule ^digital-marketing-anitab-india/?$ https://chimpzlab.com/services/casestudy/ghci-2024.html [R=301,L]
-RewriteRule ^search-engine-optimization-for-ccoe/?$ https://chimpzlab.com/services/visibility-search/seo-aeo.html [R=301,L]
-
-# Route /api/* and /crm/* to CRM router (fixes FlightPHP URI in subdirectory)
+# Route /api/* and /crm/* to CRM router
 RewriteRule ^(api/|crm/) crm-router.php [QSA,L]
 
-# Serve existing files directly
+# Serve existing files directly, return 404 for everything else
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.html [L]
+RewriteRule ^(.*)$ - [R=404,L]
+
+# Custom 404 page
+ErrorDocument 404 /404.html

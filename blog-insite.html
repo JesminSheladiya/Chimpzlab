@@ -139,7 +139,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="services/case-studies.html"
+                <a href="case-studies.html"
                     class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors">Work</a>
                 <a href="about.html"
                     class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors">About</a>
@@ -181,7 +181,7 @@
                     <!-- Meta -->
                     <div class="flex flex-wrap items-center gap-4 mb-8 gsap-reveal">
                         <span
-                            class="text-xs font-bold uppercase tracking-widest text-white px-4 py-2 border border-white/20 rounded-full">Strategy</span>
+                            class="text-xs font-bold uppercase text-white px-4 py-2 border border-white/20 rounded-full break-words whitespace-normal max-w-full">Strategy</span>
                         <span class="text-xs font-bold uppercase tracking-widest text-gray-400">5 Min Read</span>
                         <span class="text-xs font-bold uppercase tracking-widest text-gray-400 hidden sm:inline">• July
                             1, 2026</span>
@@ -194,6 +194,9 @@
                         <span class="gsap-reveal-text">Corporate Reputation</span>
                         <span class="gsap-reveal-text text-gray-400">in an AI-First World</span>
                     </h1>
+
+                    <!-- Tags -->
+                    <div class="hero-tags gsap-reveal flex flex-wrap gap-2 mt-6"></div>
 
                     <!-- Custom Audio Player -->
                     <div class="gsap-reveal mt-10 p-2 pr-6 border border-white/10 bg-white/5 rounded-full flex items-center gap-4 w-fit interactive group hover:border-white/30 transition-colors cursor-pointer"
@@ -797,7 +800,11 @@
                 if (!data.articles || data.articles.length === 0) return;
 
                 const params = new URLSearchParams(window.location.search);
-                const slug = params.get('slug');
+                let slug = params.get('slug');
+                if (!slug) {
+                    const pathMatch = window.location.pathname.match(/\/blog\/([^/]+)/);
+                    if (pathMatch) slug = pathMatch[1];
+                }
                 let article = slug ? data.articles.find(a => a.slug === slug) : null;
                 if (!article) article = data.articles[0];
                 if (!article) return;
@@ -809,7 +816,7 @@
                 const heroMeta = document.querySelector('.gap-4.mb-8.gsap-reveal');
                 if (heroMeta) {
                     const spans = heroMeta.querySelectorAll('span');
-                    if (spans[0]) spans[0].textContent = article.tag;
+                    if (spans[0]) spans[0].textContent = article.category;
                     if (spans[1]) spans[1].textContent = article.readTime;
                     if (spans[2]) spans[2].innerHTML = '\u2022 ' + article.date;
                 }
@@ -821,7 +828,7 @@
                         if (blocks[idx]) blocks[idx].textContent = part;
                     });
                     for (let i = article.titleParts.length; i < blocks.length; i++) {
-                        blocks[i].parentElement.style.display = 'none';
+                        blocks[i].style.display = 'none';
                     }
                 }
 
@@ -830,6 +837,18 @@
 
                 const audioDurationEl = document.querySelector('#play-pause-btn + div .text-sm.font-bold.text-white');
                 if (audioDurationEl) audioDurationEl.textContent = article.audioDuration;
+
+                // --- Hero Tags ---
+                const heroTags = document.querySelector('.hero-tags');
+                if (heroTags && article.tag) {
+                    var tagItems = article.tag.split(',').map(function(t) { return t.trim(); });
+                    tagItems.forEach(function(t) {
+                        var span = document.createElement('span');
+                        span.className = 'text-[11px] font-medium text-white/70 px-3 py-1 border border-white/20 rounded-full';
+                        span.textContent = t;
+                        heroTags.appendChild(span);
+                    });
+                }
 
                 // --- Article Body ---
                 const articleContent = document.querySelector('.article-content');
@@ -1080,7 +1099,7 @@
                     <ul>
                         <li><a href="index.html" class="interactive">Home</a></li>
                         <li><a href="about.html" class="interactive">About</a></li>
-                        <li><a href="services/case-studies.html" class="interactive">Work</a></li>
+                        <li><a href="case-studies.html" class="interactive">Work</a></li>
                         <li><a href="insights.html" class="interactive">Insights</a></li>
                     </ul>
                 </div>
@@ -1089,13 +1108,13 @@
                     <a href="services/reputation-communications.html" class="footer-group-title">Reputation &amp;
                         Communications</a>
                     <ul>
-                        <li><a href="services/reputation-communications/corporate-communications.html"
+                        <li><a href="services/reputation-communications/corporate-communications-agency-in-thane"
                                 class="interactive">Corporate Communications</a></li>
-                        <li><a href="services/reputation-communications/public-relations.html"
+                        <li><a href="services/reputation-communications/public-relations-agency-in-thane"
                                 class="interactive">Public Relations</a></li>
-                        <li><a href="services/reputation-communications/thought-leadership.html"
+                        <li><a href="services/reputation-communications/thought-leadership-agency-in-thane"
                                 class="interactive">Thought Leadership</a></li>
-                        <li><a href="services/reputation-communications/employer-branding.html"
+                        <li><a href="services/reputation-communications/employer-branding-agency-in-thane"
                                 class="interactive">Employer Branding</a></li>
                     </ul>
                 </div>
@@ -1103,13 +1122,13 @@
                 <div class="footer-group">
                     <a href="services/visibility-search.html" class="footer-group-title">Visibility &amp; Search</a>
                     <ul>
-                        <li><a href="services/visibility-search/social-media-marketing.html" class="interactive">Social
+                        <li><a href="services/visibility-search/social-media-marketing-agency-in-thane" class="interactive">Social
                                 Media Marketing</a></li>
-                        <li><a href="services/visibility-search/seo-aeo.html" class="interactive">SEO / AEO</a></li>
-                        <li><a href="services/visibility-search/content-writing.html" class="interactive">Content
+                        <li><a href="services/visibility-search/seo-aeo-agency-in-thane" class="interactive">SEO / AEO</a></li>
+                        <li><a href="services/visibility-search/content-writing-services-in-thane" class="interactive">Content
                                 Writing</a>
                         </li>
-                        <li><a href="services/visibility-search/influencer-marketing.html"
+                        <li><a href="services/visibility-search/influencer-marketing-agency-in-thane"
                                 class="interactive">Influencer Marketing</a></li>
                     </ul>
                 </div>
@@ -1117,9 +1136,9 @@
                 <div class="footer-group">
                     <a href="services/creative.html" class="footer-group-title">Creative</a>
                     <ul>
-                        <li><a href="services/creative/branding.html" class="interactive">Branding</a></li>
+                        <li><a href="services/creative/branding-agency-in-thane" class="interactive">Branding</a></li>
                         <li><a href="services/creative/design.html" class="interactive">Design</a></li>
-                        <li><a href="services/creative/video-production.html" class="interactive">Video Production</a>
+                        <li><a href="services/creative/video-production-services-in-thane" class="interactive">Video Production</a>
                         </li>
                     </ul>
                 </div>
@@ -1127,13 +1146,13 @@
                 <div class="footer-group">
                     <a href="services/demand-generation.html" class="footer-group-title">Demand Generation</a>
                     <ul>
-                        <li><a href="services/demand-generation/performance-marketing.html"
+                        <li><a href="services/demand-generation/performance-marketing-agency-in-thane"
                                 class="interactive">Performance Marketing</a></li>
-                        <li><a href="services/demand-generation/email-marketing.html" class="interactive">Email
+                        <li><a href="services/demand-generation/email-marketing-services-in-thane" class="interactive">Email
                                 Marketing</a></li>
-                        <li><a href="services/demand-generation/vetted-lead-generation.html" class="interactive">Vetted
+                        <li><a href="services/demand-generation/vetted-lead-generation-services-in-thane" class="interactive">Vetted
                                 Lead Generation</a></li>
-                        <li><a href="services/demand-generation/marketing-automation.html" class="interactive">Marketing
+                        <li><a href="services/demand-generation/marketing-automation-services-in-thane" class="interactive">Marketing
                                 Automation</a></li>
                     </ul>
                 </div>
@@ -1141,11 +1160,11 @@
                 <div class="footer-group">
                     <a href="services/digital-experiences.html" class="footer-group-title">Digital Experiences</a>
                     <ul>
-                        <li><a href="services/digital-experiences/website-design-development.html"
+                        <li><a href="services/digital-experiences/website-design-development-services-in-thane"
                                 class="interactive">Web Design &amp; Development</a></li>
-                        <li><a href="services/digital-experiences/landing-pages.html" class="interactive">Landing
+                        <li><a href="services/digital-experiences/landing-page-services-in-thane" class="interactive">Landing
                                 Pages</a></li>
-                        <li><a href="services/digital-experiences/chatbots.html" class="interactive">Chatbot &amp;
+                        <li><a href="services/digital-experiences/chatbot-development-services-in-thane" class="interactive">Chatbot &amp;
                                 Virtual Assistant</a></li>
                     </ul>
                 </div>

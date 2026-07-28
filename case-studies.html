@@ -3,21 +3,22 @@
 
 <head>
     <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-MVP2NQBM');</script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MVP2NQBM');</script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Studies | ChimpzLab</title>
+    <title>Case Studies | ChimpzLab — Selected Work</title>
+    <meta name="description"
+        content="Rank on Google, get cited in AI answers, and build a social presence tied to real goals. Book a strategy call with ChimpzLab.">
+    <meta name="keywords"
+        content="SEO agency Thane, social media marketing agency India, AEO services India, influencer marketing agency">
 
-    <link rel="icon" type="image/gif" href="asset/chimpzlab-icon.gif">
-    <link rel="apple-touch-icon" href="asset/chimpzlab-icon.gif">
+    <link rel="icon" type="image/gif" href="../asset/chimpzlab-icon.gif">
+    <link rel="apple-touch-icon" href="../asset/chimpzlab-icon.gif">
     <!-- Fonts: Manrope -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,6 +35,10 @@
     <!-- Lenis for Smooth Scrolling -->
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
 
+    <!-- Masonry & ImagesLoaded -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -44,7 +49,15 @@
                     colors: {
                         brand: {
                             dark: '#0a0a0a',
-                            pill: '#f3f4f6'
+                        }
+                    },
+                    animation: {
+                        'marquee': 'marquee 25s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
                         }
                     }
                 }
@@ -52,24 +65,26 @@
         }
     </script>
 
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
-<body class="selection:bg-black selection:text-white">
+<body class="selection:bg-white selection:text-black">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVP2NQBM" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVP2NQBM"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- Custom Cursor -->
     <div id="cursor"></div>
 
-    <!-- Navigation (Light Mode Adapted) -->
     <nav class="fixed w-full top-0 z-50 px-6 md:px-12 py-6 flex justify-between items-center pointer-events-none backdrop-blur-md"
         style="background: linear-gradient(180deg, #000000cf, transparent);">
         <!-- Logo -->
-        <a href="index.html" class="pointer-events-auto interactive z-10 flex items-center gap-2" aria-label="Home">
-            <img src="asset/chimpzlab-white.png" alt="ChimpzLab" class="h-7 md:h-9 object-contain "
+        <a href="../index.html" class="pointer-events-auto interactive z-10 flex items-center gap-2" aria-label="Home">
+            <img src="../asset/chimpzlab-white.png" alt="ChimpzLab" class="h-7 md:h-9 object-contain "
                 onerror="this.style.display='none'; document.getElementById('text-logo').style.display='block';">
             <span id="text-logo"
                 class="hidden text-white font-extrabold text-2xl md:text-3xl tracking-tighter">CHIMPZLAB</span>
@@ -79,7 +94,7 @@
         <div class="pointer-events-auto hidden md:flex absolute left-1/2 -translate-x-1/2 z-10">
             <div class="nav-pill px-6 py-3 rounded-full flex items-center gap-8">
                 <div class="has-dropdown">
-                    <a href="#"
+                    <a href="../index.html#services-section"
                         class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors flex items-center gap-1">
                         Services
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -89,7 +104,7 @@
                     </a>
                     <div class="mega-menu">
                         <div class="mega-menu-grid">
-                            <a href="services/reputation-communications.html" class="service-card-mini">
+                            <a href="../services/reputation-communications.html" class="service-card-mini">
                                 <div class="icon">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -98,7 +113,7 @@
                                 </div>
                                 <span class="card-title">Reputation &<br>Communications</span>
                             </a>
-                            <a href="services/visibility-search.html" class="service-card-mini">
+                            <a href="../services/visibility-search.html" class="service-card-mini">
                                 <div class="icon">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -107,7 +122,7 @@
                                 </div>
                                 <span class="card-title">Visibility &<br>Search</span>
                             </a>
-                            <a href="services/creative.html" class="service-card-mini">
+                            <a href="../services/creative.html" class="service-card-mini">
                                 <div class="icon">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -116,7 +131,7 @@
                                 </div>
                                 <span class="card-title">Creative</span>
                             </a>
-                            <a href="services/demand-generation.html" class="service-card-mini">
+                            <a href="../services/demand-generation.html" class="service-card-mini">
                                 <div class="icon">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -125,7 +140,7 @@
                                 </div>
                                 <span class="card-title">Demand <br>Generation</span>
                             </a>
-                            <a href="services/digital-experiences.html" class="service-card-mini">
+                            <a href="../services/digital-experiences.html" class="service-card-mini">
                                 <div class="icon">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -137,11 +152,12 @@
                         </div>
                     </div>
                 </div>
-                <a href="services/case-studies.html"
-                    class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors">Work</a>
-                <a href="about.html"
+                <a href="case-studies.html"
+                    class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors"
+                    class="interactive text-white font-medium text-sm transition-colors">Work</a>
+                <a href="../about.html"
                     class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors">About</a>
-                <a href="insights.html"
+                <a href="../insights.html"
                     class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors">Insights</a>
             </div>
         </div>
@@ -149,7 +165,7 @@
         <!-- Right: CTA + Mobile -->
         <div class="flex items-center gap-4 z-10">
             <div class="pointer-events-auto hidden md:flex">
-                <a href="#booking-form"
+                <a href="../index.html#booking-form"
                     class="interactive bg-white hover:bg-gray-200 text-black px-7 py-3 rounded-full text-sm font-bold tracking-wide transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.15)]">
                     Let's Connect
                 </a>
@@ -164,402 +180,152 @@
         </div>
     </nav>
 
-    <!-- Blog Hero Split Layout -->
-    <header class="pt-32 md:pt-48 pb-20 px-6 md:px-12 relative bg-brand-dark">
-        <div class="w-full max-w-[1400px] mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-
-                <!-- Left: Text & Audio (7 Cols) -->
-                <div class="lg:col-span-7">
-                    <!-- Meta -->
-                    <div class="flex flex-wrap items-center gap-4 mb-8 gsap-reveal">
-                        <span
-                            class="text-xs font-bold uppercase tracking-widest text-white px-4 py-2 border border-white/20 rounded-full">Strategy</span>
-                        <span class="text-xs font-bold uppercase tracking-widest text-gray-500">5 Min Read</span>
-                        <span class="text-xs font-bold uppercase tracking-widest text-gray-500 hidden md:inline">• July
-                            1,
-                            2026</span>
-                    </div>
-
-                    <!-- Title -->
-                    <h1
-                        class="text-5xl sm:text-7xl md:text-8xl font-extrabold text-white mb-8 tracking-tighter uppercase">
-                        <div class="overflow-hidden"><span class="block gsap-reveal-text">Featured</span></div>
-                        <div class="overflow-hidden"><span class="block text-white/40 gsap-reveal-text">Case
-                                Studies</span>
-                        </div>
-                    </h1>
-
-                    <!-- Custom Audio Player -->
-                    <div class="gsap-reveal mt-10 p-2 pr-6 border border-white/10 bg-white/5 rounded-full flex items-center gap-4 w-fit interactive group hover:border-white/30 transition-colors cursor-pointer"
-                        onclick="toggleAudio()">
-
-                        <!-- Hidden Audio Element (ADD YOUR SRC HERE) -->
-                        <audio id="blog-audio" src="" preload="metadata"></audio>
-
-                        <button id="play-pause-btn"
-                            class="w-14 h-14 rounded-full bg-black text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-md">
-                            <!-- Play Icon (Default) -->
-                            <svg id="icon-play" class="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M8 5v14l11-7z" />
-                            </svg>
-                            <!-- Pause Icon (Hidden initially) -->
-                            <svg id="icon-pause" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-                            </svg>
-                        </button>
-
-                        <div class="flex flex-col justify-center">
-                            <span class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-0.5">Listen to
-                                this
-                                blog</span>
-                            <div class="flex items-center gap-3">
-                                <!-- Visual Waveform Placeholder -->
-                                <div class="flex items-center gap-1 h-3">
-                                    <div class="w-1 h-2 bg-white/60 rounded-full animate-pulse"></div>
-                                    <div class="w-1 h-3 bg-white/60 rounded-full animate-pulse delay-75"></div>
-                                    <div class="w-1 h-1.5 bg-white/60 rounded-full animate-pulse delay-150"></div>
-                                    <div class="w-1 h-2.5 bg-white/60 rounded-full animate-pulse delay-75"></div>
-                                    <div class="w-1 h-2 bg-white/20 rounded-full"></div>
-                                    <div class="w-1 h-1 bg-white/20 rounded-full"></div>
-                                    <div class="w-1 h-2 bg-white/20 rounded-full"></div>
-                                </div>
-                                <span class="text-sm font-bold text-white">4:20</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right: Cover Image (5 Cols) -->
-                <div class="lg:col-span-5 gsap-reveal mt-12 lg:mt-0">
-                    <div class="w-full aspect-[4/5] bg-gray-100 overflow-hidden rounded-2xl relative shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop"
-                            alt="Corporate Strategy"
-                            class="w-full h-full object-cover img-bw hover:scale-105 transition-transform duration-700">
-                    </div>
-                </div>
-
+    <!-- Hero -->
+    <section class="pt-44 md:pt-56 pb-14 px-6 md:px-12 relative overflow-hidden bg-brand-dark">
+        <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+            <div
+                class="absolute top-[-10%] right-[-5%] w-[60vw] h-[60vw] rounded-full bg-gradient-to-br from-white/10 to-transparent blur-3xl">
+            </div>
+            <div
+                class="absolute bottom-[-20%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-gradient-to-tr from-white/5 to-transparent blur-3xl">
+            </div>
+            <div class="absolute inset-0 bg-[url('../asset/grid-pattern.svg')] bg-repeat opacity-10 mix-blend-overlay">
             </div>
         </div>
-    </header>
-
-    <!-- Main Content & Sidebar Layout -->
-    <section class="px-6 md:px-12 pt-20 pb-32 bg-white text-brand-dark">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
-
-            <!-- Left: Article Body (Spans 8 columns) -->
-            <article class="lg:col-span-8 article-content text-lg md:text-xl font-light">
-
-                <!-- Share Options (Moved to Top) -->
-                <div class="mb-12 pb-8 border-b border-gray-200 flex items-center gap-6 gsap-reveal">
-                    <span class="text-xs font-bold uppercase tracking-widest text-gray-500">Share Article</span>
-                    <a href="https://linkedin.com/company/chimpzlab" target="_blank" rel="noopener noreferrer"
-                        class="text-black hover:text-gray-400 transition-colors interactive">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                        </svg>
-                    </a>
-                    <a href="https://twitter.com/chimpzlab" target="_blank" rel="noopener noreferrer"
-                        class="text-black hover:text-gray-400 transition-colors interactive">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                        </svg>
-                    </a>
-                </div>
-
-                <p class="gsap-reveal text-2xl md:text-3xl text-black font-medium mb-12 leading-tight">
-                    Search is no longer just a list of blue links. With the rapid integration of Generative AI into
-                    search engines, how stakeholders research your company is fundamentally changing. If your corporate
-                    narrative isn't structured for AI, you are handing your reputation over to an algorithm.
-                </p>
-
-                <p class="gsap-reveal">
-                    For decades, corporate communications and SEO existed in entirely separate silos. PR teams focused
-                    on securing tier-one media placements, while digital teams obsessed over keywords and technical site
-                    structure. In an era where AI models synthesize answers from across the web in real-time, this
-                    separation is no longer just inefficient—it’s dangerous to your brand equity.
-                </p>
-
-                <p class="gsap-reveal">
-                    When an investor, a prospective employee, or a critical partner asks an AI engine, <em>"What is the
-                        market reputation of [Your Company]?"</em>, the engine doesn't just read your latest press
-                    release. It synthesizes your website, employee reviews, news sentiment, and leadership visibility
-                    into one definitive summary.
-                </p>
-
-                <blockquote class="gsap-reveal">
-                    "You can no longer control the narrative by simply issuing a statement. You must architect a digital
-                    infrastructure that consistently feeds the truth to the machines that shape human perception."
-                </blockquote>
-
-                <h2 class="gsap-reveal uppercase tracking-tight">The Shift from SEO to AEO (Answer Engine Optimization)
-                </h2>
-
-                <p class="gsap-reveal">
-                    Optimizing for AI means understanding that these systems look for consensus and context. A single
-                    highly-placed op-ed might drive immediate traffic, but consistently published, expert-level content
-                    across your owned channels establishes the semantic authority that AI relies upon.
-                </p>
-
-                <p class="gsap-reveal">
-                    This is where integrated communications becomes non-negotiable. Your corporate narrative must be
-                    unified. If your PR team is telling a story about innovation, but your careers page is entirely
-                    generic and your leadership has zero footprint on LinkedIn, the AI detects an inconsistency. To an
-                    answer engine, inconsistency equates to a lack of authority.
-                </p>
-
-                <h2 class="gsap-reveal uppercase tracking-tight">How to Audit Your AI Footprint</h2>
-
-                <p class="gsap-reveal">
-                    Start by querying the major AI tools as if you were your own harshest critic. Ask about your
-                    company's controversies, market position, and culture. The gaps in the generated responses represent
-                    your immediate communications mandate.
-                </p>
-
-                <p class="gsap-reveal">
-                    At ChimpzLab, we approach this by merging narrative strategy with technical digital execution. We
-                    ensure that the story you want to tell is exactly the story the algorithms piece together. Because
-                    in an AI-first world, visibility and reputation are the exact same thing.
-                </p>
-            </article>
-
-            <!-- Right: Sticky Sidebar (Spans 4 columns) -->
-            <aside class="lg:col-span-4 hidden lg:block relative">
-                <div class="sticky top-40">
-
-                    <!-- Blog Categorization by Services -->
-                    <div class="mb-16 gsap-reveal">
-                        <h4
-                            class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-6 border-b border-gray-200 pb-4">
-                            Explore by Service</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="services/reputation-communications.html"
-                                class="interactive border border-black/20 rounded-full px-4 py-2 text-xs font-semibold tracking-wide text-black hover:bg-black hover:text-white transition-colors">Reputation
-                                & Comms</a>
-                            <a href="services/visibility-search.html"
-                                class="interactive border border-black/20 rounded-full px-4 py-2 text-xs font-semibold tracking-wide text-black hover:bg-black hover:text-white transition-colors">Visibility
-                                & Search</a>
-                            <a href="services/creative.html"
-                                class="interactive border border-black/20 rounded-full px-4 py-2 text-xs font-semibold tracking-wide text-black hover:bg-black hover:text-white transition-colors">Content
-                                & Creative</a>
-                            <a href="services/demand-generation.html"
-                                class="interactive border border-black/20 rounded-full px-4 py-2 text-xs font-semibold tracking-wide text-black hover:bg-black hover:text-white transition-colors">Demand
-                                & Automation</a>
-                            <a href="services/digital-experiences.html"
-                                class="interactive border border-black/20 rounded-full px-4 py-2 text-xs font-semibold tracking-wide text-black hover:bg-black hover:text-white transition-colors">Digital
-                                Experiences</a>
-                        </div>
-                    </div>
-
-                    <!-- Table of Recent Blogs -->
-                    <div class="gsap-reveal">
-                        <h4
-                            class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-6 border-b border-gray-200 pb-4">
-                            Recent Insights</h4>
-                        <ul class="space-y-6">
-                            <li class="group">
-                                <a href="blog-insite.html" class="interactive block">
-                                    <span
-                                        class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-1">Digital
-                                        • 4 Min Read</span>
-                                    <h5
-                                        class="text-lg font-bold tracking-tight text-black group-hover:text-gray-500 transition-colors leading-tight">
-                                        Your website is your most important PR asset</h5>
-                                </a>
-                            </li>
-                            <li class="group">
-                                <a href="blog-insite.html" class="interactive block">
-                                    <span
-                                        class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-1">Engagement
-                                        • 6 Min Read</span>
-                                    <h5
-                                        class="text-lg font-bold tracking-tight text-black group-hover:text-gray-500 transition-colors leading-tight">
-                                        Navigating stakeholder trust in complex markets</h5>
-                                </a>
-                            </li>
-                            <li class="group">
-                                <a href="blog-insite.html" class="interactive block">
-                                    <span
-                                        class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-1">Corporate
-                                        Comms • 5 Min Read</span>
-                                    <h5
-                                        class="text-lg font-bold tracking-tight text-black group-hover:text-gray-500 transition-colors leading-tight">
-                                        The difference between activity and actual reputation.</h5>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-            </aside>
+        <div class="max-w-[1400px] mx-auto w-full relative z-10">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-[1px] bg-white/30"></div>
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-white/70">Selected Work</span>
+            </div>
+            <h1
+                class="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold text-white tracking-tighter uppercase leading-[0.9] mb-8">
+                <span class="block gsap-reveal-text">Case</span>
+                <span class="block text-white/40 gsap-reveal-text">Studies</span>
+            </h1>
+            <p class="max-w-2xl text-lg md:text-xl text-white/70 font-light leading-relaxed gsap-reveal">
+                A cross-section of the brands we've positioned, designed, and grown — filterable by the
+                discipline that matters to you.
+            </p>
         </div>
     </section>
 
-    <!-- More Blogs Connector -->
-    <section class="px-6 md:px-12 py-24 bg-white text-brand-dark border-t border-gray-200">
+    <!-- Filter + Grid -->
+    <section class="px-6 md:px-12 py-12 md:py-16 bg-brand-dark border-t border-white/10">
         <div class="max-w-[1400px] mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8 gsap-reveal">
-                <h3 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter uppercase text-black">More
-                    in
-                    Strategy</h3>
-                <a href="blog-insite.html"
-                    class="interactive border border-black/20 text-black hover:bg-black hover:text-white px-8 py-4 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 whitespace-nowrap">View
-                    All Strategy</a>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8">
-                <!-- Related Blog 1 -->
-                <a href="blog-insite.html" class="group interactive block gsap-reveal">
-                    <div class="w-full aspect-[16/9] bg-gray-100 overflow-hidden rounded-xl mb-6 relative">
-                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800&auto=format&fit=crop"
-                            alt="Strategy Planning"
-                            class="w-full h-full object-cover img-bw opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+            <style>
+                .cs-header-row {
+                    display: flex;
+                    align-items: center;
+                    gap: 1.25rem;
+                }
+                #cs-filters-wrapper {
+                    flex: 1;
+                    min-width: 0;
+                    position: relative;
+                    padding-left: 10px;
+                }
+                #cs-filters-wrapper::after {
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    width: 48px;
+                    background: linear-gradient(90deg, transparent, rgba(13,13,13,0.9));
+                    pointer-events: none;
+                    z-index: 1;
+                }
+                #cs-filters {
+                    overflow-x: auto;
+                    scrollbar-width: none;
+                    -webkit-overflow-scrolling: touch;
+                    scroll-behavior: smooth;
+                    cursor: grab;
+                    user-select: none;
+                }
+                #cs-filters::-webkit-scrollbar { display: none; }
+                #cs-filters.dragging {
+                    cursor: grabbing;
+                    scroll-behavior: auto;
+                }
+                .cs-filter {
+                    white-space: nowrap;
+                    border: 1px solid rgba(255,255,255,0.08);
+                    background: rgba(255,255,255,0.04);
+                    backdrop-filter: blur(4px);
+                    transition: all 0.3s;
+                }
+                .cs-filter:last-child {
+                    margin-right: 50px;
+                }
+                .cs-filter:hover {
+                    background: rgba(255,255,255,0.12);
+                    border-color: rgba(255,255,255,0.2);
+                }
+                .cs-filter.active {
+                    background: #fff;
+                    color: #0d0d0d;
+                    border-color: #fff;
+                }
+                @media (max-width: 575px) {
+                    .cs-header-row {
+                        flex-wrap: wrap;
+                        justify-content: center;
+                    }
+                    .cs-header-row .cs-count {
+                        width: 100%;
+                        text-align: center;
+                        margin-top: 2px;
+                    }
+                }
+            </style>
+            <div class="sticky top-24 z-40 mb-12 py-3 backdrop-blur-xl bg-brand-dark/85 -mx-2 px-2 rounded-xl border border-white/5">
+                <div class="cs-header-row">
+                    <div id="cs-filters-wrapper">
+                    <div class="flex flex-nowrap items-center gap-1.5 md:gap-2"
+                        id="cs-filters" role="tablist" aria-label="Filter case studies by discipline">
+                        <button data-filter="all"
+                            class="cs-filter active interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">All</button>
+                        <button data-filter="corporate-communications"
+                            class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Corporate Communications</button>
+                        <button data-filter="public-relations"
+                            class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Public Relations</button>
+                        <button data-filter="thought-leadership"
+                            class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Thought Leadership</button>
+                        <button data-filter="employer-branding"
+                            class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Employer Branding</button>
+                        <button data-filter="social-media-marketing"
+                            class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Social Media Marketing</button>
+                        <button data-filter="seo-aeo"
+                            class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">SEO / AEO</button>
+                        <button data-filter="content-writing"
+                            class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Content Writing</button>
+                        <button data-filter="influencer-marketing"
+                            class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Influencer Marketing</button>
+                        <button data-filter="branding"
+                            class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Branding</button>
+                        <button data-filter="design"
+                            class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Design</button>
+                        <button data-filter="performance-marketing"
+                            class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Performance Marketing</button>
+                        <button data-filter="vetted-lead-generation"
+                            class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Vetted Lead Generation</button>
+                        <button data-filter="chatbot-virtual-assistant"
+                            class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Chatbot & Virtual Assistant</button>
                     </div>
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-3">Strategy • 4
-                        Min
-                        Read</span>
-                    <h4
-                        class="text-2xl md:text-2xl font-bold tracking-tight text-black group-hover:text-gray-500 transition-colors leading-tight mb-4">
-                        Re-thinking Corporate Narrative during a Market Shift</h4>
-                </a>
-                <!-- Related Blog 2 -->
-                <a href="blog-insite.html" class="group interactive block gsap-reveal">
-                    <div class="w-full aspect-[16/9] bg-gray-100 overflow-hidden rounded-xl mb-6 relative">
-                        <img src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?q=80&w=800&auto=format&fit=crop"
-                            alt="Market Analysis"
-                            class="w-full h-full object-cover img-bw opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
                     </div>
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 block mb-3">Strategy • 7
-                        Min
-                        Read</span>
-                    <h4
-                        class="text-2xl md:text-2xl font-bold tracking-tight text-black group-hover:text-gray-500 transition-colors leading-tight mb-4">
-                        Why Your Brand's Search Footprint is a Boardroom Issue</h4>
-                </a>
+                    <span class="cs-count shrink-0 text-xs md:text-sm text-white/40 font-medium tracking-wide whitespace-nowrap"></span>
+                </div>
             </div>
+
+            <div id="cs-grid" class="cs-masonry">
+            </div>
+
+            <p id="cs-empty" class="hidden text-center text-white/40 py-20 text-lg">No case studies in this category
+                yet.</p>
         </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section class="py-32 px-6 md:px-12 bg-white border-t border-gray-200" id="booking-form">
-        <div class="max-w-[1400px] mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-
-                <!-- Left Side: Copy -->
-                <div class="gsap-reveal">
-                    <h2
-                        class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 text-black uppercase leading-[0.9]">
-                        Ready to get started?</h2>
-                    <p class="text-xl text-gray-600 mb-12 max-w-lg font-medium">Submit your inquiry and our team will
-                        get back to you within 24 hours.</p>
-
-                    <div class="space-y-8 max-w-md">
-                        <!-- Item -->
-                        <div class="flex gap-4 items-start">
-                            <div
-                                class="shrink-0 w-6 h-6 rounded-full border-2 border-black flex items-center justify-center mt-1">
-                                <svg class="w-3.5 h-3.5 text-black" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-bold text-black mb-1">Reputation Strategy</h4>
-                                <p class="text-gray-600 text-sm font-medium">Expert guidance on your brand's market
-                                    narrative.</p>
-                            </div>
-                        </div>
-                        <!-- Item -->
-                        <div class="flex gap-4 items-start">
-                            <div
-                                class="shrink-0 w-6 h-6 rounded-full border-2 border-black flex items-center justify-center mt-1">
-                                <svg class="w-3.5 h-3.5 text-black" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-bold text-black mb-1">Stakeholder Mapping</h4>
-                                <p class="text-gray-600 text-sm font-medium">Deep analysis of who matters to your
-                                    business.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Side: Dark Form Container -->
-                <div class="bg-[#111111] rounded-2xl p-8 md:p-12 shadow-2xl gsap-reveal">
-                    <form id="contactForm" class="space-y-6" method="POST" action="lead-capture.php">
-                        <!-- Top Row Fields -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <input type="text" name="name" placeholder="Your Name *" minlength="2" maxlength="100"
-                                    pattern="[A-Za-zÀ-ÿ\s\.\-']+"
-                                    title="Please enter a valid name (letters, spaces, hyphens only)"
-                                    class="w-full bg-transparent border border-white/10 rounded-lg px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
-                                    required>
-                                <p class="error-msg text-red-500 text-xs mt-1 hidden">Please enter your full name.</p>
-                            </div>
-                            <div>
-                                <input type="email" name="email" placeholder="Email *" maxlength="254"
-                                    pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
-                                    title="Please enter a valid email address"
-                                    class="w-full bg-transparent border border-white/10 rounded-lg px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
-                                    required>
-                                <p class="error-msg text-red-500 text-xs mt-1 hidden">Please enter a valid email
-                                    address.</p>
-                            </div>
-                        </div>
-                        <!-- Phone -->
-                        <div>
-                            <input type="tel" name="phone" placeholder="Phone *" minlength="10" maxlength="15"
-                                pattern="[\+\d\s\-\(\)]{10,15}" title="Please enter a valid phone number (10-15 digits)"
-                                class="w-full bg-transparent border border-white/10 rounded-lg px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
-                                required>
-                            <p class="error-msg text-red-500 text-xs mt-1 hidden">Please enter a valid phone number (min
-                                10 digits).</p>
-                        </div>
-                        <!-- Textarea -->
-                        <div>
-                            <textarea name="message" placeholder="Tell us about your project *" rows="4" minlength="10"
-                                maxlength="2000"
-                                class="w-full bg-transparent border border-white/10 rounded-lg px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors resize-none"
-                                required></textarea>
-                            <p class="error-msg text-red-500 text-xs mt-1 hidden">Message must be at least 10
-                                characters.</p>
-                        </div>
-
-                        <!-- Honeypot: invisible to humans, bots love it -->
-                        <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true">
-                            <label>Leave this blank</label>
-                            <input type="text" name="_hp" tabindex="-1" autocomplete="off">
-                        </div>
-
-                        <!-- Hidden fields -->
-                        <input type="hidden" name="api_key" value="3afc0840e1193e58397159d4af15cf4a15b5b35c">
-                        <input type="hidden" name="_redirect" value="thanks.html">
-
-                        <!-- Submit Button -->
-                        <div class="pt-6">
-                            <button type="submit" id="submitBtn"
-                                class="interactive w-fit bg-white hover:bg-gray-200 text-black px-8 py-4 rounded-full text-sm font-bold tracking-wider uppercase transition-all duration-300 flex items-center gap-2">
-                                Send Message
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer class="w-full bg-[#050505] text-white py-6 md:py-8 px-5 md:px-12 relative border-t border-white/10 d-none">
         <div
             class="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center lg:justify-between gap-4 lg:gap-12 text-center">
@@ -572,7 +338,7 @@
             <!-- Block 2 (column): Logo + Address + Social -->
             <div class="flex flex-col items-center gap-4 w-full lg:w-auto">
                 <div class="flex-shrink-0 interactive">
-                    <img src="asset/chimpzlab-white-logo.gif" alt="ChimpzLab Icon"
+                    <img src="../asset/chimpzlab-white-logo.gif" alt="ChimpzLab Icon"
                         class="h-24 md:h-32 w-auto object-contain">
                 </div>
                 <a href="https://maps.google.com/?q=408+Fenkin+9+Phase+1+Wagle+Estate+Thane+West+400604" target="_blank"
@@ -603,15 +369,15 @@
                 <h4 class="text-xs font-bold text-white/50 mb-2 pb-2 border-b border-white/10 inline-block">Services
                 </h4>
                 <ul class="flex flex-col">
-                    <li><a href="services/reputation-communications.html"
+                    <li><a href="../services/reputation-communications.html"
                             class="interactive text-xs font-medium block py-1">Reputation &amp; Communications</a></li>
-                    <li><a href="services/visibility-search.html"
+                    <li><a href="../services/visibility-search.html"
                             class="interactive text-xs font-medium block py-1">Visibility &amp; Search</a></li>
-                    <li><a href="services/creative.html" class="interactive text-xs font-medium block py-1">Content
+                    <li><a href="../services/creative.html" class="interactive text-xs font-medium block py-1">Content
                             &amp; Creative</a></li>
-                    <li><a href="services/demand-generation.html"
+                    <li><a href="../services/demand-generation.html"
                             class="interactive text-xs font-medium block py-1">Demand &amp; Generation</a></li>
-                    <li><a href="services/digital-experiences.html"
+                    <li><a href="../services/digital-experiences.html"
                             class="interactive text-xs font-medium block py-1">Digital Experiences</a></li>
                 </ul>
             </div>
@@ -619,59 +385,60 @@
                 <h4 class="text-xs font-bold text-white/50 mb-2 pb-2 border-b border-white/10 inline-block">Service
                     Pages</h4>
                 <ul class="flex flex-col">
-                    <li><a href="services/reputation-communications/thought-leadership.html"
+                    <li><a href="../services/reputation-communications/thought-leadership-agency-in-thane"
                             class="interactive text-xs leading-tight font-medium block py-1">Thought Leadership</a></li>
-                    <li><a href="services/reputation-communications/public-relations.html"
+                    <li><a href="../services/reputation-communications/public-relations-agency-in-thane"
                             class="interactive text-xs leading-tight font-medium block py-1">Public Relations</a></li>
-                    <li><a href="services/reputation-communications/employer-branding.html"
+                    <li><a href="../services/reputation-communications/employer-branding-agency-in-thane"
                             class="interactive text-xs leading-tight font-medium block py-1">Employer Branding</a></li>
-                    <li><a href="services/reputation-communications/corporate-communications.html"
+                    <li><a href="../services/reputation-communications/corporate-communications-agency-in-thane"
                             class="interactive text-xs leading-tight font-medium block py-1">Corporate
                             Communications</a></li>
-                    <li><a href="services/visibility-search/seo-aeo.html"
+                    <li><a href="../services/visibility-search/seo-aeo-agency-in-thane"
                             class="interactive text-xs leading-tight font-medium block py-1">SEO &amp; AEO</a></li>
-                    <li><a href="services/visibility-search/social-media-marketing.html"
+                    <li><a href="../services/visibility-search/social-media-marketing-agency-in-thane"
                             class="interactive text-xs leading-tight font-medium block py-1">Social Media Marketing</a>
                     </li>
-                    <li><a href="services/visibility-search/influencer-marketing.html"
+                    <li><a href="../services/visibility-search/influencer-marketing-agency-in-thane"
                             class="interactive text-xs leading-tight font-medium block py-1">Influencer Marketing</a>
                     </li>
-                    <li><a href="services/visibility-search/content-writing.html"
+                    <li><a href="../services/visibility-search/content-writing-services-in-thane"
                             class="interactive text-xs leading-tight font-medium block py-1">Content Writing</a></li>
-                    <li><a href="services/creative/video-production.html"
+                    <li><a href="../services/creative/video-production-services-in-thane"
                             class="interactive text-xs leading-tight font-medium block py-1">Video Production</a></li>
-                    <li><a href="services/creative/design.html"
+                    <li><a href="../services/creative/design.html"
                             class="interactive text-xs leading-tight font-medium block py-1">Design</a></li>
-                    <li><a href="services/creative/branding.html"
+                    <li><a href="../services/creative/branding-agency-in-thane"
                             class="interactive text-xs leading-tight font-medium block py-1">Branding</a></li>
-                    <li><a href="services/demand-generation/vetted-lead-generation.html"
+                    <li><a href="../services/demand-generation/vetted-lead-generation-services-in-thane"
                             class="interactive text-xs leading-tight font-medium block py-1">Vetted Lead Generation</a>
                     </li>
-                    <li><a href="services/demand-generation/performance-marketing.html"
+                    <li><a href="../services/demand-generation/performance-marketing-agency-in-thane"
                             class="interactive text-xs leading-tight font-medium block py-1">Performance Marketing</a>
                     </li>
-                    <li><a href="services/demand-generation/marketing-automation.html"
+                    <li><a href="../services/demand-generation/marketing-automation-services-in-thane"
                             class="interactive text-xs leading-tight font-medium block py-1">Marketing Automations</a>
                     </li>
-                    <li><a href="services/demand-generation/email-marketing.html"
+                    <li><a href="../services/demand-generation/email-marketing-services-in-thane"
                             class="interactive text-xs leading-tight font-medium block py-1">Email Marketing</a></li>
-                    <li><a href="services/digital-experiences/chatbots.html"
+                    <li><a href="../services/digital-experiences/chatbot-development-services-in-thane"
                             class="interactive text-xs leading-tight font-medium block py-1">Chatbots</a></li>
-                    <li><a href="services/digital-experiences/website-design-development.html"
+                    <li><a href="../services/digital-experiences/website-design-development-services-in-thane"
                             class="interactive text-xs leading-tight font-medium block py-1">Website Design &amp;
                             Development</a></li>
-                    <li><a href="services/digital-experiences/landing-pages.html"
+                    <li><a href="../services/digital-experiences/landing-page-services-in-thane"
                             class="interactive text-xs leading-tight font-medium block py-1">Landing Pages</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="text-xs font-bold text-white/50 mb-2 pb-2 border-b border-white/10 inline-block">Company</h4>
                 <ul class="flex flex-col">
-                    <li><a href="index.html" data-company class="interactive text-xs font-medium">Home</a></li>
-                    <li><a href="about.html" data-company class="interactive text-xs font-medium">About</a></li>
-                    <li><a href="services/case-studies.html" data-company
+                    <li><a href="../index.html" data-company class="interactive text-xs font-medium">Home</a></li>
+                    <li><a href="../about.html" data-company class="interactive text-xs font-medium">About</a></li>
+                    <li><a href="case-studies.html" data-company
                             class="interactive text-xs font-medium">Work</a></li>
-                    <li><a href="insights.html" data-company class="interactive text-xs font-medium">Insights</a></li>
+                    <li><a href="../insights.html" data-company class="interactive text-xs font-medium">Insights</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -683,103 +450,104 @@
                     <h4 class="text-xs font-bold text-white/50 mb-2 pb-2 border-b border-white/10">Services</h4>
                     <h4 class="text-xs font-bold text-white/50 mb-2 pb-2 border-b border-white/10">Service Pages</h4>
                     <!-- Reputation -->
-                    <div><a href="services/reputation-communications.html" data-service="reputation-communications"
+                    <div><a href="../services/reputation-communications.html" data-service="reputation-communications"
                             class="interactive text-white/80 text-xs font-bold block py-1">Reputation &amp;
                             Communications</a></div>
                     <div>
                         <ul class="flex flex-col">
-                            <li><a href="services/reputation-communications/thought-leadership.html"
+                            <li><a href="../services/reputation-communications/thought-leadership-agency-in-thane"
                                     data-parent="reputation-communications"
                                     class="interactive text-xs leading-tight font-medium block py-1">Thought
                                     Leadership</a></li>
-                            <li><a href="services/reputation-communications/public-relations.html"
+                            <li><a href="../services/reputation-communications/public-relations-agency-in-thane"
                                     data-parent="reputation-communications"
                                     class="interactive text-xs leading-tight font-medium block py-1">Public
                                     Relations</a></li>
-                            <li><a href="services/reputation-communications/employer-branding.html"
+                            <li><a href="../services/reputation-communications/employer-branding-agency-in-thane"
                                     data-parent="reputation-communications"
                                     class="interactive text-xs leading-tight font-medium block py-1">Employer
                                     Branding</a></li>
-                            <li><a href="services/reputation-communications/corporate-communications.html"
+                            <li><a href="../services/reputation-communications/corporate-communications-agency-in-thane"
                                     data-parent="reputation-communications"
                                     class="interactive text-xs leading-tight font-medium block py-1">Corporate
                                     Communications</a></li>
                         </ul>
                     </div>
                     <!-- Visibility -->
-                    <div><a href="services/visibility-search.html" data-service="visibility-search"
+                    <div><a href="../services/visibility-search.html" data-service="visibility-search"
                             class="interactive text-white/80 text-xs font-bold block py-1">Visibility &amp; Search</a>
                     </div>
                     <div>
                         <ul class="flex flex-col">
-                            <li><a href="services/visibility-search/seo-aeo.html" data-parent="visibility-search"
+                            <li><a href="../services/visibility-search/seo-aeo-agency-in-thane" data-parent="visibility-search"
                                     class="interactive text-xs leading-tight font-medium block py-1">SEO &amp; AEO</a>
                             </li>
-                            <li><a href="services/visibility-search/social-media-marketing.html"
+                            <li><a href="../services/visibility-search/social-media-marketing-agency-in-thane"
                                     data-parent="visibility-search"
                                     class="interactive text-xs leading-tight font-medium block py-1">Social Media
                                     Marketing</a></li>
-                            <li><a href="services/visibility-search/influencer-marketing.html"
+                            <li><a href="../services/visibility-search/influencer-marketing-agency-in-thane"
                                     data-parent="visibility-search"
                                     class="interactive text-xs leading-tight font-medium block py-1">Influencer
                                     Marketing</a></li>
-                            <li><a href="services/visibility-search/content-writing.html"
+                            <li><a href="../services/visibility-search/content-writing-services-in-thane"
                                     data-parent="visibility-search"
                                     class="interactive text-xs leading-tight font-medium block py-1">Content Writing</a>
                             </li>
                         </ul>
                     </div>
                     <!-- Creative -->
-                    <div><a href="services/creative.html" data-service="creative"
+                    <div><a href="../services/creative.html" data-service="creative"
                             class="interactive text-white/80 text-xs font-bold block py-1">Content &amp; Creative</a>
                     </div>
                     <div>
                         <ul class="flex flex-col">
-                            <li><a href="services/creative/video-production.html" data-parent="creative"
+                            <li><a href="../services/creative/video-production-services-in-thane" data-parent="creative"
                                     class="interactive text-xs leading-tight font-medium block py-1">Video
                                     Production</a></li>
-                            <li><a href="services/creative/design.html" data-parent="creative"
+                            <li><a href="../services/creative/design.html" data-parent="creative"
                                     class="interactive text-xs leading-tight font-medium block py-1">Design</a></li>
-                            <li><a href="services/creative/branding.html" data-parent="creative"
+                            <li><a href="../services/creative/branding-agency-in-thane" data-parent="creative"
                                     class="interactive text-xs leading-tight font-medium block py-1">Branding</a></li>
                         </ul>
                     </div>
                     <!-- Demand -->
-                    <div><a href="services/demand-generation.html" data-service="demand-generation"
+                    <div><a href="../services/demand-generation.html" data-service="demand-generation"
                             class="interactive text-white/80 text-xs font-bold block py-1">Demand &amp; Generation</a>
                     </div>
                     <div>
                         <ul class="flex flex-col">
-                            <li><a href="services/demand-generation/vetted-lead-generation.html"
+                            <li><a href="../services/demand-generation/vetted-lead-generation-services-in-thane"
                                     data-parent="demand-generation"
                                     class="interactive text-xs leading-tight font-medium block py-1">Vetted Lead
                                     Generation</a></li>
-                            <li><a href="services/demand-generation/performance-marketing.html"
+                            <li><a href="../services/demand-generation/performance-marketing-agency-in-thane"
                                     data-parent="demand-generation"
                                     class="interactive text-xs leading-tight font-medium block py-1">Performance
                                     Marketing</a></li>
-                            <li><a href="services/demand-generation/marketing-automation.html"
+                            <li><a href="../services/demand-generation/marketing-automation-services-in-thane"
                                     data-parent="demand-generation"
                                     class="interactive text-xs leading-tight font-medium block py-1">Marketing
                                     Automations</a></li>
-                            <li><a href="services/demand-generation/email-marketing.html"
+                            <li><a href="../services/demand-generation/email-marketing-services-in-thane"
                                     data-parent="demand-generation"
                                     class="interactive text-xs leading-tight font-medium block py-1">Email Marketing</a>
                             </li>
                         </ul>
                     </div>
                     <!-- Digital -->
-                    <div><a href="services/digital-experiences.html" data-service="digital-experiences"
+                    <div><a href="../services/digital-experiences.html" data-service="digital-experiences"
                             class="interactive text-white/80 text-xs font-bold block py-1">Digital Experiences</a></div>
                     <div>
                         <ul class="flex flex-col">
-                            <li><a href="services/digital-experiences/chatbots.html" data-parent="digital-experiences"
+                            <li><a href="../services/digital-experiences/chatbot-development-services-in-thane"
+                                    data-parent="digital-experiences"
                                     class="interactive text-xs leading-tight font-medium block py-1">Chatbots</a></li>
-                            <li><a href="services/digital-experiences/website-design-development.html"
+                            <li><a href="../services/digital-experiences/website-design-development-services-in-thane"
                                     data-parent="digital-experiences"
                                     class="interactive text-xs leading-tight font-medium block py-1">Website Design
                                     &amp; Development</a></li>
-                            <li><a href="services/digital-experiences/landing-pages.html"
+                            <li><a href="../services/digital-experiences/landing-page-services-in-thane"
                                     data-parent="digital-experiences"
                                     class="interactive text-xs leading-tight font-medium block py-1">Landing Pages</a>
                             </li>
@@ -789,36 +557,221 @@
                 <div>
                     <h4 class="text-xs font-bold text-white/50 mb-2 pb-2 border-b border-white/10">Company</h4>
                     <ul class="flex flex-col">
-                        <li><a href="index.html" data-company class="interactive text-xs font-medium">Home</a></li>
-                        <li><a href="about.html" data-company class="interactive text-xs font-medium">About</a></li>
-                        <li><a href="services/case-studies.html" data-company
+                        <li><a href="../index.html" data-company class="interactive text-xs font-medium">Home</a></li>
+                        <li><a href="../about.html" data-company class="interactive text-xs font-medium">About</a></li>
+                        <li><a href="case-studies.html" data-company
                                 class="interactive text-xs font-medium">Work</a></li>
-                        <li><a href="insights.html" data-company class="interactive text-xs font-medium">Insights</a>
+                        <li><a href="../insights.html" data-company class="interactive text-xs font-medium">Insights</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
     </footer>
-    <script>
 
 
-    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        const cursor = document.getElementById('cursor');
-        const interactiveElements = document.querySelectorAll('.interactive, a, button, input, textarea, select, label');
-        document.addEventListener('mousemove', (e) => { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; });
-        interactiveElements.forEach(el => { el.addEventListener('mouseenter', () => cursor.classList.add('hovered')); el.addEventListener('mouseleave', () => cursor.classList.remove('hovered')); });
-        window.lenis = new Lenis({ wrapper: window, content: document.documentElement, duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), direction: 'vertical', gestureDirection: 'vertical', smooth: true, mouseMultiplier: 1, smoothTouch: false, touchMultiplier: 2, infinite: false, });
-        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-        requestAnimationFrame(raf);
-        gsap.registerPlugin(ScrollTrigger);
-        lenis.on('scroll', ScrollTrigger.update);
-        gsap.from(".gsap-reveal-text", { y: 120, opacity: 0, duration: 1.2, stagger: 0.1, ease: "power4.out", delay: 0.2 });
-        const revealElements = document.querySelectorAll(".gsap-reveal");
-        revealElements.forEach((el) => { gsap.to(el, { scrollTrigger: { trigger: el, start: "top 85%", toggleActions: "play none none reverse" }, opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }); });
-        ScrollTrigger.refresh();
-    </script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Custom cursor
+            const cursor = document.getElementById('cursor');
+            if (cursor) {
+                const interactiveElements = document.querySelectorAll('.interactive, a, button, input, textarea, select, label');
+                document.addEventListener('mousemove', (e) => { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; });
+                interactiveElements.forEach(el => {
+                    el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
+                    el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+                });
+            }
+
+            // Smooth scroll (Lenis) — guarded
+            try {
+                if (typeof Lenis !== 'undefined') {
+                    window.lenis = new Lenis({ duration: 1.1, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smooth: true });
+                    const lenisRaf = (time) => { lenis.raf(time); requestAnimationFrame(lenisRaf); };
+                    requestAnimationFrame(lenisRaf);
+                }
+            } catch (e) { }
+
+            // --- Render cards from JSON ---
+            const CATS = { "corporate-communications": "Corporate Communications", "public-relations": "Public Relations", "thought-leadership": "Thought Leadership", "employer-branding": "Employer Branding", "social-media-marketing": "Social Media Marketing", "seo-aeo": "SEO / AEO", "content-writing": "Content Writing", "influencer-marketing": "Influencer Marketing", "branding": "Branding", "design": "Design", "performance-marketing": "Performance Marketing", "vetted-lead-generation": "Vetted Lead Generation", "chatbot-virtual-assistant": "Chatbot & Virtual Assistant" };
+
+
+            const grid = document.getElementById('cs-grid');
+            const emptyMsg = document.getElementById('cs-empty');
+            const countEl = document.querySelector('.cs-count');
+
+            function renderCards(data) {
+                grid.innerHTML = '';
+                data = data.filter(item => !item.draft);
+                data.forEach((item, i) => {
+                    const idx = String(i + 1).padStart(2, '0');
+                    const tags = item.cats
+                        ? '<span class="cs-tag">' + item.cats + '</span>'
+                        : item.categoryKeys.map(k => '<span class="cs-tag">' + (CATS[k] || k) + '</span>').join('');
+                    const card = document.createElement('a');
+                    card.href = item.link;
+                    card.setAttribute('data-cats', item.categoryKeys.join(' '));
+                    card.className = 'cs-card group relative block rounded-2xl overflow-hidden border border-white/10 bg-[#101010]';
+                    card.innerHTML =
+                        '<div class="relative overflow-hidden">' +
+                        '<img src="' + item.cover + '" alt="' + item.title + '" class="w-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" loading="lazy">' +
+                        '</div>' +
+                        '<div class="p-5 sm:p-6">' +
+                        '<h3 class="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-[1.05] text-white">' + item.title + '</h3>' +
+                        '<div class="flex flex-wrap gap-2 mt-3 mb-2">' + tags + '</div>' +
+                        '<span class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white/85 mt-2">View Case Study' +
+                        '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H8m9 0v9"/></svg>' +
+                        '</span>' +
+                        '</div>';
+                    grid.appendChild(card);
+                });
+            }
+
+            let msnry = null;
+
+            function getGutter() {
+                return window.innerWidth >= 1024 ? 32 : 24;
+            }
+
+            // Load data from external JSON file
+            fetch('./case-studies.json', { cache: 'no-cache' })
+                .then(r => r.json())
+                .then(data => {
+                    renderCards(data);
+                    imagesLoaded(grid, () => {
+                        msnry = new Masonry(grid, {
+                            itemSelector: '.cs-card',
+                            columnWidth: '.cs-card',
+                            percentPosition: true,
+                            gutter: getGutter(),
+                            transitionDuration: 0,
+                        });
+                        grid.classList.add('cs-masonry-ready');
+                        initReveal();
+                        updateCount();
+                    });
+                })
+                .catch(() => {
+                    grid.innerHTML = '<p class="text-center text-white/40 py-20">Failed to load case studies.</p>';
+                });
+
+            function initReveal() {
+                const cards = document.querySelectorAll('.cs-card');
+                if ('IntersectionObserver' in window) {
+                    const io = new IntersectionObserver((entries) => {
+                        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+                    }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
+                    cards.forEach(c => io.observe(c));
+                } else {
+                    cards.forEach(c => c.classList.add('in'));
+                }
+            }
+
+            // Filtering with crossfade
+            const filterBtns = document.querySelectorAll('.cs-filter');
+
+            function updateCount() {
+                const visible = grid.querySelectorAll('.cs-card:not(.hidden)').length;
+                countEl.textContent = visible + (visible === 1 ? ' Project' : ' Projects');
+                emptyMsg.classList.toggle('hidden', visible > 0);
+            }
+
+            let filterBusy = false;
+            filterBtns.forEach(btn => btn.addEventListener('click', () => {
+                if (btn.classList.contains('active') || filterBusy) return;
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const f = btn.dataset.filter;
+
+                filterBusy = true;
+                grid.style.transition = 'opacity .28s ease';
+                grid.style.opacity = '0';
+
+                setTimeout(() => {
+                    const cards = grid.querySelectorAll('.cs-card');
+                    cards.forEach(card => {
+                        const match = f === 'all' || card.dataset.cats.split(' ').includes(f);
+                        card.classList.toggle('hidden', !match);
+                        if (match) card.classList.add('in'); else card.classList.remove('in');
+                    });
+                    updateCount();
+                    if (msnry) msnry.destroy();
+                    msnry = new Masonry(grid, {
+                        itemSelector: '.cs-card:not(.hidden)',
+                        columnWidth: '.cs-card:not(.hidden)',
+                        percentPosition: true,
+                        gutter: getGutter(),
+                        transitionDuration: 0,
+                    });
+                    requestAnimationFrame(() => {
+                        grid.style.opacity = '1';
+                        setTimeout(() => { filterBusy = false; }, 280);
+                    });
+                }, 280);
+            }));
+
+            // Drag-to-scroll for case study filters
+            (function() {
+                const el = document.getElementById('cs-filters');
+                if (!el) return;
+                let isDown = false, startX, scrollLeft, vel = 0;
+                let frame = null, lastX = 0, lastTime = 0;
+
+                function momentum() {
+                    vel *= 0.95;
+                    el.scrollLeft -= vel;
+                    if (Math.abs(vel) > 0.5) {
+                        frame = requestAnimationFrame(momentum);
+                    } else {
+                        cancelAnimationFrame(frame);
+                        frame = null;
+                    }
+                }
+
+                function startDrag(pageX) {
+                    isDown = true;
+                    el.classList.add('dragging');
+                    cancelAnimationFrame(frame);
+                    frame = null;
+                    vel = 0;
+                    startX = pageX;
+                    lastX = pageX;
+                    scrollLeft = el.scrollLeft;
+                    lastTime = performance.now();
+                }
+
+                function moveDrag(pageX) {
+                    if (!isDown) return;
+                    const now = performance.now();
+                    const dt = Math.min(now - lastTime, 50);
+                    const dx = pageX - lastX;
+                    if (dt > 0) {
+                        vel = vel * 0.6 + (dx / dt * 16) * 0.4;
+                    }
+                    el.scrollLeft -= dx * 2.5;
+                    lastX = pageX;
+                    lastTime = now;
+                }
+
+                function endDrag() {
+                    isDown = false;
+                    el.classList.remove('dragging');
+                    if (Math.abs(vel) > 0.5) {
+                        frame = requestAnimationFrame(momentum);
+                    }
+                }
+
+                el.addEventListener('mousedown', (e) => { startDrag(e.pageX); e.preventDefault(); });
+                el.addEventListener('mousemove', (e) => { moveDrag(e.pageX); });
+                el.addEventListener('mouseup', endDrag);
+                el.addEventListener('mouseleave', endDrag);
+                el.addEventListener('touchstart', (e) => { startDrag(e.touches[0].pageX); }, { passive: true });
+                el.addEventListener('touchmove', (e) => { moveDrag(e.touches[0].pageX); }, { passive: true });
+                el.addEventListener('touchend', endDrag);
+            })();
+        });</script>
 
 
     <script>
@@ -903,7 +856,7 @@
             panel.className = 'mobile-menu-panel';
             panel.setAttribute('data-lenis-prevent', ''); // let the panel scroll natively even when Lenis is stopped
 
-            var html = '<div class="mobile-menu-head"><a href="' + (homeLink ? homeLink.href : 'index.html') + '" class="mobile-menu-logo">CHIMPZLAB</a>';
+            var html = '<div class="mobile-menu-head"><a href="' + (homeLink ? homeLink.href : '../index.html') + '" class="mobile-menu-logo">CHIMPZLAB</a>';
             html += '<button type="button" class="mobile-menu-close" aria-label="Close menu">&times;</button></div>';
             html += '<nav class="mobile-menu-nav">';
             html += '<div class="mobile-menu-group"><button type="button" class="mobile-menu-toggle">Services <span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></button><div class="mobile-submenu">';
@@ -961,11 +914,82 @@
 
 
 
+    <!-- Contact / Booking Section -->
+    <section class="py-16 md:py-20 px-6 md:px-12 bg-brand-dark text-white border-t border-white/10" id="booking-form"
+        style="min-height: 100dvh; align-items: center; display: flex; flex-wrap: wrap;">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                <div>
+                    <h2
+                        class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter mb-8 uppercase leading-[0.9]">
+                        Ready to start your next project?</h2>
+                    <p class="text-lg md:text-2xl text-gray-400 mb-12 max-w-lg font-light">Let's discuss how ChimpzLab
+                        can help you build reputation, visibility, and trust.</p>
+                </div>
+                <div class="bg-[#111] border border-white/10 rounded-2xl p-6 md:p-8">
+                    <form id="contactForm" class="space-y-6" method="POST" action="../lead-capture.php">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <input type="text" name="name" placeholder="Your Name *" minlength="2" maxlength="100"
+                                    pattern="[A-Za-zÀ-ÿ\s\.\-']+"
+                                    title="Please enter a valid name (letters, spaces, hyphens only)"
+                                    class="w-full bg-transparent border border-white/20 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
+                                    required>
+                                <p class="error-msg text-red-500 text-xs mt-1 hidden">Please enter your full name.</p>
+                            </div>
+                            <div>
+                                <input type="email" name="email" placeholder="Email *" maxlength="254"
+                                    pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+                                    title="Please enter a valid email address"
+                                    class="w-full bg-transparent border border-white/20 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
+                                    required>
+                                <p class="error-msg text-red-500 text-xs mt-1 hidden">Please enter a valid email
+                                    address.</p>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="tel" name="phone" placeholder="Phone *" minlength="10" maxlength="15"
+                                pattern="[\+\d\s\-\(\)]{10,15}" title="Please enter a valid phone number (10-15 digits)"
+                                class="w-full bg-transparent border border-white/20 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
+                                required>
+                            <p class="error-msg text-red-500 text-xs mt-1 hidden">Please enter a valid phone number (min
+                                10 digits).</p>
+                        </div>
+                        <div>
+                            <textarea name="message" placeholder="Tell us about your project *" rows="4" minlength="10"
+                                maxlength="2000"
+                                class="w-full bg-transparent border border-white/20 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors resize-none"
+                                required></textarea>
+                            <p class="error-msg text-red-500 text-xs mt-1 hidden">Message must be at least 10
+                                characters.</p>
+                        </div>
+                        <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true">
+                            <label>Leave this blank</label>
+                            <input type="text" name="_hp" tabindex="-1" autocomplete="off">
+                        </div>
+                        <input type="hidden" name="api_key" value="3afc0840e1193e58397159d4af15cf4a15b5b35c">
+                        <input type="hidden" name="_redirect" value="thanks.html">
+                        <div class="pt-6">
+                            <button type="submit" id="submitBtn"
+                                class="interactive w-fit bg-white hover:bg-gray-200 text-black px-10 py-5 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-3">
+                                Send Message
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer-v2">
         <div class="footer-inner">
             <div class="footer-grid">
                 <div class="footer-col-brand">
-                    <img src="asset/chimpzlab-white-logo.gif" alt="ChimpzLab" class="footer-logo-mark interactive"
+                    <img src="../asset/chimpzlab-white-logo.gif" alt="ChimpzLab" class="footer-logo-mark interactive"
                         onerror="this.style.display='none'">
 
                     <div class="footer-block">
@@ -1038,10 +1062,10 @@
                 <div class="footer-group">
                     <span class="footer-group-title">Company</span>
                     <ul>
-                        <li><a href="index.html" class="interactive">Home</a></li>
-                        <li><a href="about.html" class="interactive">About</a></li>
-                        <li><a href="services/case-studies.html" class="interactive">Work</a></li>
-                        <li><a href="insights.html" class="interactive">Insights</a></li>
+                        <li><a href="../index.html" class="interactive">Home</a></li>
+                        <li><a href="../about.html" class="interactive">About</a></li>
+                        <li><a href="case-studies.html" class="interactive">Work</a></li>
+                        <li><a href="../insights.html" class="interactive">Insights</a></li>
                     </ul>
                 </div>
 
@@ -1049,13 +1073,13 @@
                     <a href="services/reputation-communications.html" class="footer-group-title">Reputation &amp;
                         Communications</a>
                     <ul>
-                        <li><a href="services/reputation-communications/corporate-communications.html"
+                        <li><a href="../services/reputation-communications/corporate-communications-agency-in-thane"
                                 class="interactive">Corporate Communications</a></li>
-                        <li><a href="services/reputation-communications/public-relations.html"
+                        <li><a href="../services/reputation-communications/public-relations-agency-in-thane"
                                 class="interactive">Public Relations</a></li>
-                        <li><a href="services/reputation-communications/thought-leadership.html"
+                        <li><a href="../services/reputation-communications/thought-leadership-agency-in-thane"
                                 class="interactive">Thought Leadership</a></li>
-                        <li><a href="services/reputation-communications/employer-branding.html"
+                        <li><a href="../services/reputation-communications/employer-branding-agency-in-thane"
                                 class="interactive">Employer Branding</a></li>
                     </ul>
                 </div>
@@ -1063,13 +1087,14 @@
                 <div class="footer-group">
                     <a href="services/visibility-search.html" class="footer-group-title">Visibility &amp; Search</a>
                     <ul>
-                        <li><a href="services/visibility-search/social-media-marketing.html" class="interactive">Social
+                        <li><a href="../services/visibility-search/social-media-marketing-agency-in-thane"
+                                class="interactive">Social
                                 Media Marketing</a></li>
-                        <li><a href="services/visibility-search/seo-aeo.html" class="interactive">SEO / AEO</a></li>
-                        <li><a href="services/visibility-search/content-writing.html" class="interactive">Content
+                        <li><a href="../services/visibility-search/seo-aeo-agency-in-thane" class="interactive">SEO / AEO</a></li>
+                        <li><a href="../services/visibility-search/content-writing-services-in-thane" class="interactive">Content
                                 Writing</a>
                         </li>
-                        <li><a href="services/visibility-search/influencer-marketing.html"
+                        <li><a href="../services/visibility-search/influencer-marketing-agency-in-thane"
                                 class="interactive">Influencer Marketing</a></li>
                     </ul>
                 </div>
@@ -1077,9 +1102,10 @@
                 <div class="footer-group">
                     <a href="services/creative.html" class="footer-group-title">Creative</a>
                     <ul>
-                        <li><a href="services/creative/branding.html" class="interactive">Branding</a></li>
-                        <li><a href="services/creative/design.html" class="interactive">Design</a></li>
-                        <li><a href="services/creative/video-production.html" class="interactive">Video Production</a>
+                        <li><a href="../services/creative/branding-agency-in-thane" class="interactive">Branding</a></li>
+                        <li><a href="../services/creative/design.html" class="interactive">Design</a></li>
+                        <li><a href="../services/creative/video-production-services-in-thane" class="interactive">Video
+                                Production</a>
                         </li>
                     </ul>
                 </div>
@@ -1087,13 +1113,15 @@
                 <div class="footer-group">
                     <a href="services/demand-generation.html" class="footer-group-title">Demand Generation</a>
                     <ul>
-                        <li><a href="services/demand-generation/performance-marketing.html"
+                        <li><a href="../services/demand-generation/performance-marketing-agency-in-thane"
                                 class="interactive">Performance Marketing</a></li>
-                        <li><a href="services/demand-generation/email-marketing.html" class="interactive">Email
+                        <li><a href="../services/demand-generation/email-marketing-services-in-thane" class="interactive">Email
                                 Marketing</a></li>
-                        <li><a href="services/demand-generation/vetted-lead-generation.html" class="interactive">Vetted
+                        <li><a href="../services/demand-generation/vetted-lead-generation-services-in-thane"
+                                class="interactive">Vetted
                                 Lead Generation</a></li>
-                        <li><a href="services/demand-generation/marketing-automation.html" class="interactive">Marketing
+                        <li><a href="../services/demand-generation/marketing-automation-services-in-thane"
+                                class="interactive">Marketing
                                 Automation</a></li>
                     </ul>
                 </div>
@@ -1101,11 +1129,11 @@
                 <div class="footer-group">
                     <a href="services/digital-experiences.html" class="footer-group-title">Digital Experiences</a>
                     <ul>
-                        <li><a href="services/digital-experiences/website-design-development.html"
+                        <li><a href="../services/digital-experiences/website-design-development-services-in-thane"
                                 class="interactive">Web Design &amp; Development</a></li>
-                        <li><a href="services/digital-experiences/landing-pages.html" class="interactive">Landing
+                        <li><a href="../services/digital-experiences/landing-page-services-in-thane" class="interactive">Landing
                                 Pages</a></li>
-                        <li><a href="services/digital-experiences/chatbots.html" class="interactive">Chatbot &amp;
+                        <li><a href="../services/digital-experiences/chatbot-development-services-in-thane" class="interactive">Chatbot &amp;
                                 Virtual Assistant</a></li>
                     </ul>
                 </div>
@@ -1113,14 +1141,14 @@
             </div>
 
             <div class="footer-logo-end">
-                <img src="asset/chimpzlab-footer.png" alt="ChimpzLab" class="footer-end-logo interactive">
+                <img src="../asset/chimpzlab-footer.png" alt="ChimpzLab" class="footer-end-logo interactive">
             </div>
 
             <div class="footer-bottom flex md:flex-row items-center justify-between gap-4">
-                <p>&copy; 2026 ChimpzLab. All rights reserved.</p>
-                <a href="privacy-policy.html"
-                    class="text-gray-400 hover:text-white transition-colors text-sm interactive">Privacy Policy</a>
-            </div>
+                    <p>&copy; 2026 ChimpzLab. All rights reserved.</p>
+                    <a href="../privacy-policy.html"
+                        class="text-gray-400 hover:text-white transition-colors text-sm interactive">Privacy Policy</a>
+                </div>
         </div>
     </footer>
 

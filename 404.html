@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/gif" href="asset/chimpzlab-icon.gif">
+    <meta name="robots" content="noindex, nofollow">
+    <title>404 — Page Not Found | ChimpzLab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Manrope', 'sans-serif'] },
+                    colors: { brand: { dark: '#0a0a0a', pill: '#1a1a1a' } }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-[#0a0a0a] min-h-screen flex items-center justify-center px-6 selection:bg-white selection:text-black">
+    <!-- Custom Cursor -->
+    <div id="cursor"></div>
+    <div class="text-center max-w-lg">
+        <div class="text-8xl md:text-9xl font-extrabold tracking-tighter text-white/10 mb-6">404</div>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tighter text-white mb-4">Page Not Found</h1>
+        <p class="text-lg text-white/60 mb-10">The page you're looking for doesn't exist or has been moved.</p>
+        <a href="/"
+            class="inline-block bg-white text-[#0a0a0a] px-8 py-4 rounded-full text-sm font-bold tracking-wider hover:bg-white/90 transition-all duration-300">Back
+            to Home</a>
+    </div>
+</body>
+
+<script>
+    // Custom Cursor Logic
+    const cursor = document.getElementById('cursor');
+    const interactiveElements = document.querySelectorAll('.interactive, a, button, input, textarea, label');
+
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+    });
+</script>
+
+</html>
