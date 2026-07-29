@@ -155,6 +155,7 @@ RewriteRule ^social-media-for-stl-digital-2/?$ /case-studies/stl-digital [R=301,
 RewriteRule ^employer-branding-for-blue-star-india/?$ /case-studies/blue-star [R=301,L]
 RewriteRule ^social-media-marketing-for-cisco-thingqbator/?$ /case-studies/cisco-thingqbator [R=301,L]
 RewriteRule ^digital-marketing-anitab-india/?$ /case-studies/ghci-2024 [R=301,L]
+
 # valuex redirects
 RewriteRule ^search-engine-optimization-for-ccoe/?$ /services/visibility-search/seo-aeo-agency-in-thane [R=301,L]
 RewriteRule ^search-engine-optimization-for-karma-capital/?$ / [R=301,L]
