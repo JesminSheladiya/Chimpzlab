@@ -7,18 +7,18 @@
       "readTime": "5 Min Read",
       "date": "July 2026",
       "titleParts": [
-        "Do Dubbed Western AI Avatars Actually Work for Tier\u20112 and Tier\u20113 Indian Audiences?"
+        "Do Dubbed Western AI Avatars Actually Work for Tier‑2 and Tier‑3 Indian Audiences?"
       ],
       "titleFull": "AI video dubbing India regional languages brands",
       "image": "asset/july-blogs/5th-blog.png",
       "alt": "AI video dubbing India",
-      "intro": "Generic Western AI dubbing tools frequently underperform with Tier\u20112 and Tier\u20113 Indian audiences because they fail to handle regional dialects and cultural cues.",
+      "intro": "Generic Western AI dubbing tools frequently underperform with Tier‑2 and Tier‑3 Indian audiences because they fail to handle regional dialects and cultural cues.",
       "takeaways": [
         "70%+ of Indian Gen Z watch dubbed content",
         "Western AI avatars miss regional nuances, harming brand trust",
-        "India\u2011specific AI dubbing tools are emerging",
+        "India‑specific AI dubbing tools are emerging",
         "Native models handle Devanagari and Hinglish better",
-        "Local AI dubbing can improve engagement for Tier\u20112/3 markets"
+        "Local AI dubbing can improve engagement for Tier‑2/3 markets"
       ],
       "body": [
         {
@@ -27,7 +27,7 @@
         },
         {
           "type": "p",
-          "text": "Western AI dubbing tools often miss regional dialects, cultural cues, and Devanagari or Hinglish phonetics, leading to an uncanny\u2011valley effect that erodes brand trust. India\u2011specific AI dubbing platforms offer native models trained on regional languages and provide better lip\u2011sync mapping, delivering a more authentic experience for Tier\u20112 and Tier\u20113 audiences."
+          "text": "Western AI dubbing tools often miss regional dialects, cultural cues, and Devanagari or Hinglish phonetics, leading to an uncanny‑valley effect that erodes brand trust. India‑specific AI dubbing platforms offer native models trained on regional languages and provide better lip‑sync mapping, delivering a more authentic experience for Tier‑2 and Tier‑3 audiences."
         },
         {
           "type": "h2",
@@ -142,14 +142,14 @@
       "readTime": "5 Min Read",
       "date": "July 2026",
       "titleParts": [
-        "Is Accessibility\u2011First Design Now a Legal Requirement in 2026?"
+        "Is Accessibility‑First Design Now a Legal Requirement in 2026?"
       ],
       "titleFull": "accessibility first design 2026 legal requirement",
       "image": "asset/july-blogs/6th-blog.png",
       "alt": "Accessibility first design 2026",
-      "intro": "Accessibility\u2011first design has moved from best practice to a legal and litigation risk in 2026.",
+      "intro": "Accessibility‑first design has moved from best practice to a legal and litigation risk in 2026.",
       "takeaways": [
-        "EU Accessibility Act makes WCAG\u202f2.1\u202fAA mandatory",
+        "EU Accessibility Act makes WCAG 2.1 AA mandatory",
         "US lawsuits up 14% YoY in 2025",
         "94.8% of top sites still fail basic WCAG checks",
         "Accessibility improves retention and checkout conversion",
@@ -158,11 +158,11 @@
       "body": [
         {
           "type": "h2",
-          "text": "Why Is Accessibility\u2011First Design Now a Legal Requirement?"
+          "text": "Why Is Accessibility‑First Design Now a Legal Requirement?"
         },
         {
           "type": "p",
-          "text": "The European Accessibility Act took effect June\u202f2025, making WCAG\u202f2.1\u202fAA compliance mandatory for digital products sold into the EU. In the US, ADA\u2011related lawsuits rose 14% in 2025, creating a growing litigation risk. Over 94% of top\u2011traffic homepages still fail basic checks, while data shows accessible products achieve higher retention and checkout conversion rates. Indian law (RPwD Act) also imposes accessibility obligations for public\u2011facing digital services."
+          "text": "The European Accessibility Act took effect June 2025, making WCAG 2.1 AA compliance mandatory for digital products sold into the EU. In the US, ADA‑related lawsuits rose 14% in 2025, creating a growing litigation risk. Over 94% of top‑traffic homepages still fail basic checks, while data shows accessible products achieve higher retention and checkout conversion rates. Indian law (RPwD Act) also imposes accessibility obligations for public‑facing digital services."
         },
         {
           "type": "h2",
@@ -277,16 +277,16 @@
       "readTime": "5 Min Read",
       "date": "July 2026",
       "titleParts": [
-        "What Is Meta's Muse Image, and Does It Change AI\u2011Ad Disclosure Rules for Advertisers?"
+        "What Is Meta's Muse Image, and Does It Change AI‑Ad Disclosure Rules for Advertisers?"
       ],
       "titleFull": "Meta Muse Image AI ads disclosure",
       "image": "asset/july-blogs/7th-blog.png",
       "alt": "Meta Muse Image AI ads",
-      "intro": "Meta's Muse Image is a new generative image model rolling into Advantage+ Creative, changing AI\u2011ad disclosure requirements.",
+      "intro": "Meta's Muse Image is a new generative image model rolling into Advantage+ Creative, changing AI‑ad disclosure requirements.",
       "takeaways": [
         "Muse Image powers Advantage+ Creative",
-        "AI\u2011generated people must carry a visible label",
-        "Non\u2011person images get lower\u2011visibility disclosure",
+        "AI‑generated people must carry a visible label",
+        "Non‑person images get lower‑visibility disclosure",
         "Chrome Lighthouse now audits llms.txt, not related",
         "Advertisers should test labelled creatives now"
       ],
@@ -297,7 +297,7 @@
         },
         {
           "type": "p",
-          "text": "Muse Image, announced July\u202f7\u202f2026, is Meta's new generative image model that powers Advantage+ Creative. It also brings stricter AI\u2011ad disclosure: photorealistic AI\u2011generated people get a prominent label next to Sponsored, while other AI\u2011edited assets receive a lower\u2011visibility disclosure inside a three\u2011dot menu. Advertisers should run tests to gauge click\u2011through impact now."
+          "text": "Muse Image, announced July 7 2026, is Meta's new generative image model that powers Advantage+ Creative. It also brings stricter AI‑ad disclosure: photorealistic AI‑generated people get a prominent label next to Sponsored, while other AI‑edited assets receive a lower‑visibility disclosure inside a three‑dot menu. Advertisers should run tests to gauge click‑through impact now."
         },
         {
           "type": "h2",
@@ -409,12 +409,12 @@
       "titleFull": "Google May 2026 core update what changed",
       "image": "asset/july-blogs/8th-blog.png",
       "alt": "Google core update 2026",
-      "intro": "Google's May 2026 core update rewarded topical authority and genuine first\u2011hand experience over content volume and AI\u2011scaled generic writing.",
+      "intro": "Google's May 2026 core update rewarded topical authority and genuine first‑hand experience over content volume and AI‑scaled generic writing.",
       "takeaways": [
-        "Deep, authoritative content outperforms high\u2011volume farms",
-        "First\u2011hand experience signals are critical",
+        "Deep, authoritative content outperforms high‑volume farms",
+        "First‑hand experience signals are critical",
         "Core updates are ranking reassessments, not penalties",
-        "Recovery typically takes 4\u20118 weeks",
+        "Recovery typically takes 4‑8 weeks",
         "Next broad core update expected Q3 2026"
       ],
       "body": [
@@ -424,7 +424,7 @@
         },
         {
           "type": "p",
-          "text": "The May 2026 core update rewarded topical authority and genuine first\u2011hand experience, with deep, well\u2011researched articles outranking high\u2011volume generic content. It also caused heavier volatility than the March update, and recovery typically stabilises 4\u20118 weeks after rollout. The next broad core update is projected for Q3 2026, likely August or September."
+          "text": "The May 2026 core update rewarded topical authority and genuine first‑hand experience, with deep, well‑researched articles outranking high‑volume generic content. It also caused heavier volatility than the March update, and recovery typically stabilises 4‑8 weeks after rollout. The next broad core update is projected for Q3 2026, likely August or September."
         },
         {
           "type": "h2",
@@ -555,7 +555,7 @@
         "They're Ready to Talk to Sales, and What Fixes That?"
       ],
       "titleFull": "B2B lead generation dark social intent data 2026",
-      "image": "asset/july-blogs/6th-blog.png",
+      "image": "asset/july-blogs/1st-blog.png",
       "alt": "B2B dark social lead generation",
       "intro": "Most B2B buyers stay invisible to a vendor's marketing and sales systems until late in their decision because the large majority of their research now happens in places traditional tracking cannot reach, and the fix gaining traction in 2026 is replacing static lead scoring with intent-based account scoring built on real-time behavioral signals rather than form fills.",
       "takeaways": [
@@ -671,7 +671,7 @@
         "Personalization Actually Improve Conversion in 2026?"
       ],
       "titleFull": "AI landing page personalization 2026",
-      "image": "asset/july-blogs/7th-blog.png",
+      "image": "asset/july-blogs/2nd-blog.png",
       "alt": "AI landing page personalization",
       "intro": "AI-powered real-time landing page personalization does improve conversion rates in 2026 according to every source tracking it, but the reported size of that improvement varies widely depending on who is reporting it, from roughly 15% to as high as 85%, so the honest answer is that it works, with a range that should be treated skeptically rather than as one confirmed number.",
       "takeaways": [
@@ -778,7 +778,7 @@
         "Does a Website Actually Need an llms.txt File in 2026?"
       ],
       "titleFull": "do I need llms.txt 2026",
-      "image": "asset/july-blogs/8th-blog.png",
+      "image": "asset/july-blogs/3rd-blog.png",
       "alt": "llms.txt AI agents 2026",
       "intro": "For most websites, no, an llms.txt file will not improve AI search visibility, but for sites where AI coding assistants or AI shopping agents are meaningful referrers, it genuinely helps those agents understand and act on the site faster.",
       "takeaways": [
@@ -994,7 +994,7 @@
         "in 2026, or Just Producing More Content Faster?"
       ],
       "titleFull": "does AI actually improve internal communications",
-      "image": "asset/july-blogs/2nd-blog.png",
+      "image": "asset/july-blogs/9th-blog.png",
       "alt": "AI internal communications 2026",
       "intro": "AI is genuinely improving the speed and volume of internal communications output in 2026, but it is not yet improving the strategic maturity of most communications functions, and treating the two as the same thing is the most common mistake comms leaders are making right now.",
       "takeaways": [
@@ -1212,15 +1212,15 @@
         "Chatbot Work and What",
         "Does It Cost in India?"
       ],
-      "titleFull": "How Does a WhatsApp AI Chatbot Work and What Does It Cost in India?",
+      "titleFull": "WhatsApp AI Chatbot for Business India Cost",
       "image": "asset/blogs/10th-Blog.jpg",
-      "alt": "WhatsApp AI chatbot for business \u2014 smartphone with chat interface and automation nodes",
-      "intro": "A WhatsApp AI chatbot for an Indian business runs on Meta's WhatsApp Business Platform API, requires a registered Business Solution Provider rather than the free consumer app, and costs a combination of Meta's per-message or per-conversation charges plus a separate monthly platform fee.",
+      "alt": "WhatsApp AI chatbot for business — smartphone with chat interface and automation nodes",
+      "intro": "How much does a WhatsApp AI chatbot cost for Indian businesses? We break down setup costs, monthly fees, and ROI for WhatsApp automation in 2026.",
       "takeaways": [
-        "Free WhatsApp Business App cannot run AI chatbots \u2014 the WhatsApp Business Platform API is required",
-        "Meta's India pricing ranges from ~\u20b90.14 to \u20b91.09 per template message depending on category",
-        "AI chatbot platform fee runs roughly \u20b94,000 to \u20b98,000/month; full CRM integration up to \u20b910 lakh/month",
-        "DPDP Act consent requirements apply to chatbot conversation data \u2014 plan compliance ahead"
+        "Free WhatsApp Business App cannot run AI chatbots — the WhatsApp Business Platform API is required",
+        "Meta's India pricing ranges from ~₹0.14 to ₹1.09 per template message depending on category",
+        "AI chatbot platform fee runs roughly ₹4,000 to ₹8,000/month; full CRM integration up to ₹10 lakh/month",
+        "DPDP Act consent requirements apply to chatbot conversation data — plan compliance ahead"
       ],
       "body": [
         {
@@ -1241,7 +1241,7 @@
         },
         {
           "type": "p",
-          "text": "This is where 2026 introduced real change, and where a business needs to check current rates directly rather than rely on older guides. Meta has been transitioning conversation-based pricing toward a per-template message model. One provider reported Meta's revised India rates, effective January 1, 2026, at approximately \u20b91.09 per marketing template message and \u20b90.145 per utility or authentication template message, with service messages, meaning customer-initiated support and chatbot queries, remaining free within the 24-hour service window (AiSensy, 2026). Other sources describe a still-active per-conversation model for India in 2026, at roughly \u20b90.78 per marketing conversation, with service conversations free (Hyperleap, May 2026)."
+          "text": "This is where 2026 introduced real change, and where a business needs to check current rates directly rather than rely on older guides. Meta has been transitioning conversation-based pricing toward a per-template message model. One provider reported Meta's revised India rates, effective January 1, 2026, at approximately ₹1.09 per marketing template message and ₹0.145 per utility or authentication template message, with service messages, meaning customer-initiated support and chatbot queries, remaining free within the 24-hour service window (AiSensy, 2026). Other sources describe a still-active per-conversation model for India in 2026, at roughly ₹0.78 per marketing conversation, with service conversations free (Hyperleap, May 2026)."
         },
         {
           "type": "p",
@@ -1253,7 +1253,7 @@
         },
         {
           "type": "p",
-          "text": "Meaningfully more, reflecting the added natural language handling. Market rate estimates for AI-powered chatbots capable of handling open-ended queries, multilingual conversations, and context-aware responses run roughly \u20b94,000 to \u20b98,000 per month for the bot layer itself, with custom flows integrated into a CRM or backend system typically running \u20b910,000 or more per month, or as a one-time development fee depending on complexity (MessageBot, 2026). At the higher end, businesses running significant scale with full CRM and ERP integration, analytics, and multi-user access report total monthly costs, including Meta's conversation charges, Business Solution Provider fees, and implementation, ranging from roughly \u20b930,000 to \u20b910 lakh or more per month depending entirely on volume and integration depth (Secuodsoft, 2026)."
+          "text": "Meaningfully more, reflecting the added natural language handling. Market rate estimates for AI-powered chatbots capable of handling open-ended queries, multilingual conversations, and context-aware responses run roughly ₹4,000 to ₹8,000 per month for the bot layer itself, with custom flows integrated into a CRM or backend system typically running ₹10,000 or more per month, or as a one-time development fee depending on complexity (MessageBot, 2026). At the higher end, businesses running significant scale with full CRM and ERP integration, analytics, and multi-user access report total monthly costs, including Meta's conversation charges, Business Solution Provider fees, and implementation, ranging from roughly ₹30,000 to ₹10 lakh or more per month depending entirely on volume and integration depth (Secuodsoft, 2026)."
         },
         {
           "type": "blockquote",
@@ -1293,7 +1293,7 @@
         },
         {
           "type": "p",
-          "text": "<strong>How much does a WhatsApp AI chatbot cost per month in India?</strong><br>Smaller deployments with an AI-powered bot layer run roughly \u20b94,000 to \u20b98,000 per month. Larger deployments with CRM integration and higher volume can range from \u20b930,000 to \u20b910 lakh or more per month."
+          "text": "<strong>How much does a WhatsApp AI chatbot cost per month in India?</strong><br>Smaller deployments with an AI-powered bot layer run roughly ₹4,000 to ₹8,000 per month. Larger deployments with CRM integration and higher volume can range from ₹30,000 to ₹10 lakh or more per month."
         },
         {
           "type": "p",
@@ -1309,11 +1309,11 @@
         },
         {
           "type": "p",
-          "text": "<strong>What is the difference between Meta's charges and a Business Solution Provider's charges?</strong><br>Meta's per-message rate is fixed and identical regardless of provider. The provider's fee covers the software layer \u2014 shared inbox, chatbot builder, analytics, and integration support."
+          "text": "<strong>What is the difference between Meta's charges and a Business Solution Provider's charges?</strong><br>Meta's per-message rate is fixed and identical regardless of provider. The provider's fee covers the software layer — shared inbox, chatbot builder, analytics, and integration support."
         }
       ],
       "audioDuration": "12:00",
-      "description": "WhatsApp AI chatbot costs in India: Meta API pricing, Business Solution Provider fees, AI bot layer costs from \u20b94,000 to \u20b910 lakh/month, and DPDP Act compliance requirements."
+      "description": "WhatsApp AI chatbot costs in India: Meta API pricing, Business Solution Provider fees, AI bot layer costs from ₹4,000 to ₹10 lakh/month, and DPDP Act compliance requirements."
     },
     {
       "slug": "dpdp-act-email-marketing-compliance-india-2026",
@@ -1326,20 +1326,20 @@
         "Affect Email and Marketing",
         "Consent in India?"
       ],
-      "titleFull": "How Does the DPDP Act Affect Email and Marketing Consent in India?",
+      "titleFull": "DPDP Act & Email Marketing Compliance India",
       "image": "asset/blogs/9th-blog.jpg",
-      "alt": "DPDP Act email marketing compliance \u2014 data protection shield with email and consent interface",
-      "intro": "India's Digital Personal Data Protection Act requires that consent for email and marketing communication be specific, granular, and easy to withdraw, with two hard compliance dates on the calendar: the Consent Manager framework becomes operational on November 13, 2026, and full substantive compliance is required by May 13, 2027.",
+      "alt": "DPDP Act email marketing compliance — data protection shield with email and consent interface",
+      "intro": "India's DPDP Act changes how brands collect consent for email marketing. Here's what to update in your email strategy to stay compliant in 2026.",
       "takeaways": [
-        "Consent Manager framework operational from November 13, 2026 \u2014 full compliance by May 13, 2027",
-        "Penalties can reach \u20b9250 crore per violation \u2014 this is a live operational deadline, not a future regulation",
-        "Email consent must be specific and purpose-bound \u2014 blanket opt-ins will not meet the new standard",
-        "MeitY proposed compressing the timeline from 18 to 12 months \u2014 plan for November 2026 readiness"
+        "Consent Manager framework operational from November 13, 2026 — full compliance by May 13, 2027",
+        "Penalties can reach ₹250 crore per violation — this is a live operational deadline, not a future regulation",
+        "Email consent must be specific and purpose-bound — blanket opt-ins will not meet the new standard",
+        "MeitY proposed compressing the timeline from 18 to 12 months — plan for November 2026 readiness"
       ],
       "body": [
         {
           "type": "p",
-          "text": "India's Digital Personal Data Protection Act requires that consent for email and marketing communication be specific, granular, and easy to withdraw, with two hard compliance dates on the calendar: the Consent Manager framework becomes operational on November 13, 2026, and full substantive compliance, covering notice, consent, security safeguards, and data principal rights, is required by May 13, 2027. Penalties for non-compliance can reach \u20b9250 crore per violation, which makes this a live operational deadline for any business running email marketing or automation in India, not a future regulation to monitor from a distance."
+          "text": "India's Digital Personal Data Protection Act requires that consent for email and marketing communication be specific, granular, and easy to withdraw, with two hard compliance dates on the calendar: the Consent Manager framework becomes operational on November 13, 2026, and full substantive compliance, covering notice, consent, security safeguards, and data principal rights, is required by May 13, 2027. Penalties for non-compliance can reach ₹250 crore per violation, which makes this a live operational deadline for any business running email marketing or automation in India, not a future regulation to monitor from a distance."
         },
         {
           "type": "p",
@@ -1359,7 +1359,7 @@
         },
         {
           "type": "blockquote",
-          "text": "\"Penalties for non-compliance can reach \u20b9250 crore per violation. This is a live operational deadline for any business running email marketing or automation in India, not a future regulation to monitor from a distance.\""
+          "text": "\"Penalties for non-compliance can reach ₹250 crore per violation. This is a live operational deadline for any business running email marketing or automation in India, not a future regulation to monitor from a distance.\""
         },
         {
           "type": "h2",
@@ -1403,7 +1403,7 @@
         },
         {
           "type": "p",
-          "text": "<strong>What are the penalties for non-compliance with the DPDP Act?</strong><br>Penalties can reach \u20b9250 crore per violation, with the Data Protection Board already constituted and empowered to investigate complaints."
+          "text": "<strong>What are the penalties for non-compliance with the DPDP Act?</strong><br>Penalties can reach ₹250 crore per violation, with the Data Protection Board already constituted and empowered to investigate complaints."
         },
         {
           "type": "p",
@@ -1415,7 +1415,7 @@
         }
       ],
       "audioDuration": "10:00",
-      "description": "India's DPDP Act requires specific, granular email marketing consent by November 2026. Penalties reach \u20b9250 crore. Learn the deadlines, consent manager rules, and compliance steps."
+      "description": "India's DPDP Act requires specific, granular email marketing consent by November 2026. Penalties reach ₹250 crore. Learn the deadlines, consent manager rules, and compliance steps."
     },
     {
       "slug": "pr-for-ai-search-visibility-geo-india",
@@ -1428,12 +1428,12 @@
         "Show Up in AI-Generated",
         "Answers?"
       ],
-      "titleFull": "How Does PR Help a Brand Show Up in AI-Generated Answers?",
+      "titleFull": "PR for AI Search Visibility & GEO in India",
       "image": "asset/blogs/8th-Blog.jpg",
-      "alt": "PR for AI visibility \u2014 press coverage and media mentions feeding into AI answer engine",
-      "intro": "PR helps a brand get cited by AI answer engines because those engines weight independent, third-party coverage far more heavily than a brand's own website content when deciding which sources to trust and cite, meaning traditional earned media, press coverage, expert quotes, and founder-led thought leadership, functions as direct infrastructure for AI visibility rather than a separate discipline from it.",
+      "alt": "PR for AI visibility — press coverage and media mentions feeding into AI answer engine",
+      "intro": "PR is now an AI search strategy. Learn how earned media and press placements boost generative engine optimisation (GEO) and AI visibility in India.",
       "takeaways": [
-        "More than 95% of links cited in AI answers are unpaid \u2014 roughly 85% are earned media specifically",
+        "More than 95% of links cited in AI answers are unpaid — roughly 85% are earned media specifically",
         "Branded web mentions are ~3x more influential than backlinks when LLMs decide which brands to cite",
         "One authoritative earned-media placement generates more AI visibility than 100 self-published blog posts",
         "Founder bylines with Author schema give AI engines a named expert identity signal for citations"
@@ -1542,10 +1542,10 @@
         "Be Disclosed in India",
         "in 2026?"
       ],
-      "titleFull": "How Must AI or Virtual Influencers Be Disclosed in India in 2026?",
+      "titleFull": "ASCI AI Influencer Disclosure Rules India 2026",
       "image": "asset/blogs/7th-blog.jpg",
-      "alt": "AI influencer disclosure \u2014 virtual avatar with legal gavel and ASCI guidelines",
-      "intro": "Any AI-generated or virtual influencer used in Indian advertising must carry a clear, prominent disclosure stating the persona is virtual or AI-generated, under updated Advertising Standards Council of India guidelines, and that disclosure requirement sits on top of India's existing influencer rules for paid partnerships and credential disclosure requirements as well.",
+      "alt": "AI influencer disclosure — virtual avatar with legal gavel and ASCI guidelines",
+      "intro": "ASCI has issued guidelines for AI-generated influencer content in India. Here's what brands, agencies, and creators must know to stay compliant in 2026.",
       "takeaways": [
         "ASCI's 2026 guidelines require clear, prominent disclosure on any AI or virtual influencer content",
         "India's three-tier framework: high-risk AI uses prohibited outright, medium-risk uses require disclosure",
@@ -1652,15 +1652,15 @@
         "Structured So AI Engines",
         "Actually Cite It?"
       ],
-      "titleFull": "How Should Content Be Structured So AI Engines Actually Cite It?",
+      "titleFull": "How to Write Content for AI Citation & AEO",
       "image": "asset/blogs/6th-Blog.jpg",
-      "alt": "AI citation content structure \u2014 document with AI extraction nodes and structured headings",
-      "intro": "Content earns AI citation by leading every section with a direct, self-contained answer in the first sentence, using question-shaped headings that mirror how people actually ask AI tools, and backing claims with specific statistics and named sources, because AI engines chunk content into fragments and score each fragment for extractability rather than reading a page the way a human does.",
+      "alt": "AI citation content structure — document with AI extraction nodes and structured headings",
+      "intro": "Want your content cited by ChatGPT, Perplexity, or Google AI Overviews? Learn how to write for answer engine optimisation and increase AI citation chances.",
       "takeaways": [
-        "Only ~12% of URLs cited by AI also rank in Google's top 10 \u2014 AI citation and SEO are largely separate problems",
+        "Only ~12% of URLs cited by AI also rank in Google's top 10 — AI citation and SEO are largely separate problems",
         "Content with clear H2/H3 hierarchies and bullet points gets cited ~65% more often than unstructured prose",
         "Long-form content (2,500-4,000+ words) gets cited ~3x more than short posts, but only when matched with sourced depth",
-        "Listicles capture ~22% of all AI citations \u2014 structured comparison content deserves a real place in content calendars"
+        "Listicles capture ~22% of all AI citations — structured comparison content deserves a real place in content calendars"
       ],
       "body": [
         {
@@ -1778,15 +1778,15 @@
         "How Do You Optimize for",
         "In-Platform Search?"
       ],
-      "titleFull": "What Is Social SEO and How Do You Optimize for In-Platform Search?",
+      "titleFull": "Social SEO in India 2026: What You Need to Know",
       "image": "asset/blogs/5th-Blog.jpg",
-      "alt": "Social SEO \u2014 magnifying glass over social media platform icons and search bar",
-      "intro": "Social SEO is the practice of structuring social media content, captions, profile information, and on-screen text so it surfaces when someone searches directly inside a platform like Instagram, YouTube, or LinkedIn, rather than relying only on the feed algorithm to distribute it.",
+      "alt": "Social SEO — magnifying glass over social media platform icons and search bar",
+      "intro": "Social media is now a search engine. Learn how to optimise Instagram, LinkedIn, and YouTube content for social SEO in India and reach the right audience.",
       "takeaways": [
         "81% of marketers reported improved performance after investing in social SEO over six months",
         "LinkedIn leads search-like discovery at 27%, followed by YouTube at 18% and Instagram at 17%",
         "Keyword-based captions are the single most widely used social SEO tactic at 53% adoption",
-        "Social search maturity is roughly where Google SEO was in 2010 \u2014 early-mover opportunity remains"
+        "Social search maturity is roughly where Google SEO was in 2010 — early-mover opportunity remains"
       ],
       "body": [
         {
@@ -1896,12 +1896,12 @@
         "Should an Indian Marketing Team",
         "Use in 2026?"
       ],
-      "titleFull": "Which AI Video Generator Should an Indian Marketing Team Use in 2026?",
+      "titleFull": "Best AI Video Generators in India 2026",
       "image": "asset/blogs/4th-blog.jpg",
-      "alt": "AI video generation \u2014 camera and digital interface with AI nodes",
-      "intro": "Google Veo 3.1 is the strongest general-purpose choice for most Indian marketing teams in 2026, offering native audio generation, 4K output, and flexible API or subscription access, while Kling AI leads for long-form or character-consistent storytelling and Runway Gen-4 leads for teams that need tight integration into a professional editing pipeline.",
+      "alt": "AI video generation — camera and digital interface with AI nodes",
+      "intro": "Compare the top AI video generation tools available in India in 2026. From Kling to Veo 3.1 and Seedance, find the best model for your content and budget.",
       "takeaways": [
-        "OpenAI shut down Sora in April 2026 \u2014 teams on the API must migrate before September 24, 2026",
+        "OpenAI shut down Sora in April 2026 — teams on the API must migrate before September 24, 2026",
         "Google Veo 3.1 is the top general-purpose replacement with native audio, 4K, and flexible pricing",
         "Kling AI leads for long-form narrative work; Runway Gen-4 for professional editing pipeline integration",
         "Subscription costs start at $19.99/month; API pricing ranges from $0.24 to $4.80 per 8-second clip"
@@ -1994,15 +1994,15 @@
         "AI-Generated Google Ads",
         "in 2026?"
       ],
-      "titleFull": "Who Is Liable for AI-Generated Google Ads in 2026?",
+      "titleFull": "Who Is Liable for AI-Generated Google Ads?",
       "image": "asset/blogs/3rd-blog.jpg",
-      "alt": "AI-generated Google Ads liability \u2014 gavel and digital advertising interface",
-      "intro": "The advertiser is liable, not Google. Google's revised Google Ads Terms of Service, which took effect automatically on every account on July 1, 2026, explicitly states that advertisers remain fully responsible for reviewing, approving, editing, or removing campaigns and ad assets, including those generated automatically by Google's own AI tools.",
+      "alt": "AI-generated Google Ads liability — gavel and digital advertising interface",
+      "intro": "As AI writes more Google Ads, questions of liability are rising. Who's responsible when AI-generated ad copy misleads users - advertiser, agency, or platform?",
       "takeaways": [
         "Google's July 2026 Terms of Service update makes advertisers fully liable for AI-generated ad content",
         "The terms apply automatically to every Google Ads account with no acceptance step required",
         "India adds a second obligation: ASCI's draft AI disclosure guidelines use a three-tier risk framework",
-        "AI-generated assets must be reviewed and approved by humans \u2014 treating them as finished output is a liability risk"
+        "AI-generated assets must be reviewed and approved by humans — treating them as finished output is a liability risk"
       ],
       "body": [
         {
@@ -2112,15 +2112,15 @@
         "Choose Which Sources to Cite,",
         "and How Can a Business Become One in India?"
       ],
-      "titleFull": "How Do AI Answer Engines Choose Which Sources to Cite, and How Can a Business Become One in India?",
+      "titleFull": "How Do AI Answer Engines Choose Sources?",
       "image": "asset/blogs/2nd-blog.jpg",
-      "alt": "AI answer engines and citation strategy \u2014 abstract digital brain with search and data nodes",
-      "intro": "AI answer engines like ChatGPT, Perplexity, and Google AI Overviews each run their own citation logic, weighing signals like entity clarity, third-party validation, freshness, and source diversity differently, so there is no single \"rank\" a business can win across all of them. Getting cited means treating each engine as a separate discovery channel with its own rules, not optimizing for one universal AI ranking.",
+      "alt": "AI answer engines and citation strategy — abstract digital brain with search and data nodes",
+      "intro": "Learn how AI answer engines like Perplexity, ChatGPT, and Google AIO decide which sources to cite - and how to optimise your content to be picked up by AI.",
       "takeaways": [
-        "Only 11% of domains are cited by both ChatGPT and Perplexity \u2014 each engine has its own editorial identity",
+        "Only 11% of domains are cited by both ChatGPT and Perplexity — each engine has its own editorial identity",
         "85% of brand mentions in AI answers come from third-party pages, not the brand's own website",
         "ChatGPT cites fewer sources but extracts 4.2x more per source; Perplexity casts a wider net",
-        "India is roughly 18 months behind the US in AEO maturity \u2014 creating a temporary competitive window"
+        "India is roughly 18 months behind the US in AEO maturity — creating a temporary competitive window"
       ],
       "body": [
         {
@@ -2246,15 +2246,15 @@
         "Still Matter After Google",
         "Removed FAQ Rich Results?"
       ],
-      "titleFull": "Does FAQ Schema Still Matter After Google Removed FAQ Rich Results?",
+      "titleFull": "Does FAQ Schema Still Matter in 2026?",
       "image": "asset/blogs/first-blog-cover.jpg",
-      "alt": "FAQ Schema and AI Search \u2014 puzzle piece with search icon and digital network",
-      "intro": "Yes, FAQ schema still matters, but not for the reason most website owners built it in the first place. Google removed FAQ rich results \u2014 but the markup still feeds AI search engines that are fast becoming the primary discovery layer.",
+      "alt": "FAQ Schema and AI Search — puzzle piece with search icon and digital network",
+      "intro": "Google reduced FAQ rich results in 2023, but FAQ schema still plays a role in AI search and AEO. Here's what matters for your schema strategy in 2026.",
       "takeaways": [
-        "Google removed FAQ rich results on May 7, 2026 \u2014 but did not deprecate FAQPage schema itself",
+        "Google removed FAQ rich results on May 7, 2026 — but did not deprecate FAQPage schema itself",
         "AI systems like ChatGPT, Perplexity, and Google AI Overviews still read structured FAQ content",
-        "Rewrite thin 30-word FAQ answers into complete 80\u2013150-word responses for AI citation readiness",
-        "India's AI search adoption is outpacing business preparedness \u2014 creating a wider competitive window"
+        "Rewrite thin 30-word FAQ answers into complete 80–150-word responses for AI citation readiness",
+        "India's AI search adoption is outpacing business preparedness — creating a wider competitive window"
       ],
       "body": [
         {
@@ -2355,7 +2355,7 @@
         }
       ],
       "audioDuration": "8:15",
-      "description": "Google removed FAQ rich results \u2014 but FAQPage schema still feeds AI search engines like ChatGPT, Perplexity, and AI Overviews. Here's what changed, what to keep, and what to rewrite."
+      "description": "Google removed FAQ rich results — but FAQPage schema still feeds AI search engines like ChatGPT, Perplexity, and AI Overviews. Here's what changed, what to keep, and what to rewrite."
     }
   ]
 }

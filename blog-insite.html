@@ -15,12 +15,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog & Insights | ChimpzLab</title>
-    <meta name="description" content="Read ChimpzLab's latest blog posts on digital marketing, SEO, AI, social media, and industry trends.">
+    <link rel="icon" type="image/png" sizes="16x16" href="asset/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="asset/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="asset/favicon-48.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="asset/favicon-96.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="asset/favicon-144.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="asset/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="asset/favicon-512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="asset/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="description"
+        content="Read ChimpzLab's latest blog posts on digital marketing, SEO, AI, social media, and industry trends.">
+
+    <!-- Per-article meta tags: updates synchronously before rendering -->
+    <script>
+      (function() {
+        var articles = {"how-do-ai-answer-engines-choose-sources":{"title":"How Do AI Answer Engines Choose Sources? | ChimpzLab","desc":"Learn how AI answer engines like Perplexity, ChatGPT, and Google AIO decide which sources to cite - and how to optimise your content to be picked up by AI."},"best-ai-video-generator-india-2026":{"title":"Best AI Video Generators in India 2026 | ChimpzLab","desc":"Compare the top AI video generation tools available in India in 2026. From Kling to Veo 3.1 and Seedance, find the best model for your content and budget."},"does-faq-schema-still-matter-2026":{"title":"Does FAQ Schema Still Matter in 2026? | ChimpzLab","desc":"Google reduced FAQ rich results in 2023, but FAQ schema still plays a role in AI search and AEO. Here's what matters for your schema strategy in 2026."},"who-is-liable-for-ai-generated-google-ads-2026":{"title":"Who Is Liable for AI-Generated Google Ads? | ChimpzLab","desc":"As AI writes more Google Ads, questions of liability are rising. Who's responsible when AI-generated ad copy misleads users - advertiser, agency, or platform?"},"whatsapp-ai-chatbot-business-india-cost":{"title":"WhatsApp AI Chatbot for Business India Cost | ChimpzLab","desc":"How much does a WhatsApp AI chatbot cost for Indian businesses? We break down setup costs, monthly fees, and ROI for WhatsApp automation in 2026."},"social-seo-india-2026":{"title":"Social SEO in India 2026: What You Need to Know | ChimpzLab","desc":"Social media is now a search engine. Learn how to optimise Instagram, LinkedIn, and YouTube content for social SEO in India and reach the right audience."},"how-to-write-content-for-ai-citation-aeo":{"title":"How to Write Content for AI Citation & AEO | ChimpzLab","desc":"Want your content cited by ChatGPT, Perplexity, or Google AI Overviews? Learn how to write for answer engine optimisation and increase AI citation chances."},"asci-ai-influencer-disclosure-rules-india-2026":{"title":"ASCI AI Influencer Disclosure Rules India 2026 | ChimpzLab","desc":"ASCI has issued guidelines for AI-generated influencer content in India. Here's what brands, agencies, and creators must know to stay compliant in 2026."},"pr-for-ai-search-visibility-geo-india":{"title":"PR for AI Search Visibility & GEO in India | ChimpzLab","desc":"PR is now an AI search strategy. Learn how earned media and press placements boost generative engine optimisation (GEO) and AI visibility in India."},"dpdp-act-email-marketing-compliance-india-2026":{"title":"DPDP Act & Email Marketing Compliance India | ChimpzLab","desc":"India's DPDP Act changes how brands collect consent for email marketing. Here's what to update in your email strategy to stay compliant in 2026."}};
+        var slug = null;
+        var params = new URLSearchParams(window.location.search);
+        slug = params.get('slug');
+        if (!slug) { var m = window.location.pathname.match(/\/blog\/([^/]+)/); if (m) slug = m[1]; }
+        var art = slug ? articles[slug] : null;
+        if (art) {
+          document.title = art.title;
+          var meta = document.querySelector('meta[name="description"]');
+          if (meta) meta.setAttribute('content', art.desc);
+        }
+      })();
+    </script>
 
     <base href="/">
 
-    <link rel="icon" type="image/gif" href="asset/chimpzlab-icon.gif">
-    <link rel="apple-touch-icon" href="asset/chimpzlab-icon.gif">
+    
+    
     <!-- Fonts: Manrope -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -811,7 +838,41 @@
                 if (!article) return;
 
                 // Update page title
-                document.title = article.titleFull + ' | ChimpzLab Insights';
+                document.title = article.titleFull + ' | ChimpzLab';
+
+                // Update meta description
+                var metaDesc = document.querySelector('meta[name="description"]');
+                if (metaDesc && article.intro) metaDesc.setAttribute('content', article.intro);
+
+                // Inject BlogPosting JSON-LD schema
+                var blogSchema = {
+                    "@context": "https://schema.org",
+                    "@type": "BlogPosting",
+                    "headline": article.titleFull,
+                    "description": article.intro || "",
+                    "image": article.image ? "https://chimpzlab.com/" + article.image : "",
+                    "datePublished": article.date || "",
+                    "author": {
+                        "@type": "Organization",
+                        "name": "ChimpzLab"
+                    },
+                    "publisher": {
+                        "@type": "Organization",
+                        "name": "ChimpzLab",
+                        "logo": {
+                            "@type": "ImageObject",
+                            "url": "https://chimpzlab.com/asset/chimpzlab-icon.gif"
+                        }
+                    },
+                    "mainEntityOfPage": {
+                        "@type": "WebPage",
+                        "@id": "https://chimpzlab.com/blog/" + article.slug
+                    }
+                };
+                var schemaScript = document.createElement('script');
+                schemaScript.type = 'application/ld+json';
+                schemaScript.textContent = JSON.stringify(blogSchema);
+                document.head.appendChild(schemaScript);
 
                 // --- Hero Section ---
                 const heroMeta = document.querySelector('.gap-4.mb-8.gsap-reveal');
@@ -842,8 +903,8 @@
                 // --- Hero Tags ---
                 const heroTags = document.querySelector('.hero-tags');
                 if (heroTags && article.tag) {
-                    var tagItems = article.tag.split(',').map(function(t) { return t.trim(); });
-                    tagItems.forEach(function(t) {
+                    var tagItems = article.tag.split(',').map(function (t) { return t.trim(); });
+                    tagItems.forEach(function (t) {
                         var span = document.createElement('span');
                         span.className = 'text-[11px] font-medium text-white/70 px-3 py-1 border border-white/20 rounded-full';
                         span.textContent = t;
@@ -1123,10 +1184,13 @@
                 <div class="footer-group">
                     <a href="services/visibility-search.html" class="footer-group-title">Visibility &amp; Search</a>
                     <ul>
-                        <li><a href="services/visibility-search/social-media-marketing-agency-in-thane" class="interactive">Social
+                        <li><a href="services/visibility-search/social-media-marketing-agency-in-thane"
+                                class="interactive">Social
                                 Media Marketing</a></li>
-                        <li><a href="services/visibility-search/seo-aeo-agency-in-thane" class="interactive">SEO / AEO</a></li>
-                        <li><a href="services/visibility-search/content-writing-services-in-thane" class="interactive">Content
+                        <li><a href="services/visibility-search/seo-aeo-agency-in-thane" class="interactive">SEO /
+                                AEO</a></li>
+                        <li><a href="services/visibility-search/content-writing-services-in-thane"
+                                class="interactive">Content
                                 Writing</a>
                         </li>
                         <li><a href="services/visibility-search/influencer-marketing-agency-in-thane"
@@ -1139,7 +1203,8 @@
                     <ul>
                         <li><a href="services/creative/branding-agency-in-thane" class="interactive">Branding</a></li>
                         <li><a href="services/creative/design.html" class="interactive">Design</a></li>
-                        <li><a href="services/creative/video-production-services-in-thane" class="interactive">Video Production</a>
+                        <li><a href="services/creative/video-production-services-in-thane" class="interactive">Video
+                                Production</a>
                         </li>
                     </ul>
                 </div>
@@ -1149,11 +1214,14 @@
                     <ul>
                         <li><a href="services/demand-generation/performance-marketing-agency-in-thane"
                                 class="interactive">Performance Marketing</a></li>
-                        <li><a href="services/demand-generation/email-marketing-services-in-thane" class="interactive">Email
+                        <li><a href="services/demand-generation/email-marketing-services-in-thane"
+                                class="interactive">Email
                                 Marketing</a></li>
-                        <li><a href="services/demand-generation/vetted-lead-generation-services-in-thane" class="interactive">Vetted
+                        <li><a href="services/demand-generation/vetted-lead-generation-services-in-thane"
+                                class="interactive">Vetted
                                 Lead Generation</a></li>
-                        <li><a href="services/demand-generation/marketing-automation-services-in-thane" class="interactive">Marketing
+                        <li><a href="services/demand-generation/marketing-automation-services-in-thane"
+                                class="interactive">Marketing
                                 Automation</a></li>
                     </ul>
                 </div>
@@ -1163,9 +1231,11 @@
                     <ul>
                         <li><a href="services/digital-experiences/website-design-development-services-in-thane"
                                 class="interactive">Web Design &amp; Development</a></li>
-                        <li><a href="services/digital-experiences/landing-page-services-in-thane" class="interactive">Landing
+                        <li><a href="services/digital-experiences/landing-page-services-in-thane"
+                                class="interactive">Landing
                                 Pages</a></li>
-                        <li><a href="services/digital-experiences/chatbot-development-services-in-thane" class="interactive">Chatbot &amp;
+                        <li><a href="services/digital-experiences/chatbot-development-services-in-thane"
+                                class="interactive">Chatbot &amp;
                                 Virtual Assistant</a></li>
                     </ul>
                 </div>
@@ -1234,7 +1304,7 @@
         class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 w-max px-6 py-3 rounded-full bg-black text-white text-sm font-medium shadow-2xl transition-all duration-400 opacity-0 translate-y-4 pointer-events-none">
     </div>
 
-<script src="/hash-cleaner.js"></script>
+    <script src="/hash-cleaner.js"></script>
 </body>
 
 </html>
