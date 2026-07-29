@@ -114,19 +114,22 @@ RewriteRule ^blog-insite\.html$ /blog/%1? [R=301,L,NC]
 RewriteRule ^blog/([^/]+)/?$ blog-insite.html?slug=$1 [QSA,L,NC]
 
 # 301 Redirects from old site structure
-# Strip trailing slash for clean URLs (so /services/ → /services)
+# Strip trailing slash for clean URLs (so /services/ → /services, /booking-form/ → /booking-form)
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteRule ^services/$ /services [R=301,L]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^booking-form/$ /booking-form [R=301,L]
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteRule ^contact/$ /contact [R=301,L]
 
 RewriteRule ^services/?$ index.html [L,NC]
+RewriteRule ^booking-form/?$ index.html [L,NC]
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteRule ^about/?$ /about.html [R=301,L]
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteRule ^work/?$ /case-studies.html [R=301,L]
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
-RewriteRule ^contact/?$ /#booking-form [R=301,L]
+RewriteRule ^contact/?$ /booking-form [R=301,L]
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteRule ^blog/?$ /insights.html [R=301,L]
 RewriteCond %{ENV:REDIRECT_STATUS} ^$

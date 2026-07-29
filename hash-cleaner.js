@@ -2,7 +2,8 @@
   // Map of known section paths → element IDs on the home page
   var PATH_MAP = {
     '/services': 'services-section',
-    '/contact': 'booking-form'
+    '/contact': 'booking-form',
+    '/booking-form': 'booking-form'
   };
 
   // Set of section IDs that are on the home page (for hash link detection)
@@ -58,7 +59,7 @@
     }
   });
 
-  // Handle links to home-page sections (e.g., /services, index.html#services-section)
+  // Handle links to home-page sections (e.g., /services, /booking-form, index.html#services-section)
   document.addEventListener('click', function(e) {
     var a = e.target.closest('a');
     if (!a) return;
@@ -88,7 +89,7 @@
       if (HOME_SECTION_IDS[hashId]) {
         e.preventDefault();
         sessionStorage.setItem('scrollSection', hashId);
-        sessionStorage.setItem('scrollPath', '/services');
+        sessionStorage.setItem('scrollPath', hashId === 'services-section' ? '/services' : '/booking-form');
         window.location.href = '/';
       }
     }
