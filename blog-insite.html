@@ -286,6 +286,12 @@
                                 <button id="speed-btn" onclick="window.toggleSpeed(event)" class="text-[10px] font-bold text-white bg-white/20 hover:bg-white/30 rounded-full px-2 py-0.5 transition-colors shadow-sm" title="Playback Speed">1x</button>
                             </div>
                         </div>
+
+                        <button id="close-audio-btn" onclick="window.closeAudio(event)" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/30 text-white/70 hover:text-white flex items-center justify-center transition-colors ml-auto hidden" title="Close Audio">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
                     </div>
 
                 </div>
@@ -1357,12 +1363,15 @@
             }
 
             function updateIcon() {
+                const closeBtn = document.getElementById('close-audio-btn');
                 if (isPlaying) {
                     if (iconPlay) iconPlay.classList.add('hidden');
                     if (iconPause) iconPause.classList.remove('hidden');
+                    if (closeBtn) closeBtn.classList.remove('hidden');
                 } else {
                     if (iconPlay) iconPlay.classList.remove('hidden');
                     if (iconPause) iconPause.classList.add('hidden');
+                    if (closeBtn) closeBtn.classList.add('hidden');
                 }
             }
 
@@ -1482,6 +1491,7 @@
                 clearHighlight();
                 currentUtteranceIndex = -1;
                 isPlaying = true;
+                if (playerContainer) playerContainer.style.display = '';
                 updateIcon();
                 playNextUtterance();
             };
@@ -1500,8 +1510,22 @@
                 clearHighlight();
                 currentUtteranceIndex = targetIndex - 1;
                 isPlaying = true;
+                if (playerContainer) playerContainer.style.display = '';
                 updateIcon();
                 playNextUtterance();
+            };
+
+            window.closeAudio = function(e) {
+                if (e && e.stopPropagation) e.stopPropagation();
+                if (e && e.preventDefault) e.preventDefault();
+                synth.cancel();
+                clearHighlight();
+                isPlaying = false;
+                currentUtteranceIndex = -1;
+                updateIcon();
+                if (playerContainer && playerContainer.classList.contains('fixed')) {
+                    playerContainer.style.display = 'none';
+                }
             };
 
             // Allow clicking on paragraphs to skip to them
@@ -1515,6 +1539,7 @@
                         clearHighlight();
                         currentUtteranceIndex = index - 1;
                         isPlaying = true;
+                        if (playerContainer) playerContainer.style.display = '';
                         updateIcon();
                         playNextUtterance();
                     }
