@@ -757,6 +757,13 @@
                             <input type="text" name="_hp" tabindex="-1" autocomplete="off">
                         </div>
 
+                        
+                        <!-- Google reCAPTCHA -->
+                        <div class="pt-2">
+                            <div class="g-recaptcha" data-sitekey="6LfjBG0tAAAAANJuXdNgEt-xhQkQu-KKwN8gZ-7i"></div>
+                            <p id="recaptchaError" class="error-msg text-red-500 text-xs mt-1 hidden">Please complete the CAPTCHA.</p>
+                        </div>
+
                         <!-- Hidden fields -->
                         <input type="hidden" name="api_key" value="3afc0840e1193e58397159d4af15cf4a15b5b35c">
                         <input type="hidden" name="_redirect" value="../thanks.html">
@@ -1631,6 +1638,29 @@
         })();
     </script>
 <script src="/hash-cleaner.js"></script>
+
+    <!-- Google reCAPTCHA API -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <!-- Google reCAPTCHA Validation Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contactForm');
+            if (!form) return;
+
+            const errorEl = document.getElementById('recaptchaError');
+
+            form.addEventListener('submit', (e) => {
+                const recaptchaResponse = grecaptcha.getResponse();
+                if (recaptchaResponse.length === 0) {
+                    e.preventDefault();
+                    if(errorEl) errorEl.classList.remove('hidden');
+                } else {
+                    if(errorEl) errorEl.classList.add('hidden');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
