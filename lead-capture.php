@@ -9,7 +9,7 @@ if (!empty($_POST['_hp'])) {
 
 $env = [];
 // Google reCAPTCHA Verification
-$recaptchaSecret = '6LdO_WwtAAAAAB_NLh4mPE87fajWK-XcFaHs3I1M';
+$recaptchaSecret = '6LfjBG0tAAAAAN_OcQXh1ci7OFewVveYXDgtawVU';
 $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
 
 if (empty($recaptchaResponse)) {
