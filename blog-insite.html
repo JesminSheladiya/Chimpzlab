@@ -244,14 +244,17 @@
                     <div class="hero-tags gsap-reveal flex flex-wrap gap-2 mt-6"></div>
 
                     <!-- Custom Audio Player -->
-                    <div class="gsap-reveal mt-10 p-2 pr-6 border border-white/10 bg-white/5 rounded-full flex items-center gap-4 w-fit interactive group hover:border-white/30 transition-colors cursor-pointer"
-                        onclick="toggleAudio()">
+                    <div id="audio-player-container" class="gsap-reveal mt-10 p-2 pr-6 border border-white/10 bg-white/5 rounded-full flex items-center gap-4 w-fit interactive group hover:border-white/30 transition-all duration-300">
 
                         <!-- Hidden Audio Element (ADD YOUR SRC HERE) -->
                         <audio id="blog-audio" src="" preload="metadata"></audio>
 
-                        <button id="play-pause-btn"
-                            class="w-14 h-14 rounded-full bg-black text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-md">
+                        <button id="skip-prev-btn" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors shadow-sm" onclick="window.skipAudio(-1, event)" title="Previous Paragraph">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                        </button>
+
+                        <button id="play-pause-btn" onclick="window.toggleAudio(event)"
+                            class="w-14 h-14 rounded-full bg-black text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-md mx-1">
                             <!-- Play Icon (Default) -->
                             <svg id="icon-play" class="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M8 5v14l11-7z" />
@@ -260,6 +263,10 @@
                             <svg id="icon-pause" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
                             </svg>
+                        </button>
+
+                        <button id="skip-next-btn" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors shadow-sm" onclick="window.skipAudio(1, event)" title="Next Paragraph">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
                         </button>
 
                         <div class="flex flex-col justify-center">
@@ -276,10 +283,11 @@
                                     <div class="w-1 h-1 bg-white/20 rounded-full"></div>
                                     <div class="w-1 h-2 bg-white/20 rounded-full"></div>
                                 </div>
-                                <span class="text-sm font-bold text-white">4:20</span>
+                                <button id="speed-btn" onclick="window.toggleSpeed(event)" class="text-[10px] font-bold text-white bg-white/20 hover:bg-white/30 rounded-full px-2 py-0.5 transition-colors shadow-sm" title="Playback Speed">1x</button>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
                 <!-- Right: Cover Image (5 Cols) -->
@@ -619,26 +627,9 @@
         revealElements.forEach((el) => { gsap.to(el, { scrollTrigger: { trigger: el, start: "top 85%", toggleActions: "play none none reverse" }, opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }); });
         ScrollTrigger.refresh();
 
-        // Blog Audio Player (visual toggle; set an audio src on #blog-audio to enable playback)
+        // Blog Audio Player (visual toggle; replaced by Speech Synthesis logic at bottom of file)
         window.toggleAudio = function () {
-            const audio = document.getElementById('blog-audio');
-            const playIcon = document.getElementById('icon-play');
-            const pauseIcon = document.getElementById('icon-pause');
-            if (!audio || !playIcon || !pauseIcon) return;
-            if (!audio.getAttribute('src') || audio.getAttribute('src') === '') {
-                showToast('Audio not available for now', 'warning');
-                return;
-            }
-            if (audio.paused) {
-                const p = audio.play();
-                if (p && typeof p.catch === 'function') p.catch(function () { });
-                playIcon.classList.add('hidden');
-                pauseIcon.classList.remove('hidden');
-            } else {
-                audio.pause();
-                playIcon.classList.remove('hidden');
-                pauseIcon.classList.add('hidden');
-            }
+            // Function overridden below
         };
 
         function setShareLinks(url, title) {
@@ -1325,6 +1316,221 @@
     </div>
 
     <script src="/hash-cleaner.js"></script>
+
+    <!-- Speech Synthesis Logic -->
+    <style>
+        .speech-block {
+            transition: background-color 0.3s ease;
+        }
+        .speech-block:hover {
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.03) !important;
+            border-radius: 4px;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const iconPlay = document.getElementById('icon-play');
+            const iconPause = document.getElementById('icon-pause');
+            let synth = window.speechSynthesis;
+            let utterances = [];
+            let currentUtteranceIndex = -1;
+            let isPlaying = false;
+            let blocks = [];
+            let currentSpeed = 1;
+
+            // Sticky Audio Player
+            const playerContainer = document.getElementById('audio-player-container');
+            const heroSection = document.querySelector('header');
+            
+            if (playerContainer && heroSection) {
+                window.addEventListener('scroll', () => {
+                    const rect = heroSection.getBoundingClientRect();
+                    if (rect.bottom < 0) {
+                        playerContainer.classList.add('fixed', 'bottom-8', 'left-1/2', '-translate-x-1/2', 'z-[100]', 'shadow-2xl', 'bg-brand-dark/90', 'backdrop-blur-md');
+                        playerContainer.classList.remove('mt-10', 'bg-white/5');
+                    } else {
+                        playerContainer.classList.remove('fixed', 'bottom-8', 'left-1/2', '-translate-x-1/2', 'z-[100]', 'shadow-2xl', 'bg-brand-dark/90', 'backdrop-blur-md');
+                        playerContainer.classList.add('mt-10', 'bg-white/5');
+                    }
+                });
+            }
+
+            function updateIcon() {
+                if (isPlaying) {
+                    if (iconPlay) iconPlay.classList.add('hidden');
+                    if (iconPause) iconPause.classList.remove('hidden');
+                } else {
+                    if (iconPlay) iconPlay.classList.remove('hidden');
+                    if (iconPause) iconPause.classList.add('hidden');
+                }
+            }
+
+            function clearHighlight() {
+                blocks.forEach(b => {
+                    b.style.backgroundColor = '';
+                    if (b.dataset.originalText) {
+                        b.innerHTML = b.dataset.originalText;
+                    }
+                });
+            }
+
+            function playNextUtterance() {
+                currentUtteranceIndex++;
+                if (currentUtteranceIndex < utterances.length) {
+                    const u = utterances[currentUtteranceIndex];
+                    u.rate = currentSpeed;
+                    synth.speak(u);
+                } else {
+                    isPlaying = false;
+                    currentUtteranceIndex = -1;
+                    updateIcon();
+                }
+            }
+
+            function initSpeechIfNeeded() {
+                if (utterances.length > 0) return true;
+                
+                blocks = Array.from(document.querySelectorAll('h1, .article-content > p, .article-content > h2, .article-content > blockquote'));
+                if (blocks.length === 0) return false;
+
+                blocks.forEach((block) => {
+                    const text = block.innerText.trim();
+                    if (!text) return;
+                    
+                    block.classList.add('speech-block');
+                    block.title = "Click to read from here";
+                    block.dataset.originalText = text;
+                    
+                    const u = new SpeechSynthesisUtterance(text);
+                    u.onstart = () => {
+                        clearHighlight();
+                        block.style.backgroundColor = 'rgba(255, 235, 59, 0.3)'; // Highlight yellow
+                        block.scrollIntoView({ behavior: 'smooth', block: 'center' }); // Auto-scroll
+                    };
+                    u.onboundary = (e) => {
+                        if (e.name === 'word') {
+                            const charIndex = e.charIndex;
+                            let end = charIndex + (e.charLength || 0);
+                            if (end === charIndex) {
+                                while (end < text.length && /\\S/.test(text[end])) end++;
+                            }
+                            if (charIndex >= text.length) return;
+                            const before = text.substring(0, charIndex);
+                            const currentWord = text.substring(charIndex, end);
+                            const after = text.substring(end);
+                            block.innerHTML = `${before}<span style="background-color:rgba(0,0,0,0.8); color:white; border-radius:4px; padding:0 2px; transition: background-color 0.1s ease;">${currentWord}</span>${after}`;
+                        }
+                    };
+                    u.onend = () => {
+                        clearHighlight();
+                        playNextUtterance();
+                    };
+                    u.onerror = (err) => {
+                        clearHighlight();
+                        isPlaying = false;
+                        updateIcon();
+                    };
+                    utterances.push(u);
+                });
+                return utterances.length > 0;
+            }
+
+            window.toggleSpeed = function(e) {
+                if (e && e.stopPropagation) e.stopPropagation();
+                if (e && e.preventDefault) e.preventDefault();
+                
+                if (currentSpeed === 1) currentSpeed = 1.25;
+                else if (currentSpeed === 1.25) currentSpeed = 1.5;
+                else if (currentSpeed === 1.5) currentSpeed = 2;
+                else currentSpeed = 1;
+                
+                const speedBtn = document.getElementById('speed-btn');
+                if (speedBtn) speedBtn.innerText = currentSpeed + 'x';
+                
+                if (isPlaying && currentUtteranceIndex >= 0) {
+                    synth.cancel();
+                    currentUtteranceIndex--;
+                    playNextUtterance();
+                }
+            };
+
+            window.toggleAudio = function (e) {
+                if (e && e.stopPropagation) e.stopPropagation();
+                if (e && e.preventDefault) e.preventDefault();
+                
+                if (!initSpeechIfNeeded()) {
+                    if (typeof showToast === 'function') showToast('No content available to read.', 'warning');
+                    return;
+                }
+                
+                // If already playing or paused and we have active utterances, just toggle state
+                if (currentUtteranceIndex >= 0 && currentUtteranceIndex < utterances.length) {
+                    if (isPlaying) {
+                        synth.pause();
+                        isPlaying = false;
+                    } else {
+                        synth.resume();
+                        isPlaying = true;
+                    }
+                    updateIcon();
+                    return;
+                }
+
+                // Start fresh
+                synth.cancel();
+                clearHighlight();
+                currentUtteranceIndex = -1;
+                isPlaying = true;
+                updateIcon();
+                playNextUtterance();
+            };
+
+            window.skipAudio = function(direction, e) {
+                if (e && e.stopPropagation) e.stopPropagation();
+                if (e && e.preventDefault) e.preventDefault();
+                
+                if (!initSpeechIfNeeded()) return;
+                
+                let targetIndex = currentUtteranceIndex + direction;
+                if (targetIndex < 0) targetIndex = 0;
+                if (targetIndex >= utterances.length) targetIndex = utterances.length - 1;
+
+                synth.cancel();
+                clearHighlight();
+                currentUtteranceIndex = targetIndex - 1;
+                isPlaying = true;
+                updateIcon();
+                playNextUtterance();
+            };
+
+            // Allow clicking on paragraphs to skip to them
+            document.body.addEventListener('click', (e) => {
+                const block = e.target.closest('h1, .article-content > p, .article-content > h2, .article-content > blockquote');
+                if (block) {
+                    if (!initSpeechIfNeeded()) return;
+                    const index = blocks.indexOf(block);
+                    if (index !== -1) {
+                        synth.cancel();
+                        clearHighlight();
+                        currentUtteranceIndex = index - 1;
+                        isPlaying = true;
+                        updateIcon();
+                        playNextUtterance();
+                    }
+                }
+            });
+
+            // Initialize class on blocks when content changes (simulate mutation observer or simple timeout for now)
+            setTimeout(() => { initSpeechIfNeeded(); }, 1500);
+
+            // Cancel speech on page unload
+            window.addEventListener('beforeunload', () => {
+                synth.cancel();
+                clearHighlight();
+            });
+        });
+    </script>
 </body>
 
 </html>
