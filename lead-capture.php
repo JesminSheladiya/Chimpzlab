@@ -8,6 +8,35 @@ if (!empty($_POST['_hp'])) {
 }
 
 $env = [];
+// Google reCAPTCHA Verification
+$recaptchaSecret = '6LdO_WwtAAAAAB_NLh4mPE87fajWK-XcFaHs3I1M';
+$recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
+
+if (empty($recaptchaResponse)) {
+    die('Please complete the CAPTCHA.');
+}
+
+$verifyUrl = 'https://www.google.com/recaptcha/api/siteverify';
+$verifyData = [
+    'secret' => $recaptchaSecret,
+    'response' => $recaptchaResponse,
+    'remoteip' => $_SERVER['REMOTE_ADDR']
+];
+
+$options = [
+    'http' => [
+        'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+        'method'  => 'POST',
+        'content' => http_build_query($verifyData)
+    ]
+];
+$context  = stream_context_create($options);
+$result = file_get_contents($verifyUrl, false, $context);
+$responseData = json_decode($result, true);
+
+if (!$responseData['success']) {
+    die('CAPTCHA verification failed. Please try again.');
+}
 if (is_file(__DIR__ . '/crm/.env')) {
     foreach (file(__DIR__ . '/crm/.env', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) as $line) {
         $line = trim($line);
