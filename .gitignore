@@ -1,0 +1,8 @@
+.DS_Store
+
+# Secrets & credentials
+crm/.env
+
+# Runtime data (personal lead data must not be committed)
+crm/storage/database.sqlite
+crm/storage/database.sqlite.bak-*

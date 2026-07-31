@@ -93,6 +93,67 @@ $leadId = $pdo->lastInsertId();
 $stmt = $pdo->prepare('INSERT INTO lead_activity (lead_id, type, body) VALUES (?, \'created\', ?)');
 $stmt->execute([$leadId, 'Lead captured from ' . $site['name']]);
 
+// Send email notification via SMTP
+try {
+    require_once __DIR__ . '/crm/src/Mailer.php';
+
+    $smtpCfg = [
+        'host' => $env['SMTP_HOST'] ?? 'smtp.zoho.com',
+        'port' => (int) ($env['SMTP_PORT'] ?? 465),
+        'secure' => $env['SMTP_SECURE'] ?? 'ssl',
+        'username' => $env['SMTP_USERNAME'] ?? '',
+        'password' => $env['SMTP_PASSWORD'] ?? '',
+        'from_email' => $env['SMTP_FROM'] ?? '',
+        'from_name' => $env['SMTP_FROM_NAME'] ?? 'ChimpzLab',
+    ];
+
+    $to = $env['SMTP_TO'] ?? '';
+    if ($to !== '') {
+        $subject = 'New lead from ' . ($site['name'] ?? 'ChimpzLab') . ': ' . $name;
+        \App\Mailer::send($smtpCfg, $to, $subject, leadEmailHtml($site['name'] ?? 'ChimpzLab', [
+            'name' => $name,
+            'email' => $email,
+            'phone' => $phone,
+            'message' => $message,
+            'ip_address' => $_SERVER['REMOTE_ADDR'] ?? '',
+            'referrer' => $_SERVER['HTTP_REFERER'] ?? '',
+        ]));
+    }
+} catch (Throwable $e) {
+    error_log('Lead email notification failed: ' . $e->getMessage());
+}
+
+/**
+ * Builds the HTML body used for the lead notification email.
+ */
+function leadEmailHtml(string $siteName, array $lead): string
+{
+    $esc = fn($v) => htmlspecialchars((string) $v, ENT_QUOTES, 'UTF-8');
+
+    $rows = '';
+    $fields = [
+        'Name' => $lead['name'] ?? '',
+        'Email' => $lead['email'] ?? '',
+        'Phone' => $lead['phone'] ?? '',
+        'Message' => $lead['message'] ?? '',
+    ];
+    foreach ($fields as $label => $value) {
+        if ($value === '') continue;
+        $rows .= '<tr><td style="padding:6px 12px;color:#666;white-space:nowrap">' . $esc($label)
+            . '</td><td style="padding:6px 12px;font-weight:600">' . nl2br($esc($value)) . '</td></tr>';
+    }
+    $rows .= '<tr><td style="padding:6px 12px;color:#666;white-space:nowrap">Received</td>'
+        . '<td style="padding:6px 12px;font-weight:600">' . $esc(date('r')) . '</td></tr>';
+    $rows .= '<tr><td style="padding:6px 12px;color:#666;white-space:nowrap">Source IP</td>'
+        . '<td style="padding:6px 12px;font-weight:600">' . $esc($lead['ip_address'] ?? '') . '</td></tr>';
+
+    return '<div style="font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:560px">'
+        . '<h2 style="margin:0 0 4px">New lead - ' . $esc($siteName) . '</h2>'
+        . '<p style="color:#666;margin:0 0 16px">New form submission from chimpzlab.com</p>'
+        . '<table style="border-collapse:collapse;width:100%;border:1px solid #eee">' . $rows . '</table>'
+        . '</div>';
+}
+
 // Redirect
 header('Location: ' . $redirect);
 exit;
