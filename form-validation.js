@@ -57,7 +57,11 @@
 
         var captchaError = form.querySelector('#recaptchaError');
         if (captchaError) {
-            var captchaOk = typeof grecaptcha !== 'undefined' && grecaptcha.getResponse && grecaptcha.getResponse().length > 0;
+            var api = null;
+            if (typeof grecaptcha !== 'undefined') {
+                api = (typeof grecaptcha.enterprise === 'object' && grecaptcha.enterprise !== null) ? grecaptcha.enterprise : grecaptcha;
+            }
+            var captchaOk = !!api && typeof api.getResponse === 'function' && api.getResponse().length > 0;
             if (!captchaOk) {
                 valid = false;
                 captchaError.classList.remove('hidden');

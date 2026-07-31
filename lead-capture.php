@@ -9,7 +9,7 @@ if (!empty($_POST['_hp'])) {
 
 $env = [];
 // Google reCAPTCHA Verification
-$recaptchaSecret = '6LfjBG0tAAAAAN_OcQXh1ci7OFewVveYXDgtawVU';
+$recaptchaSecret = '6Ld5s24tAAAAAH4MDkioXeo7QcWR5mE-3oYyBUUs';
 $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
 
 if (empty($recaptchaResponse)) {
@@ -96,6 +96,7 @@ $stmt->execute([$leadId, 'Lead captured from ' . $site['name']]);
 // Send email notification via SMTP
 try {
     require_once __DIR__ . '/crm/src/Mailer.php';
+    require_once __DIR__ . '/crm/src/email-templates.php';
 
     $smtpCfg = [
         'host' => $env['SMTP_HOST'] ?? 'smtp.zoho.com',
@@ -119,39 +120,18 @@ try {
             'referrer' => $_SERVER['HTTP_REFERER'] ?? '',
         ]));
     }
+
+    // Thank-you email to the submitter
+    if ($email !== '') {
+        \App\Mailer::send(
+            $smtpCfg,
+            $email,
+            'Thank you for contacting ' . ($site['name'] ?? 'ChimpzLab'),
+            thankYouEmailHtml($site['name'] ?? 'ChimpzLab', $name)
+        );
+    }
 } catch (Throwable $e) {
     error_log('Lead email notification failed: ' . $e->getMessage());
-}
-
-/**
- * Builds the HTML body used for the lead notification email.
- */
-function leadEmailHtml(string $siteName, array $lead): string
-{
-    $esc = fn($v) => htmlspecialchars((string) $v, ENT_QUOTES, 'UTF-8');
-
-    $rows = '';
-    $fields = [
-        'Name' => $lead['name'] ?? '',
-        'Email' => $lead['email'] ?? '',
-        'Phone' => $lead['phone'] ?? '',
-        'Message' => $lead['message'] ?? '',
-    ];
-    foreach ($fields as $label => $value) {
-        if ($value === '') continue;
-        $rows .= '<tr><td style="padding:6px 12px;color:#666;white-space:nowrap">' . $esc($label)
-            . '</td><td style="padding:6px 12px;font-weight:600">' . nl2br($esc($value)) . '</td></tr>';
-    }
-    $rows .= '<tr><td style="padding:6px 12px;color:#666;white-space:nowrap">Received</td>'
-        . '<td style="padding:6px 12px;font-weight:600">' . $esc(date('r')) . '</td></tr>';
-    $rows .= '<tr><td style="padding:6px 12px;color:#666;white-space:nowrap">Source IP</td>'
-        . '<td style="padding:6px 12px;font-weight:600">' . $esc($lead['ip_address'] ?? '') . '</td></tr>';
-
-    return '<div style="font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:560px">'
-        . '<h2 style="margin:0 0 4px">New lead - ' . $esc($siteName) . '</h2>'
-        . '<p style="color:#666;margin:0 0 16px">New form submission from chimpzlab.com</p>'
-        . '<table style="border-collapse:collapse;width:100%;border:1px solid #eee">' . $rows . '</table>'
-        . '</div>';
 }
 
 // Redirect
