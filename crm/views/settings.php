@@ -77,7 +77,7 @@
       <label class="form-label">Auto-delete spam after (days, 0 = keep forever)</label>
       <input type="number" class="form-control" name="spam_retention_days" min="0" max="3650" value="<?= (int) $settings['spam_retention_days'] ?>" style="max-width:200px">
       <p class="text-muted small mb-0 mt-2">
-        Spam is quarantined, never silently dropped — review it under Leads &rarr; Status: Spam.
+        Spam is quarantined, never silently dropped - review it under Leads &rarr; Status: Spam.
         You can also empty the spam folder manually from there.
       </p>
     </div>
@@ -91,7 +91,7 @@
   <div class="card-body">
     <dl class="kv mb-3" style="grid-template-columns:150px 1fr">
       <dt>IP ranges loaded</dt>
-      <dd><?= number_format($geoipRanges) ?><?= $geoipRanges === 0 ? ' — country capture and blocking are inactive' : '' ?></dd>
+      <dd><?= number_format($geoipRanges) ?><?= $geoipRanges === 0 ? ' - country capture and blocking are inactive' : '' ?></dd>
       <dt>Last synced</dt>
       <dd><?= h($settings['geoip_last_sync'] ?: 'never') ?></dd>
     </dl>

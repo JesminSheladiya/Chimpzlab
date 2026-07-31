@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS sites (
     id              INTEGER PRIMARY KEY AUTOINCREMENT,
     name            TEXT NOT NULL,
     api_key         TEXT UNIQUE NOT NULL,
-    allowed_domain  TEXT,                 -- optional, e.g. https://example.com — used for CORS + Origin check
+    allowed_domain  TEXT,                 -- optional, e.g. https://example.com - used for CORS + Origin check
     redirect_url    TEXT,                 -- optional, used by the no-JS form fallback after a successful submit
     success_message TEXT,                 -- optional message shown after successful form submission
     fields_json     TEXT,                 -- optional custom field definitions (JSON array) for the form builder

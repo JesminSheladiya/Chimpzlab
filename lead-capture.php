@@ -1,5 +1,5 @@
 <?php
-// Direct lead capture — no FlightPHP, no .htaccess needed
+// Direct lead capture - no FlightPHP, no .htaccess needed
 
 // Honeypot check
 if (!empty($_POST['_hp'])) {

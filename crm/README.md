@@ -5,19 +5,19 @@ them in one place. Built on [FlightPHP](https://flightphp.com/) + SQLite.
 
 ## Features
 
-- **Per-site lead capture** — each site you connect gets its own API key, so
+- **Per-site lead capture** - each site you connect gets its own API key, so
   every lead is tagged with its source and can be individually disabled.
-- **Two embed options** — a drop-in JS widget (`<script>` tag, strongest spam
+- **Two embed options** - a drop-in JS widget (`<script>` tag, strongest spam
   protection) or a plain HTML `<form>` fallback for no-JS sites.
 - **Spam protection**, all server-side, no external services required:
   - honeypot field
   - per-IP rate limiting
   - signed time-trap token (rejects submissions that are too fast or replayed
-    stale tokens) — JS widget only
+    stale tokens) - JS widget only
   - disposable-email-domain blocklist
   - admin-editable keyword / email-domain / regex rules, each set to
     "flag" (kept, marked spam) or "block" (still logged, but hidden by default)
-- **Lead management backend** — filter by site/status/date/search, change
+- **Lead management backend** - filter by site/status/date/search, change
   lead status, delete, and export filtered results to CSV.
 
 ## Requirements
@@ -63,7 +63,7 @@ is seeded by `bin/install.php`.
 
 SQLite is plenty for small-to-medium lead volume and keeps deployment to
 "copy files, point PHP at them." If you outgrow it, swap `DB_PATH` handling
-in `src/helpers.php` (`db()`) for a MySQL PDO DSN — the rest of the app only
+in `src/helpers.php` (`db()`) for a MySQL PDO DSN - the rest of the app only
 talks to the database through plain PDO/SQL, so the change is contained to
 that one function plus the few `datetime('now', ...)` SQLite-isms in
 `src/SpamFilter.php` and the leads-filter query in `src/routes/admin.php`.

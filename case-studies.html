@@ -3,11 +3,14 @@
 
 <head>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MVP2NQBM');</script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MVP2NQBM');</script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +20,8 @@
     <meta property="og:site_name" content="ChimpzLab">
     <meta property="og:url" content="https://chimpzlab.com/case-studies.html">
     <meta property="og:title" content="Client Case Studies & Success Stories | ChimpzLab">
-    <meta property="og:description" content="Explore ChimpzLab's portfolio of client success stories across real estate, tech, FMCG, healthcare, and more. Real results. Real brands. Real digital impact.">
+    <meta property="og:description"
+        content="Explore ChimpzLab's portfolio of client success stories across real estate, tech, FMCG, healthcare, and more. Real results. Real brands. Real digital impact.">
     <meta property="og:image" content="https://chimpzlab.com/asset/favicon-512.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="512">
@@ -26,7 +30,8 @@
     <meta name="twitter:site" content="@ChimpzLab">
     <meta name="twitter:url" content="https://chimpzlab.com/case-studies.html">
     <meta name="twitter:title" content="Client Case Studies & Success Stories | ChimpzLab">
-    <meta name="twitter:description" content="Explore ChimpzLab's portfolio of client success stories across real estate, tech, FMCG, healthcare, and more. Real results. Real brands. Real digital impact.">
+    <meta name="twitter:description"
+        content="Explore ChimpzLab's portfolio of client success stories across real estate, tech, FMCG, healthcare, and more. Real results. Real brands. Real digital impact.">
     <meta name="twitter:image" content="https://chimpzlab.com/asset/favicon-512.png">
     <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="icon" type="image/png" sizes="16x16" href="/asset/favicon-16.png">
@@ -38,12 +43,13 @@
     <link rel="icon" type="image/png" sizes="512x512" href="/asset/favicon-512.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/asset/apple-touch-icon.png">
     <link rel="manifest" href="/manifest.json">
-    <meta name="description" content="Explore ChimpzLab's portfolio of client success stories across real estate, tech, FMCG, healthcare, and more. Real results. Real brands. Real digital impact.">
+    <meta name="description"
+        content="Explore ChimpzLab's portfolio of client success stories across real estate, tech, FMCG, healthcare, and more. Real results. Real brands. Real digital impact.">
     <meta name="keywords"
         content="SEO agency Thane, social media marketing agency India, AEO services India, influencer marketing agency">
 
-    
-    
+
+
     <!-- Fonts: Manrope -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -98,8 +104,8 @@
 
 <body class="selection:bg-white selection:text-black">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVP2NQBM"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVP2NQBM" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- Custom Cursor -->
@@ -228,7 +234,7 @@
                 <span class="block text-white/40 gsap-reveal-text">Studies</span>
             </h1>
             <p class="max-w-2xl text-lg md:text-xl text-white/70 font-light leading-relaxed gsap-reveal">
-                A cross-section of the brands we've positioned, designed, and grown — filterable by the
+                A cross-section of the brands we've positioned, designed, and grown - filterable by the
                 discipline that matters to you.
             </p>
         </div>
@@ -243,12 +249,14 @@
                     align-items: center;
                     gap: 1.25rem;
                 }
+
                 #cs-filters-wrapper {
                     flex: 1;
                     min-width: 0;
                     position: relative;
                     padding-left: 10px;
                 }
+
                 #cs-filters-wrapper::after {
                     content: '';
                     position: absolute;
@@ -256,10 +264,11 @@
                     top: 0;
                     bottom: 0;
                     width: 48px;
-                    background: linear-gradient(90deg, transparent, rgba(13,13,13,0.9));
+                    background: linear-gradient(90deg, transparent, rgba(13, 13, 13, 0.9));
                     pointer-events: none;
                     z-index: 1;
                 }
+
                 #cs-filters {
                     overflow-x: auto;
                     scrollbar-width: none;
@@ -268,35 +277,45 @@
                     cursor: grab;
                     user-select: none;
                 }
-                #cs-filters::-webkit-scrollbar { display: none; }
+
+                #cs-filters::-webkit-scrollbar {
+                    display: none;
+                }
+
                 #cs-filters.dragging {
                     cursor: grabbing;
                     scroll-behavior: auto;
                 }
+
                 .cs-filter {
                     white-space: nowrap;
-                    border: 1px solid rgba(255,255,255,0.08);
-                    background: rgba(255,255,255,0.04);
+                    border: 1px solid rgba(255, 255, 255, 0.08);
+                    background: rgba(255, 255, 255, 0.04);
                     backdrop-filter: blur(4px);
                     transition: all 0.3s;
                 }
+
                 .cs-filter:last-child {
                     margin-right: 50px;
                 }
+
                 .cs-filter:hover {
-                    background: rgba(255,255,255,0.12);
-                    border-color: rgba(255,255,255,0.2);
+                    background: rgba(255, 255, 255, 0.12);
+                    border-color: rgba(255, 255, 255, 0.2);
                 }
+
                 .cs-filter.active {
                     background: #fff;
                     color: #0d0d0d;
                     border-color: #fff;
                 }
+
                 @media (max-width: 575px) {
                     .cs-header-row {
                         flex-wrap: wrap;
                         justify-content: center;
                     }
+
                     .cs-header-row .cs-count {
                         width: 100%;
                         text-align: center;
@@ -304,42 +323,55 @@
                     }
                 }
             </style>
-            <div class="sticky top-24 z-40 mb-12 py-3 backdrop-blur-xl bg-brand-dark/85 -mx-2 px-2 rounded-xl border border-white/5">
+            <div
+                class="sticky top-24 z-40 mb-12 py-3 backdrop-blur-xl bg-brand-dark/85 -mx-2 px-2 rounded-xl border border-white/5">
                 <div class="cs-header-row">
                     <div id="cs-filters-wrapper">
-                    <div class="flex flex-nowrap items-center gap-1.5 md:gap-2"
-                        id="cs-filters" role="tablist" aria-label="Filter case studies by discipline">
-                        <button data-filter="all"
-                            class="cs-filter active interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">All</button>
-                        <button data-filter="corporate-communications"
-                            class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Corporate Communications</button>
-                        <button data-filter="public-relations"
-                            class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Public Relations</button>
-                        <button data-filter="thought-leadership"
-                            class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Thought Leadership</button>
-                        <button data-filter="employer-branding"
-                            class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Employer Branding</button>
-                        <button data-filter="social-media-marketing"
-                            class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Social Media Marketing</button>
-                        <button data-filter="seo-aeo"
-                            class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">SEO / AEO</button>
-                        <button data-filter="content-writing"
-                            class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Content Writing</button>
-                        <button data-filter="influencer-marketing"
-                            class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Influencer Marketing</button>
-                        <button data-filter="branding"
-                            class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Branding</button>
-                        <button data-filter="design"
-                            class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Design</button>
-                        <button data-filter="performance-marketing"
-                            class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Performance Marketing</button>
-                        <button data-filter="vetted-lead-generation"
-                            class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Vetted Lead Generation</button>
-                        <button data-filter="chatbot-virtual-assistant"
-                            class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Chatbot & Virtual Assistant</button>
+                        <div class="flex flex-nowrap items-center gap-1.5 md:gap-2" id="cs-filters" role="tablist"
+                            aria-label="Filter case studies by discipline">
+                            <button data-filter="all"
+                                class="cs-filter active interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">All</button>
+                            <button data-filter="corporate-communications"
+                                class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Corporate
+                                Communications</button>
+                            <button data-filter="public-relations"
+                                class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Public
+                                Relations</button>
+                            <button data-filter="thought-leadership"
+                                class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Thought
+                                Leadership</button>
+                            <button data-filter="employer-branding"
+                                class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Employer
+                                Branding</button>
+                            <button data-filter="social-media-marketing"
+                                class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Social
+                                Media Marketing</button>
+                            <button data-filter="seo-aeo"
+                                class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">SEO
+                                / AEO</button>
+                            <button data-filter="content-writing"
+                                class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Content
+                                Writing</button>
+                            <button data-filter="influencer-marketing"
+                                class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Influencer
+                                Marketing</button>
+                            <button data-filter="branding"
+                                class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Branding</button>
+                            <button data-filter="design"
+                                class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Design</button>
+                            <button data-filter="performance-marketing"
+                                class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Performance
+                                Marketing</button>
+                            <button data-filter="vetted-lead-generation"
+                                class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Vetted
+                                Lead Generation</button>
+                            <button data-filter="chatbot-virtual-assistant"
+                                class="cs-filter interactive shrink-0 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300">Chatbot
+                                & Virtual Assistant</button>
+                        </div>
                     </div>
-                    </div>
-                    <span class="cs-count shrink-0 text-xs md:text-sm text-white/40 font-medium tracking-wide whitespace-nowrap"></span>
+                    <span
+                        class="cs-count shrink-0 text-xs md:text-sm text-white/40 font-medium tracking-wide whitespace-nowrap"></span>
                 </div>
             </div>
 
@@ -460,8 +492,7 @@
                 <ul class="flex flex-col">
                     <li><a href="../index.html" data-company class="interactive text-xs font-medium">Home</a></li>
                     <li><a href="../about.html" data-company class="interactive text-xs font-medium">About</a></li>
-                    <li><a href="case-studies.html" data-company
-                            class="interactive text-xs font-medium">Work</a></li>
+                    <li><a href="case-studies.html" data-company class="interactive text-xs font-medium">Work</a></li>
                     <li><a href="../insights.html" data-company class="interactive text-xs font-medium">Insights</a>
                     </li>
                 </ul>
@@ -504,7 +535,8 @@
                     </div>
                     <div>
                         <ul class="flex flex-col">
-                            <li><a href="../services/visibility-search/seo-aeo-agency-in-thane" data-parent="visibility-search"
+                            <li><a href="../services/visibility-search/seo-aeo-agency-in-thane"
+                                    data-parent="visibility-search"
                                     class="interactive text-xs leading-tight font-medium block py-1">SEO &amp; AEO</a>
                             </li>
                             <li><a href="../services/visibility-search/social-media-marketing-agency-in-thane"
@@ -584,8 +616,8 @@
                     <ul class="flex flex-col">
                         <li><a href="../index.html" data-company class="interactive text-xs font-medium">Home</a></li>
                         <li><a href="../about.html" data-company class="interactive text-xs font-medium">About</a></li>
-                        <li><a href="case-studies.html" data-company
-                                class="interactive text-xs font-medium">Work</a></li>
+                        <li><a href="case-studies.html" data-company class="interactive text-xs font-medium">Work</a>
+                        </li>
                         <li><a href="../insights.html" data-company class="interactive text-xs font-medium">Insights</a>
                         </li>
                     </ul>
@@ -610,7 +642,7 @@
                 });
             }
 
-            // Smooth scroll (Lenis) — guarded
+            // Smooth scroll (Lenis) - guarded
             try {
                 if (typeof Lenis !== 'undefined') {
                     window.lenis = new Lenis({ duration: 1.1, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smooth: true });
@@ -738,7 +770,7 @@
             }));
 
             // Drag-to-scroll for case study filters
-            (function() {
+            (function () {
                 const el = document.getElementById('cs-filters');
                 if (!el) return;
                 let isDown = false, startX, scrollLeft, vel = 0;
@@ -992,6 +1024,14 @@
                             <label>Leave this blank</label>
                             <input type="text" name="_hp" tabindex="-1" autocomplete="off">
                         </div>
+
+                        <!-- Google reCAPTCHA -->
+                        <div class="pt-2">
+                            <div class="g-recaptcha" data-sitekey="6LfjBG0tAAAAANJuXdNgEt-xhQkQu-KKwN8gZ-7i"></div>
+                            <p id="recaptchaError" class="error-msg text-red-500 text-xs mt-1 hidden">Please complete
+                                the CAPTCHA.</p>
+                        </div>
+
                         <input type="hidden" name="api_key" value="3afc0840e1193e58397159d4af15cf4a15b5b35c">
                         <input type="hidden" name="_redirect" value="thanks.html">
                         <div class="pt-6">
@@ -1115,8 +1155,10 @@
                         <li><a href="../services/visibility-search/social-media-marketing-agency-in-thane"
                                 class="interactive">Social
                                 Media Marketing</a></li>
-                        <li><a href="../services/visibility-search/seo-aeo-agency-in-thane" class="interactive">SEO / AEO</a></li>
-                        <li><a href="../services/visibility-search/content-writing-services-in-thane" class="interactive">Content
+                        <li><a href="../services/visibility-search/seo-aeo-agency-in-thane" class="interactive">SEO /
+                                AEO</a></li>
+                        <li><a href="../services/visibility-search/content-writing-services-in-thane"
+                                class="interactive">Content
                                 Writing</a>
                         </li>
                         <li><a href="../services/visibility-search/influencer-marketing-agency-in-thane"
@@ -1127,7 +1169,8 @@
                 <div class="footer-group">
                     <a href="services/creative.html" class="footer-group-title">Creative</a>
                     <ul>
-                        <li><a href="../services/creative/branding-agency-in-thane" class="interactive">Branding</a></li>
+                        <li><a href="../services/creative/branding-agency-in-thane" class="interactive">Branding</a>
+                        </li>
                         <li><a href="../services/creative/design.html" class="interactive">Design</a></li>
                         <li><a href="../services/creative/video-production-services-in-thane" class="interactive">Video
                                 Production</a>
@@ -1140,7 +1183,8 @@
                     <ul>
                         <li><a href="../services/demand-generation/performance-marketing-agency-in-thane"
                                 class="interactive">Performance Marketing</a></li>
-                        <li><a href="../services/demand-generation/email-marketing-services-in-thane" class="interactive">Email
+                        <li><a href="../services/demand-generation/email-marketing-services-in-thane"
+                                class="interactive">Email
                                 Marketing</a></li>
                         <li><a href="../services/demand-generation/vetted-lead-generation-services-in-thane"
                                 class="interactive">Vetted
@@ -1156,9 +1200,11 @@
                     <ul>
                         <li><a href="../services/digital-experiences/website-design-development-services-in-thane"
                                 class="interactive">Web Design &amp; Development</a></li>
-                        <li><a href="../services/digital-experiences/landing-page-services-in-thane" class="interactive">Landing
+                        <li><a href="../services/digital-experiences/landing-page-services-in-thane"
+                                class="interactive">Landing
                                 Pages</a></li>
-                        <li><a href="../services/digital-experiences/chatbot-development-services-in-thane" class="interactive">Chatbot &amp;
+                        <li><a href="../services/digital-experiences/chatbot-development-services-in-thane"
+                                class="interactive">Chatbot &amp;
                                 Virtual Assistant</a></li>
                     </ul>
                 </div>
@@ -1170,10 +1216,10 @@
             </div>
 
             <div class="footer-bottom flex md:flex-row items-center justify-between gap-4">
-                    <p>&copy; 2026 ChimpzLab. All rights reserved.</p>
-                    <a href="../privacy-policy.html"
-                        class="text-gray-400 hover:text-white transition-colors text-sm interactive">Privacy Policy</a>
-                </div>
+                <p>&copy; 2026 ChimpzLab. All rights reserved.</p>
+                <a href="../privacy-policy.html"
+                    class="text-gray-400 hover:text-white transition-colors text-sm interactive">Privacy Policy</a>
+            </div>
         </div>
     </footer>
 
@@ -1222,7 +1268,30 @@
             }
         })();
     </script>
-<script src="/hash-cleaner.js"></script>
+    <script src="/hash-cleaner.js"></script>
+
+    <!-- Google reCAPTCHA API -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <!-- Google reCAPTCHA Validation Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contactForm');
+            if (!form) return;
+
+            const errorEl = document.getElementById('recaptchaError');
+
+            form.addEventListener('submit', (e) => {
+                const recaptchaResponse = grecaptcha.getResponse();
+                if (recaptchaResponse.length === 0) {
+                    e.preventDefault();
+                    if (errorEl) errorEl.classList.remove('hidden');
+                } else {
+                    if (errorEl) errorEl.classList.add('hidden');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

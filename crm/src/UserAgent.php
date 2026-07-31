@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App;
 
 /**
- * Lightweight user-agent parser — turns the raw UA string already stored on
+ * Lightweight user-agent parser - turns the raw UA string already stored on
  * every lead into human-readable device / OS / browser labels for the admin
  * UI. Heuristic and best-effort; no external service or database.
  */

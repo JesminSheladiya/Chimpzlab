@@ -7,7 +7,7 @@ namespace App;
 use RuntimeException;
 
 /**
- * Minimal, dependency-free SMTP client — enough to deliver lead
+ * Minimal, dependency-free SMTP client - enough to deliver lead
  * notifications and weekly reports through a configured mail server
  * (host/port/credentials), keeping MicroCRM's "copy files, no services"
  * deployment story intact.

@@ -23,7 +23,7 @@ class SpamFilter
     /**
      * Every embed snippet (JS widget and plain HTML) includes the honeypot
      * field, so a submission without the key at all didn't come through a
-     * real form — it was POSTed straight at the API.
+     * real form - it was POSTed straight at the API.
      */
     public static function honeypotFieldMissing(array $data, string $field = '_hp'): bool
     {
@@ -79,7 +79,7 @@ class SpamFilter
     }
 
     /**
-     * Same email or phone already submitted to this site recently — usually
+     * Same email or phone already submitted to this site recently - usually
      * a bot hammering the form, occasionally an impatient human, so it flags
      * rather than blocks.
      */

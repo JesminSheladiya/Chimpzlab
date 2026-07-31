@@ -12,10 +12,10 @@
       <div class="card-body">
         <dl class="kv">
           <dt>Site</dt><dd><?= h($lead['site_name']) ?></dd>
-          <dt>Name</dt><dd><?= h($lead['name'] ?: '—') ?></dd>
-          <dt>Email</dt><dd><?= h($lead['email'] ?: '—') ?></dd>
-          <dt>Phone</dt><dd><?= h($lead['phone'] ?: '—') ?></dd>
-          <dt>Message</dt><dd><?= nl2br(h($lead['message'] ?: '—')) ?></dd>
+          <dt>Name</dt><dd><?= h($lead['name'] ?: '-') ?></dd>
+          <dt>Email</dt><dd><?= h($lead['email'] ?: '-') ?></dd>
+          <dt>Phone</dt><dd><?= h($lead['phone'] ?: '-') ?></dd>
+          <dt>Message</dt><dd><?= nl2br(h($lead['message'] ?: '-')) ?></dd>
           <?php $extra = $lead['extra_json'] ? json_decode($lead['extra_json'], true) : null; ?>
           <?php if ($extra): ?>
             <dt>Extra fields</dt>
@@ -78,8 +78,8 @@
           <dt>Device</dt><dd class="small"><?= h($ua['device']) ?><?= $ua['bot'] ? ' <span class="badge badge-spam">bot-like</span>' : '' ?></dd>
           <dt>OS</dt><dd class="small"><?= h($ua['os']) ?></dd>
           <dt>Browser</dt><dd class="small"><?= h($ua['browser']) ?></dd>
-          <dt>Country</dt><dd class="small"><?= h($lead['country'] ?: '—') ?></dd>
-          <dt>Language</dt><dd class="small"><?= h($langShort ?: '—') ?></dd>
+          <dt>Country</dt><dd class="small"><?= h($lead['country'] ?: '-') ?></dd>
+          <dt>Language</dt><dd class="small"><?= h($langShort ?: '-') ?></dd>
         </dl>
       </div>
     </div>
@@ -112,8 +112,8 @@
         <dl class="kv mb-0" style="grid-template-columns: 110px 1fr;">
           <dt>Submitted</dt><dd class="small"><?= h($lead['created_at']) ?></dd>
           <dt>IP address</dt><dd class="small"><?= h($lead['ip_address']) ?></dd>
-          <dt>Referrer</dt><dd class="small" style="word-break:break-all"><?= h($lead['referrer'] ?: '—') ?></dd>
-          <dt>User agent</dt><dd class="small" style="word-break:break-all"><?= h($lead['user_agent'] ?: '—') ?></dd>
+          <dt>Referrer</dt><dd class="small" style="word-break:break-all"><?= h($lead['referrer'] ?: '-') ?></dd>
+          <dt>User agent</dt><dd class="small" style="word-break:break-all"><?= h($lead['user_agent'] ?: '-') ?></dd>
         </dl>
       </div>
     </div>

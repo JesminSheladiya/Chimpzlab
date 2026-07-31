@@ -153,13 +153,13 @@
               <hr class="my-4">
 
               <?php if (!$fields || (count($fields) === 1 && $fields[0]['name'] === '')): ?>
-                <h3>Option A — JS widget (recommended)</h3>
+                <h3>Option A - JS widget (recommended)</h3>
                 <p class="text-muted small">Drops a spam-hardened form (default Name/Email/Phone/Message fields) into the page.</p>
                 <pre><?= h(
                   '<div data-microcrm="' . $site['api_key'] . '"></div>' . "\n" .
                   '<script src="' . $base . '/embed/' . $site['api_key'] . '/widget.js" async></script>'
                 ) ?></pre>
-                <h3 class="mt-4">Option B — Plain HTML form (no JS)</h3>
+                <h3 class="mt-4">Option B - Plain HTML form (no JS)</h3>
               <?php else: ?>
                 <h3>Embed code (custom fields, no JS)</h3>
                 <p class="text-muted small">The JS widget only supports the default field set, so custom-field forms use the plain HTML embed below.</p>

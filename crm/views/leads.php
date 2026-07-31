@@ -74,7 +74,7 @@ $spamView = $filters['status'] === 'spam';
 </div>
 
 <?php if ($spamView): ?>
-  <p class="text-muted small">Spam quarantine — review below, restore false positives with “Not spam”, or empty the folder.</p>
+  <p class="text-muted small">Spam quarantine - review below, restore false positives with “Not spam”, or empty the folder.</p>
 <?php endif; ?>
 
 <div class="card">
@@ -103,10 +103,10 @@ $spamView = $filters['status'] === 'spam';
             <td><?= h($lead['email']) ?></td>
             <td><?= h($lead['phone']) ?></td>
             <td class="small"><?= h($source) ?></td>
-            <td class="small"><?= h($lead['country'] ?: '—') ?></td>
+            <td class="small"><?= h($lead['country'] ?: '-') ?></td>
             <td><span class="badge badge-<?= h($lead['status']) ?>"><?= h($lead['status']) ?></span></td>
             <?php if ($spamView): ?>
-              <td><code class="small"><?= h($lead['spam_reason'] ?: '—') ?></code></td>
+              <td><code class="small"><?= h($lead['spam_reason'] ?: '-') ?></code></td>
             <?php endif; ?>
             <td class="text-end text-nowrap">
               <?php if ($lead['is_spam']): ?>

@@ -6,7 +6,7 @@
 </p>
 
 <?php if (!$sites): ?>
-  <p class="text-muted">No sites yet — add one under <a href="/sites">Sites</a> first.</p>
+  <p class="text-muted">No sites yet - add one under <a href="/sites">Sites</a> first.</p>
 <?php else: ?>
 
 <div class="row">

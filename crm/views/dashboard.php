@@ -124,7 +124,7 @@ for ($i = 13; $i >= 0; $i--) {
               </tr>
             <?php endforeach; ?>
             <?php if (!$bySite): ?>
-              <tr><td colspan="2" class="text-muted">No sites yet — add one under <a href="/sites">Sites</a>.</td></tr>
+              <tr><td colspan="2" class="text-muted">No sites yet - add one under <a href="/sites">Sites</a>.</td></tr>
             <?php endif; ?>
           </tbody>
         </table>

@@ -7,7 +7,7 @@ namespace App;
 use PDO;
 
 /**
- * Builds the per-site weekly lead digest — both the stat aggregation and the
+ * Builds the per-site weekly lead digest - both the stat aggregation and the
  * HTML email body. Shared by bin/send-reports.php (delivery) and the admin
  * "/reports/preview" route (in-browser preview) so the preview is always
  * byte-for-byte what recipients receive.
@@ -47,7 +47,7 @@ class Report
 
     public static function subject(array $site, array $stats): string
     {
-        return "[{$site['name']}] Weekly lead report — {$stats['total']} new lead(s)";
+        return "[{$site['name']}] Weekly lead report - {$stats['total']} new lead(s)";
     }
 
     public static function html(array $site, array $stats, int $days): string

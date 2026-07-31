@@ -6,7 +6,7 @@ declare(strict_types=1);
 // backend. Loaded automatically via composer's "files" autoload entry.
 
 /**
- * Minimal .env parser — no external dependency needed for a handful of keys.
+ * Minimal .env parser - no external dependency needed for a handful of keys.
  */
 function env_load(string $path): array
 {
@@ -234,7 +234,7 @@ function geoip_sync(PDO $pdo): array
     $context = stream_context_create(['http' => ['timeout' => 120, 'user_agent' => 'MicroCRM-geoip-updater']]);
     $csv = @file_get_contents($url, false, $context);
     if ($csv === false || $csv === '') {
-        return [false, 'Download failed — check the server\'s network connection.'];
+        return [false, 'Download failed - check the server\'s network connection.'];
     }
 
     $pdo->beginTransaction();
@@ -265,7 +265,7 @@ function geoip_sync(PDO $pdo): array
 /**
  * Resolves an IP to a two-letter country code using the local ip_country
  * table. Returns null for IPv6, private/loopback addresses, or when the
- * table hasn't been populated yet (see bin/update-geoip.php) — GeoIP is
+ * table hasn't been populated yet (see bin/update-geoip.php) - GeoIP is
  * strictly best-effort and must never break lead capture.
  */
 function geoip_country(PDO $pdo, string $ip): ?string
@@ -298,7 +298,7 @@ function geoip_country(PDO $pdo, string $ip): ?string
  * custom form-builder fields if any are defined, otherwise the default
  * Name / Email / Phone / Message set.
  *
- * Returns raw (unescaped) HTML markup — the caller is responsible for
+ * Returns raw (unescaped) HTML markup - the caller is responsible for
  * escaping it once via h() when displaying it inside a <pre> block, since
  * this is also literally the code an admin copy-pastes onto their site.
  */

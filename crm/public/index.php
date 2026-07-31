@@ -5,7 +5,7 @@ declare(strict_types=1);
 session_start();
 date_default_timezone_set('Asia/Kolkata');
 
-// Fix subdirectory routing — strip /{folder}/crm/public/ from REQUEST_URI
+// Fix subdirectory routing - strip /{folder}/crm/public/ from REQUEST_URI
 $scriptDir = dirname($_SERVER['SCRIPT_NAME']); // e.g., /chimpzlab-2/crm/public
 $requestPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 if ($scriptDir !== '/' && $scriptDir !== '.' && strpos($requestPath, $scriptDir) === 0) {

@@ -143,7 +143,7 @@ Flight::route('POST /api/leads', function () {
     // Hard length caps: nothing legitimate needs more, and oversized fields
     // are a spam/abuse signature in themselves.
     // Custom form-builder templates use common aliases for the core columns
-    // (e.g. fullname/fname for name, mobile for phone) — fold them in so
+    // (e.g. fullname/fname for name, mobile for phone) - fold them in so
     // those leads still populate the name/phone columns and pass validation.
     $name = trim((string) ($data['name'] ?? $data['fullname'] ?? $data['fname'] ?? ''));
     $email = trim((string) ($data['email'] ?? ''));
@@ -287,7 +287,7 @@ Flight::route('POST /api/leads', function () {
     $isAjax = !empty($data['_ajax']) || !empty($_GET['_ajax']) || (isset($_SERVER['HTTP_ACCEPT']) && str_contains($_SERVER['HTTP_ACCEPT'], 'application/json'));
     
     if ($isAjax) {
-        // Always report success, spam or not — the response shouldn't help bots
+        // Always report success, spam or not - the response shouldn't help bots
         // learn which submissions got flagged.
         Flight::json(['success' => true, 'message' => $successMessage]);
         return;

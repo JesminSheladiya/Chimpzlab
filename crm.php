@@ -1,5 +1,5 @@
 <?php
-// CRM entry point for subdirectory hosting — call as: /chimpzlab-2/crm.php?route=/login
+// CRM entry point for subdirectory hosting - call as: /chimpzlab-2/crm.php?route=/login
 // Bypasses the need for .htaccess rewriting
 
 $route = $_GET['route'] ?? '/';

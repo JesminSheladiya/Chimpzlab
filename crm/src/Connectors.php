@@ -24,7 +24,7 @@ class Connectors
 
     /**
      * Dispatches a freshly-captured lead to all matching connectors. Never
-     * throws — any connector error is logged and swallowed so lead capture
+     * throws - any connector error is logged and swallowed so lead capture
      * always succeeds.
      *
      * @param array $lead  associative lead row (must include id, site_id, is_spam)
@@ -213,7 +213,7 @@ class Connectors
         }
 
         return '<div style="font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:560px">'
-            . '<h2 style="margin:0 0 4px">New lead — ' . $esc($site['name'] ?? 'MicroCRM') . '</h2>'
+            . '<h2 style="margin:0 0 4px">New lead - ' . $esc($site['name'] ?? 'MicroCRM') . '</h2>'
             . '<p style="color:#666;margin:0 0 16px">Captured by MicroCRM</p>'
             . '<table style="border-collapse:collapse;width:100%;border:1px solid #eee">' . $rows . '</table>'
             . '</div>';

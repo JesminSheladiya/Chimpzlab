@@ -555,7 +555,7 @@ Flight::route('POST /sites/@id/regenerate', function (string $id) {
     require_login();
     csrf_check();
     db()->prepare('UPDATE sites SET api_key = ? WHERE id = ?')->execute([generate_api_key(), $id]);
-    flash('success', 'New API key generated — update the embed code on the site.');
+    flash('success', 'New API key generated - update the embed code on the site.');
     Flight::redirect('/sites');
 });
 
@@ -795,7 +795,7 @@ Flight::route('GET /reports/preview/@id', function (string $id) {
     $days = 7;
     $stats = \App\Report::stats($pdo, (int) $site['id'], $days);
     $emailHtml = \App\Report::html($site, $stats, $days);
-    $recipient = $site['report_email'] ?: '(no recipient set — reports disabled for this site)';
+    $recipient = $site['report_email'] ?: '(no recipient set - reports disabled for this site)';
 
     // Render the exact email body inside a lightweight "email client" frame.
     header('Content-Type: text/html; charset=utf-8');

@@ -475,7 +475,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
                                         d="M5 13l4 4L19 7"></path>
                                 </svg>
-                                <span>Unified PR and digital strategy is no longer optional—it is a boardroom
+                                <span>Unified PR and digital strategy is no longer optional-it is a boardroom
                                     imperative.</span>
                             </li>
                         </ul>
@@ -533,7 +533,7 @@
                     For decades, corporate communications and SEO existed in entirely separate silos. PR teams focused
                     on securing tier-one media placements, while digital teams obsessed over keywords and technical site
                     structure. In an era where AI models synthesize answers from across the web in real-time, this
-                    separation is no longer just inefficient—it’s dangerous to your brand equity.
+                    separation is no longer just inefficient-it’s dangerous to your brand equity.
                 </p>
 
                 <p class="gsap-reveal">
@@ -636,7 +636,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
                                     d="M5 13l4 4L19 7"></path>
                             </svg>
-                            <span>Unified PR and digital strategy is no longer optional—it is a boardroom
+                            <span>Unified PR and digital strategy is no longer optional-it is a boardroom
                                 imperative.</span>
                         </li>
                     </ul>
@@ -1171,6 +1171,14 @@
                             <label>Leave this blank</label>
                             <input type="text" name="_hp" tabindex="-1" autocomplete="off">
                         </div>
+
+                        <!-- Google reCAPTCHA -->
+                        <div class="pt-2">
+                            <div class="g-recaptcha" data-sitekey="6LfjBG0tAAAAANJuXdNgEt-xhQkQu-KKwN8gZ-7i"></div>
+                            <p id="recaptchaError" class="error-msg text-red-500 text-xs mt-1 hidden">Please complete
+                                the CAPTCHA.</p>
+                        </div>
+
                         <input type="hidden" name="api_key" value="3afc0840e1193e58397159d4af15cf4a15b5b35c">
                         <input type="hidden" name="_redirect" value="thanks.html">
                         <div class="pt-6">
@@ -1641,6 +1649,29 @@
             window.addEventListener('beforeunload', () => {
                 synth.cancel();
                 clearHighlight();
+            });
+        });
+    </script>
+
+    <!-- Google reCAPTCHA API -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <!-- Google reCAPTCHA Validation Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contactForm');
+            if (!form) return;
+
+            const errorEl = document.getElementById('recaptchaError');
+
+            form.addEventListener('submit', (e) => {
+                const recaptchaResponse = grecaptcha.getResponse();
+                if (recaptchaResponse.length === 0) {
+                    e.preventDefault();
+                    if (errorEl) errorEl.classList.remove('hidden');
+                } else {
+                    if (errorEl) errorEl.classList.add('hidden');
+                }
             });
         });
     </script>
