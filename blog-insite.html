@@ -299,7 +299,8 @@
                                 <div class="flex items-center gap-1.5" title="Playback Speed">
                                     <input type="range" class="speed-range w-12 h-1 accent-white cursor-pointer"
                                         min="0.5" max="2" step="0.25" value="1"
-                                        oninput="window.setSpeed(this.value, event)">
+                                        oninput="window.setSpeed(this.value, event)"
+                                        onchange="window.applySpeed(event)">
                                     <span
                                         class="speed-label text-[10px] font-bold text-white bg-white/20 rounded-full px-1.5 py-0.5 min-w-[30px] text-center"
                                         title="Normal">1x</span>
@@ -381,7 +382,8 @@
                     </div>
                     <div class="flex items-center gap-1.5" title="Playback Speed">
                         <input type="range" class="speed-range w-12 h-1 accent-white cursor-pointer" min="0.5" max="2"
-                            step="0.25" value="1" oninput="window.setSpeed(this.value, event)">
+                            step="0.25" value="1" oninput="window.setSpeed(this.value, event)"
+                            onchange="window.applySpeed(event)">
                         <span
                             class="speed-label text-[10px] font-bold text-white bg-white/20 rounded-full px-1.5 py-0.5 min-w-[30px] text-center"
                             title="Normal">1x</span>
@@ -1431,6 +1433,8 @@
             let stickyHidden = false;
             let blocks = [];
             let currentSpeed = 1;
+            let baseOffset = 0;
+            let resumeOffset = 0;
 
             // Sticky Audio Player (separate element, shown after 600px scroll)
             const stickyPlayer = document.getElementById('sticky-audio-player-container');
@@ -1489,13 +1493,33 @@
                 currentUtteranceIndex++;
                 if (currentUtteranceIndex < utterances.length) {
                     const u = utterances[currentUtteranceIndex];
+                    u.text = blocks[currentUtteranceIndex].dataset.originalText;
+                    baseOffset = 0;
+                    resumeOffset = 0;
                     u.rate = currentSpeed;
                     synth.speak(u);
                 } else {
                     isPlaying = false;
                     currentUtteranceIndex = -1;
+                    resumeOffset = 0;
                     updateIcon();
                 }
+            }
+
+            function speakFromOffset(index, offset) {
+                if (index < 0 || index >= utterances.length) return;
+                const u = utterances[index];
+                const fullText = blocks[index].dataset.originalText;
+                const remaining = fullText.substring(offset);
+                if (!remaining.trim()) {
+                    playNextUtterance();
+                    return;
+                }
+                baseOffset = offset;
+                resumeOffset = offset;
+                u.text = remaining;
+                u.rate = currentSpeed;
+                synth.speak(u);
             }
 
             function initSpeechIfNeeded() {
@@ -1518,12 +1542,13 @@
                     };
                     u.onboundary = (e) => {
                         if (e.name === 'word') {
-                            const charIndex = e.charIndex;
+                            const charIndex = baseOffset + e.charIndex;
                             let end = charIndex + (e.charLength || 0);
                             if (end === charIndex) {
                                 while (end < text.length && /\\S/.test(text[end])) end++;
                             }
                             if (charIndex >= text.length) return;
+                            resumeOffset = charIndex;
                             const before = text.substring(0, charIndex);
                             const currentWord = text.substring(charIndex, end);
                             const after = text.substring(end);
@@ -1563,11 +1588,14 @@
                     el.value = currentSpeed;
                     el.title = category;
                 });
+            };
 
+            window.applySpeed = function (e) {
+                if (e && e.stopPropagation) e.stopPropagation();
+                if (e && e.preventDefault) e.preventDefault();
                 if (isPlaying && currentUtteranceIndex >= 0) {
                     synth.cancel();
-                    currentUtteranceIndex--;
-                    playNextUtterance();
+                    speakFromOffset(currentUtteranceIndex, resumeOffset);
                 }
             };
 
@@ -1589,6 +1617,9 @@
                         if (synth.paused) synth.resume();
                         if (!synth.speaking) {
                             const u = utterances[currentUtteranceIndex];
+                            u.text = blocks[currentUtteranceIndex].dataset.originalText;
+                            baseOffset = 0;
+                            resumeOffset = 0;
                             u.rate = currentSpeed;
                             synth.speak(u);
                         }
