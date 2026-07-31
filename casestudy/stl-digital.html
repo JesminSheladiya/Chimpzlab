@@ -730,7 +730,7 @@
                         <!-- Phone -->
                         <div>
                             <input type="tel" name="phone" placeholder="Phone *" minlength="10" maxlength="15"
-                                pattern="[\+\d\s\-\(\)]{10,15}" title="Please enter a valid phone number (10-15 digits)"
+                                pattern="[0-9]{10,15}" inputmode="numeric" title="Please enter a valid phone number (10-15 digits)"
                                 class="w-full bg-transparent border border-white/20 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
                                 required>
                             <p class="error-msg text-red-500 text-xs mt-1 hidden">Please enter a valid phone number (min
@@ -1654,6 +1654,9 @@
             });
         });
     </script>
+
+    <!-- Form Validation -->
+    <script src="/form-validation.js"></script>
 </body>
 
 </html>
