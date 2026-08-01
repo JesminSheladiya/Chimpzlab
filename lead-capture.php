@@ -108,26 +108,36 @@ try {
         'from_name' => $env['SMTP_FROM_NAME'] ?? 'ChimpzLab',
     ];
 
+    // Embed the logo inline (cid:chimpzlab-logo) so it always displays
+    $logoFile = __DIR__ . '/asset/chimpzlab-white.png';
+    $inlineLogo = [];
+    $logo = 'https://www.chimpzlab.com/asset/chimpzlab-white.png';
+    if (is_file($logoFile)) {
+        $logo = 'cid:chimpzlab-logo';
+        $inlineLogo[] = ['file' => $logoFile, 'cid' => 'chimpzlab-logo', 'mime' => 'image/png'];
+    }
+
     $to = $env['SMTP_TO'] ?? '';
     if ($to !== '') {
+        $smtpCfg['reply_to'] = $email;
         $subject = 'New lead from ' . ($site['name'] ?? 'ChimpzLab') . ': ' . $name;
         \App\Mailer::send($smtpCfg, $to, $subject, leadEmailHtml($site['name'] ?? 'ChimpzLab', [
             'name' => $name,
             'email' => $email,
             'phone' => $phone,
             'message' => $message,
-            'ip_address' => $_SERVER['REMOTE_ADDR'] ?? '',
-            'referrer' => $_SERVER['HTTP_REFERER'] ?? '',
-        ]));
+        ], $logo), $inlineLogo);
     }
 
     // Thank-you email to the submitter
     if ($email !== '') {
+        $smtpCfg['reply_to'] = $env['SMTP_FROM'] ?? '';
         \App\Mailer::send(
             $smtpCfg,
             $email,
             'Thank you for contacting ' . ($site['name'] ?? 'ChimpzLab'),
-            thankYouEmailHtml($site['name'] ?? 'ChimpzLab', $name)
+            thankYouEmailHtml($site['name'] ?? 'ChimpzLab', $name, $logo),
+            $inlineLogo
         );
     }
 } catch (Throwable $e) {

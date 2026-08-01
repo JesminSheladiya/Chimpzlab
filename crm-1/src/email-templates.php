@@ -4,10 +4,10 @@
  * HTML templates for lead notification and thank-you emails.
  */
 
-function leadEmailHtml(string $siteName, array $lead): string
+function leadEmailHtml(string $siteName, array $lead, string $logo = ''): string
 {
     $esc = fn($v) => htmlspecialchars((string) $v, ENT_QUOTES, 'UTF-8');
-    $logo = 'https://www.chimpzlab.com/asset/chimpzlab-white.png';
+    if ($logo === '') $logo = 'https://www.chimpzlab.com/asset/chimpzlab-white.png';
 
     $rows = '';
     $fields = [
@@ -23,12 +23,6 @@ function leadEmailHtml(string $siteName, array $lead): string
     }
     $rows .= '<tr><td style="padding:10px 16px;background:#f9fafb;color:#0a0a0a;font-weight:700;white-space:nowrap;font-size:12px;text-transform:uppercase;letter-spacing:1px">Received</td>'
         . '<td style="padding:10px 16px;color:#1f2937;font-size:14px;line-height:1.6">' . $esc(date('r')) . '</td></tr>';
-    $rows .= '<tr><td style="padding:10px 16px;background:#f9fafb;color:#0a0a0a;font-weight:700;white-space:nowrap;font-size:12px;text-transform:uppercase;letter-spacing:1px">Source IP</td>'
-        . '<td style="padding:10px 16px;color:#1f2937;font-size:14px;line-height:1.6">' . $esc($lead['ip_address'] ?? '') . '</td></tr>';
-    if (($lead['referrer'] ?? '') !== '') {
-        $rows .= '<tr><td style="padding:10px 16px;background:#f9fafb;color:#0a0a0a;font-weight:700;white-space:nowrap;font-size:12px;text-transform:uppercase;letter-spacing:1px">Referrer</td>'
-            . '<td style="padding:10px 16px;color:#1f2937;font-size:14px;line-height:1.6">' . $esc($lead['referrer']) . '</td></tr>';
-    }
 
     return '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>New Lead | ' . $esc($siteName) . '</title></head>'
         . '<body style="margin:0;padding:0;background:#0a0a0a;font-family:Manrope,-apple-system,Segoe UI,Roboto,Arial,sans-serif">'
@@ -40,7 +34,7 @@ function leadEmailHtml(string $siteName, array $lead): string
         . '<div style="margin-top:28px;padding-top:24px;border-top:1px solid #e5e7eb">'
         . '<p style="margin:0 0 8px;color:#0a0a0a;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px">Disclaimer</p>'
         . '<p style="margin:0 0 8px;color:#9ca3af;font-size:11px;line-height:1.6">This email and any attachments are intended solely for the recipient(s) and may contain confidential or privileged information. If you are not the intended recipient, please notify the sender and delete this message. The views expressed are those of the sender and may not reflect those of Chimpzlab. Please ensure attachments are virus-checked before opening. Chimpzlab is not liable for any virus-related damages. Visit us at www.chimpzlab.com.</p>'
-        . '<p style="margin:0;color:#9ca3af;font-size:11px;line-height:1.6">Please consider environment before printing this email !</p>'
+
         . '</div>'
         . '</td></tr></table>'
         . '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#0a0a0a"><tr><td align="center" style="padding:28px 48px"><p style="margin:0;color:#9ca3af;font-size:12px;letter-spacing:1px;text-transform:uppercase">&copy; ' . date('Y') . ' ChimpzLab. All rights reserved.</p></td></tr></table>'
@@ -51,12 +45,12 @@ function leadEmailHtml(string $siteName, array $lead): string
  * Builds the themed thank-you email sent to the submitter.
  * Full-width, single-line HTML document using the site logo.
  */
-function thankYouEmailHtml(string $siteName, string $submitterName): string
+function thankYouEmailHtml(string $siteName, string $submitterName, string $logo = ''): string
 {
     $esc = fn($v) => htmlspecialchars((string) $v, ENT_QUOTES, 'UTF-8');
     $firstName = trim(explode(' ', trim($submitterName))[0] ?? '');
     $greeting = $firstName !== '' ? 'Dear ' . $esc($firstName) . ',' : 'Dear Sir/Madam,';
-    $logo = 'https://www.chimpzlab.com/asset/chimpzlab-white.png';
+    if ($logo === '') $logo = 'https://www.chimpzlab.com/asset/chimpzlab-white.png';
 
     return '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Thank You | ' . $esc($siteName) . '</title></head>'
         . '<body style="margin:0;padding:0;background:#0a0a0a;font-family:Manrope,-apple-system,Segoe UI,Roboto,Arial,sans-serif">'

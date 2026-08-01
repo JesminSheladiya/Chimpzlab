@@ -23,7 +23,7 @@ class Mailer
      *                    password, from_email, from_name
      * @throws RuntimeException on any protocol/connection failure
      */
-    public static function send(array $cfg, string $toEmail, string $subject, string $htmlBody): void
+    public static function send(array $cfg, string $toEmail, string $subject, string $htmlBody, array $inline = []): void
     {
         $host = (string) ($cfg['host'] ?? '');
         $port = (int) ($cfg['port'] ?? 587);
@@ -87,9 +87,12 @@ class Mailer
             self::cmd($conn, 'DATA', 354);
 
             // Cc is shown in headers; Bcc is intentionally omitted.
-            $headers = self::buildHeaders($fromEmail, $fromName, $recipients, $cc, $subject);
-            $body = $headers . "\r\n" . self::dotStuff($htmlBody) . "\r\n.";
-            self::cmd($conn, $body, 250);
+            $replyTo = (string) ($cfg['reply_to'] ?? '');
+            $boundary = '----=_Part_' . bin2hex(random_bytes(10));
+            $headers = self::buildHeaders($fromEmail, $fromName, $recipients, $cc, $subject, $replyTo, $boundary, $inline !== []);
+            $body = self::buildBody($htmlBody, $boundary, $inline);
+            $message = $headers . self::dotStuff($body) . "\r\n.";
+            self::cmd($conn, $message, 250);
 
             self::cmd($conn, 'QUIT', [221], false);
         } finally {
@@ -106,27 +109,93 @@ class Mailer
         ));
     }
 
-    private static function buildHeaders(string $fromEmail, string $fromName, array $recipients, array $cc, string $subject): string
+    private static function buildHeaders(string $fromEmail, string $fromName, array $recipients, array $cc, string $subject, string $replyTo, string $boundary, bool $related): string
     {
         $encodedName = '=?UTF-8?B?' . base64_encode($fromName) . '?=';
         $encodedSubject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
         $toHeader = implode(', ', array_map(fn($e) => "<{$e}>", $recipients));
+        $domain = strstr($fromEmail, '@') !== false ? substr(strstr($fromEmail, '@'), 1) : 'localhost';
         $lines = [
             "Date: " . date('r'),
             "From: {$encodedName} <{$fromEmail}>",
             "To: {$toHeader}",
         ];
+        if ($replyTo !== '') {
+            $lines[] = 'Reply-To: <' . $replyTo . '>';
+        }
         if ($cc !== []) {
             $lines[] = 'Cc: ' . implode(', ', array_map(fn($e) => "<{$e}>", $cc));
         }
+        $type = $related ? 'multipart/related' : 'multipart/alternative';
         $lines = array_merge($lines, [
             "Subject: {$encodedSubject}",
             "MIME-Version: 1.0",
-            "Content-Type: text/html; charset=UTF-8",
-            "Content-Transfer-Encoding: 8bit",
-            "Message-ID: <" . bin2hex(random_bytes(12)) . "@microcrm>",
+            "Content-Type: {$type}; boundary=\"{$boundary}\"",
+            "Message-ID: <" . bin2hex(random_bytes(12)) . "@{$domain}>",
+            "X-Mailer: " . self::mailerName(),
         ]);
-        return implode("\r\n", $lines) . "\r\n";
+        return implode("\r\n", $lines) . "\r\n\r\n";
+    }
+
+    private static function mailerName(): string
+    {
+        return (defined('APP_NAME') ? (string) APP_NAME : 'MicroCRM') . '/1.0 (SMTP)';
+    }
+
+    private static function buildBody(string $html, string $boundary, array $inline): string
+    {
+        $plain = self::htmlToPlain($html);
+        $altBoundary = $boundary . '_alt';
+        $parts = [];
+
+        $parts[] = "--{$boundary}";
+        $parts[] = 'Content-Type: multipart/alternative; boundary="' . $altBoundary . '"';
+        $parts[] = '';
+        $parts[] = "--{$altBoundary}";
+        $parts[] = 'Content-Type: text/plain; charset=UTF-8';
+        $parts[] = 'Content-Transfer-Encoding: base64';
+        $parts[] = '';
+        $parts[] = self::base64Lines($plain);
+        $parts[] = "--{$altBoundary}";
+        $parts[] = 'Content-Type: text/html; charset=UTF-8';
+        $parts[] = 'Content-Transfer-Encoding: base64';
+        $parts[] = '';
+        $parts[] = self::base64Lines($html);
+        $parts[] = "--{$altBoundary}--";
+
+        foreach ($inline as $att) {
+            $data = @file_get_contents($att['file'] ?? '');
+            if ($data === false) continue;
+            $mime = $att['mime'] ?? 'application/octet-stream';
+            $cid = $att['cid'] ?? 'logo';
+            $name = basename($att['file']);
+            $parts[] = "--{$boundary}";
+            $parts[] = 'Content-Type: ' . $mime . '; name="' . $name . '"';
+            $parts[] = 'Content-Transfer-Encoding: base64';
+            $parts[] = 'Content-ID: <' . $cid . '>';
+            $parts[] = 'Content-Disposition: inline; filename="' . $name . '"';
+            $parts[] = '';
+            $parts[] = self::base64Lines($data);
+        }
+
+        $parts[] = "--{$boundary}--";
+        return implode("\r\n", $parts);
+    }
+
+    private static function base64Lines(string $s): string
+    {
+        return rtrim(chunk_split(base64_encode($s), 76, "\r\n"));
+    }
+
+    private static function htmlToPlain(string $html): string
+    {
+        $text = preg_replace('#<br\s*/?>#i', "\n", $html);
+        $text = preg_replace('#</(p|div|tr|h[1-6]|li|table)>#i', "\n", $text);
+        $text = preg_replace('#<[^>]+>#', '', $text);
+        $text = html_entity_decode($text, ENT_QUOTES, 'UTF-8');
+        $text = preg_replace('/[ \t]+/', ' ', $text);
+        $text = preg_replace("/\n\s*\n+/", "\n\n", $text);
+        return trim($text);
     }
 
     /** SMTP requires a leading dot on a line to be doubled. */
