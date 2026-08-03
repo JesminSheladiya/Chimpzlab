@@ -17,6 +17,9 @@
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
+    <!-- Lenis for Smooth Scrolling -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -65,6 +68,23 @@
             color: #000000;
         }
 
+        /* Lenis Smooth Scroll */
+        html.lenis {
+            height: auto;
+        }
+
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
+
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
+
+        .lenis.lenis-scrolling iframe {
+            pointer-events: none;
+        }
+
         /* FAQ Accordion Transitions */
         .faq-answer {
             display: grid;
@@ -78,6 +98,49 @@
 
         .faq-answer>div {
             overflow: hidden;
+        }
+
+        .faq-item {
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: #d1d5db;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-item.is-open {
+            border-color: #9ca3af;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .faq-toggle .faq-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+            font-size: 1rem;
+            transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+        }
+
+        .faq-toggle:hover .faq-icon {
+            color: #000000;
+        }
+
+        .faq-toggle:focus-visible {
+            outline: 2px solid #000000;
+            outline-offset: -2px;
+            border-radius: 0.75rem;
+        }
+
+        .faq-question {
+            transition: color 0.3s ease;
+        }
+
+        .faq-item.is-open .faq-question {
+            color: #000000;
         }
 
         /* Progress Bar Animation */
@@ -790,156 +853,209 @@
 
             <div class="space-y-4">
                 <!-- FAQ Item 1 -->
-                <div class="border border-gray-200 rounded-xl bg-gray-50 overflow-hidden">
-                    <button
+                <div class="faq-item is-open border border-gray-200 rounded-xl bg-gray-50 overflow-hidden">
+                    <button id="faq-toggle-1" aria-expanded="true" aria-controls="faq-answer-1"
                         class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none">
-                        <span class="font-semibold text-black pr-4">What makes ChimpzLab different from other real
+                        <span class="faq-question font-semibold text-black pr-4">What makes ChimpzLab different from
+                            other real
                             estate digital marketing agencies?</span>
-                        <i class="ph ph-plus text-gray-400 transition-transform duration-300"></i>
+                        <i class="faq-icon ph ph-plus text-gray-400"></i>
+                        <span class="sr-only">Close</span>
                     </button>
-                    <div class="faq-answer">
-                        <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-200 pt-4">
-                            Three things. First, we verify every ad lead by phone before it reaches your sales team,
-                            filtering out brokers, wrong numbers, and low-intent enquiries so your team only talks to
-                            real buyers. Second, we combine SEO, Google Ads, social media, PR, and corporate
-                            communications under one roof rather than splitting these across separate vendors with no
-                            shared strategy. Third, we build hyperlocal keyword strategies per micro-market rather than
-                            running one generic campaign across an entire city.
+                    <div id="faq-answer-1" role="region" aria-labelledby="faq-toggle-1" class="faq-answer open">
+                        <div class="overflow-hidden">
+                            <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-200 pt-4">
+                                Three things. First, we verify every ad lead by phone before it reaches your sales team,
+                                filtering out brokers, wrong numbers, and low-intent enquiries so your team only talks
+                                to
+                                real buyers. Second, we combine SEO, Google Ads, social media, PR, and corporate
+                                communications under one roof rather than splitting these across separate vendors with
+                                no
+                                shared strategy. Third, we build hyperlocal keyword strategies per micro-market rather
+                                than
+                                running one generic campaign across an entire city.
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- FAQ Item 2 -->
-                <div class="border border-gray-200 rounded-xl bg-gray-50 overflow-hidden">
-                    <button
+                <div class="faq-item border border-gray-200 rounded-xl bg-gray-50 overflow-hidden">
+                    <button id="faq-toggle-2" aria-expanded="false" aria-controls="faq-answer-2"
                         class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none">
-                        <span class="font-semibold text-black pr-4">Do you work only with Mumbai-based
+                        <span class="faq-question font-semibold text-black pr-4">Do you work only with Mumbai-based
                             developers?</span>
-                        <i class="ph ph-plus text-gray-400 transition-transform duration-300"></i>
+                        <i class="faq-icon ph ph-plus text-gray-400"></i>
+                        <span class="sr-only">Open</span>
                     </button>
-                    <div class="faq-answer">
-                        <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-200 pt-4">
-                            No. We work with real estate developers and projects across Mumbai MMR, Delhi NCR, Chennai,
-                            and Bengaluru. Our keyword and ad strategies are built hyperlocally for each micro-market
-                            within a city, not at a city-wide level.
+                    <div id="faq-answer-2" role="region" aria-labelledby="faq-toggle-2" class="faq-answer">
+                        <div class="overflow-hidden">
+                            <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-200 pt-4">
+                                No. We work with real estate developers and projects across Mumbai MMR, Delhi NCR,
+                                Chennai,
+                                and Bengaluru. Our keyword and ad strategies are built hyperlocally for each
+                                micro-market
+                                within a city, not at a city-wide level.
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- FAQ Item 3 -->
-                <div class="border border-gray-200 rounded-xl bg-gray-50 overflow-hidden">
-                    <button
+                <div class="faq-item border border-gray-200 rounded-xl bg-gray-50 overflow-hidden">
+                    <button id="faq-toggle-3" aria-expanded="false" aria-controls="faq-answer-3"
                         class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none">
-                        <span class="font-semibold text-black pr-4">How is SEO for real estate different from SEO for
+                        <span class="faq-question font-semibold text-black pr-4">How is SEO for real estate different
+                            from SEO for
                             other industries?</span>
-                        <i class="ph ph-plus text-gray-400 transition-transform duration-300"></i>
+                        <i class="faq-icon ph ph-plus text-gray-400"></i>
+                        <span class="sr-only">Open</span>
                     </button>
-                    <div class="faq-answer">
-                        <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-200 pt-4">
-                            Real estate SEO is hyperlocal and intent-driven. Buyers search for very specific
-                            combinations: "2BHK Thane West under 1 crore" or "luxury villa Bandra sea-facing." The
-                            keyword map is built around micro-markets, project types, budget brackets, and configuration
-                            preferences rather than broad category terms. The content architecture, schema markup, and
-                            page structure all need to reflect how actual buyers search, which is fundamentally
-                            different from how a SaaS company or an ecommerce brand would approach SEO.
+                    <div id="faq-answer-3" role="region" aria-labelledby="faq-toggle-3" class="faq-answer">
+                        <div class="overflow-hidden">
+                            <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-200 pt-4">
+                                Real estate SEO is hyperlocal and intent-driven. Buyers search for very specific
+                                combinations: "2BHK Thane West under 1 crore" or "luxury villa Bandra sea-facing." The
+                                keyword map is built around micro-markets, project types, budget brackets, and
+                                configuration
+                                preferences rather than broad category terms. The content architecture, schema markup,
+                                and
+                                page structure all need to reflect how actual buyers search, which is fundamentally
+                                different from how a SaaS company or an ecommerce brand would approach SEO.
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- FAQ Item 4 -->
-                <div class="border border-gray-200 rounded-xl bg-gray-50 overflow-hidden">
-                    <button
+                <div class="faq-item border border-gray-200 rounded-xl bg-gray-50 overflow-hidden">
+                    <button id="faq-toggle-4" aria-expanded="false" aria-controls="faq-answer-4"
                         class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none">
-                        <span class="font-semibold text-black pr-4">What is answer engine optimization (AEO) and why
+                        <span class="faq-question font-semibold text-black pr-4">What is answer engine optimization
+                            (AEO) and why
                             does it matter for real estate?</span>
-                        <i class="ph ph-plus text-gray-400 transition-transform duration-300"></i>
+                        <i class="faq-icon ph ph-plus text-gray-400"></i>
+                        <span class="sr-only">Open</span>
                     </button>
-                    <div class="faq-answer">
-                        <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-200 pt-4">
-                            AEO is the practice of structuring website content so AI tools like ChatGPT, Google AI
-                            Overviews, and Perplexity cite your project or brand when a buyer asks a question like "best
-                            3BHK projects in Thane West." As more buyers start their property search by asking an AI
-                            assistant rather than typing into Google, the developers whose content is structured for AI
-                            citation will be discovered first. This is a separate optimization from traditional SEO, and
-                            very few real estate brands in India are doing it yet.
+                    <div id="faq-answer-4" role="region" aria-labelledby="faq-toggle-4" class="faq-answer">
+                        <div class="overflow-hidden">
+                            <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-200 pt-4">
+                                AEO is the practice of structuring website content so AI tools like ChatGPT, Google AI
+                                Overviews, and Perplexity cite your project or brand when a buyer asks a question like
+                                "best
+                                3BHK projects in Thane West." As more buyers start their property search by asking an AI
+                                assistant rather than typing into Google, the developers whose content is structured for
+                                AI
+                                citation will be discovered first. This is a separate optimization from traditional SEO,
+                                and
+                                very few real estate brands in India are doing it yet.
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- FAQ Item 5 -->
-                <div class="border border-gray-200 rounded-xl bg-gray-50 overflow-hidden">
-                    <button
+                <div class="faq-item border border-gray-200 rounded-xl bg-gray-50 overflow-hidden">
+                    <button id="faq-toggle-5" aria-expanded="false" aria-controls="faq-answer-5"
                         class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none">
-                        <span class="font-semibold text-black pr-4">How do you handle lead quality? We get hundreds of
+                        <span class="faq-question font-semibold text-black pr-4">How do you handle lead quality? We get
+                            hundreds of
                             junk leads from portals.</span>
-                        <i class="ph ph-plus text-gray-400 transition-transform duration-300"></i>
+                        <i class="faq-icon ph ph-plus text-gray-400"></i>
+                        <span class="sr-only">Open</span>
                     </button>
-                    <div class="faq-answer">
-                        <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-200 pt-4">
-                            We built a verification layer into our ad campaigns. Every enquiry generated through Google
-                            Ads is called by our team within 30 minutes. We confirm budget range, preferred location,
-                            configuration preference, and purchase timeline before the lead is passed to your sales
-                            team. Leads that do not meet the qualification criteria are filtered out. You receive only
-                            verified, site-visit-ready leads with full context, not a raw spreadsheet of phone numbers.
+                    <div id="faq-answer-5" role="region" aria-labelledby="faq-toggle-5" class="faq-answer">
+                        <div class="overflow-hidden">
+                            <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-200 pt-4">
+                                We built a verification layer into our ad campaigns. Every enquiry generated through
+                                Google
+                                Ads is called by our team within 30 minutes. We confirm budget range, preferred
+                                location,
+                                configuration preference, and purchase timeline before the lead is passed to your sales
+                                team. Leads that do not meet the qualification criteria are filtered out. You receive
+                                only
+                                verified, site-visit-ready leads with full context, not a raw spreadsheet of phone
+                                numbers.
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- FAQ Item 6 -->
-                <div class="border border-gray-200 rounded-xl bg-gray-50 overflow-hidden">
-                    <button
+                <div class="faq-item border border-gray-200 rounded-xl bg-gray-50 overflow-hidden">
+                    <button id="faq-toggle-6" aria-expanded="false" aria-controls="faq-answer-6"
                         class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none">
-                        <span class="font-semibold text-black pr-4">How long does it take to see results from real
+                        <span class="faq-question font-semibold text-black pr-4">How long does it take to see results
+                            from real
                             estate SEO?</span>
-                        <i class="ph ph-plus text-gray-400 transition-transform duration-300"></i>
+                        <i class="faq-icon ph ph-plus text-gray-400"></i>
+                        <span class="sr-only">Open</span>
                     </button>
-                    <div class="faq-answer">
-                        <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-200 pt-4">
-                            Organic SEO for real estate typically takes 3 to 6 months to show meaningful ranking
-                            movement, depending on the competitive density of the micro-market and the current state of
-                            the developer's website. Google Ads with our lead verification layer can start producing
-                            qualified leads within the first 2 to 3 weeks of campaign launch. We recommend running both
-                            in parallel: ads for immediate pipeline, SEO for compounding long-term visibility that
-                            reduces dependency on paid channels over time.
+                    <div id="faq-answer-6" role="region" aria-labelledby="faq-toggle-6" class="faq-answer">
+                        <div class="overflow-hidden">
+                            <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-200 pt-4">
+                                Organic SEO for real estate typically takes 3 to 6 months to show meaningful ranking
+                                movement, depending on the competitive density of the micro-market and the current state
+                                of
+                                the developer's website. Google Ads with our lead verification layer can start producing
+                                qualified leads within the first 2 to 3 weeks of campaign launch. We recommend running
+                                both
+                                in parallel: ads for immediate pipeline, SEO for compounding long-term visibility that
+                                reduces dependency on paid channels over time.
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- FAQ Item 7 -->
-                <div class="border border-gray-200 rounded-xl bg-gray-50 overflow-hidden">
-                    <button
+                <div class="faq-item border border-gray-200 rounded-xl bg-gray-50 overflow-hidden">
+                    <button id="faq-toggle-7" aria-expanded="false" aria-controls="faq-answer-7"
                         class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none">
-                        <span class="font-semibold text-black pr-4">Do you manage social media and PR for real estate
+                        <span class="faq-question font-semibold text-black pr-4">Do you manage social media and PR for
+                            real estate
                             brands too, or just SEO and ads?</span>
-                        <i class="ph ph-plus text-gray-400 transition-transform duration-300"></i>
+                        <i class="faq-icon ph ph-plus text-gray-400"></i>
+                        <span class="sr-only">Open</span>
                     </button>
-                    <div class="faq-answer">
-                        <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-200 pt-4">
-                            We manage the full spectrum. Our real estate work covers social media marketing for project
-                            launches and ongoing brand presence, LinkedIn thought leadership for directors and founders,
-                            public relations and media coverage, corporate communications including annual reports and
-                            investor decks, design and creative for hoardings and brochures, and web development for
-                            project microsites. The value of running all of this through one partner is that search,
-                            ads, social, PR, and content work as one connected strategy rather than five disconnected
-                            vendor relationships.
+                    <div id="faq-answer-7" role="region" aria-labelledby="faq-toggle-7" class="faq-answer">
+                        <div class="overflow-hidden">
+                            <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-200 pt-4">
+                                We manage the full spectrum. Our real estate work covers social media marketing for
+                                project
+                                launches and ongoing brand presence, LinkedIn thought leadership for directors and
+                                founders,
+                                public relations and media coverage, corporate communications including annual reports
+                                and
+                                investor decks, design and creative for hoardings and brochures, and web development for
+                                project microsites. The value of running all of this through one partner is that search,
+                                ads, social, PR, and content work as one connected strategy rather than five
+                                disconnected
+                                vendor relationships.
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- FAQ Item 8 -->
-                <div class="border border-gray-200 rounded-xl bg-gray-50 overflow-hidden">
-                    <button
+                <div class="faq-item border border-gray-200 rounded-xl bg-gray-50 overflow-hidden">
+                    <button id="faq-toggle-8" aria-expanded="false" aria-controls="faq-answer-8"
                         class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none">
-                        <span class="font-semibold text-black pr-4">What does the free audit include?</span>
-                        <i class="ph ph-plus text-gray-400 transition-transform duration-300"></i>
+                        <span class="faq-question font-semibold text-black pr-4">What does the free audit
+                            include?</span>
+                        <i class="faq-icon ph ph-plus text-gray-400"></i>
+                        <span class="sr-only">Open</span>
                     </button>
-                    <div class="faq-answer">
-                        <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-200 pt-4">
-                            A full diagnostic of your current organic search visibility, including which micro-market
-                            keywords you rank for (and which your competitors rank for that you do not), a review of
-                            your Google Ads setup and lead quality if you are currently running campaigns, and a
-                            technical assessment of your website's readiness for both search engines and AI answer
-                            engines. We present the findings on a call and share a written summary, with no obligation.
+                    <div id="faq-answer-8" role="region" aria-labelledby="faq-toggle-8" class="faq-answer">
+                        <div class="overflow-hidden">
+                            <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-200 pt-4">
+                                A full diagnostic of your current organic search visibility, including which
+                                micro-market
+                                keywords you rank for (and which your competitors rank for that you do not), a review of
+                                your Google Ads setup and lead quality if you are currently running campaigns, and a
+                                technical assessment of your website's readiness for both search engines and AI answer
+                                engines. We present the findings on a call and share a written summary, with no
+                                obligation.
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1125,8 +1241,31 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        // Lenis Smooth Scrolling
+        if (window.Lenis) {
+            window.lenis = new Lenis({
+                wrapper: window,
+                content: document.documentElement,
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                direction: 'vertical',
+                gestureDirection: 'vertical',
+                smooth: true,
+                mouseMultiplier: 1,
+                smoothTouch: false,
+                touchMultiplier: 2,
+                infinite: false,
+            });
+            function raf(time) {
+                window.lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+        }
+    </script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
 
             // 5. Custom Cursor
             if (window.matchMedia("(pointer: fine)").matches) {
@@ -1165,30 +1304,28 @@
             document.getElementById('year').textContent = new Date().getFullYear();
 
             // 3. FAQ Accordion Logic
-            const faqToggles = document.querySelectorAll('.faq-toggle');
-            faqToggles.forEach(toggle => {
+            const faqItems = document.querySelectorAll('.faq-item');
+            const setItemState = (item, open) => {
+                const toggle = item.querySelector('.faq-toggle');
+                const answer = item.querySelector('.faq-answer');
+                const icon = item.querySelector('.faq-icon');
+                const label = item.querySelector('.sr-only');
+                item.classList.toggle('is-open', open);
+                answer.classList.toggle('open', open);
+                toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                icon.style.transform = open ? 'rotate(45deg)' : 'rotate(0deg)';
+                if (label) label.textContent = open ? 'Close' : 'Open';
+            };
+
+            faqItems.forEach(item => {
+                setItemState(item, item.classList.contains('is-open'));
+                const toggle = item.querySelector('.faq-toggle');
                 toggle.addEventListener('click', () => {
-                    const answer = toggle.nextElementSibling;
-                    const icon = toggle.querySelector('i');
-
-                    // Close others (Optional, uncomment if you want accordion style)
-                    document.querySelectorAll('.faq-answer').forEach(ans => {
-                        if (ans !== answer) {
-                            ans.classList.remove('open');
-                            ans.previousElementSibling.querySelector('i').style.transform = 'rotate(0deg)';
-                        }
+                    const isOpen = item.classList.contains('is-open');
+                    faqItems.forEach(other => {
+                        if (other !== item) setItemState(other, false);
                     });
-
-
-                    answer.classList.toggle('open');
-
-                    if (answer.classList.contains('open')) {
-                        icon.style.transform = 'rotate(45deg)';
-                        toggle.classList.add('text-brand-accent');
-                    } else {
-                        icon.style.transform = 'rotate(0deg)';
-                        toggle.classList.remove('text-brand-accent');
-                    }
+                    setItemState(item, !isOpen);
                 });
             });
 
