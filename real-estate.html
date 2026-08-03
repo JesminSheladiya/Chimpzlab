@@ -1080,30 +1080,33 @@
 
                 <!-- Right Side: Form Container -->
                 <div class="bg-[#111111] border border-gray-900 rounded-[2rem] p-8 md:p-12 shadow-2xl">
-                    <form
-                        onsubmit="event.preventDefault(); document.getElementById('form-success').classList.remove('hidden'); this.style.display='none';"
-                        class="space-y-6">
+                    <form id="contactForm" class="space-y-6" method="POST" action="real-estate-lead.php">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <input type="text" id="name" required
+                                <input type="text" name="name" id="name" required
                                     class="w-full bg-transparent border border-gray-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:ring-1 focus:ring-gray-600 focus:border-gray-600 transition-all placeholder-gray-500"
                                     placeholder="Your Name *">
+                                <p class="error-msg text-red-500 text-xs mt-1 hidden">Please enter your full name.</p>
                             </div>
                             <div>
-                                <input type="tel" id="phone" required
+                                <input type="tel" name="phone" id="phone" required inputmode="numeric"
                                     class="w-full bg-transparent border border-gray-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:ring-1 focus:ring-gray-600 focus:border-gray-600 transition-all placeholder-gray-500"
                                     placeholder="WhatsApp Number *">
+                                <p class="error-msg text-red-500 text-xs mt-1 hidden">Please enter a valid phone number
+                                    (min 10 digits).</p>
                             </div>
                         </div>
 
                         <div>
-                            <input type="text" id="company" required
+                            <input type="text" name="company" id="company" required
                                 class="w-full bg-transparent border border-gray-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:ring-1 focus:ring-gray-600 focus:border-gray-600 transition-all placeholder-gray-500"
                                 placeholder="Company / Project Name *">
+                            <p class="error-msg text-red-500 text-xs mt-1 hidden">Please enter your company or project
+                                name.</p>
                         </div>
 
                         <div>
-                            <select id="challenge" required
+                            <select id="challenge" name="challenge" required
                                 class="w-full bg-transparent border border-gray-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:ring-1 focus:ring-gray-600 focus:border-gray-600 transition-all appearance-none cursor-pointer">
                                 <option value="" disabled selected class="bg-gray-900 text-gray-500">Biggest challenge
                                     right now *</option>
@@ -1117,19 +1120,32 @@
                                 </option>
                                 <option value="other" class="bg-gray-900 text-white">Something else</option>
                             </select>
+                            <p class="error-msg text-red-500 text-xs mt-1 hidden">Please select your biggest challenge.
+                            </p>
                         </div>
                         <div>
-                            <textarea id="description" rows="3"
+                            <textarea id="description" name="description" rows="3"
                                 class="w-full bg-transparent border border-gray-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:ring-1 focus:ring-gray-600 focus:border-gray-600 transition-all placeholder-gray-500 resize-none"
                                 placeholder="Tell us a little more about your requirements (Optional)"></textarea>
                         </div>
 
-
+                        <!-- Honeypot: invisible to humans, bots love it -->
+                        <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true">
+                            <label>Leave this blank</label>
+                            <input type="text" name="_hp" tabindex="-1" autocomplete="off">
+                        </div>
 
                         <div class="pt-2">
-                            <!-- Replace YOUR_RECAPTCHA_SITE_KEY with your actual site key -->
-                            <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY" data-theme="dark"></div>
+                            <div class="g-recaptcha" data-sitekey="6Ld5s24tAAAAABcGfuai8DbOmn6JAS9kARQonH1h"
+                                data-theme="dark"></div>
+                            <p id="recaptchaError" class="error-msg text-red-500 text-xs mt-1 hidden">Please complete
+                                the CAPTCHA.</p>
                         </div>
+
+                        <!-- Hidden fields -->
+                        <input type="hidden" name="api_key" value="3afc0840e1193e58397159d4af15cf4a15b5b35c">
+                        <input type="hidden" name="_redirect" value="thanks.html">
+
                         <div class="pt-2">
                             <button type="submit"
                                 class="inline-flex w-full justify-center px-8 py-4 rounded-full font-bold text-black bg-white hover:bg-gray-200 transition-all text-sm uppercase tracking-wider items-center gap-3">
@@ -1377,10 +1393,25 @@
             if (barContainer) {
                 observer.observe(barContainer.parentElement.parentElement);
             }
+
+            // 6. reCAPTCHA Validation
+            const form = document.getElementById('contactForm');
+            if (form) {
+                const errorEl = document.getElementById('recaptchaError');
+                form.addEventListener('submit', (e) => {
+                    const recaptchaResponse = grecaptcha.getResponse();
+                    if (recaptchaResponse.length === 0) {
+                        e.preventDefault();
+                        if (errorEl) errorEl.classList.remove('hidden');
+                    } else {
+                        if (errorEl) errorEl.classList.add('hidden');
+                    }
+                });
+            }
         });
     </script>
 
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </body>
 

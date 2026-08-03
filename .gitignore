@@ -6,3 +6,5 @@ crm/.env
 # Runtime data (personal lead data must not be committed)
 crm/storage/database.sqlite
 crm/storage/database.sqlite.bak-*
+crm/storage/database.sqlite-wal
+crm/storage/database.sqlite-shm
