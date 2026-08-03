@@ -57,6 +57,12 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
+        .nav-pill {
+            background-color: rgba(26, 26, 26, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
         .gradient-text {
             background: linear-gradient(to right, #ffffff, #9ca3af);
             -webkit-background-clip: text;
@@ -195,6 +201,119 @@
             background-color: #374151 !important;
             color: #ffffff !important;
         }
+
+        /* Mobile menu overlay (matches the rest of the site) */
+        body.menu-open {
+            overflow: hidden;
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9990;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.35s ease, visibility 0.35s ease;
+        }
+
+        .mobile-menu-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu-panel {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: min(82vw, 360px);
+            background: #0c0f0f;
+            border-left: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 24px 24px 40px;
+            display: flex;
+            flex-direction: column;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-y: auto;
+            z-index: 9991;
+        }
+
+        .mobile-menu-overlay.open .mobile-menu-panel {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+
+        .mobile-menu-logo {
+            color: #fff;
+            font-weight: 800;
+            font-size: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .mobile-menu-close {
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 2rem;
+            line-height: 1;
+            cursor: pointer;
+            padding: 4px 8px;
+        }
+
+        .mobile-menu-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .mobile-menu-link,
+        .mobile-menu-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #e2e2e2;
+            font-size: 1.05rem;
+            font-weight: 600;
+            padding: 14px 4px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            background: transparent;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .mobile-menu-link:hover,
+        .mobile-menu-toggle:hover {
+            color: #fff;
+        }
+
+        .mobile-menu-cta {
+            margin-top: 24px;
+            text-align: center;
+            background: #fff;
+            color: #000;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            padding: 14px;
+            border-radius: 9999px;
+        }
+
+        .mobile-menu-cta:hover {
+            background: #e5e5e5;
+        }
     </style>
 
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -203,54 +322,47 @@
 <body class="antialiased font-sans selection:bg-white selection:text-black">
 
     <!-- SECTION 1: NAV -->
-    <nav class="fixed w-full top-0 z-50 px-6 md:px-12 py-6 flex justify-between items-center pointer-events-none backdrop-blur-md transition-all duration-300"
+    <nav class="fixed w-full top-0 z-50 px-6 md:px-12 py-6 flex justify-between items-center pointer-events-none backdrop-blur-md"
         style="background: linear-gradient(180deg, #000000cf, transparent);">
         <!-- Logo -->
-        <a href="#" class="pointer-events-auto z-10 flex items-center gap-2">
-            <img src="asset/chimpzlab-white.png" alt="ChimpzLab Real Estate" class="h-7 md:h-9 object-contain">
+        <a href="#" class="pointer-events-auto interactive z-10 flex items-center gap-2" aria-label="Home">
+            <img src="asset/chimpzlab-white.png" alt="ChimpzLab Real Estate" class="h-7 md:h-9 object-contain"
+                onerror="this.style.display='none'; document.getElementById('text-logo').style.display='block';">
+            <span id="text-logo"
+                class="hidden text-white font-extrabold text-2xl md:text-3xl tracking-tighter">CHIMPZLAB</span>
         </a>
 
         <!-- Desktop Centered Menu -->
-        <div class="pointer-events-auto hidden md:flex absolute left-1/2 -translate-x-1/2 z-10">
-            <div
-                class="bg-[#1a1a1a]/85 backdrop-blur-[12px] border border-white/5 text-white px-6 py-3 rounded-full flex items-center gap-8 cursor-pointer">
-                <a href="#how-we-work" class="text-gray-300 hover:text-white font-medium text-sm transition-colors">How
-                    We Work</a>
-                <a href="#the-problem" class="text-gray-300 hover:text-white font-medium text-sm transition-colors">The
+        <div class="pointer-events-auto hidden min-[992px]:flex absolute left-1/2 -translate-x-1/2 z-10">
+            <div class="nav-pill px-6 py-3 rounded-full flex items-center gap-8">
+                <a href="#how-we-work"
+                    class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors">How We
+                    Work</a>
+                <a href="#the-problem"
+                    class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors">The
                     Problem</a>
                 <a href="#services"
-                    class="text-gray-300 hover:text-white font-medium text-sm transition-colors">Services</a>
-                <a href="#faqs" class="text-gray-300 hover:text-white font-medium text-sm transition-colors">FAQs</a>
+                    class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors">Services</a>
+                <a href="#faqs" class="interactive text-gray-300 hover:text-white font-medium text-sm transition-colors">FAQs</a>
             </div>
         </div>
 
         <!-- Right: CTA + Mobile -->
         <div class="flex items-center gap-4 z-10">
-            <div class="pointer-events-auto hidden md:flex">
+            <div class="pointer-events-auto hidden min-[992px]:flex">
                 <a href="#contact"
-                    class="bg-white hover:bg-gray-200 text-black px-7 py-3 rounded-full text-sm font-bold tracking-wide transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.15)] uppercase">
+                    class="interactive bg-white hover:bg-gray-200 text-black px-7 py-3 rounded-full text-sm font-bold tracking-wide transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.15)]">
                     Get Free Audit
                 </a>
             </div>
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="pointer-events-auto md:hidden text-white p-2 z-10">
-                <i class="ph ph-list text-2xl"></i>
+            <button id="mobile-menu-btn" class="pointer-events-auto min-[992px]:hidden text-white interactive p-2 z-10"
+                aria-label="Open menu">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
             </button>
-        </div>
-        <!-- Mobile Menu Panel (Hidden by default) -->
-        <div id="mobile-menu"
-            class="hidden absolute top-full left-0 w-full bg-[#0a0a0a] border-b border-gray-800 pointer-events-auto shadow-2xl">
-            <div class="px-6 pt-4 pb-6 space-y-4">
-                <a href="#how-we-work" class="block text-base font-medium text-gray-300 hover:text-white">How We
-                    Work</a>
-                <a href="#the-problem" class="block text-base font-medium text-gray-300 hover:text-white">The
-                    Problem</a>
-                <a href="#services" class="block text-base font-medium text-gray-300 hover:text-white">Services</a>
-                <a href="#faqs" class="block text-base font-medium text-gray-300 hover:text-white">FAQs</a>
-                <a href="#contact"
-                    class="block mt-4 text-center px-6 py-3 rounded-full font-bold text-black bg-white uppercase">Get
-                    Free Audit</a>
-            </div>
         </div>
     </nav>
 
@@ -1300,21 +1412,59 @@
                 });
             }
 
-            // 1. Mobile Menu Toggle
+            // 1. Mobile Menu Overlay (matches the rest of the site)
             const btn = document.getElementById('mobile-menu-btn');
-            const menu = document.getElementById('mobile-menu');
 
-            btn.addEventListener('click', () => {
-                menu.classList.toggle('hidden');
-                const icon = btn.querySelector('i');
-                if (menu.classList.contains('hidden')) {
-                    icon.classList.remove('ph-x');
-                    icon.classList.add('ph-list');
-                } else {
-                    icon.classList.remove('ph-list');
-                    icon.classList.add('ph-x');
-                }
+            const overlay = document.createElement('div');
+            overlay.className = 'mobile-menu-overlay';
+            const panel = document.createElement('div');
+            panel.className = 'mobile-menu-panel';
+            panel.setAttribute('data-lenis-prevent', '');
+
+            panel.innerHTML =
+                '<div class="mobile-menu-head"><a href="#" class="mobile-menu-logo">CHIMPZLAB</a>' +
+                '<button type="button" class="mobile-menu-close" aria-label="Close menu">&times;</button></div>' +
+                '<nav class="mobile-menu-nav">' +
+                '<a href="#how-we-work" class="mobile-menu-link">How We Work</a>' +
+                '<a href="#the-problem" class="mobile-menu-link">The Problem</a>' +
+                '<a href="#services" class="mobile-menu-link">Services</a>' +
+                '<a href="#faqs" class="mobile-menu-link">FAQs</a>' +
+                '</nav>' +
+                '<a href="#contact" class="mobile-menu-cta">Get Free Audit</a>';
+
+            overlay.appendChild(panel);
+            document.body.appendChild(overlay);
+
+            function lockScroll() {
+                document.body.classList.add('menu-open');
+                if (window.lenis && typeof window.lenis.stop === 'function') window.lenis.stop();
+            }
+            function unlockScroll() {
+                document.body.classList.remove('menu-open');
+                if (window.lenis && typeof window.lenis.start === 'function') window.lenis.start();
+            }
+            function openMenu() {
+                overlay.classList.add('open');
+                btn.setAttribute('aria-expanded', 'true');
+                lockScroll();
+            }
+            function closeMenu() {
+                overlay.classList.remove('open');
+                btn.setAttribute('aria-expanded', 'false');
+                unlockScroll();
+            }
+
+            btn.addEventListener('click', function () {
+                if (overlay.classList.contains('open')) { closeMenu(); }
+                else { openMenu(); }
             });
+            overlay.addEventListener('click', function (e) {
+                if (e.target === overlay) closeMenu();
+                if (e.target.closest('a')) closeMenu();
+            });
+            var closeBtn = panel.querySelector('.mobile-menu-close');
+            if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+            document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
 
             // 2. Set Current Year in Footer
             document.getElementById('year').textContent = new Date().getFullYear();
