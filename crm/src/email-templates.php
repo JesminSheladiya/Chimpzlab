@@ -4,7 +4,7 @@
  * HTML templates for lead notification and thank-you emails.
  */
 
-function leadEmailHtml(string $siteName, array $lead, string $logo = ''): string
+function leadEmailHtml(string $siteName, array $lead, string $logo = '', array $extraFields = []): string
 {
     $esc = fn($v) => htmlspecialchars((string) $v, ENT_QUOTES, 'UTF-8');
     if ($logo === '') $logo = 'https://www.chimpzlab.com/asset/chimpzlab-white.png';
@@ -14,12 +14,20 @@ function leadEmailHtml(string $siteName, array $lead, string $logo = ''): string
         'Name' => $lead['name'] ?? '',
         'Email' => $lead['email'] ?? '',
         'Phone' => $lead['phone'] ?? '',
-        'Message' => $lead['message'] ?? '',
     ];
     foreach ($fields as $label => $value) {
         if ($value === '') continue;
         $rows .= '<tr><td style="padding:10px 16px;background:#f9fafb;color:#0a0a0a;font-weight:700;white-space:nowrap;font-size:12px;text-transform:uppercase;letter-spacing:1px">' . $esc($label)
             . '</td><td style="padding:10px 16px;color:#1f2937;font-size:14px;line-height:1.6">' . nl2br($esc($value)) . '</td></tr>';
+    }
+    foreach ($extraFields as $label => $value) {
+        if ($value === '') continue;
+        $rows .= '<tr><td style="padding:10px 16px;background:#f9fafb;color:#0a0a0a;font-weight:700;white-space:nowrap;font-size:12px;text-transform:uppercase;letter-spacing:1px">' . $esc($label)
+            . '</td><td style="padding:10px 16px;color:#1f2937;font-size:14px;line-height:1.6">' . nl2br($esc($value)) . '</td></tr>';
+    }
+    if (($lead['message'] ?? '') !== '') {
+        $rows .= '<tr><td style="padding:10px 16px;background:#f9fafb;color:#0a0a0a;font-weight:700;white-space:nowrap;font-size:12px;text-transform:uppercase;letter-spacing:1px">Message</td>'
+            . '<td style="padding:10px 16px;color:#1f2937;font-size:14px;line-height:1.6">' . nl2br($esc($lead['message'])) . '</td></tr>';
     }
     $rows .= '<tr><td style="padding:10px 16px;background:#f9fafb;color:#0a0a0a;font-weight:700;white-space:nowrap;font-size:12px;text-transform:uppercase;letter-spacing:1px">Received</td>'
         . '<td style="padding:10px 16px;color:#1f2937;font-size:14px;line-height:1.6">' . $esc(date('r')) . '</td></tr>';

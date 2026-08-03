@@ -86,9 +86,7 @@ $challengeLabel = $challengeLabels[$challenge] ?? $challenge;
 
 $message = "Company / Project: {$company}\n"
     . "Biggest challenge right now: {$challengeLabel}\n"
-    . ($description !== '' ? "Requirements:\n{$description}" : '');
-
-$extra = [
+    . ($description !== '' ? "Requirements:\n{$description}" : '');$extra = [
     'company' => $company,
     'challenge' => $challengeLabel,
     'description' => $description,
@@ -147,8 +145,11 @@ try {
             'name' => $name,
             'email' => '',
             'phone' => $phone,
-            'message' => $message,
-        ], $logo), $inlineLogo);
+            'message' => $description,
+        ], $logo, [
+            'Company / Project' => $company,
+            'Biggest challenge right now' => $challengeLabel,
+        ]), $inlineLogo);
     }
 } catch (Throwable $e) {
     error_log('Real-estate lead email notification failed: ' . $e->getMessage());
