@@ -134,6 +134,8 @@ RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteRule ^blog/?$ /insights.html [R=301,L]
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteRule ^privacy-policy/?$ /privacy-policy.html [R=301,L]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^real-estate/?$ /real-estate.html [R=301,L]
 RewriteRule ^tag/designing/?$ /services/creative/design.html [R=301,L]
 RewriteRule ^tag/content/?$ /services/visibility-search/content-writing-services-in-thane [R=301,L]
 RewriteRule ^tag/seo/?$ /services/visibility-search/seo-aeo-agency-in-thane [R=301,L]
