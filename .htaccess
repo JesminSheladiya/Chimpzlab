@@ -206,6 +206,8 @@ ErrorDocument 404 /404.html
 </IfModule>
 
 <IfModule mod_headers.c>
+    # Block search engines from indexing any page
+    Header always set X-Robots-Tag "noindex, nofollow"
     # Disable caching for HTML to keep content fresh
     <FilesMatch "\.(html)$">
         Header set Cache-Control "no-cache, no-store, must-revalidate"
